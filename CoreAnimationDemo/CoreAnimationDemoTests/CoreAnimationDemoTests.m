@@ -2,10 +2,11 @@
 //  CoreAnimationDemoTests.m
 //  CoreAnimationDemoTests
 //
-//  Created by 李超前 on 15/10/12.
-//  Copyright © 2015年 李超前. All rights reserved.
+//  Created by lichq on 15/10/13.
+//  Copyright (c) 2015年 李超前. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface CoreAnimationDemoTests : XCTestCase
@@ -26,7 +27,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssert(YES, @"Pass");
 }
 
 - (void)testPerformanceExample {

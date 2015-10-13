@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  CoreAnimationDemo
 //
-//  Created by 李超前 on 15/10/12.
-//  Copyright © 2015年 李超前. All rights reserved.
+//  Created by lichq on 15/10/13.
+//  Copyright (c) 2015年 李超前. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -66,7 +66,7 @@
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     scaleAnimation.fromValue = [NSNumber numberWithFloat:1.0];
     scaleAnimation.toValue = [NSNumber numberWithFloat:1.5];
-    scaleAnimation.autoreverses = YES;
+    scaleAnimation.autoreverses = YES; //是否再回到原来的位置
     scaleAnimation.fillMode = kCAFillModeForwards;
     scaleAnimation.repeatCount = MAXFLOAT;
     scaleAnimation.duration = 0.8;
