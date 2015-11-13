@@ -21,6 +21,8 @@
 		80150F3F1BCCD0B2001D59D9 /* BezierPathAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F3D1BCCD0B2001D59D9 /* BezierPathAnimationVC.m */; };
 		80150F401BCCD0B2001D59D9 /* BezierPathAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80150F3E1BCCD0B2001D59D9 /* BezierPathAnimationVC.xib */; };
 		80150F431BCCD174001D59D9 /* sanguosha.png in Resources */ = {isa = PBXBuildFile; fileRef = 80150F421BCCD174001D59D9 /* sanguosha.png */; };
+		80623A3E1BF5E33C005BCAA6 /* UIViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */; };
+		80623A3F1BF5E33C005BCAA6 /* UIViewDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		80150F3D1BCCD0B2001D59D9 /* BezierPathAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathAnimationVC.m; sourceTree = "<group>"; };
 		80150F3E1BCCD0B2001D59D9 /* BezierPathAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierPathAnimationVC.xib; sourceTree = "<group>"; };
 		80150F421BCCD174001D59D9 /* sanguosha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sanguosha.png; sourceTree = "<group>"; };
+		80623A3B1BF5E33C005BCAA6 /* UIViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewDemo.h; sourceTree = "<group>"; };
+		80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewDemo.m; sourceTree = "<group>"; };
+		80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIViewDemo.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +146,9 @@
 		80150F311BCCB228001D59D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				80623A3B1BF5E33C005BCAA6 /* UIViewDemo.h */,
+				80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */,
+				80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */,
 				80150F321BCCB228001D59D9 /* BasicAnimationVC.h */,
 				80150F331BCCB228001D59D9 /* BasicAnimationVC.m */,
 				80150F341BCCB228001D59D9 /* BasicAnimationVC.xib */,
@@ -247,6 +255,7 @@
 				80150F171BCCB1AB001D59D9 /* Main.storyboard in Resources */,
 				80150F401BCCD0B2001D59D9 /* BezierPathAnimationVC.xib in Resources */,
 				80150F1C1BCCB1AB001D59D9 /* LaunchScreen.xib in Resources */,
+				80623A3F1BF5E33C005BCAA6 /* UIViewDemo.xib in Resources */,
 				80150F431BCCD174001D59D9 /* sanguosha.png in Resources */,
 				80150F191BCCB1AB001D59D9 /* Images.xcassets in Resources */,
 			);
@@ -268,6 +277,7 @@
 			files = (
 				80150F381BCCB228001D59D9 /* BasicAnimationVC.m in Sources */,
 				80150F3F1BCCD0B2001D59D9 /* BezierPathAnimationVC.m in Sources */,
+				80623A3E1BF5E33C005BCAA6 /* UIViewDemo.m in Sources */,
 				80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */,
 				80150F3A1BCCB228001D59D9 /* KeyframeAnimationVC.m in Sources */,
 				80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */,
@@ -398,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoreAnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -408,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoreAnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -466,6 +478,7 @@
 				80150F2D1BCCB1AB001D59D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80150F2E1BCCB1AB001D59D9 /* Build configuration list for PBXNativeTarget "CoreAnimationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +487,7 @@
 				80150F301BCCB1AB001D59D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

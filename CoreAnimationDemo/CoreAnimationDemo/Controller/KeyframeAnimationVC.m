@@ -26,6 +26,7 @@
 }
 
 
+#pragma mark - 重要知识点阅读
 /*
  CABasicAnimation算是CAKeyFrameAnimation的特殊情况，即不考虑中间变换过程，只考虑起始点与目标点就可以了。而CAKeyFrameAnimation则更复杂一些，允许我们在起点与终点间自定义更多内容来达到我们的实际应用需求！比如，手机淘宝中，当你添加物品到购物车后会出现将物品抛到购物车的效果，这种效果实现起来也不难，无非是先绘制抛物线在执行position以及scale的GroupAnimation而已
  */

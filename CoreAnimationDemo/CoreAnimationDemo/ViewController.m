@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+
+#import "UIViewDemo.h"
+
 #import "BasicAnimationVC.h"
 #import "KeyframeAnimationVC.h"
 #import "BezierPathAnimationVC.h"
@@ -20,9 +23,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = NSLocalizedString(@"View自身的动画", nil);
 }
 
 
+
+//
+- (IBAction)goUIViewDemo:(id)sender{
+    UIViewDemo *vc = [[UIViewDemo alloc]initWithNibName:@"UIViewDemo" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+//
 - (IBAction)goBasicAnimationVC:(id)sender{
     BasicAnimationVC *con = [[BasicAnimationVC alloc]initWithNibName:@"BasicAnimationVC" bundle:nil];
     [self.navigationController pushViewController:con animated:YES];
