@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WelcomeViewToPopup.h"
+#import "WelcomeVCToPopup.h"
 
-@interface UIViewDemo : UIViewController
+@interface UIViewDemo : UIViewController<WelcomeViewToPopupDelegate, WelcomeVCToPopupDelegate>
 
 @end

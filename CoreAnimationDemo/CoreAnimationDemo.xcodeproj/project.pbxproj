@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782C2DF31BF71E5100700EE2 /* WelcomeViewToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 782C2DF11BF71E5100700EE2 /* WelcomeViewToPopup.m */; settings = {ASSET_TAGS = (); }; };
+		782C2DF41BF71E5100700EE2 /* WelcomeViewToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 782C2DF21BF71E5100700EE2 /* WelcomeViewToPopup.xib */; settings = {ASSET_TAGS = (); }; };
+		782C2DF81BF71EB300700EE2 /* WelcomeVCToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 782C2DF61BF71EB300700EE2 /* WelcomeVCToPopup.m */; settings = {ASSET_TAGS = (); }; };
+		782C2DF91BF71EB300700EE2 /* WelcomeVCToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 782C2DF71BF71EB300700EE2 /* WelcomeVCToPopup.xib */; settings = {ASSET_TAGS = (); }; };
 		80150F0E1BCCB1AB001D59D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F0D1BCCB1AB001D59D9 /* main.m */; };
 		80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F101BCCB1AB001D59D9 /* AppDelegate.m */; };
 		80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F131BCCB1AB001D59D9 /* ViewController.m */; };
@@ -36,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		782C2DF01BF71E5100700EE2 /* WelcomeViewToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewToPopup.h; sourceTree = "<group>"; };
+		782C2DF11BF71E5100700EE2 /* WelcomeViewToPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewToPopup.m; sourceTree = "<group>"; };
+		782C2DF21BF71E5100700EE2 /* WelcomeViewToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewToPopup.xib; sourceTree = "<group>"; };
+		782C2DF51BF71EB300700EE2 /* WelcomeVCToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeVCToPopup.h; sourceTree = "<group>"; };
+		782C2DF61BF71EB300700EE2 /* WelcomeVCToPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeVCToPopup.m; sourceTree = "<group>"; };
+		782C2DF71BF71EB300700EE2 /* WelcomeVCToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVCToPopup.xib; sourceTree = "<group>"; };
 		80150F081BCCB1AB001D59D9 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80150F0C1BCCB1AB001D59D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80150F0D1BCCB1AB001D59D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +92,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782C2DEF1BF71E5100700EE2 /* ViewOrVCPopup */ = {
+			isa = PBXGroup;
+			children = (
+				782C2DF01BF71E5100700EE2 /* WelcomeViewToPopup.h */,
+				782C2DF11BF71E5100700EE2 /* WelcomeViewToPopup.m */,
+				782C2DF21BF71E5100700EE2 /* WelcomeViewToPopup.xib */,
+				782C2DF51BF71EB300700EE2 /* WelcomeVCToPopup.h */,
+				782C2DF61BF71EB300700EE2 /* WelcomeVCToPopup.m */,
+				782C2DF71BF71EB300700EE2 /* WelcomeVCToPopup.xib */,
+			);
+			path = ViewOrVCPopup;
+			sourceTree = "<group>";
+		};
 		80150EFF1BCCB1AB001D59D9 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +169,7 @@
 		80150F311BCCB228001D59D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				782C2DEF1BF71E5100700EE2 /* ViewOrVCPopup */,
 				80623A3B1BF5E33C005BCAA6 /* UIViewDemo.h */,
 				80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */,
 				80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */,
@@ -251,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80150F3B1BCCB228001D59D9 /* KeyframeAnimationVC.xib in Resources */,
+				782C2DF91BF71EB300700EE2 /* WelcomeVCToPopup.xib in Resources */,
 				80150F391BCCB228001D59D9 /* BasicAnimationVC.xib in Resources */,
 				80150F171BCCB1AB001D59D9 /* Main.storyboard in Resources */,
+				782C2DF41BF71E5100700EE2 /* WelcomeViewToPopup.xib in Resources */,
 				80150F401BCCD0B2001D59D9 /* BezierPathAnimationVC.xib in Resources */,
 				80150F1C1BCCB1AB001D59D9 /* LaunchScreen.xib in Resources */,
 				80623A3F1BF5E33C005BCAA6 /* UIViewDemo.xib in Resources */,
@@ -281,6 +307,8 @@
 				80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */,
 				80150F3A1BCCB228001D59D9 /* KeyframeAnimationVC.m in Sources */,
 				80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */,
+				782C2DF31BF71E5100700EE2 /* WelcomeViewToPopup.m in Sources */,
+				782C2DF81BF71EB300700EE2 /* WelcomeVCToPopup.m in Sources */,
 				80150F0E1BCCB1AB001D59D9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
