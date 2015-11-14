@@ -24,6 +24,11 @@
     [self initGroupLayer];
 }
 
+#pragma mark - 重要知识点阅读
+/*
+ CABasicAnimation算是CAKeyFrameAnimation的特殊情况，即不考虑中间变换过程，只考虑起始点与目标点就可以了。
+ */
+
 - (IBAction)test:(id)sender{
     BasicAnimationVC *con = [[BasicAnimationVC alloc]initWithNibName:@"BasicAnimationVC" bundle:nil];
     [self.navigationController pushViewController:con animated:YES];

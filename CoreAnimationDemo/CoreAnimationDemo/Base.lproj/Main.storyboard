@@ -33,36 +33,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-EA-N2h">
-                                <rect key="frame" x="10" y="186" width="300" height="30"/>
-                                <state key="normal" title="基本BasicAnimationVC"/>
-                                <connections>
-                                    <action selector="goBasicAnimationVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cSp-yc-tEl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyf-UL-F5N">
-                                <rect key="frame" x="10" y="234" width="300" height="30"/>
-                                <state key="normal" title="KeyframeAnimationVC不止有起始点"/>
-                                <connections>
-                                    <action selector="goKeyframeAnimationVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xSs-Ra-wfp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-fJ-arY">
-                                <rect key="frame" x="10" y="280" width="300" height="30"/>
-                                <state key="normal" title="BezierPathAnimationVC(更复杂的KeyFrame">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBezierPathAnimationVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DQr-aL-jAw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MG-Lf-Lfe">
-                                <rect key="frame" x="10" y="118" width="300" height="30"/>
+                                <rect key="frame" x="10" y="68" width="300" height="30"/>
                                 <state key="normal" title="UIViewDemo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goUIViewDemo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gSK-03-35N"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wju-AG-mL4">
+                                <rect key="frame" x="10" y="83" width="300" height="125"/>
+                                <mutableString key="text">[popupView setFrame:rect_hide];
+    [popupView setAlpha:0];
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        [popupView setFrame:rect_show];
+        [popupView setAlpha:1];
+    } completion:^(BOOL finished){
+        
+    }];</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text=" CABasicAnimation算是CAKeyFrameAnimation的特殊情况，即不考虑中间变换过程，只考虑起始点与目标点就可以了。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4JQ-wa-lHX">
+                                <rect key="frame" x="10" y="222" width="300" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-EA-N2h">
+                                <rect key="frame" x="10" y="208" width="300" height="30"/>
+                                <state key="normal" title="基本BasicAnimationVC"/>
+                                <connections>
+                                    <action selector="goBasicAnimationVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cSp-yc-tEl"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NJf-8Q-dJZ">
+                                <rect key="frame" x="10" y="317" width="300" height="126"/>
+                                <string key="text"> CABasicAnimation算是CAKeyFrameAnimation的特殊情况，即不考虑中间变换过程，只考虑起始点与目标点就可以了。而CAKeyFrameAnimation则更复杂一些，允许我们在起点与终点间自定义更多内容来达到我们的实际应用需求！比如，手机淘宝中，当你添加物品到购物车后会出现将物品抛到购物车的效果，这种效果实现起来也不难，无非是先绘制抛物线在执行position以及scale的GroupAnimation而已</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyf-UL-F5N">
+                                <rect key="frame" x="10" y="302" width="300" height="30"/>
+                                <state key="normal" title="KeyframeAnimationVC"/>
+                                <connections>
+                                    <action selector="goKeyframeAnimationVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xSs-Ra-wfp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="用贝塞尔曲线绘制路径的KeyframeAnimation" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0aa-59-Lee">
+                                <rect key="frame" x="10" y="481" width="300" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-fJ-arY">
+                                <rect key="frame" x="10" y="462" width="300" height="30"/>
+                                <state key="normal" title="BezierPathAnimationVC">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBezierPathAnimationVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DQr-aL-jAw"/>
                                 </connections>
                             </button>
                         </subviews>

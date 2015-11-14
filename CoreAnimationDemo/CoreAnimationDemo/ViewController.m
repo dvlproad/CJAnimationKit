@@ -31,25 +31,29 @@
 //
 - (IBAction)goUIViewDemo:(id)sender{
     UIViewDemo *vc = [[UIViewDemo alloc]initWithNibName:@"UIViewDemo" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
 //
 - (IBAction)goBasicAnimationVC:(id)sender{
-    BasicAnimationVC *con = [[BasicAnimationVC alloc]initWithNibName:@"BasicAnimationVC" bundle:nil];
-    [self.navigationController pushViewController:con animated:YES];
+    BasicAnimationVC *vc = [[BasicAnimationVC alloc]initWithNibName:@"BasicAnimationVC" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
 - (IBAction)goKeyframeAnimationVC:(id)sender{
-    KeyframeAnimationVC *con = [[KeyframeAnimationVC alloc]initWithNibName:@"KeyframeAnimationVC" bundle:nil];
-    [self.navigationController pushViewController:con animated:YES];
+    KeyframeAnimationVC *vc = [[KeyframeAnimationVC alloc]initWithNibName:@"KeyframeAnimationVC" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goBezierPathAnimationVC:(id)sender{
-    BezierPathAnimationVC *con = [[BezierPathAnimationVC alloc]initWithNibName:@"BezierPathAnimationVC" bundle:nil];
-    [self.navigationController pushViewController:con animated:YES];
+    BezierPathAnimationVC *vc = [[BezierPathAnimationVC alloc]initWithNibName:@"BezierPathAnimationVC" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
