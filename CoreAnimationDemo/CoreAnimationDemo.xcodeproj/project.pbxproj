@@ -7,10 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		782C2DF31BF71E5100700EE2 /* WelcomeViewToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 782C2DF11BF71E5100700EE2 /* WelcomeViewToPopup.m */; settings = {ASSET_TAGS = (); }; };
-		782C2DF41BF71E5100700EE2 /* WelcomeViewToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 782C2DF21BF71E5100700EE2 /* WelcomeViewToPopup.xib */; settings = {ASSET_TAGS = (); }; };
-		782C2DF81BF71EB300700EE2 /* WelcomeVCToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 782C2DF61BF71EB300700EE2 /* WelcomeVCToPopup.m */; settings = {ASSET_TAGS = (); }; };
-		782C2DF91BF71EB300700EE2 /* WelcomeVCToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 782C2DF71BF71EB300700EE2 /* WelcomeVCToPopup.xib */; settings = {ASSET_TAGS = (); }; };
+		0FBC5898EB7F35E1E81F3D36 /* libPods-CoreAnimationDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */; };
+		783658B11ECEDD4700AF7591 /* BasicAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658911ECEDD4700AF7591 /* BasicAnimationVC.m */; };
+		783658B21ECEDD4700AF7591 /* BasicAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658921ECEDD4700AF7591 /* BasicAnimationVC.xib */; };
+		783658B31ECEDD4700AF7591 /* BezierPathAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658951ECEDD4700AF7591 /* BezierPathAnimationVC.m */; };
+		783658B41ECEDD4700AF7591 /* BezierPathAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658961ECEDD4700AF7591 /* BezierPathAnimationVC.xib */; };
+		783658B51ECEDD4700AF7591 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658981ECEDD4700AF7591 /* HomeViewController.m */; };
+		783658B61ECEDD4700AF7591 /* KeyframeAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836589B1ECEDD4700AF7591 /* KeyframeAnimationVC.m */; };
+		783658B71ECEDD4700AF7591 /* KeyframeAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7836589C1ECEDD4700AF7591 /* KeyframeAnimationVC.xib */; };
+		783658B81ECEDD4700AF7591 /* UIViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836589F1ECEDD4700AF7591 /* UIViewDemo.m */; };
+		783658B91ECEDD4700AF7591 /* UIViewDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658A01ECEDD4700AF7591 /* UIViewDemo.xib */; };
+		783658BA1ECEDD4700AF7591 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658A31ECEDD4700AF7591 /* ModuleModel.m */; };
+		783658BB1ECEDD4700AF7591 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 783658A51ECEDD4700AF7591 /* bg@2x.jpg */; };
+		783658BC1ECEDD4700AF7591 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 783658A61ECEDD4700AF7591 /* bgCar@2x.jpg */; };
+		783658BD1ECEDD4700AF7591 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 783658A71ECEDD4700AF7591 /* bgSky@2x.jpg */; };
+		783658BE1ECEDD4700AF7591 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 783658A81ECEDD4700AF7591 /* header@2x.jpg */; };
+		783658BF1ECEDD4700AF7591 /* sanguosha.png in Resources */ = {isa = PBXBuildFile; fileRef = 783658A91ECEDD4700AF7591 /* sanguosha.png */; };
+		783658C01ECEDD4700AF7591 /* WelcomeVCToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658AC1ECEDD4700AF7591 /* WelcomeVCToPopup.m */; };
+		783658C11ECEDD4700AF7591 /* WelcomeVCToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658AD1ECEDD4700AF7591 /* WelcomeVCToPopup.xib */; };
+		783658C21ECEDD4700AF7591 /* WelcomeViewToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658AF1ECEDD4700AF7591 /* WelcomeViewToPopup.m */; };
+		783658C31ECEDD4700AF7591 /* WelcomeViewToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658B01ECEDD4700AF7591 /* WelcomeViewToPopup.xib */; };
+		783658C71ECEDDBE00AF7591 /* BaseAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658C51ECEDDBE00AF7591 /* BaseAnimationViewController.m */; };
+		783658C81ECEDDBE00AF7591 /* BaseAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658C61ECEDDBE00AF7591 /* BaseAnimationViewController.xib */; };
+		783658CD1ECEE24A00AF7591 /* CJAnimationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658CC1ECEE24A00AF7591 /* CJAnimationFactory.m */; };
+		783658D21ECEE3A400AF7591 /* RadarAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658D01ECEE3A400AF7591 /* RadarAnimationViewController.m */; };
+		783658D31ECEE3A400AF7591 /* RadarAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658D11ECEE3A400AF7591 /* RadarAnimationViewController.xib */; };
+		783658D61ECEE8A900AF7591 /* CAShapeLayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658D51ECEE8A900AF7591 /* CAShapeLayerFactory.m */; };
+		783658FF1ECFCDB100AF7591 /* PeiwoAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658FD1ECFCDB100AF7591 /* PeiwoAnimationViewController.m */; };
+		783659001ECFCDB100AF7591 /* PeiwoAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658FE1ECFCDB100AF7591 /* PeiwoAnimationViewController.xib */; };
+		783659031ED044F900AF7591 /* UIControl+CJRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 783659021ED044F900AF7591 /* UIControl+CJRadarAnimation.m */; };
 		80150F0E1BCCB1AB001D59D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F0D1BCCB1AB001D59D9 /* main.m */; };
 		80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F101BCCB1AB001D59D9 /* AppDelegate.m */; };
 		80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F131BCCB1AB001D59D9 /* ViewController.m */; };
@@ -18,15 +43,7 @@
 		80150F191BCCB1AB001D59D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80150F181BCCB1AB001D59D9 /* Images.xcassets */; };
 		80150F1C1BCCB1AB001D59D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80150F1A1BCCB1AB001D59D9 /* LaunchScreen.xib */; };
 		80150F281BCCB1AB001D59D9 /* CoreAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F271BCCB1AB001D59D9 /* CoreAnimationDemoTests.m */; };
-		80150F381BCCB228001D59D9 /* BasicAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F331BCCB228001D59D9 /* BasicAnimationVC.m */; };
-		80150F391BCCB228001D59D9 /* BasicAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80150F341BCCB228001D59D9 /* BasicAnimationVC.xib */; };
-		80150F3A1BCCB228001D59D9 /* KeyframeAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F361BCCB228001D59D9 /* KeyframeAnimationVC.m */; };
-		80150F3B1BCCB228001D59D9 /* KeyframeAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80150F371BCCB228001D59D9 /* KeyframeAnimationVC.xib */; };
-		80150F3F1BCCD0B2001D59D9 /* BezierPathAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F3D1BCCD0B2001D59D9 /* BezierPathAnimationVC.m */; };
-		80150F401BCCD0B2001D59D9 /* BezierPathAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80150F3E1BCCD0B2001D59D9 /* BezierPathAnimationVC.xib */; };
-		80150F431BCCD174001D59D9 /* sanguosha.png in Resources */ = {isa = PBXBuildFile; fileRef = 80150F421BCCD174001D59D9 /* sanguosha.png */; };
-		80623A3E1BF5E33C005BCAA6 /* UIViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */; };
-		80623A3F1BF5E33C005BCAA6 /* UIViewDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */; };
+		8384466F6D70826E5273952C /* libPods-CoreAnimationDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F1D8839AA4E6B51461D270 /* libPods-CoreAnimationDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +57,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		782C2DF01BF71E5100700EE2 /* WelcomeViewToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewToPopup.h; sourceTree = "<group>"; };
-		782C2DF11BF71E5100700EE2 /* WelcomeViewToPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewToPopup.m; sourceTree = "<group>"; };
-		782C2DF21BF71E5100700EE2 /* WelcomeViewToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewToPopup.xib; sourceTree = "<group>"; };
-		782C2DF51BF71EB300700EE2 /* WelcomeVCToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeVCToPopup.h; sourceTree = "<group>"; };
-		782C2DF61BF71EB300700EE2 /* WelcomeVCToPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeVCToPopup.m; sourceTree = "<group>"; };
-		782C2DF71BF71EB300700EE2 /* WelcomeVCToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVCToPopup.xib; sourceTree = "<group>"; };
+		2EAE353F1593EF11310330DD /* Pods-CoreAnimationDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemoTests/Pods-CoreAnimationDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39C1C815EA634157408DAAFB /* Pods-CoreAnimationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemo/Pods-CoreAnimationDemo.release.xcconfig"; sourceTree = "<group>"; };
+		406943A1047EE2340C5075D9 /* Pods-CoreAnimationDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemoTests/Pods-CoreAnimationDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreAnimationDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F1D8839AA4E6B51461D270 /* libPods-CoreAnimationDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreAnimationDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		783658901ECEDD4700AF7591 /* BasicAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimationVC.h; sourceTree = "<group>"; };
+		783658911ECEDD4700AF7591 /* BasicAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimationVC.m; sourceTree = "<group>"; };
+		783658921ECEDD4700AF7591 /* BasicAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicAnimationVC.xib; sourceTree = "<group>"; };
+		783658941ECEDD4700AF7591 /* BezierPathAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathAnimationVC.h; sourceTree = "<group>"; };
+		783658951ECEDD4700AF7591 /* BezierPathAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathAnimationVC.m; sourceTree = "<group>"; };
+		783658961ECEDD4700AF7591 /* BezierPathAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierPathAnimationVC.xib; sourceTree = "<group>"; };
+		783658971ECEDD4700AF7591 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		783658981ECEDD4700AF7591 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		7836589A1ECEDD4700AF7591 /* KeyframeAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyframeAnimationVC.h; sourceTree = "<group>"; };
+		7836589B1ECEDD4700AF7591 /* KeyframeAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyframeAnimationVC.m; sourceTree = "<group>"; };
+		7836589C1ECEDD4700AF7591 /* KeyframeAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyframeAnimationVC.xib; sourceTree = "<group>"; };
+		7836589E1ECEDD4700AF7591 /* UIViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewDemo.h; sourceTree = "<group>"; };
+		7836589F1ECEDD4700AF7591 /* UIViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewDemo.m; sourceTree = "<group>"; };
+		783658A01ECEDD4700AF7591 /* UIViewDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIViewDemo.xib; sourceTree = "<group>"; };
+		783658A21ECEDD4700AF7591 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
+		783658A31ECEDD4700AF7591 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
+		783658A51ECEDD4700AF7591 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		783658A61ECEDD4700AF7591 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
+		783658A71ECEDD4700AF7591 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
+		783658A81ECEDD4700AF7591 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		783658A91ECEDD4700AF7591 /* sanguosha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sanguosha.png; sourceTree = "<group>"; };
+		783658AB1ECEDD4700AF7591 /* WelcomeVCToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeVCToPopup.h; sourceTree = "<group>"; };
+		783658AC1ECEDD4700AF7591 /* WelcomeVCToPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeVCToPopup.m; sourceTree = "<group>"; };
+		783658AD1ECEDD4700AF7591 /* WelcomeVCToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVCToPopup.xib; sourceTree = "<group>"; };
+		783658AE1ECEDD4700AF7591 /* WelcomeViewToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewToPopup.h; sourceTree = "<group>"; };
+		783658AF1ECEDD4700AF7591 /* WelcomeViewToPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewToPopup.m; sourceTree = "<group>"; };
+		783658B01ECEDD4700AF7591 /* WelcomeViewToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewToPopup.xib; sourceTree = "<group>"; };
+		783658C41ECEDDBE00AF7591 /* BaseAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAnimationViewController.h; sourceTree = "<group>"; };
+		783658C51ECEDDBE00AF7591 /* BaseAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAnimationViewController.m; sourceTree = "<group>"; };
+		783658C61ECEDDBE00AF7591 /* BaseAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseAnimationViewController.xib; sourceTree = "<group>"; };
+		783658CB1ECEE24A00AF7591 /* CJAnimationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAnimationFactory.h; sourceTree = "<group>"; };
+		783658CC1ECEE24A00AF7591 /* CJAnimationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAnimationFactory.m; sourceTree = "<group>"; };
+		783658CF1ECEE3A400AF7591 /* RadarAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarAnimationViewController.h; sourceTree = "<group>"; };
+		783658D01ECEE3A400AF7591 /* RadarAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarAnimationViewController.m; sourceTree = "<group>"; };
+		783658D11ECEE3A400AF7591 /* RadarAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarAnimationViewController.xib; sourceTree = "<group>"; };
+		783658D41ECEE8A900AF7591 /* CAShapeLayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerFactory.h; sourceTree = "<group>"; };
+		783658D51ECEE8A900AF7591 /* CAShapeLayerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerFactory.m; sourceTree = "<group>"; };
+		783658FC1ECFCDB100AF7591 /* PeiwoAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeiwoAnimationViewController.h; sourceTree = "<group>"; };
+		783658FD1ECFCDB100AF7591 /* PeiwoAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeiwoAnimationViewController.m; sourceTree = "<group>"; };
+		783658FE1ECFCDB100AF7591 /* PeiwoAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeiwoAnimationViewController.xib; sourceTree = "<group>"; };
+		783659011ED044F900AF7591 /* UIControl+CJRadarAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CJRadarAnimation.h"; sourceTree = "<group>"; };
+		783659021ED044F900AF7591 /* UIControl+CJRadarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CJRadarAnimation.m"; sourceTree = "<group>"; };
+		7A61ABA3B52FC5365A6A31A8 /* Pods-CoreAnimationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemo/Pods-CoreAnimationDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		80150F081BCCB1AB001D59D9 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80150F0C1BCCB1AB001D59D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80150F0D1BCCB1AB001D59D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,19 +118,6 @@
 		80150F211BCCB1AB001D59D9 /* CoreAnimationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80150F261BCCB1AB001D59D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80150F271BCCB1AB001D59D9 /* CoreAnimationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationDemoTests.m; sourceTree = "<group>"; };
-		80150F321BCCB228001D59D9 /* BasicAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimationVC.h; sourceTree = "<group>"; };
-		80150F331BCCB228001D59D9 /* BasicAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimationVC.m; sourceTree = "<group>"; };
-		80150F341BCCB228001D59D9 /* BasicAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicAnimationVC.xib; sourceTree = "<group>"; };
-		80150F351BCCB228001D59D9 /* KeyframeAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyframeAnimationVC.h; sourceTree = "<group>"; };
-		80150F361BCCB228001D59D9 /* KeyframeAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyframeAnimationVC.m; sourceTree = "<group>"; };
-		80150F371BCCB228001D59D9 /* KeyframeAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyframeAnimationVC.xib; sourceTree = "<group>"; };
-		80150F3C1BCCD0B2001D59D9 /* BezierPathAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathAnimationVC.h; sourceTree = "<group>"; };
-		80150F3D1BCCD0B2001D59D9 /* BezierPathAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathAnimationVC.m; sourceTree = "<group>"; };
-		80150F3E1BCCD0B2001D59D9 /* BezierPathAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierPathAnimationVC.xib; sourceTree = "<group>"; };
-		80150F421BCCD174001D59D9 /* sanguosha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sanguosha.png; sourceTree = "<group>"; };
-		80623A3B1BF5E33C005BCAA6 /* UIViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewDemo.h; sourceTree = "<group>"; };
-		80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewDemo.m; sourceTree = "<group>"; };
-		80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIViewDemo.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8384466F6D70826E5273952C /* libPods-CoreAnimationDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,23 +133,146 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBC5898EB7F35E1E81F3D36 /* libPods-CoreAnimationDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		782C2DEF1BF71E5100700EE2 /* ViewOrVCPopup */ = {
+		2C1C036E133124E0046BC174 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				782C2DF01BF71E5100700EE2 /* WelcomeViewToPopup.h */,
-				782C2DF11BF71E5100700EE2 /* WelcomeViewToPopup.m */,
-				782C2DF21BF71E5100700EE2 /* WelcomeViewToPopup.xib */,
-				782C2DF51BF71EB300700EE2 /* WelcomeVCToPopup.h */,
-				782C2DF61BF71EB300700EE2 /* WelcomeVCToPopup.m */,
-				782C2DF71BF71EB300700EE2 /* WelcomeVCToPopup.xib */,
+				77F1D8839AA4E6B51461D270 /* libPods-CoreAnimationDemo.a */,
+				4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */,
 			);
-			path = ViewOrVCPopup;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7836588E1ECEDD4700AF7591 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				783658971ECEDD4700AF7591 /* HomeViewController.h */,
+				783658981ECEDD4700AF7591 /* HomeViewController.m */,
+				783658FC1ECFCDB100AF7591 /* PeiwoAnimationViewController.h */,
+				783658FD1ECFCDB100AF7591 /* PeiwoAnimationViewController.m */,
+				783658FE1ECFCDB100AF7591 /* PeiwoAnimationViewController.xib */,
+				783658CE1ECEE39700AF7591 /* RadarAnimationDemo */,
+				7836588F1ECEDD4700AF7591 /* BasicAnimationDemo */,
+				783658931ECEDD4700AF7591 /* BezierPathAnimationDemo */,
+				783658991ECEDD4700AF7591 /* KeyframeAnimationDemo */,
+				7836589D1ECEDD4700AF7591 /* UIViewAnimationDemo */,
+				783658C41ECEDDBE00AF7591 /* BaseAnimationViewController.h */,
+				783658C51ECEDDBE00AF7591 /* BaseAnimationViewController.m */,
+				783658C61ECEDDBE00AF7591 /* BaseAnimationViewController.xib */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		7836588F1ECEDD4700AF7591 /* BasicAnimationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				783658901ECEDD4700AF7591 /* BasicAnimationVC.h */,
+				783658911ECEDD4700AF7591 /* BasicAnimationVC.m */,
+				783658921ECEDD4700AF7591 /* BasicAnimationVC.xib */,
+			);
+			path = BasicAnimationDemo;
+			sourceTree = "<group>";
+		};
+		783658931ECEDD4700AF7591 /* BezierPathAnimationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				783658941ECEDD4700AF7591 /* BezierPathAnimationVC.h */,
+				783658951ECEDD4700AF7591 /* BezierPathAnimationVC.m */,
+				783658961ECEDD4700AF7591 /* BezierPathAnimationVC.xib */,
+			);
+			path = BezierPathAnimationDemo;
+			sourceTree = "<group>";
+		};
+		783658991ECEDD4700AF7591 /* KeyframeAnimationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7836589A1ECEDD4700AF7591 /* KeyframeAnimationVC.h */,
+				7836589B1ECEDD4700AF7591 /* KeyframeAnimationVC.m */,
+				7836589C1ECEDD4700AF7591 /* KeyframeAnimationVC.xib */,
+			);
+			path = KeyframeAnimationDemo;
+			sourceTree = "<group>";
+		};
+		7836589D1ECEDD4700AF7591 /* UIViewAnimationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7836589E1ECEDD4700AF7591 /* UIViewDemo.h */,
+				7836589F1ECEDD4700AF7591 /* UIViewDemo.m */,
+				783658A01ECEDD4700AF7591 /* UIViewDemo.xib */,
+			);
+			path = UIViewAnimationDemo;
+			sourceTree = "<group>";
+		};
+		783658A11ECEDD4700AF7591 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				783658A21ECEDD4700AF7591 /* ModuleModel.h */,
+				783658A31ECEDD4700AF7591 /* ModuleModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		783658A41ECEDD4700AF7591 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				783658A51ECEDD4700AF7591 /* bg@2x.jpg */,
+				783658A61ECEDD4700AF7591 /* bgCar@2x.jpg */,
+				783658A71ECEDD4700AF7591 /* bgSky@2x.jpg */,
+				783658A81ECEDD4700AF7591 /* header@2x.jpg */,
+				783658A91ECEDD4700AF7591 /* sanguosha.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		783658AA1ECEDD4700AF7591 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				783658AB1ECEDD4700AF7591 /* WelcomeVCToPopup.h */,
+				783658AC1ECEDD4700AF7591 /* WelcomeVCToPopup.m */,
+				783658AD1ECEDD4700AF7591 /* WelcomeVCToPopup.xib */,
+				783658AE1ECEDD4700AF7591 /* WelcomeViewToPopup.h */,
+				783658AF1ECEDD4700AF7591 /* WelcomeViewToPopup.m */,
+				783658B01ECEDD4700AF7591 /* WelcomeViewToPopup.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		783658C91ECEE1E200AF7591 /* CJAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				783659011ED044F900AF7591 /* UIControl+CJRadarAnimation.h */,
+				783659021ED044F900AF7591 /* UIControl+CJRadarAnimation.m */,
+				783658CA1ECEE1E200AF7591 /* CJRadarAnimation */,
+				783658CB1ECEE24A00AF7591 /* CJAnimationFactory.h */,
+				783658CC1ECEE24A00AF7591 /* CJAnimationFactory.m */,
+				783658D41ECEE8A900AF7591 /* CAShapeLayerFactory.h */,
+				783658D51ECEE8A900AF7591 /* CAShapeLayerFactory.m */,
+			);
+			name = CJAnimation;
+			path = ../../CJAnimation;
+			sourceTree = "<group>";
+		};
+		783658CA1ECEE1E200AF7591 /* CJRadarAnimation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CJRadarAnimation;
+			sourceTree = "<group>";
+		};
+		783658CE1ECEE39700AF7591 /* RadarAnimationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				783658CF1ECEE3A400AF7591 /* RadarAnimationViewController.h */,
+				783658D01ECEE3A400AF7591 /* RadarAnimationViewController.m */,
+				783658D11ECEE3A400AF7591 /* RadarAnimationViewController.xib */,
+			);
+			path = RadarAnimationDemo;
 			sourceTree = "<group>";
 		};
 		80150EFF1BCCB1AB001D59D9 = {
@@ -111,6 +281,8 @@
 				80150F0A1BCCB1AB001D59D9 /* CoreAnimationDemo */,
 				80150F241BCCB1AB001D59D9 /* CoreAnimationDemoTests */,
 				80150F091BCCB1AB001D59D9 /* Products */,
+				C56CED42F0E41E4D779C8415 /* Pods */,
+				2C1C036E133124E0046BC174 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,9 +302,12 @@
 				80150F101BCCB1AB001D59D9 /* AppDelegate.m */,
 				80150F121BCCB1AB001D59D9 /* ViewController.h */,
 				80150F131BCCB1AB001D59D9 /* ViewController.m */,
+				783658C91ECEE1E200AF7591 /* CJAnimation */,
+				7836588E1ECEDD4700AF7591 /* Demos */,
+				783658A11ECEDD4700AF7591 /* Models */,
+				783658A41ECEDD4700AF7591 /* Resources */,
+				783658AA1ECEDD4700AF7591 /* Views */,
 				80150F151BCCB1AB001D59D9 /* Main.storyboard */,
-				80150F411BCCD174001D59D9 /* res_images */,
-				80150F311BCCB228001D59D9 /* Controller */,
 				80150F181BCCB1AB001D59D9 /* Images.xcassets */,
 				80150F1A1BCCB1AB001D59D9 /* LaunchScreen.xib */,
 				80150F0B1BCCB1AB001D59D9 /* Supporting Files */,
@@ -166,32 +341,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		80150F311BCCB228001D59D9 /* Controller */ = {
+		C56CED42F0E41E4D779C8415 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				782C2DEF1BF71E5100700EE2 /* ViewOrVCPopup */,
-				80623A3B1BF5E33C005BCAA6 /* UIViewDemo.h */,
-				80623A3C1BF5E33C005BCAA6 /* UIViewDemo.m */,
-				80623A3D1BF5E33C005BCAA6 /* UIViewDemo.xib */,
-				80150F321BCCB228001D59D9 /* BasicAnimationVC.h */,
-				80150F331BCCB228001D59D9 /* BasicAnimationVC.m */,
-				80150F341BCCB228001D59D9 /* BasicAnimationVC.xib */,
-				80150F351BCCB228001D59D9 /* KeyframeAnimationVC.h */,
-				80150F361BCCB228001D59D9 /* KeyframeAnimationVC.m */,
-				80150F371BCCB228001D59D9 /* KeyframeAnimationVC.xib */,
-				80150F3C1BCCD0B2001D59D9 /* BezierPathAnimationVC.h */,
-				80150F3D1BCCD0B2001D59D9 /* BezierPathAnimationVC.m */,
-				80150F3E1BCCD0B2001D59D9 /* BezierPathAnimationVC.xib */,
+				7A61ABA3B52FC5365A6A31A8 /* Pods-CoreAnimationDemo.debug.xcconfig */,
+				39C1C815EA634157408DAAFB /* Pods-CoreAnimationDemo.release.xcconfig */,
+				2EAE353F1593EF11310330DD /* Pods-CoreAnimationDemoTests.debug.xcconfig */,
+				406943A1047EE2340C5075D9 /* Pods-CoreAnimationDemoTests.release.xcconfig */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		80150F411BCCD174001D59D9 /* res_images */ = {
-			isa = PBXGroup;
-			children = (
-				80150F421BCCD174001D59D9 /* sanguosha.png */,
-			);
-			path = res_images;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +359,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80150F2B1BCCB1AB001D59D9 /* Build configuration list for PBXNativeTarget "CoreAnimationDemo" */;
 			buildPhases = (
+				C81DA333D3A11E773A2EECFB /* [CP] Check Pods Manifest.lock */,
 				80150F041BCCB1AB001D59D9 /* Sources */,
 				80150F051BCCB1AB001D59D9 /* Frameworks */,
 				80150F061BCCB1AB001D59D9 /* Resources */,
+				47F142FB86DF7519D144C531 /* [CP] Embed Pods Frameworks */,
+				3EDBB99402E3FC6A94EEE577 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,9 +379,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80150F2E1BCCB1AB001D59D9 /* Build configuration list for PBXNativeTarget "CoreAnimationDemoTests" */;
 			buildPhases = (
+				5E0221ECA55C8623D2890781 /* [CP] Check Pods Manifest.lock */,
 				80150F1D1BCCB1AB001D59D9 /* Sources */,
 				80150F1E1BCCB1AB001D59D9 /* Frameworks */,
 				80150F1F1BCCB1AB001D59D9 /* Resources */,
+				EE4CB9593D999DE5D9BB23DB /* [CP] Embed Pods Frameworks */,
+				7506D85B52C873DB6E88FE43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,16 +438,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80150F3B1BCCB228001D59D9 /* KeyframeAnimationVC.xib in Resources */,
-				782C2DF91BF71EB300700EE2 /* WelcomeVCToPopup.xib in Resources */,
-				80150F391BCCB228001D59D9 /* BasicAnimationVC.xib in Resources */,
+				783658BC1ECEDD4700AF7591 /* bgCar@2x.jpg in Resources */,
+				783659001ECFCDB100AF7591 /* PeiwoAnimationViewController.xib in Resources */,
+				783658BF1ECEDD4700AF7591 /* sanguosha.png in Resources */,
+				783658BE1ECEDD4700AF7591 /* header@2x.jpg in Resources */,
+				783658B91ECEDD4700AF7591 /* UIViewDemo.xib in Resources */,
+				783658D31ECEE3A400AF7591 /* RadarAnimationViewController.xib in Resources */,
+				783658B21ECEDD4700AF7591 /* BasicAnimationVC.xib in Resources */,
+				783658C11ECEDD4700AF7591 /* WelcomeVCToPopup.xib in Resources */,
 				80150F171BCCB1AB001D59D9 /* Main.storyboard in Resources */,
-				782C2DF41BF71E5100700EE2 /* WelcomeViewToPopup.xib in Resources */,
-				80150F401BCCD0B2001D59D9 /* BezierPathAnimationVC.xib in Resources */,
+				783658BB1ECEDD4700AF7591 /* bg@2x.jpg in Resources */,
+				783658BD1ECEDD4700AF7591 /* bgSky@2x.jpg in Resources */,
+				783658C31ECEDD4700AF7591 /* WelcomeViewToPopup.xib in Resources */,
 				80150F1C1BCCB1AB001D59D9 /* LaunchScreen.xib in Resources */,
-				80623A3F1BF5E33C005BCAA6 /* UIViewDemo.xib in Resources */,
-				80150F431BCCD174001D59D9 /* sanguosha.png in Resources */,
+				783658B41ECEDD4700AF7591 /* BezierPathAnimationVC.xib in Resources */,
+				783658C81ECEDDBE00AF7591 /* BaseAnimationViewController.xib in Resources */,
 				80150F191BCCB1AB001D59D9 /* Images.xcassets in Resources */,
+				783658B71ECEDD4700AF7591 /* KeyframeAnimationVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,20 +467,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EDBB99402E3FC6A94EEE577 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreAnimationDemo/Pods-CoreAnimationDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47F142FB86DF7519D144C531 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreAnimationDemo/Pods-CoreAnimationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E0221ECA55C8623D2890781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7506D85B52C873DB6E88FE43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreAnimationDemoTests/Pods-CoreAnimationDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C81DA333D3A11E773A2EECFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4CB9593D999DE5D9BB23DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreAnimationDemoTests/Pods-CoreAnimationDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		80150F041BCCB1AB001D59D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80150F381BCCB228001D59D9 /* BasicAnimationVC.m in Sources */,
-				80150F3F1BCCD0B2001D59D9 /* BezierPathAnimationVC.m in Sources */,
-				80623A3E1BF5E33C005BCAA6 /* UIViewDemo.m in Sources */,
+				783658B11ECEDD4700AF7591 /* BasicAnimationVC.m in Sources */,
+				783658D61ECEE8A900AF7591 /* CAShapeLayerFactory.m in Sources */,
+				783658B31ECEDD4700AF7591 /* BezierPathAnimationVC.m in Sources */,
+				783658CD1ECEE24A00AF7591 /* CJAnimationFactory.m in Sources */,
 				80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */,
-				80150F3A1BCCB228001D59D9 /* KeyframeAnimationVC.m in Sources */,
+				783658FF1ECFCDB100AF7591 /* PeiwoAnimationViewController.m in Sources */,
+				783658C21ECEDD4700AF7591 /* WelcomeViewToPopup.m in Sources */,
 				80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */,
-				782C2DF31BF71E5100700EE2 /* WelcomeViewToPopup.m in Sources */,
-				782C2DF81BF71EB300700EE2 /* WelcomeVCToPopup.m in Sources */,
+				783658BA1ECEDD4700AF7591 /* ModuleModel.m in Sources */,
+				783658C01ECEDD4700AF7591 /* WelcomeVCToPopup.m in Sources */,
 				80150F0E1BCCB1AB001D59D9 /* main.m in Sources */,
+				783658B81ECEDD4700AF7591 /* UIViewDemo.m in Sources */,
+				783659031ED044F900AF7591 /* UIControl+CJRadarAnimation.m in Sources */,
+				783658D21ECEE3A400AF7591 /* RadarAnimationViewController.m in Sources */,
+				783658B51ECEDD4700AF7591 /* HomeViewController.m in Sources */,
+				783658C71ECEDDBE00AF7591 /* BaseAnimationViewController.m in Sources */,
+				783658B61ECEDD4700AF7591 /* KeyframeAnimationVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +705,7 @@
 		};
 		80150F2C1BCCB1AB001D59D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A61ABA3B52FC5365A6A31A8 /* Pods-CoreAnimationDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoreAnimationDemo/Info.plist;
@@ -444,6 +717,7 @@
 		};
 		80150F2D1BCCB1AB001D59D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39C1C815EA634157408DAAFB /* Pods-CoreAnimationDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoreAnimationDemo/Info.plist;
@@ -455,6 +729,7 @@
 		};
 		80150F2F1BCCB1AB001D59D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EAE353F1593EF11310330DD /* Pods-CoreAnimationDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -474,6 +749,7 @@
 		};
 		80150F301BCCB1AB001D59D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 406943A1047EE2340C5075D9 /* Pods-CoreAnimationDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

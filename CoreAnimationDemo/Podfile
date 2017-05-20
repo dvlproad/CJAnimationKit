@@ -1,0 +1,10 @@
+platform :ios, '7.0'
+#use_frameworks!
+
+target 'CoreAnimationDemo' do
+    pod 'CJBaseUIKit/UIView+Category', '~> 0.0.10'
+end
+
+target 'CoreAnimationDemoTests' do
+    
+end
