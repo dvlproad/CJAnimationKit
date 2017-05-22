@@ -7,10 +7,16 @@
 //
 
 #import "PeiwoAnimationViewController.h"
+#import "AppDelegate.h"
+
+#import <CJBaseUIKit/UIView+CJDragAction.h>
+#import <CJBaseUIKit/UIView+CJKeepBounds.h>
+
+#import "UIView+CJZoomFrame.h"
 
 @interface PeiwoAnimationViewController ()
 
-@property (nonatomic, strong) CAShapeLayer *maskLayer;
+@property (nonatomic, assign) CJLayerAddType layerAddType;
 
 @end
 
@@ -18,56 +24,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    [self.useMaskLayerSwitch addTarget:self action:@selector(removeAddedLayer) forControlEvents:UIControlEventValueChanged];
+    // Do any additional setup after loading the view from its nib.    
 }
 
-- (void)removeAddedLayer {
-    if (self.maskLayer) {
-        [self.maskLayer removeFromSuperlayer];
-    }
+- (IBAction)testClick:(id)sender {
+    NSLog(@"点击了按钮");
 }
-
 
 - (IBAction)doAnimation:(id)sender {
-    [self circleSmallerWithView:self.animationView];
-}
-
-
-- (void)circleSmallerWithView:(UIView *)view {
-    [self removeAddedLayer];
+    CJLayerAddType layerAddType = CJLayerAddTypeSetMask;
+    //CJLayerAddType layerAddType = CJLayerAddTypeAddSublayer;
     
-    CGRect startFrame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame));
-    UIBezierPath *startBezierPath =  [UIBezierPath bezierPathWithOvalInRect:startFrame];
-    
-    CGFloat radius = 100;
-    CGRect finalFrame = CGRectMake(100, 100, radius, radius);
-    UIBezierPath *finalBezierPath = [UIBezierPath bezierPathWithOvalInRect:finalFrame];
-    
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.path = finalBezierPath.CGPath;
-    
-    if (self.useMaskLayerSwitch.isOn) {
-        [view.layer setMask:maskLayer];     //二者选其一
+    if (self.testLayerInFloatingWindowSwitch.isOn == NO) {
+        CGRect layerFrame = CGRectMake(100, 100, 100, 200);
+        [self.animationView cj_addPeiwoLayerWithLayerFrame:layerFrame layerAnimated:YES layerAddType:layerAddType whenAnimationDidStopUpdateFrameToLayerFrame:YES andDoSubviewSetupBlock:nil];
+        
     } else {
-        [view.layer addSublayer:maskLayer]; //二者选其一
+        AppDelegate *deleage = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        deleage.cjFloatingWindow.hidden = NO;
+        deleage.cjFloatingWindow.cjDragEnable = YES;
+        [deleage.cjFloatingWindow cj_addWindowSubview:self.animationView];
+        //deleage.cjFloatingWindow.backgroundColor = [UIColor redColor];
+        
+        CGRect layerFrame = CGRectMake(100, 100, 100, 200);
+        [deleage.cjFloatingWindow cj_addPeiwoLayerWithLayerFrame:layerFrame layerAnimated:YES layerAddType:layerAddType whenAnimationDidStopUpdateFrameToLayerFrame:YES andDoSubviewSetupBlock:^{
+            for (UIView *subview in deleage.cjFloatingWindow.subviews) {
+                [subview removeFromSuperview];
+            }
+            
+            CGRect buttonFrame = CGRectMake(0, 0, CGRectGetWidth(layerFrame), CGRectGetHeight(layerFrame));
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button setFrame:buttonFrame];
+            [button setImage:[UIImage imageNamed:@"bg.jpg"] forState:UIControlStateNormal];
+            [button setBackgroundColor:[UIColor orangeColor]];
+            [deleage.cjFloatingWindow addSubview:button];
+        }];
+
     }
     
-    //添加layer的动画
-    CABasicAnimation *maskLayerAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
-    maskLayerAnimation.fromValue = (__bridge id)(startBezierPath.CGPath);
-    maskLayerAnimation.toValue = (__bridge id)((finalBezierPath.CGPath));
-    maskLayerAnimation.duration = 2.0f;
     
-    //防止动画结束后回到初始状态,只需设置removedOnCompletion、fillMode两个属性就可以了(参考：CABasicAnimation使用总结http://www.jianshu.com/p/02c341c748f9)
-    maskLayerAnimation.removedOnCompletion = NO;
-    maskLayerAnimation.fillMode = kCAFillModeForwards;
-    
-    [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
-    
-    self.maskLayer = maskLayer;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

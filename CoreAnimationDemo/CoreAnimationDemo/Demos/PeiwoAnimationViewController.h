@@ -11,6 +11,6 @@
 @interface PeiwoAnimationViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIView *animationView;
-@property (nonatomic, weak) IBOutlet UISwitch *useMaskLayerSwitch;
+@property (nonatomic, weak) IBOutlet UISwitch *testLayerInFloatingWindowSwitch;
 
 @end

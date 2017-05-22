@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FBC5898EB7F35E1E81F3D36 /* libPods-CoreAnimationDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */; };
+		783288021ED2236B00A01A8A /* av_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 783288001ED2236B00A01A8A /* av_call.png */; };
+		783288031ED2236B00A01A8A /* av_call@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783288011ED2236B00A01A8A /* av_call@3x.png */; };
+		783288061ED2DDCB00A01A8A /* UIView+CJZoomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 783288051ED2DDCB00A01A8A /* UIView+CJZoomFrame.m */; };
 		783658B11ECEDD4700AF7591 /* BasicAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658911ECEDD4700AF7591 /* BasicAnimationVC.m */; };
 		783658B21ECEDD4700AF7591 /* BasicAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658921ECEDD4700AF7591 /* BasicAnimationVC.xib */; };
 		783658B31ECEDD4700AF7591 /* BezierPathAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658951ECEDD4700AF7591 /* BezierPathAnimationVC.m */; };
@@ -36,6 +39,7 @@
 		783658FF1ECFCDB100AF7591 /* PeiwoAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658FD1ECFCDB100AF7591 /* PeiwoAnimationViewController.m */; };
 		783659001ECFCDB100AF7591 /* PeiwoAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658FE1ECFCDB100AF7591 /* PeiwoAnimationViewController.xib */; };
 		783659031ED044F900AF7591 /* UIControl+CJRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 783659021ED044F900AF7591 /* UIControl+CJRadarAnimation.m */; };
+		7840311B1ED1FF7E00469988 /* CJRepeatKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840311A1ED1FF7E00469988 /* CJRepeatKeyWindow.m */; };
 		80150F0E1BCCB1AB001D59D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F0D1BCCB1AB001D59D9 /* main.m */; };
 		80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F101BCCB1AB001D59D9 /* AppDelegate.m */; };
 		80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F131BCCB1AB001D59D9 /* ViewController.m */; };
@@ -62,6 +66,10 @@
 		406943A1047EE2340C5075D9 /* Pods-CoreAnimationDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemoTests/Pods-CoreAnimationDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreAnimationDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F1D8839AA4E6B51461D270 /* libPods-CoreAnimationDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreAnimationDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		783288001ED2236B00A01A8A /* av_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = av_call.png; sourceTree = "<group>"; };
+		783288011ED2236B00A01A8A /* av_call@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "av_call@3x.png"; sourceTree = "<group>"; };
+		783288041ED2DDCB00A01A8A /* UIView+CJZoomFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJZoomFrame.h"; sourceTree = "<group>"; };
+		783288051ED2DDCB00A01A8A /* UIView+CJZoomFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJZoomFrame.m"; sourceTree = "<group>"; };
 		783658901ECEDD4700AF7591 /* BasicAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimationVC.h; sourceTree = "<group>"; };
 		783658911ECEDD4700AF7591 /* BasicAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimationVC.m; sourceTree = "<group>"; };
 		783658921ECEDD4700AF7591 /* BasicAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicAnimationVC.xib; sourceTree = "<group>"; };
@@ -104,6 +112,8 @@
 		783658FE1ECFCDB100AF7591 /* PeiwoAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeiwoAnimationViewController.xib; sourceTree = "<group>"; };
 		783659011ED044F900AF7591 /* UIControl+CJRadarAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CJRadarAnimation.h"; sourceTree = "<group>"; };
 		783659021ED044F900AF7591 /* UIControl+CJRadarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CJRadarAnimation.m"; sourceTree = "<group>"; };
+		784031191ED1FF7E00469988 /* CJRepeatKeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRepeatKeyWindow.h; sourceTree = "<group>"; };
+		7840311A1ED1FF7E00469988 /* CJRepeatKeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRepeatKeyWindow.m; sourceTree = "<group>"; };
 		7A61ABA3B52FC5365A6A31A8 /* Pods-CoreAnimationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemo/Pods-CoreAnimationDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		80150F081BCCB1AB001D59D9 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80150F0C1BCCB1AB001D59D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,6 +236,8 @@
 				783658A71ECEDD4700AF7591 /* bgSky@2x.jpg */,
 				783658A81ECEDD4700AF7591 /* header@2x.jpg */,
 				783658A91ECEDD4700AF7591 /* sanguosha.png */,
+				783288001ED2236B00A01A8A /* av_call.png */,
+				783288011ED2236B00A01A8A /* av_call@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -253,6 +265,10 @@
 				783658CC1ECEE24A00AF7591 /* CJAnimationFactory.m */,
 				783658D41ECEE8A900AF7591 /* CAShapeLayerFactory.h */,
 				783658D51ECEE8A900AF7591 /* CAShapeLayerFactory.m */,
+				784031191ED1FF7E00469988 /* CJRepeatKeyWindow.h */,
+				7840311A1ED1FF7E00469988 /* CJRepeatKeyWindow.m */,
+				783288041ED2DDCB00A01A8A /* UIView+CJZoomFrame.h */,
+				783288051ED2DDCB00A01A8A /* UIView+CJZoomFrame.m */,
 			);
 			name = CJAnimation;
 			path = ../../CJAnimation;
@@ -446,10 +462,12 @@
 				783658D31ECEE3A400AF7591 /* RadarAnimationViewController.xib in Resources */,
 				783658B21ECEDD4700AF7591 /* BasicAnimationVC.xib in Resources */,
 				783658C11ECEDD4700AF7591 /* WelcomeVCToPopup.xib in Resources */,
+				783288031ED2236B00A01A8A /* av_call@3x.png in Resources */,
 				80150F171BCCB1AB001D59D9 /* Main.storyboard in Resources */,
 				783658BB1ECEDD4700AF7591 /* bg@2x.jpg in Resources */,
 				783658BD1ECEDD4700AF7591 /* bgSky@2x.jpg in Resources */,
 				783658C31ECEDD4700AF7591 /* WelcomeViewToPopup.xib in Resources */,
+				783288021ED2236B00A01A8A /* av_call.png in Resources */,
 				80150F1C1BCCB1AB001D59D9 /* LaunchScreen.xib in Resources */,
 				783658B41ECEDD4700AF7591 /* BezierPathAnimationVC.xib in Resources */,
 				783658C81ECEDDBE00AF7591 /* BaseAnimationViewController.xib in Resources */,
@@ -574,8 +592,10 @@
 				783658C21ECEDD4700AF7591 /* WelcomeViewToPopup.m in Sources */,
 				80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */,
 				783658BA1ECEDD4700AF7591 /* ModuleModel.m in Sources */,
+				783288061ED2DDCB00A01A8A /* UIView+CJZoomFrame.m in Sources */,
 				783658C01ECEDD4700AF7591 /* WelcomeVCToPopup.m in Sources */,
 				80150F0E1BCCB1AB001D59D9 /* main.m in Sources */,
+				7840311B1ED1FF7E00469988 /* CJRepeatKeyWindow.m in Sources */,
 				783658B81ECEDD4700AF7591 /* UIViewDemo.m in Sources */,
 				783659031ED044F900AF7591 /* UIControl+CJRadarAnimation.m in Sources */,
 				783658D21ECEE3A400AF7591 /* RadarAnimationViewController.m in Sources */,

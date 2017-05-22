@@ -242,6 +242,7 @@ static const float timeSplit = 1.f / 3.f;
     
 }
 
+
 /**
  * 动画结束时
  */
@@ -277,7 +278,7 @@ static const float timeSplit = 1.f / 3.f;
     maskLayerAnimation.fromValue = (__bridge id)(maskFinalBP.CGPath);
     maskLayerAnimation.toValue = (__bridge id)((maskStartBP.CGPath));
     maskLayerAnimation.duration = 0.5f;
-    maskLayerAnimation.delegate = self;
+//    maskLayerAnimation.delegate = self;
     self.samllAnimation = maskLayerAnimation;
     //    maskLayerAnimation.fillMode = kCAFillModeForwards;
     maskLayerAnimation.removedOnCompletion = NO;
