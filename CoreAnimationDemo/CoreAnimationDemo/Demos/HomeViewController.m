@@ -14,6 +14,8 @@
 #import "RadarAnimationViewController.h"
 #import "PeiwoAnimationViewController.h"
 
+#import "ShimmerAnimationViewController.h"
+
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -51,6 +53,12 @@
     peiwoAnimationModule.title = @"PeiwoAnimation(陪我动画)";
     peiwoAnimationModule.classEntry = [PeiwoAnimationViewController class];
     [self.datas addObject:peiwoAnimationModule];
+    
+    //ShimmerAnimationViewController
+    ModuleModel *shimmerAnimationModule = [[ModuleModel alloc] init];
+    shimmerAnimationModule.title = @"shimmerAnimation(闪光动画)";
+    shimmerAnimationModule.classEntry = [ShimmerAnimationViewController class];
+    [self.datas addObject:shimmerAnimationModule];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
