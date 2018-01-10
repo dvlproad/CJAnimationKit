@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0FBC5898EB7F35E1E81F3D36 /* libPods-CoreAnimationDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */; };
+		781F243320067B9B007429AB /* QuartzCoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F243020067B9B007429AB /* QuartzCoreHomeViewController.m */; };
+		781F243420067B9B007429AB /* QuartzCoreHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781F243220067B9B007429AB /* QuartzCoreHomeViewController.xib */; };
+		781F243820067DDA007429AB /* SampleLayerMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F243620067DDA007429AB /* SampleLayerMaskViewController.m */; };
+		781F243920067DDA007429AB /* SampleLayerMaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781F243720067DDA007429AB /* SampleLayerMaskViewController.xib */; };
+		781F243F2006804F007429AB /* RefreshAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F243D2006804F007429AB /* RefreshAnimateViewController.m */; };
+		781F24402006804F007429AB /* TNActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F243E2006804F007429AB /* TNActivityIndicator.m */; };
+		781F244220068107007429AB /* RefreshAnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781F244120068107007429AB /* RefreshAnimateViewController.xib */; };
+		781F244520068235007429AB /* RefreshResouce.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781F244420068235007429AB /* RefreshResouce.xcassets */; };
+		782852951F12AA880073076C /* UIView+CJShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = 782852941F12AA880073076C /* UIView+CJShimmering.m */; };
 		783288021ED2236B00A01A8A /* av_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 783288001ED2236B00A01A8A /* av_call.png */; };
 		783288031ED2236B00A01A8A /* av_call@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783288011ED2236B00A01A8A /* av_call@3x.png */; };
 		783288061ED2DDCB00A01A8A /* UIView+CJZoomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 783288051ED2DDCB00A01A8A /* UIView+CJZoomFrame.m */; };
@@ -15,7 +24,6 @@
 		783658B21ECEDD4700AF7591 /* BasicAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658921ECEDD4700AF7591 /* BasicAnimationVC.xib */; };
 		783658B31ECEDD4700AF7591 /* BezierPathAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658951ECEDD4700AF7591 /* BezierPathAnimationVC.m */; };
 		783658B41ECEDD4700AF7591 /* BezierPathAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658961ECEDD4700AF7591 /* BezierPathAnimationVC.xib */; };
-		783658B51ECEDD4700AF7591 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658981ECEDD4700AF7591 /* HomeViewController.m */; };
 		783658B61ECEDD4700AF7591 /* KeyframeAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836589B1ECEDD4700AF7591 /* KeyframeAnimationVC.m */; };
 		783658B71ECEDD4700AF7591 /* KeyframeAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7836589C1ECEDD4700AF7591 /* KeyframeAnimationVC.xib */; };
 		783658B81ECEDD4700AF7591 /* UIViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836589F1ECEDD4700AF7591 /* UIViewDemo.m */; };
@@ -70,6 +78,20 @@
 		406943A1047EE2340C5075D9 /* Pods-CoreAnimationDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreAnimationDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreAnimationDemoTests/Pods-CoreAnimationDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4AC1D3DEB7E93BC67998E408 /* libPods-CoreAnimationDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreAnimationDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F1D8839AA4E6B51461D270 /* libPods-CoreAnimationDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreAnimationDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		781F243020067B9B007429AB /* QuartzCoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzCoreHomeViewController.m; sourceTree = "<group>"; };
+		781F243120067B9B007429AB /* QuartzCoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzCoreHomeViewController.h; sourceTree = "<group>"; };
+		781F243220067B9B007429AB /* QuartzCoreHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuartzCoreHomeViewController.xib; sourceTree = "<group>"; };
+		781F243520067DDA007429AB /* SampleLayerMaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleLayerMaskViewController.h; sourceTree = "<group>"; };
+		781F243620067DDA007429AB /* SampleLayerMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleLayerMaskViewController.m; sourceTree = "<group>"; };
+		781F243720067DDA007429AB /* SampleLayerMaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleLayerMaskViewController.xib; sourceTree = "<group>"; };
+		781F243B2006804F007429AB /* RefreshAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshAnimateViewController.h; sourceTree = "<group>"; };
+		781F243C2006804F007429AB /* TNActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNActivityIndicator.h; sourceTree = "<group>"; };
+		781F243D2006804F007429AB /* RefreshAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshAnimateViewController.m; sourceTree = "<group>"; };
+		781F243E2006804F007429AB /* TNActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNActivityIndicator.m; sourceTree = "<group>"; };
+		781F244120068107007429AB /* RefreshAnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshAnimateViewController.xib; sourceTree = "<group>"; };
+		781F244420068235007429AB /* RefreshResouce.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RefreshResouce.xcassets; sourceTree = "<group>"; };
+		782852931F12AA880073076C /* UIView+CJShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShimmering.h"; sourceTree = "<group>"; };
+		782852941F12AA880073076C /* UIView+CJShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShimmering.m"; sourceTree = "<group>"; };
 		783288001ED2236B00A01A8A /* av_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = av_call.png; sourceTree = "<group>"; };
 		783288011ED2236B00A01A8A /* av_call@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "av_call@3x.png"; sourceTree = "<group>"; };
 		783288041ED2DDCB00A01A8A /* UIView+CJZoomFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJZoomFrame.h"; sourceTree = "<group>"; };
@@ -80,8 +102,6 @@
 		783658941ECEDD4700AF7591 /* BezierPathAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathAnimationVC.h; sourceTree = "<group>"; };
 		783658951ECEDD4700AF7591 /* BezierPathAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathAnimationVC.m; sourceTree = "<group>"; };
 		783658961ECEDD4700AF7591 /* BezierPathAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BezierPathAnimationVC.xib; sourceTree = "<group>"; };
-		783658971ECEDD4700AF7591 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		783658981ECEDD4700AF7591 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7836589A1ECEDD4700AF7591 /* KeyframeAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyframeAnimationVC.h; sourceTree = "<group>"; };
 		7836589B1ECEDD4700AF7591 /* KeyframeAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyframeAnimationVC.m; sourceTree = "<group>"; };
 		7836589C1ECEDD4700AF7591 /* KeyframeAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyframeAnimationVC.xib; sourceTree = "<group>"; };
@@ -168,15 +188,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		781F243A2006804F007429AB /* RefreshAnimate */ = {
+			isa = PBXGroup;
+			children = (
+				781F243B2006804F007429AB /* RefreshAnimateViewController.h */,
+				781F243D2006804F007429AB /* RefreshAnimateViewController.m */,
+				781F244120068107007429AB /* RefreshAnimateViewController.xib */,
+				781F24432006821D007429AB /* Resources */,
+				781F243C2006804F007429AB /* TNActivityIndicator.h */,
+				781F243E2006804F007429AB /* TNActivityIndicator.m */,
+			);
+			path = RefreshAnimate;
+			sourceTree = "<group>";
+		};
+		781F24432006821D007429AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				781F244420068235007429AB /* RefreshResouce.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7836588E1ECEDD4700AF7591 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
 				788FD8E01EEFD0A200EB067F /* ShimmerAnimationDemo */,
-				783658971ECEDD4700AF7591 /* HomeViewController.h */,
-				783658981ECEDD4700AF7591 /* HomeViewController.m */,
 				783658FC1ECFCDB100AF7591 /* PeiwoAnimationViewController.h */,
 				783658FD1ECFCDB100AF7591 /* PeiwoAnimationViewController.m */,
 				783658FE1ECFCDB100AF7591 /* PeiwoAnimationViewController.xib */,
+				781F243120067B9B007429AB /* QuartzCoreHomeViewController.h */,
+				781F243020067B9B007429AB /* QuartzCoreHomeViewController.m */,
+				781F243220067B9B007429AB /* QuartzCoreHomeViewController.xib */,
+				781F243520067DDA007429AB /* SampleLayerMaskViewController.h */,
+				781F243620067DDA007429AB /* SampleLayerMaskViewController.m */,
+				781F243720067DDA007429AB /* SampleLayerMaskViewController.xib */,
+				781F243A2006804F007429AB /* RefreshAnimate */,
 				783658CE1ECEE39700AF7591 /* RadarAnimationDemo */,
 				7836588F1ECEDD4700AF7591 /* BasicAnimationDemo */,
 				783658931ECEDD4700AF7591 /* BezierPathAnimationDemo */,
@@ -272,6 +318,8 @@
 			children = (
 				783659011ED044F900AF7591 /* UIControl+CJRadarAnimation.h */,
 				783659021ED044F900AF7591 /* UIControl+CJRadarAnimation.m */,
+				782852931F12AA880073076C /* UIView+CJShimmering.h */,
+				782852941F12AA880073076C /* UIView+CJShimmering.m */,
 				783658CA1ECEE1E200AF7591 /* CJRadarAnimation */,
 				783658CB1ECEE24A00AF7591 /* CJAnimationFactory.h */,
 				783658CC1ECEE24A00AF7591 /* CJAnimationFactory.m */,
@@ -486,11 +534,15 @@
 			files = (
 				783658BC1ECEDD4700AF7591 /* bgCar@2x.jpg in Resources */,
 				783659001ECFCDB100AF7591 /* PeiwoAnimationViewController.xib in Resources */,
+				781F243420067B9B007429AB /* QuartzCoreHomeViewController.xib in Resources */,
 				783658BF1ECEDD4700AF7591 /* sanguosha.png in Resources */,
+				781F243920067DDA007429AB /* SampleLayerMaskViewController.xib in Resources */,
 				783658BE1ECEDD4700AF7591 /* header@2x.jpg in Resources */,
+				781F244520068235007429AB /* RefreshResouce.xcassets in Resources */,
 				788FD8E81EEFD2DF00EB067F /* bgRainbow@2x.jpg in Resources */,
 				783658B91ECEDD4700AF7591 /* UIViewDemo.xib in Resources */,
 				783658D31ECEE3A400AF7591 /* RadarAnimationViewController.xib in Resources */,
+				781F244220068107007429AB /* RefreshAnimateViewController.xib in Resources */,
 				783658B21ECEDD4700AF7591 /* BasicAnimationVC.xib in Resources */,
 				783658C11ECEDD4700AF7591 /* WelcomeVCToPopup.xib in Resources */,
 				788FD8E91EEFD2DF00EB067F /* bgStarSky@2x.jpg in Resources */,
@@ -555,13 +607,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoreAnimationDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7506D85B52C873DB6E88FE43 /* [CP] Copy Pods Resources */ = {
@@ -585,13 +640,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoreAnimationDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE4CB9593D999DE5D9BB23DB /* [CP] Embed Pods Frameworks */ = {
@@ -620,21 +678,25 @@
 				783658D61ECEE8A900AF7591 /* CAShapeLayerFactory.m in Sources */,
 				783658B31ECEDD4700AF7591 /* BezierPathAnimationVC.m in Sources */,
 				783658CD1ECEE24A00AF7591 /* CJAnimationFactory.m in Sources */,
+				781F24402006804F007429AB /* TNActivityIndicator.m in Sources */,
 				80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */,
 				783658FF1ECFCDB100AF7591 /* PeiwoAnimationViewController.m in Sources */,
+				782852951F12AA880073076C /* UIView+CJShimmering.m in Sources */,
 				783658C21ECEDD4700AF7591 /* WelcomeViewToPopup.m in Sources */,
 				80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */,
 				783658BA1ECEDD4700AF7591 /* ModuleModel.m in Sources */,
 				783288061ED2DDCB00A01A8A /* UIView+CJZoomFrame.m in Sources */,
 				788FD8E41EEFD0CA00EB067F /* ShimmerAnimationViewController.m in Sources */,
+				781F243F2006804F007429AB /* RefreshAnimateViewController.m in Sources */,
+				781F243820067DDA007429AB /* SampleLayerMaskViewController.m in Sources */,
 				783658C01ECEDD4700AF7591 /* WelcomeVCToPopup.m in Sources */,
 				80150F0E1BCCB1AB001D59D9 /* main.m in Sources */,
 				7840311B1ED1FF7E00469988 /* CJRepeatKeyWindow.m in Sources */,
 				783658B81ECEDD4700AF7591 /* UIViewDemo.m in Sources */,
 				783659031ED044F900AF7591 /* UIControl+CJRadarAnimation.m in Sources */,
 				783658D21ECEE3A400AF7591 /* RadarAnimationViewController.m in Sources */,
-				783658B51ECEDD4700AF7591 /* HomeViewController.m in Sources */,
 				783658C71ECEDDBE00AF7591 /* BaseAnimationViewController.m in Sources */,
+				781F243320067B9B007429AB /* QuartzCoreHomeViewController.m in Sources */,
 				783658B61ECEDD4700AF7591 /* KeyframeAnimationVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

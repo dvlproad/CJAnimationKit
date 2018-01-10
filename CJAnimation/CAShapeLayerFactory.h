@@ -5,6 +5,7 @@
 //  Created by 李超前 on 2017/5/19.
 //  Copyright © 2017年 李超前. All rights reserved.
 //
+//  参考文档：[IOS开发之切除你心中的那个图案](http://blog.csdn.net/zhoushuangjian511/article/details/70805164)
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
@@ -25,5 +26,29 @@ typedef NS_ENUM(NSUInteger, CJCircleType) {
  *  @param circleType   圆的类型
  */
 + (CAShapeLayer *)cjCircleShapeLayerForView:(UIView *)view circleType:(CJCircleType)circleType;
+
+
+
+//1》尖角和半圆角按钮
+#pragma mark 箭头按钮
+-(void)arrowButtonTager:(UIView*)tagerView;
+
+#pragma mark 半角型按钮
+-(void)halfAngleBtn:(UIView*)tagerView;
+
+//2》五角星的绘制
+#pragma mark  五角星
+-(void)pentagram:(UIView*)tagerView;
+
+//3》心形
+#pragma mark  心形绘制
+-(void)heart:(UIView*)tagerView;
+
+//4》蝙蝠形
+-(void)Bat:(UIView*)tagerView;
+
+//5》邮票绘制
+#pragma mark  邮票
+-(void)stamps:(UIView*)tagerView;
 
 @end

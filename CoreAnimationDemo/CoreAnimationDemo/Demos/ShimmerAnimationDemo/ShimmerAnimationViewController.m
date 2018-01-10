@@ -7,6 +7,7 @@
 //
 
 #import "ShimmerAnimationViewController.h"
+#import "UIView+CJShimmering.h"
 
 @interface ShimmerAnimationViewController () {
     
@@ -60,6 +61,9 @@
     self.headImageView.layer.cornerRadius = 40;
     self.headImageView.clipsToBounds = YES;
     self.imageShimmeringView.contentView = self.headImageView;
+    
+    
+    self.cjShimmerLabel.cjShimmering = YES;
 }
 
 - (void)didReceiveMemoryWarning {

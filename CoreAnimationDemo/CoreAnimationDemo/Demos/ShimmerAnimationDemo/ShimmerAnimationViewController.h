@@ -60,4 +60,6 @@
 
 @interface ShimmerAnimationViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *cjShimmerLabel;
+
 @end

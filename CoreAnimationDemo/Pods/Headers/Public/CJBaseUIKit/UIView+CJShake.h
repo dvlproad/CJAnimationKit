@@ -1,1 +1,1 @@
-../../../CJBaseUIKit/CJUIKit/UIView+CJCategory/UIView+CJShake.h
+../../../CJBaseUIKit/CJBaseUIKit/UIView+CJCategory/UIView+CJShake.h

@@ -1,1 +1,1 @@
-../../../CJBaseUIKit/CJUIKit/UIView+CJCategory/UIView+CJGestureRecognizer.h
+../../../CJBaseUIKit/CJBaseUIKit/UIView+CJCategory/UIView+CJGestureRecognizer.h

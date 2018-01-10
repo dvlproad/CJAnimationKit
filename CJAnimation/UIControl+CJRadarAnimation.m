@@ -33,6 +33,7 @@ static NSString *cjRadarAnimationTypeKey = @"cjRadarAnimationTypeKey";
     objc_setAssociatedObject(self, &cjCircleShapeLayerKey, cjCircleShapeLayer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+//cjRadarAnimationType
 - (CJRadarAnimationType)cjRadarAnimationType {
     return [objc_getAssociatedObject(self, &cjRadarAnimationTypeKey) integerValue];
 }

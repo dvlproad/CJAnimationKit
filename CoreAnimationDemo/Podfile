@@ -2,7 +2,8 @@ platform :ios, '7.0'
 #use_frameworks!
 
 target 'CoreAnimationDemo' do
-    pod 'CJBaseUIKit/UIView+CJCategory', '~> 0.0.13'
+    pod 'CJBaseUIKit/UIView+CJCategory', '~> 0.1.9'
+    pod 'CJBaseUtil/CJDataUtil', '~> 0.2.0'
     
     pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
 end
