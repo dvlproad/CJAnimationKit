@@ -34,10 +34,16 @@
 
 //- (void)commonInit;
 
+- (void)testStartChangeToValue:(CGFloat)toValue;
+
 - (void)changeFromValue:(CGFloat)fromValue
                 toValue:(CGFloat)toValue
   withAnimationDuration:(CFTimeInterval)animationDuration;
+//- (void)changeFromValue:(CGFloat)fromValue
+//                toValue:(CGFloat)toValue
+//     withAnimationSpeed:(CGFloat)animationSpeed;
 
 - (void)updateProgressLabelWithAnimationDuration:(CFTimeInterval)duration;
+//- (void)updateProgressLabelWithAnimationSpeed:(CGFloat)speed;
 
 @end

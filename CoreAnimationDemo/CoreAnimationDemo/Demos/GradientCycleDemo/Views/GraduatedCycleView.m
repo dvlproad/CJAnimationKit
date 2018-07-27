@@ -235,7 +235,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         CGFloat labelWidth = _progressRadius * 2 - 20;
         CGFloat labelHeight = 60;
         _progressLabel.frame = CGRectMake((self.frame.size.width - labelWidth) / 2, _centerY - labelHeight / 2, labelWidth, labelHeight);
-        _progressLabel.font = [UIFont systemFontOfSize:60];
+        _progressLabel.font = [UIFont systemFontOfSize:40];
         _progressLabel.adjustsFontSizeToFitWidth = YES;
         _progressLabel.minimumScaleFactor = 0.5;
         //_progressLabel.backgroundColor = [UIColor greenColor];
@@ -249,13 +249,35 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 
 #pragma mark - Event
+- (void)testStartChangeToValue:(CGFloat)toValue {
+    _toValue = toValue;
+    [self performSelector:@selector(shapeChange) withObject:nil afterDelay:0];
+}
+
+- (void)shapeChange {
+    [self changeFromValue:0 toValue:self.toValue withAnimationDuration:2.f];
+}
+
+- (void)changeFromValue:(CGFloat)fromValue
+                toValue:(CGFloat)toValue
+     withAnimationSpeed:(CGFloat)animationSpeed {
+    
+    CGFloat changeValueCount = self.toValue -  self.fromValue;
+    CFTimeInterval animationDuration = changeValueCount * animationSpeed;
+    [self changeFromValue:fromValue toValue:toValue withAnimationDuration:animationDuration];
+}
+
 - (void)changeFromValue:(CGFloat)fromValue
                 toValue:(CGFloat)toValue
     withAnimationDuration:(CFTimeInterval)animationDuration
 {
-    BOOL canContinue = (self.maxValue >= toValue) && (toValue >= fromValue) && (fromValue >= 0);
+    if (toValue == fromValue) {
+        return;
+    }
+    
+    BOOL canContinue = (self.maxValue >= toValue) && (toValue > fromValue) && (fromValue >= 0);
     if (!canContinue) {
-        NSLog(@"Error:圆环值设置出错，请检查 %.0f >= %.0f >= %.0f", self.maxValue, toValue, fromValue);
+        NSLog(@"Error:圆环值设置出错，请检查 %.0f >= %.0f > %.0f", self.maxValue, toValue, fromValue);
         return;
     }
     _labelValue = fromValue;
@@ -292,10 +314,32 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 
 - (void)updateProgressLabelWithAnimationDuration:(CFTimeInterval)duration {
-    CGFloat changeValueCount = self.toValue -  self.fromValue;
-    CFTimeInterval everyValueNeedTime = duration/changeValueCount; //走一个刻度所需的时间
-    CFTimeInterval changeValueNeedTime = changeValueCount * everyValueNeedTime;
+    if (self.toValue == self.fromValue) {
+        return;
+    }
+    BOOL canContinue = (self.toValue > self.fromValue) && (self.fromValue >= 0);
+    if (!canContinue) {
+        NSLog(@"Error:圆环值变化值范围出错，请检查 %.0f > %.0f", self.toValue, self.fromValue);
+        return;
+    }
     
+    CGFloat changeValueCount = self.toValue -  self.fromValue;
+    CGFloat speed = duration/changeValueCount; //走一个刻度所需的时间
+    [self updateProgressLabelWithAnimationSpeed:speed];
+}
+    
+- (void)updateProgressLabelWithAnimationSpeed:(CGFloat)speed {
+    if (self.toValue == self.fromValue) {
+        return;
+    }
+    BOOL canContinue = (self.toValue > self.fromValue) && (self.fromValue >= 0);
+    if (!canContinue) {
+        NSLog(@"Error:圆环值变化值范围出错，请检查 %.0f > %.0f", self.toValue, self.fromValue);
+        return;
+    }
+    
+    CGFloat changeValueCount = self.toValue -  self.fromValue;
+    CFTimeInterval changeValueNeedTime = changeValueCount * speed;
     CGFloat repateCount = changeValueCount;
     NSTimeInterval timeInterval = changeValueNeedTime/repateCount;
     

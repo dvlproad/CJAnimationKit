@@ -38,10 +38,20 @@
 - (void)commonInit {
     __weak typeof(self)weakSelf = self;
     self.updateLabelTextBlock = ^{
-        NSString *string = [NSString stringWithFormat:@"%.0f%%", self.toValue];
+        NSString *string = [NSString stringWithFormat:@"%.0f%%", weakSelf.toValue];
         weakSelf.progressLabel.text = string;
     };
 }
+
+//- (void (^)(void))updateLabelTextBlock {
+//    __weak typeof(self)weakSelf = self;
+//    void(^updateLabelTextBlock)(void) = ^{
+//        NSString *string = [NSString stringWithFormat:@"%.0f%%", weakSelf.toValue];
+//        weakSelf.progressLabel.text = string;
+//    };
+//
+//    return updateLabelTextBlock;
+//}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
