@@ -1,7 +1,8 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 #use_frameworks!
 
 target 'CoreAnimationDemo' do
+    pod 'Masonry'
     pod 'CJBaseUIKit/UIView+CJCategory', '~> 0.1.9'
     pod 'CJBaseUtil/CJDataUtil', '~> 0.2.0'
     

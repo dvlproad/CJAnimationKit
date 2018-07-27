@@ -21,6 +21,8 @@
 
 #import "RefreshAnimateViewController.h"
 
+#import "GradientCycleViewController.h"
+
 @interface QuartzCoreHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -101,6 +103,21 @@
             refreshAnimateModule.title = @"刷新动画";
             refreshAnimateModule.classEntry = [RefreshAnimateViewController class];
             [sectionDataModel.values addObject:refreshAnimateModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //CoreAnimate && CALayer
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"GradientCycleModule";
+        {
+            //BaseAnimationDemo
+            ModuleModel *gradientCycleModule = [[ModuleModel alloc] init];
+            gradientCycleModule.title = @"圆形渐变旋转圆环";
+            gradientCycleModule.classEntry = [GradientCycleViewController class];
+            [sectionDataModel.values addObject:gradientCycleModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

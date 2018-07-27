@@ -1,18 +1,21 @@
 PODS:
   - CJBaseUIKit/UIView+CJCategory (0.1.9)
   - CJBaseUtil/CJDataUtil (0.2.0)
+  - Masonry (1.1.0)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
   - CJBaseUIKit/UIView+CJCategory (~> 0.1.9)
   - CJBaseUtil/CJDataUtil (~> 0.2.0)
+  - Masonry
   - Shimmer (~> 1.0.2)
 
 SPEC CHECKSUMS:
   CJBaseUIKit: 2e96dd6119fe3930f22cbc0f5d8f96a19b8de9ce
   CJBaseUtil: da4f91b1ca72f77dbfacc427350a30ebe7b830de
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 1ccb32de6bfe7d3237bc628bcfba336d29899301
+PODFILE CHECKSUM: d8d406514cdaad9b6dc7b412cce8a67fa149703f
 
-COCOAPODS: 1.4.0.beta.1
+COCOAPODS: 1.4.0

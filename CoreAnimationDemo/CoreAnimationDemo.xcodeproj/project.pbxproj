@@ -59,6 +59,13 @@
 		80150F191BCCB1AB001D59D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80150F181BCCB1AB001D59D9 /* Images.xcassets */; };
 		80150F1C1BCCB1AB001D59D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80150F1A1BCCB1AB001D59D9 /* LaunchScreen.xib */; };
 		80150F281BCCB1AB001D59D9 /* CoreAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80150F271BCCB1AB001D59D9 /* CoreAnimationDemoTests.m */; };
+		808E3C60210AB93B009E3924 /* GradientCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C5D210AB93B009E3924 /* GradientCycleViewController.m */; };
+		808E3C61210AB93B009E3924 /* GradientCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808E3C5F210AB93B009E3924 /* GradientCycleViewController.xib */; };
+		808E3C65210AB982009E3924 /* GradientCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C64210AB982009E3924 /* GradientCycleView.m */; };
+		808E3C68210AC1CA009E3924 /* GradientCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C67210AC1CA009E3924 /* GradientCycleLayer.m */; };
+		808E3C6B210AF742009E3924 /* GraduatedCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C6A210AF742009E3924 /* GraduatedCycleView.m */; };
+		808E3C6E210B1548009E3924 /* PercentGraduatedCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C6D210B1548009E3924 /* PercentGraduatedCycleView.m */; };
+		808E3C71210B188E009E3924 /* CountdownGraduatedCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C70210B188E009E3924 /* CountdownGraduatedCycleView.m */; };
 		8384466F6D70826E5273952C /* libPods-CoreAnimationDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F1D8839AA4E6B51461D270 /* libPods-CoreAnimationDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +164,19 @@
 		80150F211BCCB1AB001D59D9 /* CoreAnimationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80150F261BCCB1AB001D59D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80150F271BCCB1AB001D59D9 /* CoreAnimationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationDemoTests.m; sourceTree = "<group>"; };
+		808E3C5D210AB93B009E3924 /* GradientCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientCycleViewController.m; sourceTree = "<group>"; };
+		808E3C5E210AB93B009E3924 /* GradientCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientCycleViewController.h; sourceTree = "<group>"; };
+		808E3C5F210AB93B009E3924 /* GradientCycleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradientCycleViewController.xib; sourceTree = "<group>"; };
+		808E3C63210AB982009E3924 /* GradientCycleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientCycleView.h; sourceTree = "<group>"; };
+		808E3C64210AB982009E3924 /* GradientCycleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientCycleView.m; sourceTree = "<group>"; };
+		808E3C66210AC1CA009E3924 /* GradientCycleLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientCycleLayer.h; sourceTree = "<group>"; };
+		808E3C67210AC1CA009E3924 /* GradientCycleLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientCycleLayer.m; sourceTree = "<group>"; };
+		808E3C69210AF742009E3924 /* GraduatedCycleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraduatedCycleView.h; sourceTree = "<group>"; };
+		808E3C6A210AF742009E3924 /* GraduatedCycleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraduatedCycleView.m; sourceTree = "<group>"; };
+		808E3C6C210B1548009E3924 /* PercentGraduatedCycleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentGraduatedCycleView.h; sourceTree = "<group>"; };
+		808E3C6D210B1548009E3924 /* PercentGraduatedCycleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PercentGraduatedCycleView.m; sourceTree = "<group>"; };
+		808E3C6F210B188E009E3924 /* CountdownGraduatedCycleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountdownGraduatedCycleView.h; sourceTree = "<group>"; };
+		808E3C70210B188E009E3924 /* CountdownGraduatedCycleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountdownGraduatedCycleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +232,7 @@
 		7836588E1ECEDD4700AF7591 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				808E3C5C210AB93B009E3924 /* GradientCycleDemo */,
 				788FD8E01EEFD0A200EB067F /* ShimmerAnimationDemo */,
 				783658FC1ECFCDB100AF7591 /* PeiwoAnimationViewController.h */,
 				783658FD1ECFCDB100AF7591 /* PeiwoAnimationViewController.m */,
@@ -435,6 +456,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		808E3C5C210AB93B009E3924 /* GradientCycleDemo */ = {
+			isa = PBXGroup;
+			children = (
+				808E3C5E210AB93B009E3924 /* GradientCycleViewController.h */,
+				808E3C5D210AB93B009E3924 /* GradientCycleViewController.m */,
+				808E3C5F210AB93B009E3924 /* GradientCycleViewController.xib */,
+				808E3C62210AB972009E3924 /* Views */,
+			);
+			path = GradientCycleDemo;
+			sourceTree = "<group>";
+		};
+		808E3C62210AB972009E3924 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				808E3C63210AB982009E3924 /* GradientCycleView.h */,
+				808E3C64210AB982009E3924 /* GradientCycleView.m */,
+				808E3C66210AC1CA009E3924 /* GradientCycleLayer.h */,
+				808E3C67210AC1CA009E3924 /* GradientCycleLayer.m */,
+				808E3C69210AF742009E3924 /* GraduatedCycleView.h */,
+				808E3C6A210AF742009E3924 /* GraduatedCycleView.m */,
+				808E3C6C210B1548009E3924 /* PercentGraduatedCycleView.h */,
+				808E3C6D210B1548009E3924 /* PercentGraduatedCycleView.m */,
+				808E3C6F210B188E009E3924 /* CountdownGraduatedCycleView.h */,
+				808E3C70210B188E009E3924 /* CountdownGraduatedCycleView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C56CED42F0E41E4D779C8415 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +587,7 @@
 				783658BF1ECEDD4700AF7591 /* sanguosha.png in Resources */,
 				781F243920067DDA007429AB /* SampleLayerMaskViewController.xib in Resources */,
 				783658BE1ECEDD4700AF7591 /* header@2x.jpg in Resources */,
+				808E3C61210AB93B009E3924 /* GradientCycleViewController.xib in Resources */,
 				781F244520068235007429AB /* RefreshResouce.xcassets in Resources */,
 				788FD8E81EEFD2DF00EB067F /* bgRainbow@2x.jpg in Resources */,
 				783658B91ECEDD4700AF7591 /* UIViewDemo.xib in Resources */,
@@ -675,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				783658B11ECEDD4700AF7591 /* BasicAnimationVC.m in Sources */,
+				808E3C60210AB93B009E3924 /* GradientCycleViewController.m in Sources */,
 				783658D61ECEE8A900AF7591 /* CAShapeLayerFactory.m in Sources */,
 				783658B31ECEDD4700AF7591 /* BezierPathAnimationVC.m in Sources */,
 				783658CD1ECEE24A00AF7591 /* CJAnimationFactory.m in Sources */,
@@ -682,19 +733,24 @@
 				80150F141BCCB1AB001D59D9 /* ViewController.m in Sources */,
 				783658FF1ECFCDB100AF7591 /* PeiwoAnimationViewController.m in Sources */,
 				782852951F12AA880073076C /* UIView+CJShimmering.m in Sources */,
+				808E3C65210AB982009E3924 /* GradientCycleView.m in Sources */,
 				783658C21ECEDD4700AF7591 /* WelcomeViewToPopup.m in Sources */,
 				80150F111BCCB1AB001D59D9 /* AppDelegate.m in Sources */,
 				783658BA1ECEDD4700AF7591 /* ModuleModel.m in Sources */,
 				783288061ED2DDCB00A01A8A /* UIView+CJZoomFrame.m in Sources */,
+				808E3C68210AC1CA009E3924 /* GradientCycleLayer.m in Sources */,
 				788FD8E41EEFD0CA00EB067F /* ShimmerAnimationViewController.m in Sources */,
 				781F243F2006804F007429AB /* RefreshAnimateViewController.m in Sources */,
 				781F243820067DDA007429AB /* SampleLayerMaskViewController.m in Sources */,
 				783658C01ECEDD4700AF7591 /* WelcomeVCToPopup.m in Sources */,
+				808E3C6B210AF742009E3924 /* GraduatedCycleView.m in Sources */,
 				80150F0E1BCCB1AB001D59D9 /* main.m in Sources */,
 				7840311B1ED1FF7E00469988 /* CJRepeatKeyWindow.m in Sources */,
 				783658B81ECEDD4700AF7591 /* UIViewDemo.m in Sources */,
 				783659031ED044F900AF7591 /* UIControl+CJRadarAnimation.m in Sources */,
 				783658D21ECEE3A400AF7591 /* RadarAnimationViewController.m in Sources */,
+				808E3C71210B188E009E3924 /* CountdownGraduatedCycleView.m in Sources */,
+				808E3C6E210B1548009E3924 /* PercentGraduatedCycleView.m in Sources */,
 				783658C71ECEDDBE00AF7591 /* BaseAnimationViewController.m in Sources */,
 				781F243320067B9B007429AB /* QuartzCoreHomeViewController.m in Sources */,
 				783658B61ECEDD4700AF7591 /* KeyframeAnimationVC.m in Sources */,
