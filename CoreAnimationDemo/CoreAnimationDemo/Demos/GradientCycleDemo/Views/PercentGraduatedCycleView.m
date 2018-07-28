@@ -18,31 +18,6 @@
 
 @implementation PercentGraduatedCycleView
 
-- (void (^)(void))updateLabelTextBlock {
-    __weak typeof(self)weakSelf = self;
-    void(^updateLabelTextBlock)(void) = ^{
-        NSString *string = [NSString stringWithFormat:@"%.0f%%", weakSelf.toValue];
-        weakSelf.progressLabel.text = string;
-    };
-
-    return updateLabelTextBlock;
-}
-
-- (void)updateLabelWithTimer:(NSTimer *)timer {
-    if (self.labelValue >= self.toValue) {
-        [timer invalidate];
-        timer = nil;
-        
-        self.progressLabel.text = [NSString stringWithFormat:@"%.0f%%", self.labelValue];
-        self.labelValue = 0;
-        
-    } else {
-        self.progressLabel.text = [NSString stringWithFormat:@"%.0f%%", self.labelValue];
-    }
-    
-    self.labelValue ++;
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

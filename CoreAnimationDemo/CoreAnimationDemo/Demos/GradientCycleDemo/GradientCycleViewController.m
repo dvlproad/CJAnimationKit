@@ -16,7 +16,7 @@
 static int testMaxValue1 = 100;
 static int testMaxValue2 = 100;
 
-@interface GradientCycleViewController () //<GraduatedCycleViewDelegate>
+@interface GradientCycleViewController () <GraduatedCycleViewDelegate>
 
 @property (nonatomic, strong) UILabel *label1;
 @property (nonatomic, strong) PercentGraduatedCycleView *percentGraduatedCycleView;
@@ -47,7 +47,7 @@ static int testMaxValue2 = 100;
     //*
     PercentGraduatedCycleView *percentGraduatedCycleView = [[PercentGraduatedCycleView alloc] init];
     percentGraduatedCycleView.maxValue = testMaxValue1;
-//    percentGraduatedCycleView.delegate = self;
+    percentGraduatedCycleView.delegate = self;
     [self.view addSubview:percentGraduatedCycleView];
     [percentGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
@@ -74,7 +74,7 @@ static int testMaxValue2 = 100;
     //*
     CountdownGraduatedCycleView *countdownGraduatedCycleView = [[CountdownGraduatedCycleView alloc] init];
     countdownGraduatedCycleView.maxValue = testMaxValue2;
-//    countdownGraduatedCycleView.delegate = self;
+    countdownGraduatedCycleView.delegate = self;
     [self.view addSubview:countdownGraduatedCycleView];
     [countdownGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
@@ -125,21 +125,21 @@ static int testMaxValue2 = 100;
 
 
 
-/*
 - (void)graduatedCycleView_updateLabelText:(GraduatedCycleView *)gradientCycleView {
     if (gradientCycleView == self.percentGraduatedCycleView) {
-        NSString *string = [NSString stringWithFormat:@"%.0f%%", gradientCycleView.toValue];
+        NSString *string = [NSString stringWithFormat:@"%.0f%%", gradientCycleView.labelValue];
+        //NSLog(@"percent = %@", string);
         gradientCycleView.progressLabel.text = string;
         
     } else if (gradientCycleView == self.countdownGraduatedCycleView) {
         NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - gradientCycleView.labelValue);
         NSInteger secondValue = leaveSecondCount%60;
         NSInteger minuteValue = leaveSecondCount/60;
-        NSString *string = [NSString stringWithFormat:@"%02d:%02d", minuteValue, secondValue];
+        NSString *string = [NSString stringWithFormat:@"%02ld:%02ld", minuteValue, secondValue];
+        //NSLog(@"second = %@", string);
         gradientCycleView.progressLabel.text = string;
     }
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

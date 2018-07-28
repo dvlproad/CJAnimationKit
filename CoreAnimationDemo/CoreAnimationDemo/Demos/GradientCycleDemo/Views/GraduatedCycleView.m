@@ -37,6 +37,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 @property (nonatomic, assign, readonly) CGFloat cycleValue;  // 记录动画圆环值，用于动画
 
 @property (nonatomic, weak) NSTimer *labelUpdateTimer;
+
 @property (nonatomic, assign) CFTimeInterval animationDuration;
 
 @end
@@ -253,6 +254,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         return;
     }
     
+    //NSLog(@"开始改变刻度，从%.2f到%.2f", fromValue, toValue);
     _fromValue = fromValue;
     _toValue = toValue;
     _animationDuration = animationDuration;
@@ -268,11 +270,10 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     self.upperShapeLayer.strokeEnd = fromPercent ;
     self.progressLayer.strokeEnd = fromPercent;
     [CATransaction commit];
-//    if (self.delegate) {
-//        [self.delegate graduatedCycleView_updateLabelText:self];
-//    }
-    if (self.updateLabelTextBlock) {
-        self.updateLabelTextBlock();
+    if (self.delegate &&
+        [self.delegate respondsToSelector:@selector(graduatedCycleView_updateLabelText:)])
+    {
+        [self.delegate graduatedCycleView_updateLabelText:self];
     }
     
     
@@ -335,7 +336,9 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 #pragma mark - updateProgressLabel
 - (void)updateProgressLabelWithAnimation:(BOOL)animation {
-    if (self.updateLabelTextBlock == nil) {
+    if (!self.delegate ||
+        ![self.delegate respondsToSelector:@selector(graduatedCycleView_updateLabelText:)])
+    {
         self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
         return;
     }
@@ -373,18 +376,18 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 - (void)updateLabelWithTimer:(NSTimer *)labelUpdateTimer {
     if (self.labelValue >= self.toValue) {
+        _labelValue = self.toValue;
+        
         [labelUpdateTimer invalidate];
         labelUpdateTimer = nil;
         
-        self.updateLabelTextBlock(); //之前已经判断
-        
-        self.labelValue = 0;
+        [self.delegate graduatedCycleView_updateLabelText:self]; //之前已经判断
+        _labelValue = 0;
         
     } else {
-        self.updateLabelTextBlock(); //之前已经判断
+        [self.delegate graduatedCycleView_updateLabelText:self]; //之前已经判断
+        _labelValue ++;
     }
-    
-    self.labelValue ++;
 }
 
 @end

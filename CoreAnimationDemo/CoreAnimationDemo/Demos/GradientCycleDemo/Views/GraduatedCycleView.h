@@ -8,29 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-//@class GraduatedCycleView;
-//@protocol GraduatedCycleViewDelegate
-//
-////更新label文字
-//- (void)graduatedCycleView_updateLabelText:(GraduatedCycleView *)gradientCycleView;
-//
-//@end
+@class GraduatedCycleView;
+@protocol GraduatedCycleViewDelegate <NSObject>
+
+//更新label文字
+- (void)graduatedCycleView_updateLabelText:(GraduatedCycleView *)gradientCycleView;
+
+@end
 
 
 @interface GraduatedCycleView : UIView
 
-//@property (nonatomic, weak) id<GraduatedCycleViewDelegate> delegate;
+@property (nonatomic, weak) id<GraduatedCycleViewDelegate> delegate;
 @property (nonatomic, strong) CAShapeLayer *upperShapeLayer;  // 外圆的更新的layer(对外提供)
 @property (nonatomic, strong) CAShapeLayer *progressLayer;  // 小的进度progressLayer(对外提供)
 
 @property (nonatomic, strong) UILabel *progressLabel;  //  进度文字
-@property (nonatomic,assign) CGFloat labelValue;  // 记录百分比 用于数字跳动
+@property (nonatomic, assign, readonly) CGFloat labelValue;  // 记录百分比 用于数字跳动
 
 @property (nonatomic, assign, readonly) CGFloat fromValue;
 @property (nonatomic, assign, readonly) CGFloat toValue;
 @property (nonatomic, assign) CGFloat maxValue;
-
-@property (nonatomic, copy) void (^updateLabelTextBlock)(void);
 
 //- (void)testStartChangeToValue:(CGFloat)toValue;
 

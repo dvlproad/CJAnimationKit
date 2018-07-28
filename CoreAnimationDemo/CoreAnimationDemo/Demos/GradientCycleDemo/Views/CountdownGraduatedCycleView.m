@@ -10,19 +10,6 @@
 
 @implementation CountdownGraduatedCycleView
 
-- (void (^)(void))updateLabelTextBlock {
-    __weak typeof(self)weakSelf = self;
-    void(^updateLabelTextBlock)(void) = ^{
-        NSInteger leaveSecondCount = (NSInteger)(weakSelf.maxValue - weakSelf.labelValue);
-        NSInteger secondValue = leaveSecondCount%60;
-        NSInteger minuteValue = leaveSecondCount/60;
-        NSString *string = [NSString stringWithFormat:@"%02d:%02d", minuteValue, secondValue];
-        weakSelf.progressLabel.text = string;
-    };
-    return updateLabelTextBlock;
-}
-
-
 - (void)countDownWithGoneSecondCount:(NSInteger)goneSecondCount {
     CGFloat fromValue = goneSecondCount;
     CGFloat toValue = self.maxValue;
