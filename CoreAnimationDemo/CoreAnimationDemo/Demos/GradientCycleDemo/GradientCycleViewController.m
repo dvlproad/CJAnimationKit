@@ -14,7 +14,7 @@
 #import "CountdownGraduatedCycleView.h"
 
 static int testMaxValue1 = 100;
-static int testMaxValue2 = 60;
+static int testMaxValue2 = 100;
 
 @interface GradientCycleViewController () //<GraduatedCycleViewDelegate>
 
@@ -110,22 +110,19 @@ static int testMaxValue2 = 60;
 //    self.label1.text = [NSString stringWithFormat:@"随机到的值:%.2f", toValue1];
     [self.percentGraduatedCycleView changeFromValue:0 toValue:toValue1 withAnimationDuration:2.0f];
     //[self.percentGraduatedCycleView testStartChangeToValue:toValue1];
-//    [self.percentGraduatedCycleView updateProgressLabelWithAnimation:YES duration:2.0];
-    [self.percentGraduatedCycleView updateProgressLabelWithAnimationDuration:2.0f];
-    //[self.percentGraduatedCycleView updateProgressLabelWithAnimationSpeed:3.00f/testMaxValue1];
+    [self.percentGraduatedCycleView updateProgressLabelWithAnimation:YES];
     //*/
     
     //*
-    CGFloat leaveSecondCount = arc4random_uniform(testMaxValue2 + 1); //还剩几秒
+    CGFloat leaveSecondCount = randValue1; //还剩几秒
     //leaveSecondCount = testMaxValue2;
-    //self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];//添上此行会导致圆环无法从fromValue显示
+//    self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];//添上此行会导致圆环无法从fromValue显示
     NSInteger goneSecondCount = testMaxValue2-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
     CGFloat fromValue2 = goneSecondCount;
     CGFloat toValue2 = self.countdownGraduatedCycleView.maxValue;
-    CFTimeInterval duration = toValue2 - fromValue2;
 //    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
-    [self.countdownGraduatedCycleView changeFromValue:fromValue2 toValue:toValue2 withAnimationDuration:duration];
-    [self.countdownGraduatedCycleView updateProgressLabelWithAnimationDuration:duration];
+    [self.countdownGraduatedCycleView changeFromValue:fromValue2 toValue:toValue2 withSpeed:1.0f];
+    [self.countdownGraduatedCycleView updateProgressLabelWithAnimation:YES];
     //*/
 }
 

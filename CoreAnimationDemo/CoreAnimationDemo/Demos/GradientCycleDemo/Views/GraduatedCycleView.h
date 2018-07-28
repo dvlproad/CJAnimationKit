@@ -36,14 +36,8 @@
 
 - (void)testStartChangeToValue:(CGFloat)toValue;
 
-- (void)changeFromValue:(CGFloat)fromValue
-                toValue:(CGFloat)toValue
-  withAnimationDuration:(CFTimeInterval)animationDuration;
-//- (void)changeFromValue:(CGFloat)fromValue
-//                toValue:(CGFloat)toValue
-//     withAnimationSpeed:(CGFloat)animationSpeed;
+- (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration;
 
-- (void)updateProgressLabelWithAnimationDuration:(CFTimeInterval)duration;
-//- (void)updateProgressLabelWithAnimationSpeed:(CGFloat)speed;
+- (void)updateProgressLabelWithAnimation:(BOOL)animation;
 
 @end

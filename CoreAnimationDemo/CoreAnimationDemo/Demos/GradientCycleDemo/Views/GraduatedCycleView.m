@@ -33,7 +33,8 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 @property (nonatomic, strong) CAGradientLayer *progressGradientLayer; // 小的进度渐变颜色
 
 
-@property (nonatomic, weak) NSTimer *timer;
+@property (nonatomic, weak) NSTimer *labelUpdateTimer;
+@property (nonatomic, assign) CFTimeInterval animationDuration;
 
 @end
 
@@ -255,21 +256,10 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 }
 
 - (void)shapeChange {
-    [self changeFromValue:0 toValue:self.toValue withAnimationDuration:2.f];
+    [self changeFromValue:0 toValue:self.toValue withAnimationDuration:2.0f];
 }
 
-- (void)changeFromValue:(CGFloat)fromValue
-                toValue:(CGFloat)toValue
-     withAnimationSpeed:(CGFloat)animationSpeed {
-    
-    CGFloat changeValueCount = self.toValue -  self.fromValue;
-    CFTimeInterval animationDuration = changeValueCount * animationSpeed;
-    [self changeFromValue:fromValue toValue:toValue withAnimationDuration:animationDuration];
-}
-
-- (void)changeFromValue:(CGFloat)fromValue
-                toValue:(CGFloat)toValue
-    withAnimationDuration:(CFTimeInterval)animationDuration
+- (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration
 {
     if (toValue == fromValue) {
         return;
@@ -280,16 +270,19 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         NSLog(@"Error:圆环值设置出错，请检查 %.0f >= %.0f > %.0f", self.maxValue, toValue, fromValue);
         return;
     }
-    _labelValue = fromValue;
+    
     _fromValue = fromValue;
     _toValue = toValue;
+    _animationDuration = animationDuration;
+    _labelValue = fromValue;
+    
     
     CGFloat fromPercent = fromValue/self.maxValue;
     CGFloat toPercent = toValue/self.maxValue;
     
     // 复原
     [CATransaction begin];
-    [CATransaction setDisableActions:NO];
+    [CATransaction setDisableActions:YES];
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [CATransaction setAnimationDuration:0];
     self.upperShapeLayer.strokeEnd = fromPercent ;
@@ -311,9 +304,23 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 //        self.updateLabelTextBlock();
 //    }
 }
-
-
-- (void)updateProgressLabelWithAnimationDuration:(CFTimeInterval)duration {
+    
+- (void)updateProgressLabelWithAnimation:(BOOL)animation {
+    if (self.updateLabelTextBlock == nil) {
+        self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
+        return;
+    }
+    
+    if (animation == NO) {
+        if (self.labelUpdateTimer) {
+            [self.labelUpdateTimer invalidate];
+            self.labelUpdateTimer = nil;
+        }
+        
+        return;
+    }
+    
+    
     if (self.toValue == self.fromValue) {
         return;
     }
@@ -324,36 +331,21 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     }
     
     CGFloat changeValueCount = self.toValue -  self.fromValue;
-    CGFloat speed = duration/changeValueCount; //走一个刻度所需的时间
-    [self updateProgressLabelWithAnimationSpeed:speed];
-}
-    
-- (void)updateProgressLabelWithAnimationSpeed:(CGFloat)speed {
-    if (self.toValue == self.fromValue) {
-        return;
-    }
-    BOOL canContinue = (self.toValue > self.fromValue) && (self.fromValue >= 0);
-    if (!canContinue) {
-        NSLog(@"Error:圆环值变化值范围出错，请检查 %.0f > %.0f", self.toValue, self.fromValue);
-        return;
-    }
-    
-    CGFloat changeValueCount = self.toValue -  self.fromValue;
-    CFTimeInterval changeValueNeedTime = changeValueCount * speed;
+    CFTimeInterval changeValueNeedTime = self.animationDuration;
     CGFloat repateCount = changeValueCount;
     NSTimeInterval timeInterval = changeValueNeedTime/repateCount;
     
-    if (self.timer == nil) {
-        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(updateLablWithTimer:) userInfo:nil repeats:YES];
-        [timer fire];
-        self.timer = timer;
+    if (self.labelUpdateTimer == nil) {
+        NSTimer *labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(updateLablWithTimer:) userInfo:nil repeats:YES];
+        [labelUpdateTimer fire];
+        self.labelUpdateTimer = labelUpdateTimer;
     }
 }
 
-- (void)updateLablWithTimer:(NSTimer *)timer {
+- (void)updateLablWithTimer:(NSTimer *)labelUpdateTimer {
     if (self.labelValue >= self.toValue) {
-        [timer invalidate];
-        timer = nil;
+        [labelUpdateTimer invalidate];
+        labelUpdateTimer = nil;
         
 //        if (self.delegate) {
 //            [self.delegate graduatedCycleView_updateLabelText:self];

@@ -44,7 +44,11 @@
     self.updateLabelTextBlock();
 }
 
-
+- (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withSpeed:(CGFloat)animationSpeed
+{
+    CFTimeInterval animationDuration = animationSpeed * (toValue - fromValue);
+    [self changeFromValue:fromValue toValue:toValue withAnimationDuration:animationDuration];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
