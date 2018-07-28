@@ -335,9 +335,12 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     CGFloat changeValueSpeed = self.animationDuration/(self.toValue - self.fromValue);
     CGFloat changeValueCount = changeDuration / changeValueSpeed;
     CGFloat toValue = fromValue + changeValueCount;
-    if (toValue > self.toValue) {
+    if (toValue >= self.toValue) {
         toValue = self.toValue;
         changeDuration = (self.toValue - fromValue) * changeValueSpeed;
+        
+        [self.cycleUpdateTimer invalidate];
+        self.cycleUpdateTimer = nil;
     }
     CGFloat toPercent = toValue/self.maxValue;
     
