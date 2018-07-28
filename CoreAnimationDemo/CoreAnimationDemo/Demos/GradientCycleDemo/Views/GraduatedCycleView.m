@@ -33,6 +33,9 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 @property (nonatomic, strong) CAGradientLayer *progressGradientLayer; // 小的进度渐变颜色
 
 
+@property (nonatomic, weak) NSTimer *cycleUpdateTimer;
+@property (nonatomic, assign, readonly) CGFloat cycleValue;  // 记录动画圆环值，用于动画
+
 @property (nonatomic, weak) NSTimer *labelUpdateTimer;
 @property (nonatomic, assign) CFTimeInterval animationDuration;
 
@@ -275,27 +278,43 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     _toValue = toValue;
     _animationDuration = animationDuration;
     _labelValue = fromValue;
-    
-    
-    CGFloat fromPercent = fromValue/self.maxValue;
-    CGFloat toPercent = toValue/self.maxValue;
+    _cycleValue = fromValue;
     
     // 复原
+    CGFloat fromPercent = fromValue/self.maxValue;
     [CATransaction begin];
-    [CATransaction setDisableActions:YES];
+    [CATransaction setDisableActions:NO];
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [CATransaction setAnimationDuration:0];
     self.upperShapeLayer.strokeEnd = fromPercent ;
     self.progressLayer.strokeEnd = fromPercent;
     [CATransaction commit];
     
-    [CATransaction begin];
-    [CATransaction setDisableActions:NO];
-    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-    [CATransaction setAnimationDuration:animationDuration];
-    self.upperShapeLayer.strokeEnd = toPercent;;
-    self.progressLayer.strokeEnd = toPercent;;
-    [CATransaction commit];
+    
+    if (animationDuration > 3) {
+        if (self.cycleUpdateTimer) {
+            [self.cycleUpdateTimer invalidate];
+            self.cycleUpdateTimer = nil;
+        }
+        
+        if (self.cycleUpdateTimer == nil) {
+            NSTimer *cycleUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(updateCycleWithTimer:) userInfo:nil repeats:YES];
+            [cycleUpdateTimer fire];
+            self.cycleUpdateTimer = cycleUpdateTimer;
+        }
+        
+    } else {
+        CGFloat toPercent = toValue/self.maxValue;
+        [CATransaction begin];
+        [CATransaction setDisableActions:NO];
+        [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+        [CATransaction setAnimationDuration:animationDuration];
+        self.upperShapeLayer.strokeEnd = toPercent;;
+        self.progressLayer.strokeEnd = toPercent;;
+        [CATransaction commit];
+    }
+    
+    
     
 //    if (self.delegate) {
 //        [self.delegate graduatedCycleView_updateLabelText:self];
@@ -304,7 +323,38 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 //        self.updateLabelTextBlock();
 //    }
 }
+
+- (void)updateCycleWithTimer:(NSTimer *)cycleUpdateTimer {
+    CFTimeInterval changeDuration = self.cycleUpdateTimer.timeInterval;
+//    [self updateCurrentCycleWithChangeDuration:changeDuration];
+//}
+//
+//- (void)updateCurrentCycleWithChangeDuration:(CFTimeInterval)changeDuration {
+    CGFloat fromValue = self.cycleValue;
     
+    CGFloat changeValueSpeed = self.animationDuration/(self.toValue - self.fromValue);
+    CGFloat changeValueCount = changeDuration / changeValueSpeed;
+    CGFloat toValue = fromValue + changeValueCount;
+    if (toValue > self.toValue) {
+        toValue = self.toValue;
+        changeDuration = (self.toValue - fromValue) * changeValueSpeed;
+    }
+    CGFloat toPercent = toValue/self.maxValue;
+    
+    
+    [CATransaction begin];
+    [CATransaction setDisableActions:NO];
+    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+    [CATransaction setAnimationDuration:changeDuration];
+    self.upperShapeLayer.strokeEnd = toPercent;;
+    self.progressLayer.strokeEnd = toPercent;;
+    [CATransaction commit];
+    
+    _cycleValue = toValue;
+}
+
+
+#pragma mark - updateProgressLabel
 - (void)updateProgressLabelWithAnimation:(BOOL)animation {
     if (self.updateLabelTextBlock == nil) {
         self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
