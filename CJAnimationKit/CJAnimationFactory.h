@@ -1,9 +1,9 @@
 //
 //  CJAnimationFactory.h
-//  CoreAnimationDemo
+//  CJAnimationKitDemo
 //
-//  Created by 李超前 on 2017/5/19.
-//  Copyright © 2017年 李超前. All rights reserved.
+//  Created by ciyouzen on 2017/5/19.
+//  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

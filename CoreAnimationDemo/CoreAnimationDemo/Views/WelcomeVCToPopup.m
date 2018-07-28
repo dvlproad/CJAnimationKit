@@ -1,9 +1,9 @@
 //
 //  WelcomeVCToPopup.m
-//  CoreAnimationDemo
+//  CJAnimationKitDemo
 //
-//  Created by 李超前 on 15/11/14.
-//  Copyright © 2015年 李超前. All rights reserved.
+//  Created by ciyouzen on 15/11/14.
+//  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
 #import "WelcomeVCToPopup.h"

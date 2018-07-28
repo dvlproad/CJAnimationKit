@@ -1,12 +1,12 @@
 //
-//  GraduatedCycleView.m
-//  CoreAnimationDemo
+//  CJGraduatedCycleView.m
+//  CJAnimationKitDemo
 //
-//  Created by lichq on 2018/7/27.
-//  Copyright © 2018年 李超前. All rights reserved.
+//  Created by ciyouzen on 2018/7/27.
+//  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "GraduatedCycleView.h"
+#import "CJGraduatedCycleView.h"
 
 #define degreesToRadians(x) (M_PI*(x)/180.0) //把角度转换成PI的方式
 
@@ -14,7 +14,7 @@ static CGFloat  lineWidth = 25;   // 线宽
 static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 
-@interface GraduatedCycleView ()
+@interface CJGraduatedCycleView ()
 
 @property (nonatomic, strong) CAShapeLayer *bottomShapeLayer; // 外圆的底层layer
 //@property (nonatomic, strong) CAShapeLayer *upperShapeLayer;  // 外圆的更新的layer(对外提供)
@@ -46,7 +46,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 
 
-@implementation GraduatedCycleView
+@implementation CJGraduatedCycleView
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -109,7 +109,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     
     [self addSubview:self.progressLabel];
 //    if (self.delegate) {
-//        [self.delegate graduatedCycleView_updateLabelText:self];
+//        [self.delegate cjGraduatedCycleView_updateLabelText:self];
 //    }
 //    if (self.updateLabelTextBlock) {
 //        self.updateLabelTextBlock();
@@ -271,9 +271,9 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     self.progressLayer.strokeEnd = fromPercent;
     [CATransaction commit];
     if (self.delegate &&
-        [self.delegate respondsToSelector:@selector(graduatedCycleView_updateLabelText:)])
+        [self.delegate respondsToSelector:@selector(cjGraduatedCycleView_updateLabelText:)])
     {
-        [self.delegate graduatedCycleView_updateLabelText:self];
+        [self.delegate cjGraduatedCycleView_updateLabelText:self];
     }
     
     
@@ -337,7 +337,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 #pragma mark - updateProgressLabel
 - (void)updateProgressLabelWithAnimation:(BOOL)animation {
     if (!self.delegate ||
-        ![self.delegate respondsToSelector:@selector(graduatedCycleView_updateLabelText:)])
+        ![self.delegate respondsToSelector:@selector(cjGraduatedCycleView_updateLabelText:)])
     {
         self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
         return;
@@ -381,11 +381,11 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         [labelUpdateTimer invalidate];
         labelUpdateTimer = nil;
         
-        [self.delegate graduatedCycleView_updateLabelText:self]; //之前已经判断
+        [self.delegate cjGraduatedCycleView_updateLabelText:self]; //之前已经判断
         _labelValue = 0;
         
     } else {
-        [self.delegate graduatedCycleView_updateLabelText:self]; //之前已经判断
+        [self.delegate cjGraduatedCycleView_updateLabelText:self]; //之前已经判断
         _labelValue ++;
     }
 }

@@ -1,28 +1,28 @@
 //
 //  GradientCycleViewController.m
-//  CoreAnimationDemo
+//  CJAnimationKitDemo
 //
-//  Created by lichq on 2018/7/27.
-//  Copyright © 2018年 李超前. All rights reserved.
+//  Created by ciyouzen on 2018/7/27.
+//  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
 #import "GradientCycleViewController.h"
 #import "GradientCycleView.h"
 #import "GradientCycleLayer.h"
 
-#import "PercentGraduatedCycleView.h"
-#import "CountdownGraduatedCycleView.h"
+#import "CJGraduatedCycleView.h"
+#import "CJGraduatedCycleView+Countdown.h"
 
 static int testMaxValue1 = 100;
 static int testMaxValue2 = 100;
 
-@interface GradientCycleViewController () <GraduatedCycleViewDelegate>
+@interface GradientCycleViewController () <CJGraduatedCycleViewDelegate>
 
 @property (nonatomic, strong) UILabel *label1;
-@property (nonatomic, strong) PercentGraduatedCycleView *percentGraduatedCycleView;
+@property (nonatomic, strong) CJGraduatedCycleView *percentGraduatedCycleView;
 
 @property (nonatomic, strong) UILabel *label2;
-@property (nonatomic, strong) CountdownGraduatedCycleView *countdownGraduatedCycleView;
+@property (nonatomic, strong) CJGraduatedCycleView *countdownGraduatedCycleView;
 
 @end
 
@@ -45,7 +45,7 @@ static int testMaxValue2 = 100;
     [self.view.layer addSublayer:layer];
     
     //*
-    PercentGraduatedCycleView *percentGraduatedCycleView = [[PercentGraduatedCycleView alloc] init];
+    CJGraduatedCycleView *percentGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
     percentGraduatedCycleView.maxValue = testMaxValue1;
     percentGraduatedCycleView.delegate = self;
     [self.view addSubview:percentGraduatedCycleView];
@@ -72,7 +72,7 @@ static int testMaxValue2 = 100;
     //*/
     
     //*
-    CountdownGraduatedCycleView *countdownGraduatedCycleView = [[CountdownGraduatedCycleView alloc] init];
+    CJGraduatedCycleView *countdownGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
     countdownGraduatedCycleView.maxValue = testMaxValue2;
     countdownGraduatedCycleView.delegate = self;
     [self.view addSubview:countdownGraduatedCycleView];
@@ -125,7 +125,7 @@ static int testMaxValue2 = 100;
 
 
 
-- (void)graduatedCycleView_updateLabelText:(GraduatedCycleView *)gradientCycleView {
+- (void)cjGraduatedCycleView_updateLabelText:(CJGraduatedCycleView *)gradientCycleView {
     if (gradientCycleView == self.percentGraduatedCycleView) {
         NSString *string = [NSString stringWithFormat:@"%.0f%%", gradientCycleView.labelValue];
         //NSLog(@"percent = %@", string);

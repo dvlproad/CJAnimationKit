@@ -1,6 +1,6 @@
 //
 //  UIView+CJZoomFrame.m
-//  CoreAnimationDemo
+//  CJAnimationKitDemo
 //
 //  Created by ciyouzen on 2017/5/22.
 //  Copyright © 2017年 dvlproad. All rights reserved.

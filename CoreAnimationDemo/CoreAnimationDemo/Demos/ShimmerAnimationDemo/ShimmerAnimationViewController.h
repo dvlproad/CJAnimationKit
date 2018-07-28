@@ -1,9 +1,9 @@
 //
 //  ShimmerAnimationViewController.h
-//  CoreAnimationDemo
+//  CJAnimationKitDemo
 //
 //  Created by lichaoqian on 17/6/13.
-//  Copyright © 2017年 李超前. All rights reserved.
+//  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
