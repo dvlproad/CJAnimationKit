@@ -10,42 +10,23 @@
 
 @implementation CountdownGraduatedCycleView
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        [self  commonInit];
-    }
-    
-    return self;
-    
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:frame])) {
-        [self commonInit];
-        
-    }
-    return self;
-}
-
-- (void)commonInit {
+- (void (^)(void))updateLabelTextBlock {
     __weak typeof(self)weakSelf = self;
-    self.updateLabelTextBlock = ^{
+    void(^updateLabelTextBlock)(void) = ^{
         NSInteger leaveSecondCount = (NSInteger)(weakSelf.maxValue - weakSelf.labelValue);
         NSInteger secondValue = leaveSecondCount%60;
         NSInteger minuteValue = leaveSecondCount/60;
         NSString *string = [NSString stringWithFormat:@"%02d:%02d", minuteValue, secondValue];
         weakSelf.progressLabel.text = string;
     };
+    return updateLabelTextBlock;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.updateLabelTextBlock();
-}
 
-- (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withSpeed:(CGFloat)animationSpeed
-{
+- (void)countDownWithGoneSecondCount:(NSInteger)goneSecondCount {
+    CGFloat fromValue = goneSecondCount;
+    CGFloat toValue = self.maxValue;
+    CGFloat animationSpeed = 1.0f;
     CFTimeInterval animationDuration = animationSpeed * (toValue - fromValue);
     [self changeFromValue:fromValue toValue:toValue withAnimationDuration:animationDuration];
 }

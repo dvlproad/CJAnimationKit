@@ -10,8 +10,6 @@
 
 @interface CountdownGraduatedCycleView : GraduatedCycleView
 
-
-- (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withSpeed:(CGFloat)animationSpeed;
 - (void)countDownWithGoneSecondCount:(NSInteger)goneSecondCount;
 
 @end

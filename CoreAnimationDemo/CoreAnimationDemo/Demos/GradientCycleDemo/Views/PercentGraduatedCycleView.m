@@ -18,48 +18,17 @@
 
 @implementation PercentGraduatedCycleView
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        [self  commonInit];
-    }
-    
-    return self;
-    
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:frame])) {
-        [self commonInit];
-        
-    }
-    return self;
-}
-
-- (void)commonInit {
+- (void (^)(void))updateLabelTextBlock {
     __weak typeof(self)weakSelf = self;
-    self.updateLabelTextBlock = ^{
+    void(^updateLabelTextBlock)(void) = ^{
         NSString *string = [NSString stringWithFormat:@"%.0f%%", weakSelf.toValue];
         weakSelf.progressLabel.text = string;
     };
+
+    return updateLabelTextBlock;
 }
 
-//- (void (^)(void))updateLabelTextBlock {
-//    __weak typeof(self)weakSelf = self;
-//    void(^updateLabelTextBlock)(void) = ^{
-//        NSString *string = [NSString stringWithFormat:@"%.0f%%", weakSelf.toValue];
-//        weakSelf.progressLabel.text = string;
-//    };
-//
-//    return updateLabelTextBlock;
-//}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.updateLabelTextBlock();
-}
-
-- (void)updateLablWithTimer:(NSTimer *)timer {
+- (void)updateLabelWithTimer:(NSTimer *)timer {
     if (self.labelValue >= self.toValue) {
         [timer invalidate];
         timer = nil;

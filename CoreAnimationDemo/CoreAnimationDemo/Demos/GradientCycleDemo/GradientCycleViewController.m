@@ -118,10 +118,7 @@ static int testMaxValue2 = 100;
     //leaveSecondCount = testMaxValue2;
 //    self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];//添上此行会导致圆环无法从fromValue显示
     NSInteger goneSecondCount = testMaxValue2-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
-    CGFloat fromValue2 = goneSecondCount;
-    CGFloat toValue2 = self.countdownGraduatedCycleView.maxValue;
-//    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
-    [self.countdownGraduatedCycleView changeFromValue:fromValue2 toValue:toValue2 withSpeed:1.0f];
+    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
     [self.countdownGraduatedCycleView updateProgressLabelWithAnimation:YES];
     //*/
 }

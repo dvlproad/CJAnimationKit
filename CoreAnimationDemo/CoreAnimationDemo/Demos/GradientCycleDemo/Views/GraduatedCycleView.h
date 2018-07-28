@@ -32,9 +32,7 @@
 
 @property (nonatomic, copy) void (^updateLabelTextBlock)(void);
 
-//- (void)commonInit;
-
-- (void)testStartChangeToValue:(CGFloat)toValue;
+//- (void)testStartChangeToValue:(CGFloat)toValue;
 
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration;
 

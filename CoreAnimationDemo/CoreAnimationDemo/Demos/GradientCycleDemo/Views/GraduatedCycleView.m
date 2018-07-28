@@ -47,27 +47,6 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 @implementation GraduatedCycleView
 
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-//    if (self = [super initWithCoder:aDecoder]) {
-//        [self  commonInit];
-//    }
-//
-//    return self;
-//
-//}
-//
-//- (instancetype)initWithFrame:(CGRect)frame {
-//    if ((self = [super initWithFrame:frame])) {
-//        [self commonInit];
-//
-//    }
-//    return self;
-//}
-//
-//- (void)commonInit {
-//
-//}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -289,6 +268,12 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     self.upperShapeLayer.strokeEnd = fromPercent ;
     self.progressLayer.strokeEnd = fromPercent;
     [CATransaction commit];
+//    if (self.delegate) {
+//        [self.delegate graduatedCycleView_updateLabelText:self];
+//    }
+    if (self.updateLabelTextBlock) {
+        self.updateLabelTextBlock();
+    }
     
     
     if (animationDuration > 3) {
@@ -313,15 +298,6 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         self.progressLayer.strokeEnd = toPercent;;
         [CATransaction commit];
     }
-    
-    
-    
-//    if (self.delegate) {
-//        [self.delegate graduatedCycleView_updateLabelText:self];
-//    }
-//    if (self.updateLabelTextBlock) {
-//        self.updateLabelTextBlock();
-//    }
 }
 
 - (void)updateCycleWithTimer:(NSTimer *)cycleUpdateTimer {
@@ -389,34 +365,23 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     NSTimeInterval timeInterval = changeValueNeedTime/repateCount;
     
     if (self.labelUpdateTimer == nil) {
-        NSTimer *labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(updateLablWithTimer:) userInfo:nil repeats:YES];
+        NSTimer *labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(updateLabelWithTimer:) userInfo:nil repeats:YES];
         [labelUpdateTimer fire];
         self.labelUpdateTimer = labelUpdateTimer;
     }
 }
 
-- (void)updateLablWithTimer:(NSTimer *)labelUpdateTimer {
+- (void)updateLabelWithTimer:(NSTimer *)labelUpdateTimer {
     if (self.labelValue >= self.toValue) {
         [labelUpdateTimer invalidate];
         labelUpdateTimer = nil;
         
-//        if (self.delegate) {
-//            [self.delegate graduatedCycleView_updateLabelText:self];
-        if (self.updateLabelTextBlock) {
-            self.updateLabelTextBlock();
-        } else {
-            self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
-        }
+        self.updateLabelTextBlock(); //之前已经判断
+        
         self.labelValue = 0;
         
     } else {
-//        if (self.delegate) {
-//            [self.delegate graduatedCycleView_updateLabelText:self];
-        if (self.updateLabelTextBlock) {
-            self.updateLabelTextBlock();
-        } else {
-            self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
-        }
+        self.updateLabelTextBlock(); //之前已经判断
     }
     
     self.labelValue ++;
