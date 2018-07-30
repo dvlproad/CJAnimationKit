@@ -91,3 +91,11 @@ UIBezierPath的使用参考：[放肆地使用UIBezierPath和CAShapeLayer画各�
 + (instancetype)bezierPathWithOvalInRect:(CGRect)rect;
 ```
 
+
+
+#### 刻度盘动画
+strokeStart&strokeEnd
+> ![Example](./Screenshots/strokeStart&strokeEnd.png "strokeStart&strokeEnd")
+
+刻度圆盘
+> ![Example](./Screenshots/刻度圆盘.gif "刻度圆盘")

@@ -1,0 +1,28 @@
+PODS:
+  - CJBaseUIKit/UIView/CJDragAction (0.2.2)
+  - CJBaseUtil/CJDataUtil (0.3.0)
+  - Masonry (1.1.0)
+  - Shimmer (1.0.2)
+
+DEPENDENCIES:
+  - CJBaseUIKit/UIView/CJDragAction (~> 0.2.2)
+  - CJBaseUtil/CJDataUtil (~> 0.3.0)
+  - Masonry
+  - Shimmer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CJBaseUIKit
+    - CJBaseUtil
+    - Masonry
+    - Shimmer
+
+SPEC CHECKSUMS:
+  CJBaseUIKit: 5e21637c39e347c60373597b57bb49c22610607b
+  CJBaseUtil: 58e64a849ccda0b36799bb16e81ae7983e5ea109
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+
+PODFILE CHECKSUM: 5be17e92e386529388f7bec3e141220da4507a0a
+
+COCOAPODS: 1.5.3

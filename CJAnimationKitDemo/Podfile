@@ -1,0 +1,17 @@
+platform :ios, '8.0'
+#use_frameworks!
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
+
+target 'CJAnimationKitDemo' do
+  pod 'Masonry'
+  pod 'CJBaseUIKit/UIView/CJDragAction', '~> 0.2.2'
+  pod 'CJBaseUtil/CJDataUtil', '~> 0.3.0'
+  
+  pod 'Shimmer' #fackBook的闪光动画
+end
+
+target 'CJAnimationKitDemoTests' do
+
+end
