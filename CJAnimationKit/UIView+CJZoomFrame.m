@@ -9,8 +9,6 @@
 #import "UIView+CJZoomFrame.h"
 #import <objc/runtime.h>
 
-#import "AppDelegate.h"
-
 @interface UIView ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) CAShapeLayer *cjMaskLayer;

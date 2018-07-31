@@ -132,7 +132,6 @@
 
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView updateLabelWithProgressValue:(CGFloat)progressValue {
     NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - progressValue);
-    leaveSecondCount = progressValue;
     NSInteger secondValue = leaveSecondCount%60;
     NSInteger minuteValue = leaveSecondCount/60;
     NSString *timeString = [NSString stringWithFormat:@"%02ld:%02ld", minuteValue, secondValue];
@@ -149,6 +148,10 @@
     [attributedString addAttributes:otherAttributes range:NSMakeRange(timeString.length, suffixString.length)];
     //NSLog(@"second = %@", fullString);
     gradientCycleView.progressLabel.attributedText = attributedString;
+}
+
+- (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView didFinishUpdateWithInfo:(CGFloat)progressValue {
+    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:0];
 }
 
 - (void)didReceiveMemoryWarning {

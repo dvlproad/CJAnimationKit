@@ -28,11 +28,15 @@ static int testMaxValue2 = 100;
 
 @implementation GradientCycleViewController
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.percentGraduatedCycleView invalidateTimer];
-    [self.countdownGraduatedCycleView invalidateTimer];
+//    [self.percentGraduatedCycleView invalidateTimer];
+//    [self.countdownGraduatedCycleView invalidateTimer];
 }
 
 - (void)viewDidLoad {
@@ -114,22 +118,15 @@ static int testMaxValue2 = 100;
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     // 传入百分比的时候，传入 小数，  0.1 - 1 范围内  <==>  1 - 100
-    //*
     CGFloat randValue1 = arc4random_uniform(testMaxValue1 + 1);
-    //CGFloat fromValue1 = 0;
     CGFloat toValue1 = randValue1;
-//    self.label1.text = [NSString stringWithFormat:@"随机到的值:%.2f", toValue1];
+    self.label1.text = [NSString stringWithFormat:@"随机到的值:%.2f", toValue1];
     [self.percentGraduatedCycleView changeFromValue:0 toValue:toValue1 withAnimationDuration:2.0f];
-    //[self.percentGraduatedCycleView testStartChangeToValue:toValue1];
-    //*/
     
-    //*
     CGFloat leaveSecondCount = randValue1; //还剩几秒
-    //leaveSecondCount = testMaxValue2;
-//    self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];//添上此行会导致圆环无法从fromValue显示
+    self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];
     NSInteger goneSecondCount = testMaxValue2-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
-    //*/
 }
 
 

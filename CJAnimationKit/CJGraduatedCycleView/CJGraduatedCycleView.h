@@ -20,6 +20,9 @@
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView
 updateLabelWithProgressValue:(CGFloat)progressValue;
 
+- (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView
+     didFinishUpdateWithInfo:(CGFloat)info;
+
 @end
 
 
@@ -40,8 +43,6 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 @property (nonatomic, assign) CGFloat fullCycleLineWidth; // 圆进度的线宽
 
 - (void)invalidateTimer;
-
-//- (void)testStartChangeToValue:(CGFloat)toValue;
 
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration;
 

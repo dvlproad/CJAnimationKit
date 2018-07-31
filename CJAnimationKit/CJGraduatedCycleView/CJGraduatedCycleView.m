@@ -29,14 +29,14 @@
 
 
 @property (nonatomic, assign, readonly) CGFloat progressValue;  // 记录动画圆环值，用于动画
-//@property (nonatomic, weak) NSTimer *cycleUpdateTimer;
-//@property (nonatomic, weak) NSTimer *labelUpdateTimer;
 @property (nonatomic, weak) NSTimer *minTimer;
 @property (nonatomic, assign) BOOL timerAlsoForCycleChange;
 @property (nonatomic, assign) CGFloat cumulativeValueInThisRepeat; //当前累积的值
 
 @property (nonatomic, assign) CFTimeInterval animationDuration;
 @property (nonatomic, assign, readonly) CGFloat changeValueSpeed; /**< 变化速度 */
+
+//@property (nonatomic, assign, readonly) NSInteger currentRepeatCount;
 
 @end
 
@@ -240,15 +240,6 @@
 
 
 #pragma mark - Event
-//- (void)testStartChangeToValue:(CGFloat)toValue {
-//    _toValue = toValue;
-//    [self performSelector:@selector(shapeChange) withObject:nil afterDelay:0];
-//}
-//
-//- (void)shapeChange {
-//    [self changeFromValue:0 toValue:self.toValue withAnimationDuration:2.0f];
-//}
-
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration
 {
     if (toValue == fromValue) {
@@ -271,13 +262,6 @@
     // 复原
     CGFloat fromPercent = fromValue/self.maxValue;
     [self changeStrokeEnd:fromPercent withAnimationDuration:0];
-//    [CATransaction begin];
-//    [CATransaction setDisableActions:YES];
-//    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-//    [CATransaction setAnimationDuration:0];
-//    self.graduatedCycleUpperShapeLayer.strokeEnd = fromPercent;;
-//    self.fullCycleUpperLayer.strokeEnd = fromPercent;
-//    [CATransaction commit];
     
     if (self.delegate &&
         [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
@@ -285,20 +269,23 @@
         [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.progressValue];
     }
     
-    if (animationDuration <= 3) {
-        [self createMinTimerForCycleChange:NO];
-        CGFloat actualToPercent = toValue/self.maxValue;
-        [self changeStrokeEnd:actualToPercent withAnimationDuration:animationDuration];
-        
-    } else {
-        //设置定时器，开启动画
-        [self createMinTimerForCycleChange:YES];
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ //TODO:不延迟的话，圆环动画会有两个问题①刚进入时候，动画会从0开始，而不是从fromPercent开始；②如果执行完一圈，还要继续执行，会导致会有一个后退的动画。
+        if (animationDuration <= 30) {
+            [self createMinTimerShouldAlsoForCycleChange:NO];
+            CGFloat actualToPercent = toValue/self.maxValue;
+            [self changeStrokeEnd:actualToPercent withAnimationDuration:animationDuration];
+            
+        } else {
+            //设置定时器，开启动画
+            [self createMinTimerShouldAlsoForCycleChange:YES];
+        }
+    });
+    
     
 }
 
-- (void)createMinTimerForCycleChange:(BOOL)shouldForCycleChange {
-    _timerAlsoForCycleChange = shouldForCycleChange;
+- (void)createMinTimerShouldAlsoForCycleChange:(BOOL)shouldAlsoForCycleChange {
+    _timerAlsoForCycleChange = shouldAlsoForCycleChange;
     
     CGFloat changeValueCount = self.toValue -  self.fromValue;
     CFTimeInterval changeValueNeedTime = self.animationDuration;
@@ -327,20 +314,18 @@
     _cumulativeValueInThisRepeat += changeDuration;
     
     CFTimeInterval actualChangeDuration = 0;
+    CGFloat actualToValue = 0;
     CGFloat possibleToValue = self.progressValue + changeDuration * self.changeValueSpeed;
     //NSLog(@"possibleToValue = %.2f", possibleToValue);
     if (possibleToValue >= self.toValue) {
         actualChangeDuration = (self.toValue - self.progressValue) * self.changeValueSpeed;
-        _progressValue = self.toValue;
-        if (self.minTimer) {
-            [self.minTimer invalidate];
-            self.minTimer = nil;
-        }
+        actualToValue = self.toValue;
         
     } else {
         actualChangeDuration = changeDuration;
-        _progressValue = possibleToValue;
+        actualToValue = possibleToValue;
     }
+    _progressValue = actualToValue;
     
     //NSLog(@"progressValue = %.2f", self.progressValue);
     //更新label
@@ -352,6 +337,18 @@
     
     if (self.timerAlsoForCycleChange) {
         [self updateCycleValueWithChangeDuration:actualChangeDuration];
+    }
+    
+    
+    if (self.progressValue >= self.toValue) {
+        if (self.minTimer) {
+            [self.minTimer invalidate];
+            self.minTimer = nil;
+        }
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:didFinishUpdateWithInfo:)]) {
+            [self.delegate cjGraduatedCycleView:self didFinishUpdateWithInfo:0];
+        }
     }
 }
 
