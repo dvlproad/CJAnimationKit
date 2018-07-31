@@ -28,7 +28,6 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 @property (nonatomic, weak) id<CJGraduatedCycleViewDelegate> delegate;
 
 @property (nonatomic, strong) UILabel *progressLabel;  //  进度文字
-@property (nonatomic, assign, readonly) CGFloat labelValue;  // 记录百分比 用于数字跳动
 
 @property (nonatomic, assign, readonly) CGFloat fromValue;
 @property (nonatomic, assign, readonly) CGFloat toValue;
@@ -40,10 +39,10 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 @property (nonatomic, assign) CGFloat graduatedCycleLineWidth; // 线宽
 @property (nonatomic, assign) CGFloat fullCycleLineWidth; // 圆进度的线宽
 
+- (void)invalidateTimer;
+
 //- (void)testStartChangeToValue:(CGFloat)toValue;
 
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration;
-
-- (void)updateProgressLabelWithAnimation:(BOOL)animation;
 
 @end

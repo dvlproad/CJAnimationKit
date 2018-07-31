@@ -10,6 +10,8 @@ target 'CJAnimationKitDemo' do
   pod 'CJBaseUtil/CJDataUtil', '~> 0.3.0'
   
   pod 'Shimmer' #fackBook的闪光动画
+  
+  pod 'HWWeakTimer', '~> 1.0' #Timer的循环引用
 end
 
 target 'CJAnimationKitDemoTests' do

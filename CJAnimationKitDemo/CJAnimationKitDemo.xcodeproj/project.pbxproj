@@ -473,9 +473,9 @@
 		781FFB93210E346B0051A1BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				781FFB94210E346B0051A1BE /* GradientCycleView.h */,
 				781FFB95210E346B0051A1BE /* GradientCycleLayer.h */,
 				781FFB96210E346B0051A1BE /* GradientCycleLayer.m */,
+				781FFB94210E346B0051A1BE /* GradientCycleView.h */,
 				781FFB97210E346B0051A1BE /* GradientCycleView.m */,
 			);
 			path = Views;
@@ -588,15 +588,15 @@
 		781FFBDC210E3BFA0051A1BE /* arrow */ = {
 			isa = PBXGroup;
 			children = (
-				781FFBDD210E3BFA0051A1BE /* arrow_up.png */,
-				781FFBDE210E3BFA0051A1BE /* arrow_balland_red@2x.png */,
-				781FFBDF210E3BFA0051A1BE /* arrow_L_blue.png */,
-				781FFBE0210E3BFA0051A1BE /* arrow_R_gray@2x.png */,
-				781FFBE1210E3BFA0051A1BE /* arrow_R_blue.png */,
-				781FFBE2210E3BFA0051A1BE /* arrow_L_white@2x.png */,
 				781FFBE3210E3BFA0051A1BE /* arrow_back_red@2x.png */,
-				781FFBE4210E3BFA0051A1BE /* arrow_R_white@2x.png */,
+				781FFBDE210E3BFA0051A1BE /* arrow_balland_red@2x.png */,
 				781FFBE5210E3BFA0051A1BE /* arrow_down.png */,
+				781FFBDF210E3BFA0051A1BE /* arrow_L_blue.png */,
+				781FFBE2210E3BFA0051A1BE /* arrow_L_white@2x.png */,
+				781FFBE1210E3BFA0051A1BE /* arrow_R_blue.png */,
+				781FFBE0210E3BFA0051A1BE /* arrow_R_gray@2x.png */,
+				781FFBE4210E3BFA0051A1BE /* arrow_R_white@2x.png */,
+				781FFBDD210E3BFA0051A1BE /* arrow_up.png */,
 			);
 			path = arrow;
 			sourceTree = "<group>";

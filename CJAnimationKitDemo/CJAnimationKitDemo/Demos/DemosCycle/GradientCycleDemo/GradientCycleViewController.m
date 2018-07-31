@@ -28,6 +28,13 @@ static int testMaxValue2 = 100;
 
 @implementation GradientCycleViewController
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.percentGraduatedCycleView invalidateTimer];
+    [self.countdownGraduatedCycleView invalidateTimer];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -114,7 +121,6 @@ static int testMaxValue2 = 100;
 //    self.label1.text = [NSString stringWithFormat:@"随机到的值:%.2f", toValue1];
     [self.percentGraduatedCycleView changeFromValue:0 toValue:toValue1 withAnimationDuration:2.0f];
     //[self.percentGraduatedCycleView testStartChangeToValue:toValue1];
-    [self.percentGraduatedCycleView updateProgressLabelWithAnimation:YES];
     //*/
     
     //*
@@ -123,7 +129,6 @@ static int testMaxValue2 = 100;
 //    self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];//添上此行会导致圆环无法从fromValue显示
     NSInteger goneSecondCount = testMaxValue2-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
-    [self.countdownGraduatedCycleView updateProgressLabelWithAnimation:YES];
     //*/
 }
 
@@ -131,12 +136,12 @@ static int testMaxValue2 = 100;
 #pragma mark - CJGraduatedCycleViewDelegate
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView updateLabelWithProgressValue:(CGFloat)progressValue {
     if (gradientCycleView == self.percentGraduatedCycleView) {
-        NSString *string = [NSString stringWithFormat:@"%.0f%%", gradientCycleView.labelValue];
+        NSString *string = [NSString stringWithFormat:@"%.0f%%", progressValue];
         //NSLog(@"percent = %@", string);
         gradientCycleView.progressLabel.text = string;
         
     } else if (gradientCycleView == self.countdownGraduatedCycleView) {
-        NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - gradientCycleView.labelValue);
+        NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - progressValue);
         NSInteger secondValue = leaveSecondCount%60;
         NSInteger minuteValue = leaveSecondCount/60;
         NSString *string = [NSString stringWithFormat:@"%02ld:%02ld", minuteValue, secondValue];

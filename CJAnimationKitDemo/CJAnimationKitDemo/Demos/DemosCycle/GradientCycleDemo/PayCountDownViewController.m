@@ -25,13 +25,12 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    CGFloat randValue1 = arc4random_uniform(100 + 1) + 100;
+    CGFloat randValue1 = 12;
     
     self.countdownGraduatedCycleView.maxValue = randValue1;
     CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1); //还剩几秒
     NSInteger goneSecondCount = randValue1-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
-    [self.countdownGraduatedCycleView updateProgressLabelWithAnimation:YES];
 }
 
 - (void)viewDidLoad {
@@ -45,10 +44,7 @@
     CGFloat statusHeight = CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [closeButton setBackgroundColor:[UIColor colorWithRed:0.4 green:0.3 blue:0.4 alpha:0.5]];
-    [closeButton setTitle:NSLocalizedString(@"返回", nil) forState:UIControlStateNormal];
-    [closeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [closeButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [closeButton setImage:[UIImage imageNamed:@"arrow_L_blue"] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:closeButton];
     [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,13 +105,12 @@
 }
 
 - (void)payEvent {
-    CGFloat randValue1 = arc4random_uniform(100 + 1) + 100;
+    CGFloat randValue1 = 12;
     
     self.countdownGraduatedCycleView.maxValue = randValue1;
     CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1);
     NSInteger goneSecondCount = randValue1-leaveSecondCount;
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
-    [self.countdownGraduatedCycleView updateProgressLabelWithAnimation:YES];
 }
 
 #pragma mark - CJGraduatedCycleViewDelegate
@@ -136,7 +131,8 @@
 }
 
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView updateLabelWithProgressValue:(CGFloat)progressValue {
-    NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - gradientCycleView.labelValue);
+    NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - progressValue);
+    leaveSecondCount = progressValue;
     NSInteger secondValue = leaveSecondCount%60;
     NSInteger minuteValue = leaveSecondCount/60;
     NSString *timeString = [NSString stringWithFormat:@"%02ld:%02ld", minuteValue, secondValue];
@@ -151,7 +147,7 @@
                                       };
     [attributedString addAttributes:timeAttributes range:NSMakeRange(0, timeString.length)];
     [attributedString addAttributes:otherAttributes range:NSMakeRange(timeString.length, suffixString.length)];
-    NSLog(@"second = %@", fullString);
+    //NSLog(@"second = %@", fullString);
     gradientCycleView.progressLabel.attributedText = attributedString;
 }
 

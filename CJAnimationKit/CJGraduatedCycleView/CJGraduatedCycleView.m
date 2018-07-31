@@ -28,12 +28,15 @@
 @property (nonatomic, strong) CAShapeLayer *fullCycleUpperLayer;  // 小的进度progressLayer(对外提供)
 
 
-@property (nonatomic, weak) NSTimer *cycleUpdateTimer;
-@property (nonatomic, assign, readonly) CGFloat cycleValue;  // 记录动画圆环值，用于动画
-
-@property (nonatomic, weak) NSTimer *labelUpdateTimer;
+@property (nonatomic, assign, readonly) CGFloat progressValue;  // 记录动画圆环值，用于动画
+//@property (nonatomic, weak) NSTimer *cycleUpdateTimer;
+//@property (nonatomic, weak) NSTimer *labelUpdateTimer;
+@property (nonatomic, weak) NSTimer *minTimer;
+@property (nonatomic, assign) BOOL timerAlsoForCycleChange;
+@property (nonatomic, assign) CGFloat cumulativeValueInThisRepeat; //当前累积的值
 
 @property (nonatomic, assign) CFTimeInterval animationDuration;
+@property (nonatomic, assign, readonly) CGFloat changeValueSpeed; /**< 变化速度 */
 
 @end
 
@@ -42,6 +45,13 @@
 
 
 @implementation CJGraduatedCycleView
+
+- (void)invalidateTimer {
+    if (self.minTimer) {
+        [self.minTimer invalidate];
+        self.minTimer = nil;
+    }
+}
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -230,14 +240,14 @@
 
 
 #pragma mark - Event
-- (void)testStartChangeToValue:(CGFloat)toValue {
-    _toValue = toValue;
-    [self performSelector:@selector(shapeChange) withObject:nil afterDelay:0];
-}
-
-- (void)shapeChange {
-    [self changeFromValue:0 toValue:self.toValue withAnimationDuration:2.0f];
-}
+//- (void)testStartChangeToValue:(CGFloat)toValue {
+//    _toValue = toValue;
+//    [self performSelector:@selector(shapeChange) withObject:nil afterDelay:0];
+//}
+//
+//- (void)shapeChange {
+//    [self changeFromValue:0 toValue:self.toValue withAnimationDuration:2.0f];
+//}
 
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration
 {
@@ -255,136 +265,125 @@
     _fromValue = fromValue;
     _toValue = toValue;
     _animationDuration = animationDuration;
-    _labelValue = fromValue;
-    _cycleValue = fromValue;
+    _changeValueSpeed = (toValue-fromValue)/animationDuration;
+    _progressValue = fromValue;
     
     // 复原
     CGFloat fromPercent = fromValue/self.maxValue;
-    [CATransaction begin];
-    [CATransaction setDisableActions:NO];
-    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-    [CATransaction setAnimationDuration:0];
-    self.graduatedCycleUpperShapeLayer.strokeEnd = fromPercent ;
-    self.fullCycleUpperLayer.strokeEnd = fromPercent;
-    [CATransaction commit];
+    [self changeStrokeEnd:fromPercent withAnimationDuration:0];
+//    [CATransaction begin];
+//    [CATransaction setDisableActions:YES];
+//    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+//    [CATransaction setAnimationDuration:0];
+//    self.graduatedCycleUpperShapeLayer.strokeEnd = fromPercent;;
+//    self.fullCycleUpperLayer.strokeEnd = fromPercent;
+//    [CATransaction commit];
+    
     if (self.delegate &&
         [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
     {
-        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.labelValue];
+        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.progressValue];
     }
     
-    
-    if (animationDuration > 3) {
-        if (self.cycleUpdateTimer) {
-            [self.cycleUpdateTimer invalidate];
-            self.cycleUpdateTimer = nil;
-        }
-        
-        if (self.cycleUpdateTimer == nil) {
-            NSTimer *cycleUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(updateCycleWithTimer:) userInfo:nil repeats:YES];
-            [cycleUpdateTimer fire];
-            self.cycleUpdateTimer = cycleUpdateTimer;
-        }
+    if (animationDuration <= 3) {
+        [self createMinTimerForCycleChange:NO];
+        CGFloat actualToPercent = toValue/self.maxValue;
+        [self changeStrokeEnd:actualToPercent withAnimationDuration:animationDuration];
         
     } else {
-        CGFloat toPercent = toValue/self.maxValue;
-        [CATransaction begin];
-        [CATransaction setDisableActions:NO];
-        [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-        [CATransaction setAnimationDuration:animationDuration];
-        self.graduatedCycleUpperShapeLayer.strokeEnd = toPercent;;
-        self.fullCycleUpperLayer.strokeEnd = toPercent;;
-        [CATransaction commit];
+        //设置定时器，开启动画
+        [self createMinTimerForCycleChange:YES];
     }
+    
 }
 
-- (void)updateCycleWithTimer:(NSTimer *)cycleUpdateTimer {
-    CFTimeInterval changeDuration = self.cycleUpdateTimer.timeInterval;
-//    [self updateCurrentCycleWithChangeDuration:changeDuration];
-//}
-//
-//- (void)updateCurrentCycleWithChangeDuration:(CFTimeInterval)changeDuration {
-    CGFloat fromValue = self.cycleValue;
-    
-    CGFloat changeValueSpeed = self.animationDuration/(self.toValue - self.fromValue);
-    CGFloat changeValueCount = changeDuration / changeValueSpeed;
-    CGFloat toValue = fromValue + changeValueCount;
-    if (toValue >= self.toValue) {
-        toValue = self.toValue;
-        changeDuration = (self.toValue - fromValue) * changeValueSpeed;
-        
-        [self.cycleUpdateTimer invalidate];
-        self.cycleUpdateTimer = nil;
-    }
-    CGFloat toPercent = toValue/self.maxValue;
-    
-    
-    [CATransaction begin];
-    [CATransaction setDisableActions:NO];
-    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-    [CATransaction setAnimationDuration:changeDuration];
-    self.graduatedCycleUpperShapeLayer.strokeEnd = toPercent;;
-    self.fullCycleUpperLayer.strokeEnd = toPercent;;
-    [CATransaction commit];
-    
-    _cycleValue = toValue;
-}
-
-
-#pragma mark - updateProgressLabel
-- (void)updateProgressLabelWithAnimation:(BOOL)animation {
-    if (!self.delegate ||
-        ![self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
-    {
-        self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
-        return;
-    }
-    
-    if (animation == NO) {
-        if (self.labelUpdateTimer) {
-            [self.labelUpdateTimer invalidate];
-            self.labelUpdateTimer = nil;
-        }
-        
-        return;
-    }
-    
-    
-    if (self.toValue == self.fromValue) {
-        return;
-    }
-    BOOL canContinue = (self.toValue > self.fromValue) && (self.fromValue >= 0);
-    if (!canContinue) {
-        NSLog(@"Error:圆环值变化值范围出错，请检查 %.0f > %.0f", self.toValue, self.fromValue);
-        return;
-    }
+- (void)createMinTimerForCycleChange:(BOOL)shouldForCycleChange {
+    _timerAlsoForCycleChange = shouldForCycleChange;
     
     CGFloat changeValueCount = self.toValue -  self.fromValue;
     CFTimeInterval changeValueNeedTime = self.animationDuration;
-    CGFloat repateCount = changeValueCount;
-    NSTimeInterval timeInterval = changeValueNeedTime/repateCount;
+    CGFloat shouldUpdateCount = changeValueCount/1; //用多少遍去更新这些要变化的值（这里每次去更新一个值）
+    NSTimeInterval timeInterval = changeValueNeedTime/shouldUpdateCount;
+    if (self.minTimer) {
+        [self.minTimer invalidate];
+        self.minTimer = nil;
+    }
+    if (self.minTimer == nil) {
+        //NSLog(@"开始设置定时器");
+        [self updateCycleValueWithChangeDuration:timeInterval];
+        NSTimer *minTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(updateValueWithMinTimer:) userInfo:nil repeats:YES];
+//        [minTimer fire];
+        self.minTimer = minTimer;
+    }
+    _cumulativeValueInThisRepeat = 0;
+}
+
+
+
+#pragma mark - updateValue
+- (void)updateValueWithMinTimer:(NSTimer *)minTimer {
+    //NSLog(@"定时器开始执行");
+    CFTimeInterval changeDuration = self.minTimer.timeInterval;
+    _cumulativeValueInThisRepeat += changeDuration;
     
-    if (self.labelUpdateTimer == nil) {
-        NSTimer *labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(updateLabelWithTimer:) userInfo:nil repeats:YES];
-        [labelUpdateTimer fire];
-        self.labelUpdateTimer = labelUpdateTimer;
+    CFTimeInterval actualChangeDuration = 0;
+    CGFloat possibleToValue = self.progressValue + changeDuration * self.changeValueSpeed;
+    //NSLog(@"possibleToValue = %.2f", possibleToValue);
+    if (possibleToValue >= self.toValue) {
+        actualChangeDuration = (self.toValue - self.progressValue) * self.changeValueSpeed;
+        _progressValue = self.toValue;
+        if (self.minTimer) {
+            [self.minTimer invalidate];
+            self.minTimer = nil;
+        }
+        
+    } else {
+        actualChangeDuration = changeDuration;
+        _progressValue = possibleToValue;
+    }
+    
+    //NSLog(@"progressValue = %.2f", self.progressValue);
+    //更新label
+    if (self.delegate &&
+        [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
+    {
+        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.progressValue];
+    }
+    
+    if (self.timerAlsoForCycleChange) {
+        [self updateCycleValueWithChangeDuration:actualChangeDuration];
     }
 }
 
-- (void)updateLabelWithTimer:(NSTimer *)labelUpdateTimer {
-    if (self.labelValue >= self.toValue) {
-        _labelValue = self.toValue;
-        
-        [labelUpdateTimer invalidate];
-        labelUpdateTimer = nil;
-        
-        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.labelValue]; //之前已经判断
-        _labelValue = 0;
+//更新cycle
+- (void)updateCycleValueWithChangeDuration:(CFTimeInterval)changeDuration {
+    CFTimeInterval actualChangeDuration = 0;
+    CGFloat actualToValue = 0;
+    CGFloat possibleToValue = self.progressValue + changeDuration * self.changeValueSpeed;
+    if (possibleToValue >= self.toValue) {
+        actualChangeDuration = (self.toValue - self.progressValue) * self.changeValueSpeed;
+        actualToValue = self.toValue;
         
     } else {
-        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.labelValue]; //之前已经判断
-        _labelValue ++;
+        actualChangeDuration = changeDuration;
+        actualToValue = possibleToValue;
     }
+    
+
+    CGFloat actualToPercent = actualToValue/self.maxValue;
+    [self changeStrokeEnd:actualToPercent withAnimationDuration:actualChangeDuration];
 }
+
+- (void)changeStrokeEnd:(CGFloat)strokeEnd withAnimationDuration:(CFTimeInterval)animationDuration {
+    [CATransaction begin];
+    [CATransaction setDisableActions:NO];
+    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+    [CATransaction setAnimationDuration:animationDuration];
+    self.graduatedCycleUpperShapeLayer.strokeEnd = strokeEnd;;
+    self.fullCycleUpperLayer.strokeEnd = strokeEnd;
+    [CATransaction commit];
+}
+
+
 
 @end
