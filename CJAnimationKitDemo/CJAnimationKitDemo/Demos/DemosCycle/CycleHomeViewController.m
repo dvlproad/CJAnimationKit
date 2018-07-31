@@ -9,6 +9,7 @@
 #import "CycleHomeViewController.h"
 
 #import "GradientCycleViewController.h"
+#import "PayCountDownViewController.h"
 
 @interface CycleHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -48,6 +49,13 @@
             CJModuleModel *gradientCycleModule = [[CJModuleModel alloc] init];
             gradientCycleModule.title = @"圆形渐变旋转圆环";
             gradientCycleModule.classEntry = [GradientCycleViewController class];
+            [sectionDataModel.values addObject:gradientCycleModule];
+        }
+        {
+            //BaseAnimationDemo
+            CJModuleModel *gradientCycleModule = [[CJModuleModel alloc] init];
+            gradientCycleModule.title = @"圆形渐变旋转圆环(事例)";
+            gradientCycleModule.classEntry = [PayCountDownViewController class];
             [sectionDataModel.values addObject:gradientCycleModule];
         }
         
@@ -100,8 +108,16 @@
     
     UIViewController *viewController = nil;
     
+    NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
+                                      ];
+    
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])])
+    if ([clsString isEqualToString:NSStringFromClass([PayCountDownViewController class])]) {
+        viewController = [[PayCountDownViewController alloc] init];
+        [self presentViewController:viewController animated:YES completion:nil];
+        return;
+    }
+    else if ([noxibViewControllers containsObject:clsString])
     {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];

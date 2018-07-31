@@ -81,6 +81,7 @@
 		781FFBF6210E3BFB0051A1BE /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE8210E3BFA0051A1BE /* icons8-settings.png */; };
 		781FFBF7210E3BFB0051A1BE /* icons8-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */; };
 		781FFBF8210E3BFB0051A1BE /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBEA210E3BFB0051A1BE /* icons8-home.png */; };
+		807561DD210FFC5700BC95E9 /* PayCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */; };
 		B4AF2C0A5A57B65F43A52DA1 /* libPods-CJAnimationKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */; };
 		F26800A769E90758B937B6EB /* libPods-CJAnimationKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */; };
 /* End PBXBuildFile section */
@@ -216,6 +217,8 @@
 		781FFBE8210E3BFA0051A1BE /* icons8-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings.png"; sourceTree = "<group>"; };
 		781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-calendar.png"; sourceTree = "<group>"; };
 		781FFBEA210E3BFB0051A1BE /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
+		807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayCountDownViewController.m; sourceTree = "<group>"; };
+		807561DC210FFC5700BC95E9 /* PayCountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayCountDownViewController.h; sourceTree = "<group>"; };
 		8A6AA26B60DC67DFE0F5FFFA /* Pods-CJAnimationKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		95297E5170A8FC376543CCF4 /* Pods-CJAnimationKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJAnimationKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,19 +328,19 @@
 		7802B31C210CB1B9006C113A /* CJAnimationKit */ = {
 			isa = PBXGroup;
 			children = (
-				7802B31D210CB1B9006C113A /* UIView+CJZoomFrame.m */,
-				7802B31E210CB1B9006C113A /* UIControl+CJRadarAnimation.m */,
 				7802B31F210CB1B9006C113A /* CAShapeLayerFactory.h */,
+				7802B32A210CB1B9006C113A /* CAShapeLayerFactory.m */,
+				7802B32D210CB1B9006C113A /* CJAnimationFactory.h */,
+				7802B326210CB1B9006C113A /* CJAnimationFactory.m */,
 				7802B320210CB1B9006C113A /* CJGraduatedCycleView */,
 				7802B325210CB1B9006C113A /* CJRepeatKeyWindow.h */,
-				7802B326210CB1B9006C113A /* CJAnimationFactory.m */,
-				7802B327210CB1B9006C113A /* UIView+CJShimmering.m */,
-				7802B328210CB1B9006C113A /* UIControl+CJRadarAnimation.h */,
-				7802B329210CB1B9006C113A /* UIView+CJZoomFrame.h */,
-				7802B32A210CB1B9006C113A /* CAShapeLayerFactory.m */,
 				7802B32B210CB1B9006C113A /* CJRepeatKeyWindow.m */,
+				7802B328210CB1B9006C113A /* UIControl+CJRadarAnimation.h */,
+				7802B31E210CB1B9006C113A /* UIControl+CJRadarAnimation.m */,
 				7802B32C210CB1B9006C113A /* UIView+CJShimmering.h */,
-				7802B32D210CB1B9006C113A /* CJAnimationFactory.h */,
+				7802B327210CB1B9006C113A /* UIView+CJShimmering.m */,
+				7802B329210CB1B9006C113A /* UIView+CJZoomFrame.h */,
+				7802B31D210CB1B9006C113A /* UIView+CJZoomFrame.m */,
 			);
 			name = CJAnimationKit;
 			path = ../../CJAnimationKit;
@@ -347,8 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				7802B321210CB1B9006C113A /* CJGraduatedCycleView.h */,
-				7802B322210CB1B9006C113A /* CJGraduatedCycleView+Countdown.h */,
 				7802B323210CB1B9006C113A /* CJGraduatedCycleView.m */,
+				7802B322210CB1B9006C113A /* CJGraduatedCycleView+Countdown.h */,
 				7802B324210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m */,
 			);
 			path = CJGraduatedCycleView;
@@ -457,9 +460,11 @@
 		781FFB8F210E346B0051A1BE /* GradientCycleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				781FFB90210E346B0051A1BE /* GradientCycleViewController.m */,
 				781FFB91210E346B0051A1BE /* GradientCycleViewController.h */,
+				781FFB90210E346B0051A1BE /* GradientCycleViewController.m */,
 				781FFB92210E346B0051A1BE /* GradientCycleViewController.xib */,
+				807561DC210FFC5700BC95E9 /* PayCountDownViewController.h */,
+				807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */,
 				781FFB93210E346B0051A1BE /* Views */,
 			);
 			path = GradientCycleDemo;
@@ -843,6 +848,7 @@
 				781FFB79210E30B90051A1BE /* AppDelegate+WindowRootViewController.m in Sources */,
 				781FFBC3210E346B0051A1BE /* GradientCycleLayer.m in Sources */,
 				7802B3A5210CB1D0006C113A /* WelcomeVCToPopup.m in Sources */,
+				807561DD210FFC5700BC95E9 /* PayCountDownViewController.m in Sources */,
 				781FFBBB210E346B0051A1BE /* BaseAnimationViewController.m in Sources */,
 				7802B2EC210CAF9B006C113A /* AppDelegate.m in Sources */,
 			);

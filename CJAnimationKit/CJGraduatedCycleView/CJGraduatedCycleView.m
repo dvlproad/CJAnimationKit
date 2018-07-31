@@ -10,15 +10,11 @@
 
 #define degreesToRadians(x) (M_PI*(x)/180.0) //把角度转换成PI的方式
 
-static CGFloat  lineWidth = 25;   // 线宽
-static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
-
 
 @interface CJGraduatedCycleView ()
 
-@property (nonatomic, strong) CAShapeLayer *bottomShapeLayer; // 外圆的底层layer
-//@property (nonatomic, strong) CAShapeLayer *upperShapeLayer;  // 外圆的更新的layer(对外提供)
-@property (nonatomic, strong) CAGradientLayer *gradientLayer;  // 外圆的颜色渐变layer
+@property (nonatomic, strong) CAShapeLayer *graduatedCycleBottomShapeLayer; // 外圆的底层layer
+@property (nonatomic, strong) CAShapeLayer *graduatedCycleUpperShapeLayer;  // 外圆的更新的layer(对外提供)
 
 @property (nonatomic, assign) CGFloat startAngle;  // 开始的弧度
 @property (nonatomic, assign) CGFloat endAngle;  // 结束的弧度
@@ -28,9 +24,8 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 @property (nonatomic, assign) CGFloat centerX;  // 中心点 x
 @property (nonatomic, assign) CGFloat centerY;  // 中心点 y
 
-@property (nonatomic, strong) CAShapeLayer *progressBottomLayer; // 底部进度条的layer
-//@property (nonatomic, strong) CAShapeLayer *progressLayer;  // 小的进度progressLayer(对外提供)
-@property (nonatomic, strong) CAGradientLayer *progressGradientLayer; // 小的进度渐变颜色
+@property (nonatomic, strong) CAShapeLayer *fullCycleBottomLayer; // 底部进度条的layer
+@property (nonatomic, strong) CAShapeLayer *fullCycleUpperLayer;  // 小的进度progressLayer(对外提供)
 
 
 @property (nonatomic, weak) NSTimer *cycleUpdateTimer;
@@ -48,11 +43,33 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 
 @implementation CJGraduatedCycleView
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    self.graduatedCycleLineWidth = 25;
+    self.fullCycleLineWidth = 3;
+    
+    self.graduatedCycleBottomStrokeColor = [UIColor lightGrayColor];
+    self.fullCycleBottomStrokeColor = [UIColor colorWithRed:180/255.0 green:195/255.0 blue:208/255.0 alpha:1]; //#cfd4dd
+}
+
+
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    self.backgroundColor = [UIColor blackColor];
-    
     
     _startAngle = - 360;  // 启始角度
     _endAngle = 0;  // 结束角度
@@ -65,168 +82,148 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     
     
     CGFloat cycleDiameter = MIN(width, height);
-    _radius = (cycleDiameter - 1*lineWidth) / 2;  // 内圆的角度
-    _progressRadius = (_radius-lineWidth/2) - progressLineWidth - 10; // 外圆的角度
+    _radius = (cycleDiameter - 1*self.graduatedCycleLineWidth) / 2;  // 内圆的角度
+    _progressRadius = (_radius-self.graduatedCycleLineWidth/2) - self.fullCycleLineWidth - 10; // 外圆的角度
     
     
     /* 1、绘制内环 */
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_centerX, _centerY)
+    UIBezierPath *graduatedCyclePath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_centerX, _centerY)
                                                         radius:_radius
                                                     startAngle:degreesToRadians(_startAngle)
                                                       endAngle:degreesToRadians(_endAngle)
                                                      clockwise:YES];
-    
     // ①、绘制底部灰色填充layer
-    CGColorRef bottomStrokeColor = [UIColor lightGrayColor].CGColor;
-    _bottomShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:path strokeColor:bottomStrokeColor];
-    
+    CGColorRef graduatedCycleBottomStrokeColor = self.graduatedCycleBottomStrokeColor.CGColor;
+
+    _graduatedCycleBottomShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:graduatedCyclePath strokeColor:graduatedCycleBottomStrokeColor];
     // ②、绘制底部进度显示 layer
-    CGColorRef upStrokeColor = [UIColor redColor].CGColor;
-    _upperShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:path strokeColor:upStrokeColor];
-    _upperShapeLayer.strokeStart = 0;
-    _upperShapeLayer.strokeEnd =   0;
-    
+    CGColorRef graduatedCycleUpStrokeColor = [UIColor redColor].CGColor;
+    _graduatedCycleUpperShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:graduatedCyclePath strokeColor:graduatedCycleUpStrokeColor];
+    _graduatedCycleUpperShapeLayer.strokeStart = 0;
+    _graduatedCycleUpperShapeLayer.strokeEnd =   0;
     // ③、绘制颜色渐变 layer
-    _gradientLayer = [self createGradientLayerWithBezierPath:path];
+    CAGradientLayer *graduatedGradientLayer = [self createGradientLayerWithBezierPath:graduatedCyclePath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:gradientLayerForBezierPath:)]) {
+        graduatedGradientLayer = [self.delegate cjGraduatedCycleView:self
+                                          gradientLayerForBezierPath:graduatedCyclePath];
+    } else {
+        graduatedGradientLayer = [self createGradientLayerWithBezierPath:graduatedCyclePath];
+    }
     
-    [_bottomShapeLayer addSublayer:_gradientLayer]; // 将进度渐变layer 添加到 底部layer 上
-    [_gradientLayer setMask:_upperShapeLayer]; // 设置进度layer 颜色 渐变
-    
-    [self.layer addSublayer:_bottomShapeLayer];  // 添加到底层的layer 上
+    // ④、按层次设置①②③
+    [_graduatedCycleBottomShapeLayer addSublayer:graduatedGradientLayer]; // 将进度渐变layer 添加到 底部layer 上
+    [graduatedGradientLayer setMask:_graduatedCycleUpperShapeLayer]; // 设置进度layer 颜色 渐变
+    [self.layer addSublayer:_graduatedCycleBottomShapeLayer];  // 添加到底层的layer 上
     
     
     /* 2、绘制外环 */
-    [self drawProgressBottomLayer];  // 绘制外圆的底层layer
+    UIBezierPath *fullCyclePath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_centerX, _centerY)
+                                                                 radius:_progressRadius
+                                                             startAngle:degreesToRadians(_startAngle)
+                                                               endAngle:degreesToRadians(_endAngle)
+                                                              clockwise:YES];
+    // ①、绘制外圆的底层layer
+    CGColorRef fullBottomStrokeColor = self.fullCycleBottomStrokeColor.CGColor;
+    _fullCycleBottomLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullBottomStrokeColor];
+    _fullCycleBottomLayer.strokeStart = 0;
+    _fullCycleBottomLayer.strokeEnd =   1;
     
-    [self drawProgressLayer];   // 绘制外圆的更新的layer
+    // ②、绘制外圆的更新的layer
+    CGColorRef fullUpStrokeColor = [UIColor blueColor].CGColor;
+    _fullCycleUpperLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullUpStrokeColor];
+    _fullCycleUpperLayer.strokeStart = 0;
+    _fullCycleUpperLayer.strokeEnd =   0;
+    //[self performSelector:@selector(shapeChange) withObject:nil afterDelay:0.3];
+    //  ③、绘制渐变色
+    CAGradientLayer *fullCycleGradientLayer = nil;
+    // ④、按层次设置①②③
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:gradientLayerForBezierPath:)]) {
+        fullCycleGradientLayer = [self.delegate cjGraduatedCycleView:self
+                                          gradientLayerForBezierPath:fullCyclePath];
+    } else {
+        fullCycleGradientLayer = [self createGradientLayerWithBezierPath:fullCyclePath];
+    }
+    [_fullCycleBottomLayer addSublayer:fullCycleGradientLayer];  // 把更新的layer 添加到 底部的layer 上
+    [fullCycleGradientLayer setMask:_fullCycleUpperLayer]; // 设置渐变色的蒙版为更新的layer
     
-    [self drawProgressGradientLayer]; //  绘制渐变色
-    
-    [_progressBottomLayer addSublayer:_progressGradientLayer];  // 把更新的layer 添加到 底部的layer 上
-    [_progressGradientLayer setMask:_progressLayer]; // 设置渐变色的蒙版为更新的layer
-    [self.layer addSublayer:_progressBottomLayer ];  // 把bottomlayer 加到自己的layer 上
+    [self.layer addSublayer:_fullCycleBottomLayer ];  // 把bottomlayer 加到自己的layer 上
     
     
     [self addSubview:self.progressLabel];
-//    if (self.delegate) {
-//        [self.delegate cjGraduatedCycleView_updateLabelText:self];
-//    }
-//    if (self.updateLabelTextBlock) {
-//        self.updateLabelTextBlock();
-//    }
 }
 
 - (CAShapeLayer *)createGraduatedCycleShapeLayerWithBezierPath:(UIBezierPath *)path
-                                                   strokeColor:(CGColorRef)strokeColor {
+                                                   strokeColor:(CGColorRef)strokeColor
+{
     CAShapeLayer *graduatedCycleShapeLayer = [[CAShapeLayer alloc] init];
     graduatedCycleShapeLayer.frame = self.bounds;
 
     graduatedCycleShapeLayer.path = path.CGPath;
     graduatedCycleShapeLayer.lineCap = kCALineCapButt;
-    graduatedCycleShapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:2],[NSNumber numberWithInt:5], nil];
-    graduatedCycleShapeLayer.lineWidth = lineWidth;
+    graduatedCycleShapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:5], nil];
+    graduatedCycleShapeLayer.lineWidth = self.graduatedCycleLineWidth;
     graduatedCycleShapeLayer.strokeColor = strokeColor;
     graduatedCycleShapeLayer.fillColor = [UIColor clearColor].CGColor;
     
     return graduatedCycleShapeLayer;
 }
 
+- (CAShapeLayer *)createFullCycleShapeLayerWithBezierPath:(UIBezierPath *)path
+                                                   strokeColor:(CGColorRef)strokeColor
+{
+    CAShapeLayer *graduatedCycleShapeLayer = [[CAShapeLayer alloc] init];
+    graduatedCycleShapeLayer.frame = self.bounds;
+    
+    graduatedCycleShapeLayer.path = path.CGPath;
+    /*
+    //如果想显示为齿轮状态，则打开这段代码
+    graduatedCycleShapeLayer.lineCap = kCALineCapButt;
+    graduatedCycleShapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:2],[NSNumber numberWithInt:5], nil];
+    */
+    //线段的开头为圆角
+    graduatedCycleShapeLayer.lineCap = kCALineCapRound;
+    
+    graduatedCycleShapeLayer.lineWidth = self.fullCycleLineWidth;
+    graduatedCycleShapeLayer.strokeColor = strokeColor;
+    graduatedCycleShapeLayer.fillColor = [UIColor clearColor].CGColor;
+    
+    return graduatedCycleShapeLayer;
+}
+
+
 //  绘制渐变色的layer
 - (CAGradientLayer *)createGradientLayerWithBezierPath:(UIBezierPath *)path
 {
-    NSMutableArray *colors = [NSMutableArray arrayWithObjects:(id)[UIColor greenColor].CGColor,
-                              (id)[UIColor whiteColor].CGColor,
-                              (id)[UIColor purpleColor].CGColor,
-                              (id)[UIColor redColor].CGColor, nil];
+    NSArray *colors = @[(id)[UIColor greenColor].CGColor,
+                        (id)[UIColor whiteColor].CGColor,
+                        (id)[UIColor purpleColor].CGColor,
+                        (id)[UIColor redColor].CGColor];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = colors;
     gradientLayer.shadowPath = path.CGPath;
     gradientLayer.frame = self.bounds;
     gradientLayer.startPoint = CGPointMake(0, 1);
     gradientLayer.endPoint = CGPointMake(1, 0);
-    [gradientLayer setColors:colors];
+    //gradientLayer.locations = @[@0.2, @0.5, @0.7, @1];
     
     return gradientLayer;
-}
-
-- (CAShapeLayer *)drawProgressBottomLayer
-{
-    _progressBottomLayer                 = [[CAShapeLayer alloc] init];
-    _progressBottomLayer.frame           = self.bounds;
-    UIBezierPath *path                = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_centerX, _centerY) radius:_progressRadius  startAngle:degreesToRadians(_startAngle) endAngle:degreesToRadians(_endAngle - 5) clockwise:YES];
-    _progressBottomLayer.path = path.CGPath;
-#pragma mark - 如果想显示为齿轮状态，则打开这段代码
-    //    _progressBottomLayer.lineCap = kCALineCapButt;
-    //    _progressBottomLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:5],[NSNumber numberWithInt:5], nil];
-    
-#pragma mark - 线段的开头为圆角
-    _progressBottomLayer.lineCap = kCALineCapRound;
-    
-    _progressBottomLayer.lineWidth = progressLineWidth;
-    _progressBottomLayer.strokeColor     = [UIColor clearColor].CGColor;
-    _progressBottomLayer.fillColor       = [UIColor clearColor].CGColor;
-    return _progressBottomLayer;
-}
-
-- (CAShapeLayer *)drawProgressLayer
-{
-    _progressLayer                 = [[CAShapeLayer alloc] init];
-    _progressLayer.frame           = self.bounds;
-    
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_centerX, _centerY ) radius:_progressRadius  startAngle:degreesToRadians(_startAngle) endAngle:degreesToRadians(_endAngle - 5)  clockwise:YES];
-    _progressLayer.path            = bezierPath.CGPath;
-    _progressLayer.strokeStart = 0;
-    _progressLayer.strokeEnd =   0;
-    //    [self performSelector:@selector(shapeChange) withObject:nil afterDelay:0.3];
-    _progressLayer.lineWidth = progressLineWidth;
-    
-    
-#pragma mark - 如果想显示为齿轮状态，则打开这段代码
-    //    _progressLayer.lineCap = kCALineCapButt;
-    //    _progressLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:5],[NSNumber numberWithInt:5], nil];
-    
-#pragma mark - 线段的开头为圆角
-    _progressLayer.lineCap = kCALineCapRound;
-    
-    _progressLayer.strokeColor     = [UIColor blueColor].CGColor;
-    _progressLayer.fillColor       = [UIColor clearColor].CGColor;
-    return _progressLayer;
-    
-}
-
-- (CAGradientLayer *)drawProgressGradientLayer
-{
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_centerX, _centerY ) radius:_progressRadius  startAngle:degreesToRadians(_startAngle)  endAngle:degreesToRadians(_endAngle - 5)  clockwise:YES];
-    
-    _progressGradientLayer = [CAGradientLayer layer];
-    _progressGradientLayer.frame = self.bounds;
-    _progressLayer.shadowPath = bezierPath.CGPath;
-    
-    _progressGradientLayer.colors =  [NSMutableArray arrayWithObjects:(id)[UIColor greenColor].CGColor,(id)[UIColor whiteColor].CGColor,(id)[UIColor purpleColor].CGColor,(id)[UIColor redColor].CGColor, nil];
-    
-    
-    //[_progressGradientLayer setLocations:@[@0.2, @0.5, @0.7, @1]];
-    [_progressGradientLayer setStartPoint:CGPointMake(0, 1)];
-    [_progressGradientLayer setEndPoint:CGPointMake(1, 0)];
-    
-    
-    return _progressGradientLayer;
 }
 
 - (UILabel *)progressLabel {
     if (!_progressLabel) {
         _progressLabel = [[UILabel alloc]init];
         
-        CGFloat labelWidth = _progressRadius * 2 - 20;
-        CGFloat labelHeight = 60;
-        _progressLabel.frame = CGRectMake((self.frame.size.width - labelWidth) / 2, _centerY - labelHeight / 2, labelWidth, labelHeight);
         _progressLabel.font = [UIFont systemFontOfSize:40];
         _progressLabel.adjustsFontSizeToFitWidth = YES;
         _progressLabel.minimumScaleFactor = 0.5;
         //_progressLabel.backgroundColor = [UIColor greenColor];
         _progressLabel.textAlignment = NSTextAlignmentCenter;
-        _progressLabel.textColor = [UIColor whiteColor];
+        _progressLabel.textColor = [UIColor blackColor];
         _progressLabel.text = @"";
     }
+    CGFloat labelWidth = _progressRadius * 2 - 20;
+    CGFloat labelHeight = 60;
+    _progressLabel.frame = CGRectMake((self.frame.size.width - labelWidth) / 2, _centerY - labelHeight / 2, labelWidth, labelHeight);
     
     return _progressLabel;
 }
@@ -267,13 +264,13 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     [CATransaction setDisableActions:NO];
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [CATransaction setAnimationDuration:0];
-    self.upperShapeLayer.strokeEnd = fromPercent ;
-    self.progressLayer.strokeEnd = fromPercent;
+    self.graduatedCycleUpperShapeLayer.strokeEnd = fromPercent ;
+    self.fullCycleUpperLayer.strokeEnd = fromPercent;
     [CATransaction commit];
     if (self.delegate &&
-        [self.delegate respondsToSelector:@selector(cjGraduatedCycleView_updateLabelText:)])
+        [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
     {
-        [self.delegate cjGraduatedCycleView_updateLabelText:self];
+        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.labelValue];
     }
     
     
@@ -295,8 +292,8 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         [CATransaction setDisableActions:NO];
         [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
         [CATransaction setAnimationDuration:animationDuration];
-        self.upperShapeLayer.strokeEnd = toPercent;;
-        self.progressLayer.strokeEnd = toPercent;;
+        self.graduatedCycleUpperShapeLayer.strokeEnd = toPercent;;
+        self.fullCycleUpperLayer.strokeEnd = toPercent;;
         [CATransaction commit];
     }
 }
@@ -326,8 +323,8 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
     [CATransaction setDisableActions:NO];
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [CATransaction setAnimationDuration:changeDuration];
-    self.upperShapeLayer.strokeEnd = toPercent;;
-    self.progressLayer.strokeEnd = toPercent;;
+    self.graduatedCycleUpperShapeLayer.strokeEnd = toPercent;;
+    self.fullCycleUpperLayer.strokeEnd = toPercent;;
     [CATransaction commit];
     
     _cycleValue = toValue;
@@ -337,7 +334,7 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
 #pragma mark - updateProgressLabel
 - (void)updateProgressLabelWithAnimation:(BOOL)animation {
     if (!self.delegate ||
-        ![self.delegate respondsToSelector:@selector(cjGraduatedCycleView_updateLabelText:)])
+        ![self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
     {
         self.progressLabel.text = NSLocalizedString(@"请实现updateLabelTextBlock", nil);
         return;
@@ -381,11 +378,11 @@ static CGFloat  progressLineWidth = 3;  // 外圆进度的线宽
         [labelUpdateTimer invalidate];
         labelUpdateTimer = nil;
         
-        [self.delegate cjGraduatedCycleView_updateLabelText:self]; //之前已经判断
+        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.labelValue]; //之前已经判断
         _labelValue = 0;
         
     } else {
-        [self.delegate cjGraduatedCycleView_updateLabelText:self]; //之前已经判断
+        [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.labelValue]; //之前已经判断
         _labelValue ++;
     }
 }

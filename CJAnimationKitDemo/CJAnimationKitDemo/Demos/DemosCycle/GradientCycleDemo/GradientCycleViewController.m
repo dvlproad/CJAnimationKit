@@ -46,13 +46,15 @@ static int testMaxValue2 = 100;
     
     //*
     CJGraduatedCycleView *percentGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
+    percentGraduatedCycleView.backgroundColor = [UIColor blackColor];
+    percentGraduatedCycleView.progressLabel.textColor = [UIColor whiteColor];
     percentGraduatedCycleView.maxValue = testMaxValue1;
     percentGraduatedCycleView.delegate = self;
     [self.view addSubview:percentGraduatedCycleView];
     [percentGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
-        make.top.mas_equalTo(self.view).mas_offset(88);
+        make.top.mas_equalTo(self.view).mas_offset(100);
         make.height.mas_equalTo(200);
     }];
     self.percentGraduatedCycleView = percentGraduatedCycleView;
@@ -73,6 +75,8 @@ static int testMaxValue2 = 100;
     
     //*
     CJGraduatedCycleView *countdownGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
+    countdownGraduatedCycleView.backgroundColor = [UIColor blackColor];
+    countdownGraduatedCycleView.progressLabel.textColor = [UIColor whiteColor];
     countdownGraduatedCycleView.maxValue = testMaxValue2;
     countdownGraduatedCycleView.delegate = self;
     [self.view addSubview:countdownGraduatedCycleView];
@@ -124,8 +128,8 @@ static int testMaxValue2 = 100;
 }
 
 
-
-- (void)cjGraduatedCycleView_updateLabelText:(CJGraduatedCycleView *)gradientCycleView {
+#pragma mark - CJGraduatedCycleViewDelegate
+- (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView updateLabelWithProgressValue:(CGFloat)progressValue {
     if (gradientCycleView == self.percentGraduatedCycleView) {
         NSString *string = [NSString stringWithFormat:@"%.0f%%", gradientCycleView.labelValue];
         //NSLog(@"percent = %@", string);

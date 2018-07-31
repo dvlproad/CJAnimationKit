@@ -11,8 +11,14 @@
 @class CJGraduatedCycleView;
 @protocol CJGraduatedCycleViewDelegate <NSObject>
 
+@optional
+//渐变颜色
+- (CAGradientLayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView
+               gradientLayerForBezierPath:(UIBezierPath *)path;
+
 //更新label文字
-- (void)cjGraduatedCycleView_updateLabelText:(CJGraduatedCycleView *)gradientCycleView;
+- (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView
+updateLabelWithProgressValue:(CGFloat)progressValue;
 
 @end
 
@@ -20,8 +26,6 @@
 @interface CJGraduatedCycleView : UIView
 
 @property (nonatomic, weak) id<CJGraduatedCycleViewDelegate> delegate;
-@property (nonatomic, strong) CAShapeLayer *upperShapeLayer;  // 外圆的更新的layer(对外提供)
-@property (nonatomic, strong) CAShapeLayer *progressLayer;  // 小的进度progressLayer(对外提供)
 
 @property (nonatomic, strong) UILabel *progressLabel;  //  进度文字
 @property (nonatomic, assign, readonly) CGFloat labelValue;  // 记录百分比 用于数字跳动
@@ -29,6 +33,12 @@
 @property (nonatomic, assign, readonly) CGFloat fromValue;
 @property (nonatomic, assign, readonly) CGFloat toValue;
 @property (nonatomic, assign) CGFloat maxValue;
+
+@property (nonatomic) UIColor *graduatedCycleBottomStrokeColor;
+@property (nonatomic) UIColor *fullCycleBottomStrokeColor;
+
+@property (nonatomic, assign) CGFloat graduatedCycleLineWidth; // 线宽
+@property (nonatomic, assign) CGFloat fullCycleLineWidth; // 圆进度的线宽
 
 //- (void)testStartChangeToValue:(CGFloat)toValue;
 
