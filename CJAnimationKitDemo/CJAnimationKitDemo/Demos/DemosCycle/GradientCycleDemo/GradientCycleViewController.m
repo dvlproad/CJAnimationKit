@@ -59,7 +59,7 @@ static int testMaxValue2 = 100;
     CJGraduatedCycleView *percentGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
     percentGraduatedCycleView.backgroundColor = [UIColor blackColor];
     percentGraduatedCycleView.progressLabel.textColor = [UIColor whiteColor];
-    percentGraduatedCycleView.maxValue = testMaxValue1;
+    [percentGraduatedCycleView setMaxValue:testMaxValue1 dividedCount:1];
     percentGraduatedCycleView.delegate = self;
     [self.view addSubview:percentGraduatedCycleView];
     [percentGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,7 +88,7 @@ static int testMaxValue2 = 100;
     CJGraduatedCycleView *countdownGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
     countdownGraduatedCycleView.backgroundColor = [UIColor blackColor];
     countdownGraduatedCycleView.progressLabel.textColor = [UIColor whiteColor];
-    countdownGraduatedCycleView.maxValue = testMaxValue2;
+    [countdownGraduatedCycleView setMaxValue:testMaxValue2 dividedCount:1];
     countdownGraduatedCycleView.delegate = self;
     [self.view addSubview:countdownGraduatedCycleView];
     [countdownGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {

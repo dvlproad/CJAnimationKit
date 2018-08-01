@@ -36,7 +36,7 @@
 @property (nonatomic, assign) CFTimeInterval animationDuration;
 @property (nonatomic, assign, readonly) CGFloat changeValueSpeed; /**< 变化速度 */
 
-//@property (nonatomic, assign, readonly) NSInteger currentRepeatCount;
+@property (nonatomic, assign) NSInteger hasExecCount;   /**< 已经执行了几次 */
 
 @end
 
@@ -75,8 +75,15 @@
     
     self.graduatedCycleBottomStrokeColor = [UIColor lightGrayColor];
     self.fullCycleBottomStrokeColor = [UIColor colorWithRed:180/255.0 green:195/255.0 blue:208/255.0 alpha:1]; //#cfd4dd
+    
+    _dividedCount = 1;
 }
 
+
+- (void)setMaxValue:(CGFloat)maxValue dividedCount:(NSInteger)dividedCount {
+    _maxValue = maxValue;
+    _dividedCount = dividedCount;
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -258,9 +265,11 @@
     _animationDuration = animationDuration;
     _changeValueSpeed = (toValue-fromValue)/animationDuration;
     _progressValue = fromValue;
+    NSInteger everyLoopMaxValue = self.maxValue/self.dividedCount;  /**< 每个循环的最大值 */
+    _hasExecCount = fromValue/everyLoopMaxValue;
     
     // 复原
-    CGFloat fromPercent = fromValue/self.maxValue;
+    CGFloat fromPercent = [self getPercentForProgressValue:fromValue];
     [self changeStrokeEnd:fromPercent withAnimationDuration:0];
     
     if (self.delegate &&
@@ -270,9 +279,9 @@
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ //TODO:不延迟的话，圆环动画会有两个问题①刚进入时候，动画会从0开始，而不是从fromPercent开始；②如果执行完一圈，还要继续执行，会导致会有一个后退的动画。
-        if (animationDuration <= 30) {
+        if (animationDuration <= 3) {
             [self createMinTimerShouldAlsoForCycleChange:NO];
-            CGFloat actualToPercent = toValue/self.maxValue;
+            CGFloat actualToPercent = [self getPercentForProgressValue:toValue];
             [self changeStrokeEnd:actualToPercent withAnimationDuration:animationDuration];
             
         } else {
@@ -282,6 +291,24 @@
     });
     
     
+}
+
+- (CGFloat)getPercentForProgressValue:(NSInteger)progressValue {
+//    CGFloat percent = (CGFloat)(progressValue)/self.maxValue; //确保结果是浮点数
+    
+    NSInteger everyLoopMaxValue = self.maxValue/self.dividedCount;  /**< 每个循环的最大值 */
+    NSInteger currentLoopFromValue = progressValue%(everyLoopMaxValue);//确保范围为0-everyLoopMaxValue
+    if (currentLoopFromValue == 0) {
+        if (progressValue == 0) {
+            return 0;
+        } else {
+            return 1;
+        }
+    } else {
+        CGFloat percent = (CGFloat)(currentLoopFromValue)/everyLoopMaxValue; //确保结果是浮点数
+        
+        return percent;
+    }
 }
 
 - (void)createMinTimerShouldAlsoForCycleChange:(BOOL)shouldAlsoForCycleChange {
@@ -326,8 +353,15 @@
         actualToValue = possibleToValue;
     }
     _progressValue = actualToValue;
-    
     //NSLog(@"progressValue = %.2f", self.progressValue);
+    
+    if ([self checkCurrentLoopWillFinishAfterThisTime]) {
+        _hasExecCount ++;
+        if (self.progressValue < self.toValue) { //全部完成的时候不能恢复到0
+            [self changeStrokeEnd:0 withAnimationDuration:0];
+        }
+    }
+    
     //更新label
     if (self.delegate &&
         [self.delegate respondsToSelector:@selector(cjGraduatedCycleView:updateLabelWithProgressValue:)])
@@ -335,9 +369,12 @@
         [self.delegate cjGraduatedCycleView:self updateLabelWithProgressValue:self.progressValue];
     }
     
+    
     if (self.timerAlsoForCycleChange) {
         [self updateCycleValueWithChangeDuration:actualChangeDuration];
     }
+    
+    
     
     
     if (self.progressValue >= self.toValue) {
@@ -350,6 +387,19 @@
             [self.delegate cjGraduatedCycleView:self didFinishUpdateWithInfo:0];
         }
     }
+    
+}
+
+
+- (BOOL)checkCurrentLoopWillFinishAfterThisTime {
+//    BOOL isCurrentLoopFinish = self.progressValue >= self.toValue;
+    
+    NSInteger everyLoopMaxValue = self.maxValue/self.dividedCount;  /**< 每个循环的最大值 */
+    NSInteger maxValueAfterThisLoop = (self.hasExecCount+1) * everyLoopMaxValue;
+    BOOL isCurrentLoopFinish = self.progressValue >= maxValueAfterThisLoop;
+    //NSLog(@"isCurrentLoopFinish = %@, progressValue = %.0f, maxValueAfterThisLoop = %ld", isCurrentLoopFinish ? @"YES":@"NO", self.progressValue, maxValueAfterThisLoop);
+    
+    return isCurrentLoopFinish;
 }
 
 //更新cycle
@@ -367,13 +417,20 @@
     }
     
 
-    CGFloat actualToPercent = actualToValue/self.maxValue;
+    CGFloat actualToPercent = [self getPercentForProgressValue:actualToValue];;
     [self changeStrokeEnd:actualToPercent withAnimationDuration:actualChangeDuration];
 }
 
 - (void)changeStrokeEnd:(CGFloat)strokeEnd withAnimationDuration:(CFTimeInterval)animationDuration {
+    NSLog(@"progressValue = %.2f, percent = %.2lf, animationDuration = %.2f", self.progressValue, strokeEnd, animationDuration);
+    
     [CATransaction begin];
     [CATransaction setDisableActions:NO];
+//    if (animationDuration == 0) {
+//        [CATransaction setDisableActions:YES];
+//    } else {
+//        [CATransaction setDisableActions:NO];
+//    }
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [CATransaction setAnimationDuration:animationDuration];
     self.graduatedCycleUpperShapeLayer.strokeEnd = strokeEnd;;

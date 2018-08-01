@@ -34,7 +34,6 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 
 @property (nonatomic, assign, readonly) CGFloat fromValue;
 @property (nonatomic, assign, readonly) CGFloat toValue;
-@property (nonatomic, assign) CGFloat maxValue;
 
 @property (nonatomic) UIColor *graduatedCycleBottomStrokeColor;
 @property (nonatomic) UIColor *fullCycleBottomStrokeColor;
@@ -42,7 +41,12 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 @property (nonatomic, assign) CGFloat graduatedCycleLineWidth; // 线宽
 @property (nonatomic, assign) CGFloat fullCycleLineWidth; // 圆进度的线宽
 
+@property (nonatomic, assign, readonly) CGFloat maxValue;       /**< 总共多少值 */
+@property (nonatomic, assign, readonly) NSInteger dividedCount; /**< 划分成几次来完成(默认1) */
+
 - (void)invalidateTimer;
+
+- (void)setMaxValue:(CGFloat)maxValue dividedCount:(NSInteger)dividedCount;
 
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration;
 

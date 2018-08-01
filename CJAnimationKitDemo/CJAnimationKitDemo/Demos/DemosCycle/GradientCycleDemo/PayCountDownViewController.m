@@ -2,7 +2,7 @@
 //  PayCountDownViewController.m
 //  CoreAnimationDemo
 //
-//  Created by lichq on 2018/7/30.
+//  Created by ciyouzen on 2018/7/30.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
@@ -25,9 +25,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    CGFloat randValue1 = 12;
+    CGFloat randValue1 = 90;
     
-    self.countdownGraduatedCycleView.maxValue = randValue1;
+    [self.countdownGraduatedCycleView setMaxValue:randValue1 dividedCount:6];
     CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1); //还剩几秒
     NSInteger goneSecondCount = randValue1-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
@@ -105,9 +105,9 @@
 }
 
 - (void)payEvent {
-    CGFloat randValue1 = 12;
+    CGFloat randValue1 = 90;
     
-    self.countdownGraduatedCycleView.maxValue = randValue1;
+    [self.countdownGraduatedCycleView setMaxValue:randValue1 dividedCount:6];
     CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1);
     NSInteger goneSecondCount = randValue1-leaveSecondCount;
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
