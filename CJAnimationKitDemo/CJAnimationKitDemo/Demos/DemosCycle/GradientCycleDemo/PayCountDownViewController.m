@@ -1,12 +1,14 @@
 //
 //  PayCountDownViewController.m
-//  CoreAnimationDemo
+//  CJAnimationKitDemo
 //
 //  Created by ciyouzen on 2018/7/30.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
 #import "PayCountDownViewController.h"
+
+#import <CJBaseUIKit/UINavigationBar+CJChangeBG.h>
 #import "CJGraduatedCycleView+Countdown.h"
 
 @interface PayCountDownViewController () <CJGraduatedCycleViewDelegate>
@@ -17,9 +19,16 @@
 
 @implementation PayCountDownViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     
+    [self navigationBarReset];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    [self navigationBarCustomSet];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -41,18 +50,21 @@
     
     //CGFloat screenHeight = CGRectGetHeight([[UIScreen mainScreen] bounds]);
     //CGFloat statusHeight = screenHeight == 812.0 ? 44 : 20;
-    CGFloat statusHeight = CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
+    //CGFloat statusHeight = CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [closeButton setImage:[UIImage imageNamed:@"arrow_L_blue"] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:closeButton];
-    [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view).mas_offset(23);
-        make.top.mas_equalTo(self.view).mas_offset(statusHeight);
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
-    }];
+//    [self.view addSubview:closeButton];
+//    [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(self.view).mas_offset(23);
+//        make.top.mas_equalTo(self.view).mas_offset(statusHeight);
+//        make.width.mas_equalTo(44);
+//        make.height.mas_equalTo(44);
+//    }];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
+    self.navigationItem.leftBarButtonItems = @[leftBarButtonItem];
+    
     
     CJGraduatedCycleView *countdownGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
     countdownGraduatedCycleView.backgroundColor = [UIColor whiteColor];
@@ -61,7 +73,8 @@
     [countdownGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
-        make.top.mas_equalTo(self.view).mas_offset(240);
+        //make.top.mas_equalTo(self.view).mas_offset(240);
+        make.centerY.mas_equalTo(self.view).mas_offset(-80);
         make.height.mas_equalTo(240);
     }];
     countdownGraduatedCycleView.graduatedCycleLineWidth = 16;
@@ -101,16 +114,17 @@
 }
 
 - (void)goBack {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.presentingViewController) { //判断self有没有present方式显示的父视图presentingViewController
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)payEvent {
-    CGFloat randValue1 = 90;
-    
-    [self.countdownGraduatedCycleView setMaxValue:randValue1 dividedCount:6];
-    CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1);
-    NSInteger goneSecondCount = randValue1-leaveSecondCount;
-    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
+    if (self.startPayBlock) {
+        self.startPayBlock(self);
+    }
 }
 
 #pragma mark - CJGraduatedCycleViewDelegate
@@ -152,6 +166,27 @@
 
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView didFinishUpdateWithInfo:(CGFloat)progressValue {
     [self.countdownGraduatedCycleView countDownWithGoneSecondCount:0];
+}
+
+#pragma mark - 导航栏的设置
+///导航栏的重置
+- (void)navigationBarReset {
+    //[self.navigationController.navigationBar cj_reset];
+    [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setShadowImage:nil];
+    
+//    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+        //改变导航栏的字体
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+//                                                                          NSFontAttributeName:[UIFont systemFontOfSize:21]}];
+}
+
+///导航栏在当前页面的自定义
+- (void)navigationBarCustomSet {
+     [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];//改变导航栏背景色
+    [self.navigationController.navigationBar cj_removeUnderline];//删除导航栏的下划线
+    //即[self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)didReceiveMemoryWarning {

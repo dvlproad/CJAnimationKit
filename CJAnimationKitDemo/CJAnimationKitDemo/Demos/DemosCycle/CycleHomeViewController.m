@@ -113,8 +113,14 @@
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
     if ([clsString isEqualToString:NSStringFromClass([PayCountDownViewController class])]) {
-        viewController = [[PayCountDownViewController alloc] init];
-        [self presentViewController:viewController animated:YES completion:nil];
+        PayCountDownViewController *payCountDownViewController = [[PayCountDownViewController alloc] init];
+        
+        __weak typeof(self)weakSelf = self;
+        payCountDownViewController.startPayBlock = ^(PayCountDownViewController *mPayCountDownViewController) {
+            [weakSelf goPrepayViewControllerFromViewController:mPayCountDownViewController];
+        };
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:payCountDownViewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
         return;
     }
     else if ([noxibViewControllers containsObject:clsString])
@@ -130,7 +136,12 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-
+- (void)goPrepayViewControllerFromViewController:(UIViewController *)viewController {
+    UIViewController *prepayViewController = [[UIViewController alloc] init];
+    prepayViewController.view.backgroundColor = [UIColor whiteColor];
+    prepayViewController.title = NSLocalizedString(@"支付", nil);
+    [viewController.navigationController pushViewController:prepayViewController animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

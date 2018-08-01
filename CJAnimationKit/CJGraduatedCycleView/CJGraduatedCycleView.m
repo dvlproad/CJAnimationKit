@@ -422,7 +422,7 @@
 }
 
 - (void)changeStrokeEnd:(CGFloat)strokeEnd withAnimationDuration:(CFTimeInterval)animationDuration {
-    NSLog(@"progressValue = %.2f, percent = %.2lf, animationDuration = %.2f", self.progressValue, strokeEnd, animationDuration);
+    //NSLog(@"progressValue = %.2f, percent = %.2lf, animationDuration = %.2f", self.progressValue, strokeEnd, animationDuration);
     
     [CATransaction begin];
     [CATransaction setDisableActions:NO];
