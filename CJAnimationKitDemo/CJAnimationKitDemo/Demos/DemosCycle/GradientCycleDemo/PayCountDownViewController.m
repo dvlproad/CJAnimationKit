@@ -38,8 +38,7 @@
     
     [self.countdownGraduatedCycleView setMaxValue:randValue1 dividedCount:6];
     CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1); //还剩几秒
-    NSInteger goneSecondCount = randValue1-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
-    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
+    [self.countdownGraduatedCycleView beginCountDownWithGoneSecondCount:leaveSecondCount];
 }
 
 - (void)viewDidLoad {
@@ -165,7 +164,7 @@
 }
 
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView didFinishUpdateWithInfo:(CGFloat)progressValue {
-    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:0];
+    [self.countdownGraduatedCycleView beginCountDownWithFull];
 }
 
 #pragma mark - 导航栏的设置

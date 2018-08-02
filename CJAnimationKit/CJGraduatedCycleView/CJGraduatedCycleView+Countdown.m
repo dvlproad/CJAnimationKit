@@ -10,12 +10,26 @@
 
 @implementation CJGraduatedCycleView (Countdown)
 
-- (void)countDownWithGoneSecondCount:(NSInteger)goneSecondCount {
+- (void)beginCountDownWithFull {
+    [self beginCountDownWithGoneSecondCount:0];
+}
+
+- (void)beginCountDownWithLeaveSecondCount:(NSInteger)leaveSecondCount {
+    NSInteger goneSecondCount = self.maxValue-leaveSecondCount;
+    
+    [self beginCountDownWithGoneSecondCount:goneSecondCount];
+}
+
+- (void)beginCountDownWithGoneSecondCount:(NSInteger)goneSecondCount {
     CGFloat fromValue = goneSecondCount;
     CGFloat toValue = self.maxValue;
     CGFloat animationSpeed = 1.0f;
     CFTimeInterval animationDuration = animationSpeed * (toValue - fromValue);
     [self changeFromValue:fromValue toValue:toValue withAnimationDuration:animationDuration];
 }
+
+
+
+
 
 @end

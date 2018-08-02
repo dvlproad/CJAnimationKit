@@ -125,8 +125,7 @@ static int testMaxValue2 = 100;
     
     CGFloat leaveSecondCount = randValue1; //还剩几秒
     self.label2.text = [NSString stringWithFormat:@"随机到的剩余秒数:%.2f", leaveSecondCount];
-    NSInteger goneSecondCount = testMaxValue2-leaveSecondCount; //已经走了几秒，完整倒计时时候，此值一般是0秒
-    [self.countdownGraduatedCycleView countDownWithGoneSecondCount:goneSecondCount];
+    [self.countdownGraduatedCycleView beginCountDownWithLeaveSecondCount:leaveSecondCount];
 }
 
 
