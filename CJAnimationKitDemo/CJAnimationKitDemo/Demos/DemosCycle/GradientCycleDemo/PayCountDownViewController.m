@@ -37,7 +37,7 @@
     NSInteger maxValue = self.totalSecond;
     NSInteger leaveSecondCount = self.leaveSecond;
     
-    [self.countdownGraduatedCycleView setMaxValue:maxValue dividedCount:1];
+    [self.countdownGraduatedCycleView setMaxValue:maxValue dividedCount:2 clockwise:YES];
     [self.countdownGraduatedCycleView beginCountDownWithLeaveSecondCount:leaveSecondCount];
 }
 
@@ -135,53 +135,44 @@
 }
 
 #pragma mark - CJGraduatedCycleViewDelegate
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)graduatedCycleBottomShapeLayer
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualBottomLayerForCycleType:(CJCycleType)cycleType
 {
-//    graduatedCycleBottomShapeLayer.strokeColor = [UIColor redColor].CGColor;
-//    return graduatedCycleBottomShapeLayer;
+    CAShapeLayer *possibleBottomLayer = nil;
+    if (cycleType == CJCycleTypeGraduated) {
+        possibleBottomLayer = graduatedCycleView.graduatedCyclePossibleBottomLayer;
+    } else {
+        possibleBottomLayer = graduatedCycleView.fullCyclePossibleBottomLayer;
+    }
+    
+//    possibleBottomLayer.strokeColor = [UIColor redColor].CGColor;
+//    return possibleBottomLayer;
     
     UIColor *topColor = [UIColor colorWithRed:23/255.0 green:100/255.0 blue:255/255.0 alpha:1];//#186aff
     UIColor *bottomColor = [UIColor colorWithRed:5/255.0 green:180/255.0 blue:254/255.0 alpha:1];//#05cffe
     NSArray *colors = @[(id)topColor.CGColor, (id)bottomColor.CGColor];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.colors = colors;
-    gradientLayer.shadowPath = graduatedCycleBottomShapeLayer.path;
-    gradientLayer.frame = graduatedCycleView.bounds;
+    gradientLayer.shadowPath = possibleBottomLayer.path;
+    gradientLayer.frame = possibleBottomLayer.bounds;
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1);
     
-    [gradientLayer setMask:graduatedCycleBottomShapeLayer]; // 设置进度layer 颜色 渐变
+    [gradientLayer setMask:possibleBottomLayer]; // 设置进度layer 颜色 渐变
     
     return gradientLayer;
 }
 
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)graduatedCyclePossibleUpperLayer
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualUpperLayerForCycleType:(CJCycleType)cycleType
 {
-    graduatedCyclePossibleUpperLayer.strokeColor = [UIColor lightGrayColor].CGColor;
-    return graduatedCyclePossibleUpperLayer;
-}
-
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)fullCyclePossibleBottomLayer
-{
-    UIColor *topColor = [UIColor colorWithRed:23/255.0 green:100/255.0 blue:255/255.0 alpha:1];//#186aff
-    UIColor *bottomColor = [UIColor colorWithRed:5/255.0 green:180/255.0 blue:254/255.0 alpha:1];//#05cffe
-    NSArray *colors = @[(id)topColor.CGColor, (id)bottomColor.CGColor];
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.colors = colors;
-    gradientLayer.shadowPath = fullCyclePossibleBottomLayer.path;
-    gradientLayer.frame = graduatedCycleView.bounds;
-    gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(0, 1);
+    CAShapeLayer *possibleUpperLayer = nil;
+    if (cycleType == CJCycleTypeGraduated) {
+        possibleUpperLayer = graduatedCycleView.graduatedCyclePossibleUpperShapeLayer;
+    } else {
+        possibleUpperLayer = graduatedCycleView.fullCyclePossibleUpperLayer;
+    }
     
-    [gradientLayer setMask:fullCyclePossibleBottomLayer]; // 设置进度layer 颜色 渐变
-    
-    return gradientLayer;
-}
-
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)fullCyclePossibleUpperLayer
-{
-    fullCyclePossibleUpperLayer.strokeColor = [UIColor lightGrayColor].CGColor;
-    return fullCyclePossibleUpperLayer;
+    possibleUpperLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+    return possibleUpperLayer;
 }
 
 

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJAnimationKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJAnimationKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的动画"
   s.homepage     = "https://gitee.com/dvlproad/CJAnimationKit"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://gitee.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit_0.0.1" }
+  s.source       = { :git => "https://gitee.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit_0.0.2" }
   s.source_files  = "CJAnimationKit/*.{h,m}"
 
   s.frameworks = "UIKit", "QuartzCore"

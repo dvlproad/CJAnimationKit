@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+///圆环类型
 typedef NS_ENUM(NSUInteger, CJCycleType) {
-    CJCycleTypeGraduated,
-    CJCycleTypeFull,
+    CJCycleTypeGraduated,       /**< 刻度环 */
+    CJCycleTypeFull,            /**< 圆满的进度环 */
 };
 
 @class CJGraduatedCycleView;
@@ -18,42 +19,24 @@ typedef NS_ENUM(NSUInteger, CJCycleType) {
 
 @required
 /**
- *  通过刻度环目前可能的BottomLayer 获取刻度环最后实际的BottomLayer(可在此方法中对layer做修改)
+ *  获取指定环最后实际的BottomLayer(可在此方法中对layer做修改)
  *
- *  @param graduatedCyclePossibleBottomLayer 刻度环目前可能的BottomLayer
+ *  @param cycleType    圆环类型
  *
- *  @return 刻度环最后实际的BottomLayer
+ *  @return 指定环最后实际的BottomLayer
  */
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)graduatedCyclePossibleBottomLayer;
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView
+    actualBottomLayerForCycleType:(CJCycleType)cycleType;
 
 /**
- *  通过刻度环目前可能的UpperLayer 获取刻度环最后实际的UpperLayer(可在此方法中对layer做修改)
+ *  获取指定环最后实际的UpperLayer(可在此方法中对layer做修改)
  *
- *  @param graduatedCyclePossibleUpperLayer 刻度环目前可能的底部layer
+ *  @param cycleType    圆环类型
  *
- *  @return 刻度环最后实际的UpperLayer
+ *  @return 指定环最后实际的UpperLayer
  */
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)graduatedCyclePossibleUpperLayer;
-
-
-/**
- *  通过圆满的进度环目前可能的BottomLayer 获取圆满的进度环最后实际的BottomLayer(可在此方法中对layer做修改)
- *
- *  @param fullCyclePossibleBottomLayer 圆满的进度环目前可能的BottomLayer
- *
- *  @return 圆满的进度环最后实际的BottomLayer
- */
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)fullCyclePossibleBottomLayer;
-
-/**
- *  通过圆满的进度环目前可能的UpperLayer 获取圆满的进度环最后实际的UpperLayer(可在此方法中对layer做修改)
- *
- *  @param fullCyclePossibleUpperLayer 圆满的进度环目前可能的底部layer
- *
- *  @return 圆满的进度环最后实际的UpperLayer
- */
-- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)fullCyclePossibleUpperLayer;
-
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView
+     actualUpperLayerForCycleType:(CJCycleType)cycleType;
 
 
 @optional
@@ -71,10 +54,10 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 
 @property (nonatomic, weak) id<CJGraduatedCycleViewDelegate> delegate;
 
-@property (nonatomic, strong) CAShapeLayer *graduatedCycleBottomShapeLayer; // 外圆的底层layer
-@property (nonatomic, strong) CAShapeLayer *graduatedCycleUpperShapeLayer;  // 外圆的更新的layer(对外提供)
-@property (nonatomic, strong) CAShapeLayer *fullCycleBottomLayer; // 底部进度条的layer
-@property (nonatomic, strong) CAShapeLayer *fullCycleUpperLayer;  // 小的进度progressLayer(对外提供)
+@property (nonatomic, strong) CAShapeLayer *graduatedCyclePossibleBottomLayer; // 外圆的底层layer
+@property (nonatomic, strong) CAShapeLayer *graduatedCyclePossibleUpperShapeLayer;  // 外圆的更新的layer(对外提供)
+@property (nonatomic, strong) CAShapeLayer *fullCyclePossibleBottomLayer; // 底部进度条的layer
+@property (nonatomic, strong) CAShapeLayer *fullCyclePossibleUpperLayer;  // 小的进度progressLayer(对外提供)
 @property (nonatomic, strong) UILabel *progressLabel;  //  进度文字
 
 @property (nonatomic, assign, readonly) CGFloat fromValue;
@@ -90,10 +73,18 @@ updateLabelWithProgressValue:(CGFloat)progressValue;
 
 @property (nonatomic, assign, readonly) CGFloat maxValue;       /**< 总共多少值 */
 @property (nonatomic, assign, readonly) NSInteger dividedCount; /**< 划分成几次来完成(默认1) */
+@property (nonatomic, assign, readonly) NSInteger clockwise;    /**< 是否顺时针(默认YES) */
 
 - (void)invalidateTimer;
 
-- (void)setMaxValue:(CGFloat)maxValue dividedCount:(NSInteger)dividedCount;
+/**
+ *  设置值
+ *
+ *  @param maxValue     总共多少值
+ *  @param dividedCount 划分成几次来完成(默认1)
+ *  @param clockwise    是否顺时针(默认YES)，顺时针时候upperLayer越来越多，逆时针时候upperLayer越来越少
+ */
+- (void)setMaxValue:(CGFloat)maxValue dividedCount:(NSInteger)dividedCount clockwise:(BOOL)clockwise;
 
 - (void)changeFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withAnimationDuration:(CFTimeInterval)animationDuration;
 

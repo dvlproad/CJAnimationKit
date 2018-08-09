@@ -77,12 +77,14 @@
     self.fullCycleBottomStrokeColor = [UIColor colorWithRed:180/255.0 green:195/255.0 blue:208/255.0 alpha:1]; //#cfd4dd
  
     _dividedCount = 1;
+    _clockwise = YES;
 }
 
 
-- (void)setMaxValue:(CGFloat)maxValue dividedCount:(NSInteger)dividedCount {
+- (void)setMaxValue:(CGFloat)maxValue dividedCount:(NSInteger)dividedCount clockwise:(BOOL)clockwise {
     _maxValue = maxValue;
     _dividedCount = dividedCount;
+    _clockwise = clockwise;
 }
 
 - (void)layoutSubviews {
@@ -111,18 +113,18 @@
                                                      clockwise:YES];
     // ①、绘制bottomLayer及其上的渐变layer
     CGColorRef graduatedCycleBottomStrokeColor = self.graduatedCycleBottomStrokeColor.CGColor;
-    _graduatedCycleBottomShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:graduatedCyclePath strokeColor:graduatedCycleBottomStrokeColor];
+    _graduatedCyclePossibleBottomLayer = [self createGraduatedCycleShapeLayerWithBezierPath:graduatedCyclePath strokeColor:graduatedCycleBottomStrokeColor];
     
-    CALayer *actualGraduatedCycleBottomLayer = [self.delegate cjGraduatedCycleView:self actualGraduatedCycleBottomLayerWithPossibleBottomLayer:_graduatedCycleBottomShapeLayer];
+    CALayer *actualGraduatedCycleBottomLayer = [self.delegate cjGraduatedCycleView:self actualBottomLayerForCycleType:CJCycleTypeGraduated];
     [self.layer addSublayer:actualGraduatedCycleBottomLayer]; // 将进度渐变layer 添加到 底部layer 上
     
     
     // ②、绘制upLayer及其上的渐变layer
     CGColorRef graduatedCycleUpStrokeColor = self.graduatedCycleUpStrokeColor.CGColor;
-    _graduatedCycleUpperShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:graduatedCyclePath strokeColor:graduatedCycleUpStrokeColor];
-    _graduatedCycleUpperShapeLayer.strokeStart = 0;
-    _graduatedCycleUpperShapeLayer.strokeEnd =   0;
-    CALayer *actualGraduatedCycleUpperLayer = [self.delegate cjGraduatedCycleView:self actualGraduatedCycleUpperLayerWithPossibleUpperLayer:_graduatedCycleUpperShapeLayer];
+    _graduatedCyclePossibleUpperShapeLayer = [self createGraduatedCycleShapeLayerWithBezierPath:graduatedCyclePath strokeColor:graduatedCycleUpStrokeColor];
+    _graduatedCyclePossibleUpperShapeLayer.strokeStart = 0;
+    _graduatedCyclePossibleUpperShapeLayer.strokeEnd =   0;
+    CALayer *actualGraduatedCycleUpperLayer = [self.delegate cjGraduatedCycleView:self actualUpperLayerForCycleType:CJCycleTypeGraduated];
     [self.layer addSublayer:actualGraduatedCycleUpperLayer];
     
     
@@ -135,20 +137,20 @@
                                                               clockwise:YES];
     // ①、绘制bottomLayer及其上的渐变layer
     CGColorRef fullBottomStrokeColor = self.fullCycleBottomStrokeColor.CGColor;
-    _fullCycleBottomLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullBottomStrokeColor];
-    _fullCycleBottomLayer.strokeStart = 0;
-    _fullCycleBottomLayer.strokeEnd =   1;
+    _fullCyclePossibleBottomLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullBottomStrokeColor];
+    _fullCyclePossibleBottomLayer.strokeStart = 0;
+    _fullCyclePossibleBottomLayer.strokeEnd =   1;
     
-    CALayer *actualFullCycleBottomLayer = [self.delegate cjGraduatedCycleView:self actualFullCycleBottomLayerWithPossibleBottomLayer:_fullCycleBottomLayer];
+    CALayer *actualFullCycleBottomLayer = [self.delegate cjGraduatedCycleView:self actualBottomLayerForCycleType:CJCycleTypeFull];
     [self.layer addSublayer:actualFullCycleBottomLayer];  // 添加到底层的layer 上
     
     
     // ②、绘制upLayer及其上的渐变layer
     CGColorRef fullUpStrokeColor = self.fullCycleUpStrokeColor.CGColor;
-    _fullCycleUpperLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullUpStrokeColor];
-    _fullCycleUpperLayer.strokeStart = 0;
-    _fullCycleUpperLayer.strokeEnd =   0;
-    CALayer *actualFullCycleUpperLayer = [self.delegate cjGraduatedCycleView:self actualFullCycleUpperLayerWithPossibleUpperLayer:_fullCycleUpperLayer];
+    _fullCyclePossibleUpperLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullUpStrokeColor];
+    _fullCyclePossibleUpperLayer.strokeStart = 0;
+    _fullCyclePossibleUpperLayer.strokeEnd =   0;
+    CALayer *actualFullCycleUpperLayer = [self.delegate cjGraduatedCycleView:self actualUpperLayerForCycleType:CJCycleTypeFull];
     [self.layer addSublayer:actualFullCycleUpperLayer ];  // 把bottomlayer 加到自己的layer 上
     
 
@@ -270,16 +272,22 @@
     
     NSInteger everyLoopMaxValue = self.maxValue/self.dividedCount;  /**< 每个循环的最大值 */
     NSInteger currentLoopFromValue = progressValue%(everyLoopMaxValue);//确保范围为0-everyLoopMaxValue
+    
+    CGFloat percent = 0;
     if (currentLoopFromValue == 0) {
         if (progressValue == 0) {
-            return 0;
+            percent = 0;
         } else {
-            return 1;
+            percent = 1;
         }
     } else {
-        CGFloat percent = (CGFloat)(currentLoopFromValue)/everyLoopMaxValue; //确保结果是浮点数
-        
+        percent = (CGFloat)(currentLoopFromValue)/everyLoopMaxValue; //确保结果是浮点数
+    }
+    
+    if (self.clockwise) {
         return percent;
+    } else {
+        return 1-percent;
     }
 }
 
@@ -405,8 +413,8 @@
 //    }
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [CATransaction setAnimationDuration:animationDuration];
-    self.graduatedCycleUpperShapeLayer.strokeEnd = strokeEnd;;
-    self.fullCycleUpperLayer.strokeEnd = strokeEnd;
+    self.graduatedCyclePossibleUpperShapeLayer.strokeEnd = strokeEnd;;
+    self.fullCyclePossibleUpperLayer.strokeEnd = strokeEnd;
     [CATransaction commit];
 }
 
