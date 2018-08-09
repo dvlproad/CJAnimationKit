@@ -114,10 +114,24 @@
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
     if ([clsString isEqualToString:NSStringFromClass([PayCountDownViewController class])]) {
         PayCountDownViewController *payCountDownViewController = [[PayCountDownViewController alloc] init];
+        payCountDownViewController.payFen = 1000;
+        payCountDownViewController.totalSecond = 60;
+        payCountDownViewController.leaveSecond = 20;
         
         __weak typeof(self)weakSelf = self;
+        payCountDownViewController.goBackBlock = ^(PayCountDownViewController *mPayCountDownViewController) {
+//            UIViewController *cancelOrderViewController = [[UIViewController alloc] init];
+//            cancelOrderViewController.view.backgroundColor = [UIColor redColor];
+//            [mPayCountDownViewController.navigationController pushViewController:cancelOrderViewController animated:YES];
+            [mPayCountDownViewController dismissViewControllerAnimated:YES completion:nil];
+        };
         payCountDownViewController.startPayBlock = ^(PayCountDownViewController *mPayCountDownViewController) {
             [weakSelf goPrepayViewControllerFromViewController:mPayCountDownViewController];
+        };
+        payCountDownViewController.countDownFinishBlock = ^(PayCountDownViewController *mPayCountDownViewController) {
+            UIViewController *cancelOrderViewController = [[UIViewController alloc] init];
+            cancelOrderViewController.view.backgroundColor = [UIColor redColor];
+            [mPayCountDownViewController.navigationController pushViewController:cancelOrderViewController animated:YES];
         };
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:payCountDownViewController];
         [self presentViewController:navigationController animated:YES completion:nil];

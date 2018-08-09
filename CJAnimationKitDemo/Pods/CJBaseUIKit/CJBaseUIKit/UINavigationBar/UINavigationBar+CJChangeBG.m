@@ -32,7 +32,11 @@ static NSString * const overlayKey = @"overlayKey";
 {
     if (!self.overlay) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20)];
+        
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
+        CGRect overlayFrame = CGRectMake(0, -statusBarHeight, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + statusBarHeight);
+        self.overlay = [[UIView alloc] initWithFrame:overlayFrame];
         self.overlay.userInteractionEnabled = NO;
         self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self insertSubview:self.overlay atIndex:0];

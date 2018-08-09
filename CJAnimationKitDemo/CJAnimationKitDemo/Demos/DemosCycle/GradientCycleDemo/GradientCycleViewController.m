@@ -130,6 +130,60 @@ static int testMaxValue2 = 100;
 
 
 #pragma mark - CJGraduatedCycleViewDelegate
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)graduatedCycleBottomShapeLayer
+{
+    graduatedCycleBottomShapeLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+    return graduatedCycleBottomShapeLayer;
+}
+
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)graduatedCyclePossibleUpperLayer
+{
+    NSArray *colors = @[(id)[UIColor greenColor].CGColor,
+                        (id)[UIColor whiteColor].CGColor,
+                        (id)[UIColor purpleColor].CGColor,
+                        (id)[UIColor redColor].CGColor];
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = colors;
+    gradientLayer.shadowPath = graduatedCyclePossibleUpperLayer.path;
+    gradientLayer.frame = graduatedCyclePossibleUpperLayer.bounds;
+    gradientLayer.startPoint = CGPointMake(0, 1);
+    gradientLayer.endPoint = CGPointMake(1, 0);
+    //gradientLayer.locations = @[@0.2, @0.5, @0.7, @1];
+    
+    [gradientLayer setMask:graduatedCyclePossibleUpperLayer]; // 设置进度layer 颜色 渐变
+    
+    return gradientLayer;
+}
+
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)fullCyclePossibleBottomLayer
+{
+    fullCyclePossibleBottomLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+    return fullCyclePossibleBottomLayer;
+}
+
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)fullCyclePossibleUpperLayer
+{
+//    fullCyclePossibleUpperLayer.strokeColor = [UIColor greenColor].CGColor;
+//    return fullCyclePossibleUpperLayer;
+    
+    NSArray *colors = @[(id)[UIColor greenColor].CGColor,
+                        (id)[UIColor whiteColor].CGColor,
+                        (id)[UIColor purpleColor].CGColor,
+                        (id)[UIColor redColor].CGColor];
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = colors;
+    gradientLayer.shadowPath = fullCyclePossibleUpperLayer.path;
+    gradientLayer.frame = fullCyclePossibleUpperLayer.bounds;
+    gradientLayer.startPoint = CGPointMake(0, 1);
+    gradientLayer.endPoint = CGPointMake(1, 0);
+    //gradientLayer.locations = @[@0.2, @0.5, @0.7, @1];
+    
+    [gradientLayer setMask:fullCyclePossibleUpperLayer]; // 设置进度layer 颜色 渐变
+    
+    return gradientLayer;
+}
+
+
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView updateLabelWithProgressValue:(CGFloat)progressValue {
     if (gradientCycleView == self.percentGraduatedCycleView) {
         NSString *string = [NSString stringWithFormat:@"%.0f%%", progressValue];

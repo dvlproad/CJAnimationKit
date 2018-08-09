@@ -34,11 +34,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    CGFloat randValue1 = 90;
+    NSInteger maxValue = self.totalSecond;
+    NSInteger leaveSecondCount = self.leaveSecond;
     
-    [self.countdownGraduatedCycleView setMaxValue:randValue1 dividedCount:6];
-    CGFloat leaveSecondCount = arc4random_uniform(randValue1 + 1); //还剩几秒
-    [self.countdownGraduatedCycleView beginCountDownWithGoneSecondCount:leaveSecondCount];
+    [self.countdownGraduatedCycleView setMaxValue:maxValue dividedCount:1];
+    [self.countdownGraduatedCycleView beginCountDownWithLeaveSecondCount:leaveSecondCount];
 }
 
 - (void)viewDidLoad {
@@ -64,10 +64,11 @@
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
     self.navigationItem.leftBarButtonItems = @[leftBarButtonItem];
     
-    
     CJGraduatedCycleView *countdownGraduatedCycleView = [[CJGraduatedCycleView alloc] init];
     countdownGraduatedCycleView.backgroundColor = [UIColor whiteColor];
     countdownGraduatedCycleView.delegate = self;
+//    countdownGraduatedCycleView.graduatedCycleBottomStrokeColor = [UIColor colorWithRed:180/255.0 green:195/255.0 blue:208/255.0 alpha:1]; //#cfd4dd
+//    countdownGraduatedCycleView.fullCycleBottomStrokeColor = [UIColor lightGrayColor];
     [self.view addSubview:countdownGraduatedCycleView];
     [countdownGraduatedCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
@@ -96,9 +97,12 @@
         make.height.mas_equalTo(20);
     }];
     
+    CGFloat priceYuan = self.payFen/100.0;
+    NSString *payYuanString = [NSString stringWithFormat:@"%.0f", priceYuan];
+    NSString *payButtonString = [NSString stringWithFormat:@"%@%@%@", NSLocalizedString(@"立即支付", nil), payYuanString, NSLocalizedString(@"元", nil)];
     UIButton *payButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [payButton setBackgroundColor:[UIColor colorWithRed:48/255.0 green:128/255.0 blue:255/255.0 alpha:1]];//#3388ff
-    [payButton setTitle:NSLocalizedString(@"立即支付", nil) forState:UIControlStateNormal];
+    [payButton setTitle:payButtonString forState:UIControlStateNormal];
     [payButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [payButton.titleLabel setFont:[UIFont systemFontOfSize:17]];
     [payButton.layer setCornerRadius:25];
@@ -113,11 +117,15 @@
 }
 
 - (void)goBack {
-    if (self.presentingViewController) { //判断self有没有present方式显示的父视图presentingViewController
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
+    if (self.goBackBlock) {
+        self.goBackBlock(self);
     }
+    
+//    if (self.presentingViewController) { //判断self有没有present方式显示的父视图presentingViewController
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    } else {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
 }
 
 - (void)payEvent {
@@ -127,23 +135,59 @@
 }
 
 #pragma mark - CJGraduatedCycleViewDelegate
-- (CAGradientLayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView
-               gradientLayerForBezierPath:(UIBezierPath *)path
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)graduatedCycleBottomShapeLayer
+{
+//    graduatedCycleBottomShapeLayer.strokeColor = [UIColor redColor].CGColor;
+//    return graduatedCycleBottomShapeLayer;
+    
+    UIColor *topColor = [UIColor colorWithRed:23/255.0 green:100/255.0 blue:255/255.0 alpha:1];//#186aff
+    UIColor *bottomColor = [UIColor colorWithRed:5/255.0 green:180/255.0 blue:254/255.0 alpha:1];//#05cffe
+    NSArray *colors = @[(id)topColor.CGColor, (id)bottomColor.CGColor];
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = colors;
+    gradientLayer.shadowPath = graduatedCycleBottomShapeLayer.path;
+    gradientLayer.frame = graduatedCycleView.bounds;
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1);
+    
+    [gradientLayer setMask:graduatedCycleBottomShapeLayer]; // 设置进度layer 颜色 渐变
+    
+    return gradientLayer;
+}
+
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualGraduatedCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)graduatedCyclePossibleUpperLayer
+{
+    graduatedCyclePossibleUpperLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+    return graduatedCyclePossibleUpperLayer;
+}
+
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleBottomLayerWithPossibleBottomLayer:(CAShapeLayer *)fullCyclePossibleBottomLayer
 {
     UIColor *topColor = [UIColor colorWithRed:23/255.0 green:100/255.0 blue:255/255.0 alpha:1];//#186aff
     UIColor *bottomColor = [UIColor colorWithRed:5/255.0 green:180/255.0 blue:254/255.0 alpha:1];//#05cffe
     NSArray *colors = @[(id)topColor.CGColor, (id)bottomColor.CGColor];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.colors = colors;
-    gradientLayer.shadowPath = path.CGPath;
+    gradientLayer.shadowPath = fullCyclePossibleBottomLayer.path;
     gradientLayer.frame = graduatedCycleView.bounds;
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1);
     
+    [gradientLayer setMask:fullCyclePossibleBottomLayer]; // 设置进度layer 颜色 渐变
+    
     return gradientLayer;
 }
 
+- (CALayer *)cjGraduatedCycleView:(CJGraduatedCycleView *)graduatedCycleView actualFullCycleUpperLayerWithPossibleUpperLayer:(CAShapeLayer *)fullCyclePossibleUpperLayer
+{
+    fullCyclePossibleUpperLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+    return fullCyclePossibleUpperLayer;
+}
+
+
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView updateLabelWithProgressValue:(CGFloat)progressValue {
+    self.leaveSecond = gradientCycleView.maxValue - progressValue;
+    
     NSInteger leaveSecondCount = (NSInteger)(gradientCycleView.maxValue - progressValue);
     NSInteger secondValue = leaveSecondCount%60;
     NSInteger minuteValue = leaveSecondCount/60;
@@ -164,7 +208,9 @@
 }
 
 - (void)cjGraduatedCycleView:(CJGraduatedCycleView *)gradientCycleView didFinishUpdateWithInfo:(CGFloat)progressValue {
-    [self.countdownGraduatedCycleView beginCountDownWithFull];
+    if (self.countDownFinishBlock) {
+        self.countDownFinishBlock(self);
+    }
 }
 
 #pragma mark - 导航栏的设置
