@@ -13,7 +13,7 @@
 #import "CJGraduatedCycleView.h"
 #import "CJGraduatedCycleView+Countdown.h"
 
-#import "CJGraduatedButtonView.h"
+#import "CQGradientBorderButton.h"
 
 static int testMaxValue1 = 100;
 static int testMaxValue2 = 100;
@@ -59,9 +59,8 @@ static int testMaxValue2 = 100;
     layer.frame = CGRectMake(100, 650, 110, 110);
     [self.view.layer addSublayer:layer];
     
-    CJGraduatedButtonView *buttonView = [[CJGraduatedButtonView alloc] init];
+    CQGradientBorderButton *buttonView = [[CQGradientBorderButton alloc] initWithCornerRadius:15 shouldEffect:YES];
     [buttonView setTitle:@"测试视图边框颜色渐变" forState:UIControlStateNormal];
-    buttonView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:buttonView];
     [buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);

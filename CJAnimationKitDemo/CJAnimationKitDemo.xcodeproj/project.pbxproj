@@ -81,7 +81,7 @@
 		781FFBF6210E3BFB0051A1BE /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE8210E3BFA0051A1BE /* icons8-settings.png */; };
 		781FFBF7210E3BFB0051A1BE /* icons8-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */; };
 		781FFBF8210E3BFB0051A1BE /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBEA210E3BFB0051A1BE /* icons8-home.png */; };
-		786966F225926F3B00E7B4A8 /* CJGraduatedButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786966F125926F3A00E7B4A8 /* CJGraduatedButtonView.m */; };
+		786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */; };
 		807561DD210FFC5700BC95E9 /* PayCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */; };
 		B4AF2C0A5A57B65F43A52DA1 /* libPods-CJAnimationKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */; };
 		F26800A769E90758B937B6EB /* libPods-CJAnimationKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */; };
@@ -218,8 +218,8 @@
 		781FFBE8210E3BFA0051A1BE /* icons8-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings.png"; sourceTree = "<group>"; };
 		781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-calendar.png"; sourceTree = "<group>"; };
 		781FFBEA210E3BFB0051A1BE /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
-		786966F025926F3A00E7B4A8 /* CJGraduatedButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJGraduatedButtonView.h; sourceTree = "<group>"; };
-		786966F125926F3A00E7B4A8 /* CJGraduatedButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJGraduatedButtonView.m; sourceTree = "<group>"; };
+		786966F025926F3A00E7B4A8 /* CQGradientBorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQGradientBorderButton.h; sourceTree = "<group>"; };
+		786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQGradientBorderButton.m; sourceTree = "<group>"; };
 		807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayCountDownViewController.m; sourceTree = "<group>"; };
 		807561DC210FFC5700BC95E9 /* PayCountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayCountDownViewController.h; sourceTree = "<group>"; };
 		8A6AA26B60DC67DFE0F5FFFA /* Pods-CJAnimationKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -354,8 +354,8 @@
 			children = (
 				7802B321210CB1B9006C113A /* CJGraduatedCycleView.h */,
 				7802B323210CB1B9006C113A /* CJGraduatedCycleView.m */,
-				786966F025926F3A00E7B4A8 /* CJGraduatedButtonView.h */,
-				786966F125926F3A00E7B4A8 /* CJGraduatedButtonView.m */,
+				786966F025926F3A00E7B4A8 /* CQGradientBorderButton.h */,
+				786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */,
 				7802B322210CB1B9006C113A /* CJGraduatedCycleView+Countdown.h */,
 				7802B324210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m */,
 			);
@@ -896,7 +896,7 @@
 				781FFBC8210E346B0051A1BE /* TNActivityIndicator.m in Sources */,
 				7802B332210CB1B9006C113A /* CJAnimationFactory.m in Sources */,
 				781FFBD5210E36FA0051A1BE /* PopupHomeViewController.m in Sources */,
-				786966F225926F3B00E7B4A8 /* CJGraduatedButtonView.m in Sources */,
+				786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */,
 				781FFBCF210E346B0051A1BE /* PeiwoAnimationViewController.m in Sources */,
 				781FFBC1210E346B0051A1BE /* GradientCycleViewController.m in Sources */,
 				781FFBCC210E346B0051A1BE /* ShimmerAnimationViewController.m in Sources */,

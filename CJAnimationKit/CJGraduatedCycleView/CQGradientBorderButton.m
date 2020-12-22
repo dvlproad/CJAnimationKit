@@ -1,64 +1,77 @@
 //
-//  CJGraduatedButtonView.m
+//  CQGradientBorderButton.m
 //  CJAnimationKitDemo
 //
 //  Created by ciyouzen on 2018/7/27.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "CJGraduatedButtonView.h"
+#import "CQGradientBorderButton.h"
 
-@interface CJGraduatedButtonView ()
+@interface CQGradientBorderButton () {
+    
+}
+@property (nonatomic, assign, readonly) CGFloat cornerRadius;
+@property (nonatomic, assign, readonly) BOOL shouldEffect;
+@property (nonatomic, strong) CAShapeLayer *fullCyclePossibleUpperLayer;  // 小的进度progressLayer(对外提供)
 
+@property (nonatomic, strong) UIVisualEffectView *effectView;
 
 @end
 
 
+@implementation CQGradientBorderButton
 
-
-
-@implementation CJGraduatedButtonView
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
+- (instancetype)initWithCornerRadius:(CGFloat)cornerRadius shouldEffect:(BOOL)shouldEffect {
+    self = [super initWithFrame:CGRectZero];
     if (self) {
-        [self commonInit];
+        _cornerRadius = cornerRadius;
+        _shouldEffect = shouldEffect;
+        
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = cornerRadius;
+        [self setupViews];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (void)commonInit {
-    self.graduatedCycleLineWidth = 25;
-    self.fullCycleLineWidth = 10;
-    
-    self.graduatedCycleUpStrokeColor = [UIColor greenColor];
-    self.graduatedCycleBottomStrokeColor = [UIColor lightGrayColor];
-    
+- (void)setupViews {
+    self.fullCycleLineWidth = 2;
     self.fullCycleUpStrokeColor = [UIColor greenColor];
-    self.fullCycleBottomStrokeColor = [UIColor colorWithRed:180/255.0 green:195/255.0 blue:208/255.0 alpha:1]; //#cfd4dd
+    
+    if (self.shouldEffect) {
+        self.backgroundColor = [UIColor clearColor]; // 请确保背景色没设置
+        [self addSubview:self.effectView];
+    }
 }
 
+- (UIVisualEffectView *)effectView {
+    if (_effectView == nil) {
+        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        _effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    }
+    return _effectView;
+}
 
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    UIBezierPath *fullCyclePath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:5];
+    UIBezierPath *fullCyclePath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.cornerRadius];
     CGColorRef fullUpStrokeColor = self.fullCycleUpStrokeColor.CGColor;
     _fullCyclePossibleUpperLayer = [self createFullCycleShapeLayerWithBezierPath:fullCyclePath strokeColor:fullUpStrokeColor];
     _fullCyclePossibleUpperLayer.strokeStart = 0;
     _fullCyclePossibleUpperLayer.strokeEnd =   1;
     CALayer *actualFullCycleUpperLayer = [self gradientLayerToLayer:_fullCyclePossibleUpperLayer];
-    [self.layer addSublayer:actualFullCycleUpperLayer ];  // 把bottomlayer 加到自己的layer 上
-
+    [self.layer addSublayer:actualFullCycleUpperLayer];  // 把bottomlayer 加到自己的layer 上
+//
+//    UIBezierPath *fullCyclePath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.cornerRadius];
+//    _fullCyclePossibleUpperLayer.path = fullCyclePath.CGPath;
+//    _fullCyclePossibleUpperLayer.frame = self.bounds;
+    
+    if (self.effectView) {
+        self.effectView.frame = self.bounds;
+    }
 }
 
 
