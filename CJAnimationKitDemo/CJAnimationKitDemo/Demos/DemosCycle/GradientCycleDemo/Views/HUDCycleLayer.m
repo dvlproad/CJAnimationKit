@@ -1,26 +1,26 @@
 //
-//  GradientCycleLayer.m
+//  HUDCycleLayer.m
 //  CJAnimationKitDemo
 //
 //  Created by ciyouzen on 2018/7/27.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "GradientCycleLayer.h"
+#import "HUDCycleLayer.h"
 
-@implementation GradientCycleLayer
+@implementation HUDCycleLayer
 
-- (instancetype)initWithSize:(CGFloat)size cycleLineWidth:(CGFloat)cycleLineWidth {
+- (instancetype)initWithSize:(CGFloat)size {
     self = [super init];
     if (self) {
-        [self setupLayerWithSizeWidth:size cycleLineWidth:(CGFloat)cycleLineWidth];
+        [self setupLayerWithSizeWidth:size];
     }
     return self;
 }
 
-- (void)setupLayerWithSizeWidth:(CGFloat)sizeWidth cycleLineWidth:(CGFloat)cycleLineWidth {
+- (void)setupLayerWithSizeWidth:(CGFloat)sizeWidth {
     CGFloat centerXY = sizeWidth/2;
-    CGFloat radius = centerXY - cycleLineWidth;
+    CGFloat radius = centerXY - 5;
     //创建一个圆环(其他参考文章：[UIBezierPath介绍](https://www.jianshu.com/p/6c9aa9c5dd68))
 //    center：弧线圆心坐标
 //    radius：弧线半径
@@ -32,28 +32,13 @@
     //圆环遮罩
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
-    shapeLayer.strokeColor = [UIColor cyanColor].CGColor;
-    shapeLayer.lineWidth = cycleLineWidth;
+    shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
+    shapeLayer.lineWidth = 5;
     shapeLayer.strokeStart = 0;
     shapeLayer.strokeEnd = 1.0;
     shapeLayer.lineCap = @"round";
     shapeLayer.lineDashPhase = 0.8;
     shapeLayer.path = bezierPath.CGPath;
-    
-    //颜色渐变
-    NSMutableArray *colors = [NSMutableArray arrayWithObjects:(id)[UIColor redColor].CGColor,(id)[UIColor whiteColor].CGColor, nil];
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.shadowPath = bezierPath.CGPath;
-    gradientLayer.frame = CGRectMake(radius,
-                                     radius,
-                                     radius+2*cycleLineWidth,
-                                     radius+2*cycleLineWidth
-                                     );
-    gradientLayer.startPoint = CGPointMake(0, 1);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    [gradientLayer setColors:[NSArray arrayWithArray:colors]];
-    [self addSublayer:gradientLayer]; //设置颜色渐变
-    [self setMask:shapeLayer]; //设置圆环遮罩
     
 //    CAAnimationGroup *groupAnnimation = [self getGroupAnnimation];
 //    [self addAnimation:groupAnnimation forKey:@"groupAnnimation"];

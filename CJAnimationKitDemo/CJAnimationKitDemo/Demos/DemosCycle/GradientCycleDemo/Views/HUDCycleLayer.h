@@ -1,5 +1,5 @@
 //
-//  GradientCycleLayer.h
+//  HUDCycleLayer.h
 //  CJAnimationKitDemo
 //
 //  Created by ciyouzen on 2018/7/27.
@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface GradientCycleLayer : CALayer
+@interface HUDCycleLayer : CALayer
 
-- (instancetype)initWithSize:(CGFloat)size cycleLineWidth:(CGFloat)cycleLineWidth NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithSize:(CGFloat)size NS_DESIGNATED_INITIALIZER;
 + (instancetype)layer NS_UNAVAILABLE;
 
 @end

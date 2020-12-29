@@ -9,6 +9,8 @@
 #import "GradientCycleViewController.h"
 #import "GradientCycleView.h"
 #import "GradientCycleLayer.h"
+#import "HUDLayerView.h"
+#import "HUDImageView.h"
 
 #import "CJGraduatedCycleView.h"
 #import "CJGraduatedCycleView+Countdown.h"
@@ -46,18 +48,6 @@ static int testMaxValue2 = 100;
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor = [UIColor lightGrayColor];
-    
-//    GradientCycleView *gradientCycleView = [[GradientCycleView alloc] initWithFrame:CGRectZero];
-//    [self.view addSubview:gradientCycleView];
-//    [gradientCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.mas_equalTo(self.view);
-//        make.size.mas_equalTo(110);
-//    }];
-    
-    GradientCycleLayer *layer = [GradientCycleLayer layer];
-    layer.backgroundColor = [UIColor blueColor].CGColor; //圆环底色
-    layer.frame = CGRectMake(100, 650, 110, 110);
-    [self.view.layer addSublayer:layer];
     
     CQGradientBorderButton *buttonView = [[CQGradientBorderButton alloc] initWithCornerRadius:15 shouldEffect:YES];
     [buttonView setTitle:@"测试视图边框颜色渐变" forState:UIControlStateNormal];
@@ -127,6 +117,53 @@ static int testMaxValue2 = 100;
     }];
     self.label2 = label2;
     //*/
+    
+    
+//    GradientCycleView *gradientCycleView = [[GradientCycleView alloc] initWithFrame:CGRectZero];
+//    [self.view addSubview:gradientCycleView];
+//    [gradientCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.mas_equalTo(self.view);
+//        make.size.mas_equalTo(110);
+//    }];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor redColor];
+    [button setTitle:@"按钮111" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop).offset(-20);
+        make.left.mas_equalTo(self.view).offset(10);
+        make.width.height.mas_equalTo(110);
+    }];
+        
+    GradientCycleLayer *layer = [[GradientCycleLayer alloc] initWithSize:110 cycleLineWidth:10];
+    layer.backgroundColor = [UIColor blueColor].CGColor; //圆环底色
+    layer.frame = CGRectMake(0, 0, 110, 110);
+    [button.layer addSublayer:layer];
+    
+    HUDLayerView *hudView = [[HUDLayerView alloc] init];
+    hudView.backgroundColor = [UIColor magentaColor]; //圆环底色
+    [self.view addSubview:hudView];
+    [hudView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop).offset(-20);
+        make.centerX.mas_equalTo(self.view).offset(0);
+        make.width.height.mas_equalTo(110);
+    }];
+    
+    HUDImageView *hudImageView = [[HUDImageView alloc] init];
+    hudImageView.backgroundColor = [UIColor clearColor]; //圆环底色
+    [self.view addSubview:hudImageView];
+    [hudImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop).offset(-20);
+        make.right.mas_equalTo(self.view).offset(-10);
+        make.width.height.mas_equalTo(110);
+    }];
+}
+
+- (void)buttonAction:(UIButton *)button {
+    NSString *title = button.titleLabel.text;
+    NSLog(@"点击按钮%@", title);
 }
 
 
