@@ -8,6 +8,8 @@
 
 #import "QuartzCoreHomeViewController.h"
 
+#import "TSShakeViewController.h"
+
 #import "RadarAnimationViewController.h"
 #import "PeiwoAnimationViewController.h"
 #import "ShimmerAnimationViewController.h"
@@ -28,6 +30,20 @@
     self.title = NSLocalizedString(@"Home首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    // 视图抖动动画
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"视图抖动动画";
+        {
+            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
+            module.title = @"视图抖动动画";
+            module.classEntry = [TSShakeViewController class];
+            [sectionDataModel.values addObject:module];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     //CALayer
     {

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AppDelegate+WindowRootViewController.h"
+#import "UIWindow+RootSetting.h"
 
 @interface AppDelegate ()
 
@@ -24,10 +24,12 @@
     
     
     // 设置主窗口,并设置根控制器
-    self.window = [[UIWindow alloc]init];
-    self.window.frame = [UIScreen mainScreen].bounds;
-    self.window.rootViewController = [self getMainRootViewController];
-    [self.window makeKeyAndVisible];
+//    if (@available(iOS 13.0, *)) {
+//
+//    } else {
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [self.window settingRoot];
+//    }
     
     return YES;
 }

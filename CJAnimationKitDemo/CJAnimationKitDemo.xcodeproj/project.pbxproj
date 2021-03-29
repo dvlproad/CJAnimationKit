@@ -36,7 +36,6 @@
 		7802B3A6210CB1D0006C113A /* WelcomeViewToPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B378210CB1CF006C113A /* WelcomeViewToPopup.m */; };
 		7802B3A7210CB1D0006C113A /* WelcomeVCToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7802B37A210CB1CF006C113A /* WelcomeVCToPopup.xib */; };
 		7802B3A8210CB1D0006C113A /* WelcomeViewToPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7802B37C210CB1CF006C113A /* WelcomeViewToPopup.xib */; };
-		781FFB79210E30B90051A1BE /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781FFB77210E30B90051A1BE /* AppDelegate+WindowRootViewController.m */; };
 		781FFBB7210E346B0051A1BE /* BasicAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 781FFB7D210E346B0051A1BE /* BasicAnimationVC.m */; };
 		781FFBB8210E346B0051A1BE /* BasicAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781FFB7E210E346B0051A1BE /* BasicAnimationVC.xib */; };
 		781FFBB9210E346B0051A1BE /* KeyframeAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781FFB82210E346B0051A1BE /* KeyframeAnimationVC.xib */; };
@@ -82,6 +81,9 @@
 		78FCB3A8259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3A7259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m */; };
 		78FCB3AE259B99B2006CD44F /* HUDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3AC259B99B1006CD44F /* HUDImageView.m */; };
 		807561DD210FFC5700BC95E9 /* PayCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */; };
+		97C286ED26119D9E0070610D /* TSShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286EC26119D9E0070610D /* TSShakeViewController.m */; };
+		97C286F32611A5270070610D /* TSAnmaionMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286F12611A5270070610D /* TSAnmaionMainViewController.m */; };
+		97C286F92611A6320070610D /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286F82611A6320070610D /* UIWindow+RootSetting.m */; };
 		B4AF2C0A5A57B65F43A52DA1 /* libPods-CJAnimationKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */; };
 		F26800A769E90758B937B6EB /* libPods-CJAnimationKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */; };
 /* End PBXBuildFile section */
@@ -153,8 +155,6 @@
 		7802B37A210CB1CF006C113A /* WelcomeVCToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVCToPopup.xib; sourceTree = "<group>"; };
 		7802B37B210CB1CF006C113A /* WelcomeViewToPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewToPopup.h; sourceTree = "<group>"; };
 		7802B37C210CB1CF006C113A /* WelcomeViewToPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewToPopup.xib; sourceTree = "<group>"; };
-		781FFB77210E30B90051A1BE /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
-		781FFB78210E30B90051A1BE /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		781FFB7D210E346B0051A1BE /* BasicAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimationVC.m; sourceTree = "<group>"; };
 		781FFB7E210E346B0051A1BE /* BasicAnimationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicAnimationVC.xib; sourceTree = "<group>"; };
 		781FFB7F210E346B0051A1BE /* BasicAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimationVC.h; sourceTree = "<group>"; };
@@ -226,6 +226,12 @@
 		807561DC210FFC5700BC95E9 /* PayCountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayCountDownViewController.h; sourceTree = "<group>"; };
 		8A6AA26B60DC67DFE0F5FFFA /* Pods-CJAnimationKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		95297E5170A8FC376543CCF4 /* Pods-CJAnimationKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		97C286EB26119D9E0070610D /* TSShakeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSShakeViewController.h; sourceTree = "<group>"; };
+		97C286EC26119D9E0070610D /* TSShakeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSShakeViewController.m; sourceTree = "<group>"; };
+		97C286F12611A5270070610D /* TSAnmaionMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAnmaionMainViewController.m; sourceTree = "<group>"; };
+		97C286F22611A5270070610D /* TSAnmaionMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAnmaionMainViewController.h; sourceTree = "<group>"; };
+		97C286F72611A6320070610D /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
+		97C286F82611A6320070610D /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
 		AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJAnimationKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJAnimationKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -295,8 +301,10 @@
 			children = (
 				7802B2EA210CAF9B006C113A /* AppDelegate.h */,
 				7802B2EB210CAF9B006C113A /* AppDelegate.m */,
-				781FFB78210E30B90051A1BE /* AppDelegate+WindowRootViewController.h */,
-				781FFB77210E30B90051A1BE /* AppDelegate+WindowRootViewController.m */,
+				97C286F72611A6320070610D /* UIWindow+RootSetting.h */,
+				97C286F82611A6320070610D /* UIWindow+RootSetting.m */,
+				97C286F22611A5270070610D /* TSAnmaionMainViewController.h */,
+				97C286F12611A5270070610D /* TSAnmaionMainViewController.m */,
 				7802B2ED210CAF9B006C113A /* ViewController.h */,
 				7802B2EE210CAF9B006C113A /* ViewController.m */,
 				7802B31C210CB1B9006C113A /* CJAnimationKit */,
@@ -547,6 +555,8 @@
 			children = (
 				781FFBD9210E37160051A1BE /* QuartzCoreHomeViewController.h */,
 				781FFBDA210E37160051A1BE /* QuartzCoreHomeViewController.m */,
+				97C286EB26119D9E0070610D /* TSShakeViewController.h */,
+				97C286EC26119D9E0070610D /* TSShakeViewController.m */,
 				781FFBA7210E346B0051A1BE /* ShimmerAnimationDemo */,
 				781FFBAB210E346B0051A1BE /* SampleLayerMask */,
 				781FFBAF210E346B0051A1BE /* PeiwoAnimationDemo */,
@@ -849,11 +859,13 @@
 				7802B2FA210CAF9D006C113A /* main.m in Sources */,
 				78FCB3A8259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m in Sources */,
 				781FFBC8210E346B0051A1BE /* TNActivityIndicator.m in Sources */,
+				97C286F92611A6320070610D /* UIWindow+RootSetting.m in Sources */,
 				7802B332210CB1B9006C113A /* CJAnimationFactory.m in Sources */,
 				781FFBD5210E36FA0051A1BE /* PopupHomeViewController.m in Sources */,
 				786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */,
 				781FFBCF210E346B0051A1BE /* PeiwoAnimationViewController.m in Sources */,
 				781FFBC1210E346B0051A1BE /* GradientCycleViewController.m in Sources */,
+				97C286ED26119D9E0070610D /* TSShakeViewController.m in Sources */,
 				781FFBCC210E346B0051A1BE /* ShimmerAnimationViewController.m in Sources */,
 				781FFBD1210E346B0051A1BE /* RadarAnimationViewController.m in Sources */,
 				78FCB39C259B8A41006CD44F /* HUDCycleLayer.m in Sources */,
@@ -862,6 +874,7 @@
 				781FFBCD210E346B0051A1BE /* SampleLayerMaskViewController.m in Sources */,
 				7802B330210CB1B9006C113A /* CJGraduatedCycleView.m in Sources */,
 				781FFBD8210E37060051A1BE /* RefreshHomeViewController.m in Sources */,
+				97C286F32611A5270070610D /* TSAnmaionMainViewController.m in Sources */,
 				781FFBC4210E346B0051A1BE /* GradientCycleView.m in Sources */,
 				7802B335210CB1B9006C113A /* CJRepeatKeyWindow.m in Sources */,
 				781FFBB7210E346B0051A1BE /* BasicAnimationVC.m in Sources */,
@@ -873,7 +886,6 @@
 				7802B331210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m in Sources */,
 				781FFBCA210E346B0051A1BE /* UIViewDemo.m in Sources */,
 				7802B3A6210CB1D0006C113A /* WelcomeViewToPopup.m in Sources */,
-				781FFB79210E30B90051A1BE /* AppDelegate+WindowRootViewController.m in Sources */,
 				781FFBC3210E346B0051A1BE /* GradientCycleLayer.m in Sources */,
 				7802B3A5210CB1D0006C113A /* WelcomeVCToPopup.m in Sources */,
 				807561DD210FFC5700BC95E9 /* PayCountDownViewController.m in Sources */,
@@ -1049,7 +1061,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
+				DEVELOPMENT_TEAM = S2T82J7TBH;
 				INFOPLIST_FILE = CJAnimationKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1068,7 +1080,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
+				DEVELOPMENT_TEAM = S2T82J7TBH;
 				INFOPLIST_FILE = CJAnimationKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
