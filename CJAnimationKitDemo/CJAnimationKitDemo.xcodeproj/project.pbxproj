@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -76,11 +76,6 @@
 		781FFBF1210E3BFB0051A1BE /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE3210E3BFA0051A1BE /* arrow_back_red@2x.png */; };
 		781FFBF2210E3BFB0051A1BE /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE4210E3BFA0051A1BE /* arrow_R_white@2x.png */; };
 		781FFBF3210E3BFB0051A1BE /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE5210E3BFA0051A1BE /* arrow_down.png */; };
-		781FFBF4210E3BFB0051A1BE /* icons8-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE6210E3BFA0051A1BE /* icons8-menu.png */; };
-		781FFBF5210E3BFB0051A1BE /* icons8-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE7210E3BFA0051A1BE /* icons8-folder.png */; };
-		781FFBF6210E3BFB0051A1BE /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE8210E3BFA0051A1BE /* icons8-settings.png */; };
-		781FFBF7210E3BFB0051A1BE /* icons8-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */; };
-		781FFBF8210E3BFB0051A1BE /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBEA210E3BFB0051A1BE /* icons8-home.png */; };
 		786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */; };
 		78FCB39C259B8A41006CD44F /* HUDCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB39B259B8A41006CD44F /* HUDCycleLayer.m */; };
 		78FCB3A2259B8B37006CD44F /* HUDLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3A1259B8B37006CD44F /* HUDLayerView.m */; };
@@ -217,11 +212,6 @@
 		781FFBE3210E3BFA0051A1BE /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
 		781FFBE4210E3BFA0051A1BE /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
 		781FFBE5210E3BFA0051A1BE /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
-		781FFBE6210E3BFA0051A1BE /* icons8-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu.png"; sourceTree = "<group>"; };
-		781FFBE7210E3BFA0051A1BE /* icons8-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-folder.png"; sourceTree = "<group>"; };
-		781FFBE8210E3BFA0051A1BE /* icons8-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings.png"; sourceTree = "<group>"; };
-		781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-calendar.png"; sourceTree = "<group>"; };
-		781FFBEA210E3BFB0051A1BE /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
 		786966F025926F3A00E7B4A8 /* CQGradientBorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQGradientBorderButton.h; sourceTree = "<group>"; };
 		786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQGradientBorderButton.m; sourceTree = "<group>"; };
 		78FCB39A259B8A41006CD44F /* HUDCycleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDCycleLayer.h; sourceTree = "<group>"; };
@@ -378,11 +368,6 @@
 			isa = PBXGroup;
 			children = (
 				781FFBDC210E3BFA0051A1BE /* arrow */,
-				781FFBE9210E3BFB0051A1BE /* icons8-calendar.png */,
-				781FFBE7210E3BFA0051A1BE /* icons8-folder.png */,
-				781FFBEA210E3BFB0051A1BE /* icons8-home.png */,
-				781FFBE6210E3BFA0051A1BE /* icons8-menu.png */,
-				781FFBE8210E3BFA0051A1BE /* icons8-settings.png */,
 				7802B36F210CB1CF006C113A /* av_call.png */,
 				7802B36E210CB1CF006C113A /* av_call@3x.png */,
 				7802B373210CB1CF006C113A /* bg@2x.jpg */,
@@ -646,7 +631,6 @@
 				7802B2E3210CAF9B006C113A /* Sources */,
 				7802B2E4210CAF9B006C113A /* Frameworks */,
 				7802B2E5210CAF9B006C113A /* Resources */,
-				9E0D96BD8BE4F894C9BF104D /* [CP] Embed Pods Frameworks */,
 				C2EEA66CEB61DB13A9BC2699 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -666,8 +650,6 @@
 				7802B2FB210CAF9E006C113A /* Sources */,
 				7802B2FC210CAF9E006C113A /* Frameworks */,
 				7802B2FD210CAF9E006C113A /* Resources */,
-				BC76A53328E3C56C41544436 /* [CP] Embed Pods Frameworks */,
-				483902FDE12A4E34B4081730 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -748,9 +730,7 @@
 				781FFBEB210E3BFB0051A1BE /* arrow_up.png in Resources */,
 				781FFBC2210E346B0051A1BE /* GradientCycleViewController.xib in Resources */,
 				7802B3A2210CB1D0006C113A /* bg@2x.jpg in Resources */,
-				781FFBF4210E3BFB0051A1BE /* icons8-menu.png in Resources */,
 				781FFBCB210E346B0051A1BE /* ShimmerAnimationViewController.xib in Resources */,
-				781FFBF7210E3BFB0051A1BE /* icons8-calendar.png in Resources */,
 				781FFBD2210E346B0051A1BE /* RadarAnimationViewController.xib in Resources */,
 				781FFBBD210E346B0051A1BE /* BezierPathAnimationVC.xib in Resources */,
 				781FFBF0210E3BFB0051A1BE /* arrow_L_white@2x.png in Resources */,
@@ -763,16 +743,13 @@
 				781FFBBE210E346B0051A1BE /* BaseAnimationViewController.xib in Resources */,
 				781FFBC5210E346B0051A1BE /* RefreshAnimateViewController.xib in Resources */,
 				781FFBB9210E346B0051A1BE /* KeyframeAnimationVC.xib in Resources */,
-				781FFBF6210E3BFB0051A1BE /* icons8-settings.png in Resources */,
 				7802B39F210CB1D0006C113A /* bgSky@2x.jpg in Resources */,
 				7802B3A4210CB1D0006C113A /* sanguosha.png in Resources */,
 				7802B39C210CB1D0006C113A /* bgCar@2x.jpg in Resources */,
-				781FFBF5210E3BFB0051A1BE /* icons8-folder.png in Resources */,
 				7802B3A1210CB1D0006C113A /* bgStarSky@2x.jpg in Resources */,
 				781FFBCE210E346B0051A1BE /* SampleLayerMaskViewController.xib in Resources */,
 				781FFBEF210E3BFB0051A1BE /* arrow_R_blue.png in Resources */,
 				781FFBF3210E3BFB0051A1BE /* arrow_down.png in Resources */,
-				781FFBF8210E3BFB0051A1BE /* icons8-home.png in Resources */,
 				7802B39E210CB1D0006C113A /* av_call.png in Resources */,
 				781FFBC6210E346B0051A1BE /* RefreshResouce.xcassets in Resources */,
 				781FFBB8210E346B0051A1BE /* BasicAnimationVC.xib in Resources */,
@@ -822,21 +799,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		483902FDE12A4E34B4081730 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5135E12519991EDD859FF9BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -855,49 +817,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E0D96BD8BE4F894C9BF104D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC76A53328E3C56C41544436 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C2EEA66CEB61DB13A9BC2699 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

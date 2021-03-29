@@ -1,23 +1,72 @@
 PODS:
-  - CJBaseUIKit/UINavigationBar (0.2.2)
-  - CJBaseUIKit/UIView/CJDragAction (0.2.2)
-  - CJBaseUtil/CJDataUtil (0.3.0)
+  - CJBaseUIKit/UINavigationBar (0.7.5)
+  - CJBaseUIKit/UIView/CJDragAction (0.7.5)
+  - CQDemoKit/BaseUIKit (0.6.0):
+    - Masonry
+  - CQDemoKit/BaseUtil (0.6.0)
+  - CQDemoKit/BaseVC (0.6.0):
+    - CQDemoKit/BaseVC/Base (= 0.6.0)
+    - CQDemoKit/BaseVC/Collection (= 0.6.0)
+    - CQDemoKit/BaseVC/ScrollView (= 0.6.0)
+    - CQDemoKit/BaseVC/TabBar (= 0.6.0)
+    - CQDemoKit/BaseVC/TableView (= 0.6.0)
+    - CQDemoKit/BaseVC/TextView (= 0.6.0)
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/Base (0.6.0):
+    - CQDemoKit/Helper
+    - Masonry
+  - CQDemoKit/BaseVC/Collection (0.6.0):
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/ScrollView (0.6.0):
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TabBar (0.6.0):
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TableView (0.6.0):
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TextView (0.6.0):
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/Demo_Resource (0.6.0):
+    - CQDemoKit/Helper
+  - CQDemoKit/Demo_RipeView (0.6.0):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseUtil
+  - CQDemoKit/Helper (0.6.0)
+  - HWWeakTimer (1.0)
   - Masonry (1.1.0)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
-  - CJBaseUIKit/UINavigationBar (~> 0.2.2)
-  - CJBaseUIKit/UIView/CJDragAction (~> 0.2.2)
-  - CJBaseUtil/CJDataUtil (~> 0.3.0)
+  - CJBaseUIKit/UINavigationBar (~> 0.7.5)
+  - CJBaseUIKit/UIView/CJDragAction (~> 0.7.5)
+  - CQDemoKit/BaseUIKit (~> 0.6.0)
+  - CQDemoKit/BaseUtil (~> 0.6.0)
+  - CQDemoKit/BaseVC (~> 0.6.0)
+  - CQDemoKit/Demo_Resource (~> 0.6.0)
+  - CQDemoKit/Demo_RipeView (~> 0.6.0)
+  - HWWeakTimer (~> 1.0)
   - Masonry
   - Shimmer
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CJBaseUIKit
+    - CQDemoKit
+    - HWWeakTimer
+    - Masonry
+    - Shimmer
+
 SPEC CHECKSUMS:
-  CJBaseUIKit: 5e21637c39e347c60373597b57bb49c22610607b
-  CJBaseUtil: 58e64a849ccda0b36799bb16e81ae7983e5ea109
+  CJBaseUIKit: d02f247601071d2cffff74782de1010b04b98486
+  CQDemoKit: 4ca734f84ecd494053166c5c0c3ddd4885151668
+  HWWeakTimer: 79488095ef2dd8937f94b676d12bd5fa954486e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 3693e6e8c84f182ae6cb500f6ea906b2626afbbf
+PODFILE CHECKSUM: aa8a511069ed0ef966d21450c7e60f8427321bd8
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.10.1

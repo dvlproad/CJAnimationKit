@@ -6,15 +6,10 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Masonry/Masonry.h>
-#import <CJBaseUtil/CJSectionDataModel.h>
-#import <CJBaseUtil/CJModuleModel.h>
+#import <CQDemoKit/CJUIKitBaseHomeViewController.h>
 
-@interface RefreshHomeViewController : UIViewController {
+@interface RefreshHomeViewController : CJUIKitBaseHomeViewController {
     
 }
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end

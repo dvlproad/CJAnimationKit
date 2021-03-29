@@ -221,7 +221,7 @@
 ///导航栏在当前页面的自定义
 - (void)navigationBarCustomSet {
      [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];//改变导航栏背景色
-    [self.navigationController.navigationBar cj_removeUnderline];//删除导航栏的下划线
+    [self.navigationController.navigationBar cj_hideUnderline:YES];//删除导航栏的下划线
     //即[self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 

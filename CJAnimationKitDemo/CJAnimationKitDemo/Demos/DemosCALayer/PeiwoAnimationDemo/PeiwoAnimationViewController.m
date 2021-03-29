@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 #import <CJBaseUIKit/UIView+CJDragAction.h>
-#import <CJBaseUIKit/UIView+CJKeepBounds.h>
+//#import <CJBaseUIKit/UIView+CJKeepBounds.h>
 
 #import "UIView+CJZoomFrame.h"
 

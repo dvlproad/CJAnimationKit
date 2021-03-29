@@ -27,46 +27,33 @@
     
     self.title = NSLocalizedString(@"Home首页", nil);
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.view).mas_offset(88);
-        make.bottom.mas_equalTo(self.view);
-    }];
-    self.tableView = tableView;
-    
-    
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
     //CALayer
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"CALayer";
         {
             //RadarAnimation
-            CJModuleModel *radarAnimationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *radarAnimationModule = [[CQDMModuleModel alloc] init];
             radarAnimationModule.title = @"RadarAnimation(雷达动画)";
             radarAnimationModule.classEntry = [RadarAnimationViewController class];
             [sectionDataModel.values addObject:radarAnimationModule];
             
             //PeiwoAnimation
-            CJModuleModel *peiwoAnimationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *peiwoAnimationModule = [[CQDMModuleModel alloc] init];
             peiwoAnimationModule.title = @"PeiwoAnimation(陪我动画)";
             peiwoAnimationModule.classEntry = [PeiwoAnimationViewController class];
             [sectionDataModel.values addObject:peiwoAnimationModule];
             
             //ShimmerAnimationViewController
-            CJModuleModel *shimmerAnimationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *shimmerAnimationModule = [[CQDMModuleModel alloc] init];
             shimmerAnimationModule.title = @"shimmerAnimation(闪光动画)";
             shimmerAnimationModule.classEntry = [ShimmerAnimationViewController class];
             [sectionDataModel.values addObject:shimmerAnimationModule];
             
             //ShimmerAnimationViewController
-            CJModuleModel *sampleLayerMaskModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *sampleLayerMaskModule = [[CQDMModuleModel alloc] init];
             sampleLayerMaskModule.title = @"切出你心中的那个图案";
             sampleLayerMaskModule.classEntry = [SampleLayerMaskViewController class];
             [sectionDataModel.values addObject:sampleLayerMaskModule];
@@ -78,64 +65,6 @@
     
     self.sectionDataModels = sectionDataModels;
 }
-
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = moduleModel.title;
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
-    
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    Class classEntry = moduleModel.classEntry;
-    NSString *nibName = NSStringFromClass(moduleModel.classEntry);
-    
-    
-    UIViewController *viewController = nil;
-    
-    NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])])
-    {
-        viewController = [[classEntry alloc] init];
-        viewController.view.backgroundColor = [UIColor whiteColor];
-        
-    } else {
-        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
-    }
-    viewController.title = NSLocalizedString(moduleModel.title, nil);
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
 
 
 - (void)didReceiveMemoryWarning {
