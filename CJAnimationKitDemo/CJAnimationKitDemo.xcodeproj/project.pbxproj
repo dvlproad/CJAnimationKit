@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65D661CD7C11E2ECBD4D1152 /* Pods_CJAnimationKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD795AC2213C993BF48D2992 /* Pods_CJAnimationKitDemoTests.framework */; };
 		7802B2EC210CAF9B006C113A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B2EB210CAF9B006C113A /* AppDelegate.m */; };
 		7802B2EF210CAF9B006C113A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B2EE210CAF9B006C113A /* ViewController.m */; };
 		7802B2F2210CAF9B006C113A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7802B2F0210CAF9B006C113A /* Main.storyboard */; };
@@ -81,11 +82,13 @@
 		78FCB3A8259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3A7259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m */; };
 		78FCB3AE259B99B2006CD44F /* HUDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3AC259B99B1006CD44F /* HUDImageView.m */; };
 		807561DD210FFC5700BC95E9 /* PayCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807561DB210FFC5400BC95E9 /* PayCountDownViewController.m */; };
+		974EFC372D324B2B00A48D07 /* TSEasyAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974EFC362D324B2B00A48D07 /* TSEasyAnimationViewController.swift */; };
+		974EFC392D324B9300A48D07 /* TSEasyAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974EFC382D324B9300A48D07 /* TSEasyAnimationView.swift */; };
+		974EFC3C2D324CB000A48D07 /* TSEasyAnimationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974EFC3B2D324CB000A48D07 /* TSEasyAnimationHomeViewController.swift */; };
 		97C286ED26119D9E0070610D /* TSShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286EC26119D9E0070610D /* TSShakeViewController.m */; };
 		97C286F32611A5270070610D /* TSAnmaionMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286F12611A5270070610D /* TSAnmaionMainViewController.m */; };
 		97C286F92611A6320070610D /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286F82611A6320070610D /* UIWindow+RootSetting.m */; };
-		B4AF2C0A5A57B65F43A52DA1 /* libPods-CJAnimationKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */; };
-		F26800A769E90758B937B6EB /* libPods-CJAnimationKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */; };
+		A77792D263A4DEB84D96AAD0 /* Pods_CJAnimationKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400A96033855F57EDBCA80B0 /* Pods_CJAnimationKitDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		193F5ACC1F09704122024D3E /* Pods-CJAnimationKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		400A96033855F57EDBCA80B0 /* Pods_CJAnimationKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJAnimationKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		516C8D55B04984645317032C /* Pods-CJAnimationKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7802B2E7210CAF9B006C113A /* CJAnimationKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJAnimationKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7802B2EA210CAF9B006C113A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -226,14 +230,17 @@
 		807561DC210FFC5700BC95E9 /* PayCountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayCountDownViewController.h; sourceTree = "<group>"; };
 		8A6AA26B60DC67DFE0F5FFFA /* Pods-CJAnimationKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		95297E5170A8FC376543CCF4 /* Pods-CJAnimationKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJAnimationKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJAnimationKitDemoTests/Pods-CJAnimationKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		974EFC352D324B2B00A48D07 /* CJAnimationKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJAnimationKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		974EFC362D324B2B00A48D07 /* TSEasyAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEasyAnimationViewController.swift; sourceTree = "<group>"; };
+		974EFC382D324B9300A48D07 /* TSEasyAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEasyAnimationView.swift; sourceTree = "<group>"; };
+		974EFC3B2D324CB000A48D07 /* TSEasyAnimationHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEasyAnimationHomeViewController.swift; sourceTree = "<group>"; };
 		97C286EB26119D9E0070610D /* TSShakeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSShakeViewController.h; sourceTree = "<group>"; };
 		97C286EC26119D9E0070610D /* TSShakeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSShakeViewController.m; sourceTree = "<group>"; };
 		97C286F12611A5270070610D /* TSAnmaionMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAnmaionMainViewController.m; sourceTree = "<group>"; };
 		97C286F22611A5270070610D /* TSAnmaionMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAnmaionMainViewController.h; sourceTree = "<group>"; };
 		97C286F72611A6320070610D /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
 		97C286F82611A6320070610D /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
-		AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJAnimationKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJAnimationKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD795AC2213C993BF48D2992 /* Pods_CJAnimationKitDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJAnimationKitDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F26800A769E90758B937B6EB /* libPods-CJAnimationKitDemo.a in Frameworks */,
+				A77792D263A4DEB84D96AAD0 /* Pods_CJAnimationKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4AF2C0A5A57B65F43A52DA1 /* libPods-CJAnimationKitDemoTests.a in Frameworks */,
+				65D661CD7C11E2ECBD4D1152 /* Pods_CJAnimationKitDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 				7802B2EB210CAF9B006C113A /* AppDelegate.m */,
 				97C286F72611A6320070610D /* UIWindow+RootSetting.h */,
 				97C286F82611A6320070610D /* UIWindow+RootSetting.m */,
+				974EFC352D324B2B00A48D07 /* CJAnimationKitDemo-Bridging-Header.h */,
 				97C286F22611A5270070610D /* TSAnmaionMainViewController.h */,
 				97C286F12611A5270070610D /* TSAnmaionMainViewController.m */,
 				7802B2ED210CAF9B006C113A /* ViewController.h */,
@@ -406,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				781FFB7B210E346B0051A1BE /* DemosBaseAnimation */,
+				974EFC3A2D324C4A00A48D07 /* DemosEasyAnimation */,
 				781FFBA6210E346B0051A1BE /* DemosCALayer */,
 				781FFB8B210E346B0051A1BE /* DemosCycle */,
 				781FFBA1210E346B0051A1BE /* DemosPopup */,
@@ -621,11 +630,29 @@
 			path = arrow;
 			sourceTree = "<group>";
 		};
+		974EFC342D324B0800A48D07 /* EasyAnimationViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				974EFC362D324B2B00A48D07 /* TSEasyAnimationViewController.swift */,
+				974EFC382D324B9300A48D07 /* TSEasyAnimationView.swift */,
+			);
+			path = EasyAnimationViewDemo;
+			sourceTree = "<group>";
+		};
+		974EFC3A2D324C4A00A48D07 /* DemosEasyAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				974EFC3B2D324CB000A48D07 /* TSEasyAnimationHomeViewController.swift */,
+				974EFC342D324B0800A48D07 /* EasyAnimationViewDemo */,
+			);
+			path = DemosEasyAnimation;
+			sourceTree = "<group>";
+		};
 		AD037E4EEF550AA92F66C714 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA1D5326025F5CA20E873779 /* libPods-CJAnimationKitDemo.a */,
-				FDFC4ECCD0B31AD0D2D4C3BE /* libPods-CJAnimationKitDemoTests.a */,
+				400A96033855F57EDBCA80B0 /* Pods_CJAnimationKitDemo.framework */,
+				CD795AC2213C993BF48D2992 /* Pods_CJAnimationKitDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -641,7 +668,7 @@
 				7802B2E3210CAF9B006C113A /* Sources */,
 				7802B2E4210CAF9B006C113A /* Frameworks */,
 				7802B2E5210CAF9B006C113A /* Resources */,
-				C2EEA66CEB61DB13A9BC2699 /* [CP] Copy Pods Resources */,
+				09BF3FF9AB18F524221D7068 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -700,6 +727,7 @@
 				TargetAttributes = {
 					7802B2E6210CAF9B006C113A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1610;
 					};
 					7802B2FE210CAF9E006C113A = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -791,6 +819,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09BF3FF9AB18F524221D7068 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4059A0EE3908122253D19742 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -827,23 +872,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2EEA66CEB61DB13A9BC2699 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -853,6 +881,7 @@
 			files = (
 				781FFBBF210E346B0051A1BE /* CycleHomeViewController.m in Sources */,
 				7802B32E210CB1B9006C113A /* UIView+CJZoomFrame.m in Sources */,
+				974EFC392D324B9300A48D07 /* TSEasyAnimationView.swift in Sources */,
 				781FFBBC210E346B0051A1BE /* BezierPathAnimationVC.m in Sources */,
 				7802B2EF210CAF9B006C113A /* ViewController.m in Sources */,
 				7802B32F210CB1B9006C113A /* UIControl+CJRadarAnimation.m in Sources */,
@@ -865,6 +894,7 @@
 				786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */,
 				781FFBCF210E346B0051A1BE /* PeiwoAnimationViewController.m in Sources */,
 				781FFBC1210E346B0051A1BE /* GradientCycleViewController.m in Sources */,
+				974EFC3C2D324CB000A48D07 /* TSEasyAnimationHomeViewController.swift in Sources */,
 				97C286ED26119D9E0070610D /* TSShakeViewController.m in Sources */,
 				781FFBCC210E346B0051A1BE /* ShimmerAnimationViewController.m in Sources */,
 				781FFBD1210E346B0051A1BE /* RadarAnimationViewController.m in Sources */,
@@ -874,6 +904,7 @@
 				781FFBCD210E346B0051A1BE /* SampleLayerMaskViewController.m in Sources */,
 				7802B330210CB1B9006C113A /* CJGraduatedCycleView.m in Sources */,
 				781FFBD8210E37060051A1BE /* RefreshHomeViewController.m in Sources */,
+				974EFC372D324B2B00A48D07 /* TSEasyAnimationViewController.swift in Sources */,
 				97C286F32611A5270070610D /* TSAnmaionMainViewController.m in Sources */,
 				781FFBC4210E346B0051A1BE /* GradientCycleView.m in Sources */,
 				7802B335210CB1B9006C113A /* CJRepeatKeyWindow.m in Sources */,
@@ -980,6 +1011,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1038,6 +1070,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1060,16 +1093,21 @@
 			baseConfigurationReference = 516C8D55B04984645317032C /* Pods-CJAnimationKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S2T82J7TBH;
 				INFOPLIST_FILE = CJAnimationKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJAnimationKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CJAnimationKitDemo/CJAnimationKitDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1079,16 +1117,20 @@
 			baseConfigurationReference = 193F5ACC1F09704122024D3E /* Pods-CJAnimationKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S2T82J7TBH;
 				INFOPLIST_FILE = CJAnimationKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJAnimationKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CJAnimationKitDemo/CJAnimationKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

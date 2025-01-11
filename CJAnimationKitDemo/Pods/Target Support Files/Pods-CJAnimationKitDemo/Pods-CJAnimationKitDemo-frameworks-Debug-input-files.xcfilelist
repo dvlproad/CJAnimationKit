@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CJAnimationKit-Swift/CJAnimationKit_Swift.framework
+${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework
+${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework
+${BUILT_PRODUCTS_DIR}/HWWeakTimer/HWWeakTimer.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework

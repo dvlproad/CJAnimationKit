@@ -1,0 +1,6 @@
+framework module CJAnimationKit_Swift {
+  umbrella header "CJAnimationKit-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

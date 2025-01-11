@@ -15,7 +15,8 @@
 #import "PopupHomeViewController.h"
 #import "RefreshHomeViewController.h"
 
-
+//#import "CJAnimationKitDemo-Bridging-Header.h"  // Swift 调用 OC 方法
+#import "CJAnimationKitDemo-Swift.h"                // OC 调用 Swift 方法
 
 @interface TSAnmaionMainViewController ()
 

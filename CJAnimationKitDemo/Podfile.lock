@@ -1,4 +1,7 @@
 PODS:
+  - CJAnimationKit-Swift (0.0.1):
+    - CJAnimationKit-Swift/Extension (= 0.0.1)
+  - CJAnimationKit-Swift/Extension (0.0.1)
   - CJBaseUIKit/UINavigationBar (0.7.5)
   - CJBaseUIKit/UIView/CJDragAction (0.7.5)
   - CQDemoKit/BaseUIKit (0.6.0):
@@ -41,6 +44,7 @@ PODS:
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - CJAnimationKit-Swift (from `../`)
   - CJBaseUIKit/UINavigationBar (~> 0.7.5)
   - CJBaseUIKit/UIView/CJDragAction (~> 0.7.5)
   - CQDemoKit/BaseUIKit (~> 0.6.0)
@@ -49,7 +53,6 @@ DEPENDENCIES:
   - CQDemoKit/Demo_Resource (~> 0.6.0)
   - CQDemoKit/Demo_RipeView (~> 0.6.0)
   - HWWeakTimer (~> 1.0)
-  - Masonry
   - Shimmer
 
 SPEC REPOS:
@@ -60,13 +63,18 @@ SPEC REPOS:
     - Masonry
     - Shimmer
 
+EXTERNAL SOURCES:
+  CJAnimationKit-Swift:
+    :path: "../"
+
 SPEC CHECKSUMS:
+  CJAnimationKit-Swift: 5c604b879639b6a60c3419fea76500ce7724071d
   CJBaseUIKit: d02f247601071d2cffff74782de1010b04b98486
   CQDemoKit: 4ca734f84ecd494053166c5c0c3ddd4885151668
   HWWeakTimer: 79488095ef2dd8937f94b676d12bd5fa954486e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: aa8a511069ed0ef966d21450c7e60f8427321bd8
+PODFILE CHECKSUM: 70901002975191065d7897d780513911a6ebbf52
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.16.2

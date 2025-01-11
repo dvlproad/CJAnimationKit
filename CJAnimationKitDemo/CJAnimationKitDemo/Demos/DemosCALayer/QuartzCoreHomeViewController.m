@@ -8,6 +8,8 @@
 
 #import "QuartzCoreHomeViewController.h"
 
+#import "CJAnimationKitDemo-Swift.h"
+
 #import "TSShakeViewController.h"
 
 #import "RadarAnimationViewController.h"
@@ -30,6 +32,20 @@
     self.title = NSLocalizedString(@"Home首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    // 视图常见动画
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"视图常见动画";
+        {
+            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
+            module.title = @"弹跳 摆动 旋转 呼吸 脉冲";
+            module.classEntry = [TSEasyAnimationViewController class];
+            [sectionDataModel.values addObject:module];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     // 视图抖动动画
     {
