@@ -19,43 +19,62 @@ struct TSEasyAnimationView: View {
     
     var body: some View {
         VStack {
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 100, height: 100)
-                .bounceAnimation($bounce)
-                .onTapGesture {
-                    bounce.toggle()
-                }
+            HStack {
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 100, height: 100)
+                    .bounceAnimation($bounce)
+                    .onTapGesture {
+                        bounce.toggle()
+                    }
+            }
+            .background(Color.gray)
             
-            Rectangle()
-                .fill(Color.red)
-                .frame(width: 100, height: 100)
-                .swingAnimation($swing)
-                .onTapGesture {
-                    swing.toggle()
-                }
+            HStack {
+                Rectangle()
+                    .fill(Color.red)
+                    .frame(width: 100, height: 100)
+                    .background(Color.gray)
+                    .swingAnimation($swing)
+                    .onTapGesture {
+                        swing.toggle()
+                    }
+            }
+            .background(Color.gray)
             
-            Image(systemName: "arrow.2.circlepath")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .rotateAnimation($rotate)
-                .onTapGesture {
-                    rotate.toggle()
-                }
+            HStack {
+                Image(systemName: "arrow.2.circlepath")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .background(Color.gray)
+                    .rotateAnimation($rotate)
+                    .onTapGesture {
+                        rotate.toggle()
+                    }
+            }
+            .background(Color.gray)
             
-            Circle()
-                .fill(Color.green)
-                .breatheAnimation($breathe)
-                .onTapGesture {
-                    breathe.toggle()
-                }
+            HStack {
+                Circle()
+                    .fill(Color.green)
+                    .breatheAnimation($breathe)
+                    .background(Color.gray)
+                    .onTapGesture {
+                        breathe.toggle()
+                    }
+            }
+            .background(Color.gray)
             
-            Circle()
-                .stroke(Color.purple, lineWidth: 4)
-                .pulseAnimation($pulse)
-                .onTapGesture {
-                    pulse.toggle()
-                }
+            HStack {
+                Circle()
+                    .stroke(Color.purple, lineWidth: 4)
+                    .background(Color.gray)
+                    .pulseAnimation($pulse)
+                    .onTapGesture {
+                        pulse.toggle()
+                    }
+            }
+            .background(Color.gray)
         }
         .onAppear() {
             bounce = true

@@ -7,7 +7,7 @@
   "authors": "dvlproad",
   "description": "A longer description of CJAnimationKit-Swift in Markdown format.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
   "platforms": {
-    "ios": "13.0"
+    "ios": "14.0"
   },
   "swift_versions": "5.0",
   "source": {
