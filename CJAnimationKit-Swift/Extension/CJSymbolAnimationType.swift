@@ -12,27 +12,27 @@ public enum SymbolEffectType: String, Sendable, CaseIterable, Codable {
     // 无
     case none
     // 弹跳
-    case bounceUpByLayer    // 弹跳 向上
-    case bounceDownByLayer  // 弹跳 向下
+    case bounceUp    // 弹跳 向上
+    case bounceDown  // 弹跳 向下
     // 缩放
-    case scaleUpByLayer     // 缩放 向上
-    case scaleDownByLayer   // 缩放 向下
+    case scaleUp     // 缩放 向上
+    case scaleDown   // 缩放 向下
     // 摇摆
-    case wiggleForwardByLayer           // 摇摆 小范围 向前
-    case wiggleBackwardByLayer          // 摇摆 小范围 向后
-    case wiggleUpByLayer                // 摇摆 固定 向上
-    case wiggleDownByLayer              // 摇摆 固定 向下
-    case wiggleLeftByLayer              // 摇摆 固定 向左
-    case wiggleRightByLayer             // 摇摆 固定 向右
-    case wiggleClockwiseByLayer         // 摇摆 固定 顺时针
-    case wiggleCounterClockwiseByLayer  // 摇摆 固定 逆时针
-    case wiggleCustom40ByLayer          // 摇摆 固定 自定义角度
+    case wiggleForward           // 摇摆 小范围 向前
+    case wiggleBackward          // 摇摆 小范围 向后
+    case wiggleUp                // 摇摆 固定 向上
+    case wiggleDown              // 摇摆 固定 向下
+    case wiggleLeft              // 摇摆 固定 向左
+    case wiggleRight             // 摇摆 固定 向右
+    case wiggleClockwise         // 摇摆 固定 顺时针
+    case wiggleCounterClockwise  // 摇摆 固定 逆时针
+    case wiggleCustom40          // 摇摆 固定 自定义角度
     // 旋转
-    case rotateClockwiseByLayer         // 旋转 顺时针
-    case rotateCounterClockwiseByLayer  // 旋转 逆时针
+    case rotateClockwise         // 旋转 顺时针
+    case rotateCounterClockwise  // 旋转 逆时针
     // 呼吸
-    case breathePlainByLayer            // 呼吸 普通
-    case breathePulseByLayer            // 呼吸 跳动
+    case breathePlain            // 呼吸 普通
+    case breathePulse            // 呼吸 跳动
     // 跳动 = 脉冲
     case pulse                          // 跳动 = 脉冲
     
@@ -40,40 +40,40 @@ public enum SymbolEffectType: String, Sendable, CaseIterable, Codable {
         switch self {
         case .none:
             return "无动画"
-        case .bounceUpByLayer:
+        case .bounceUp:
             return "弹跳"
-        case .bounceDownByLayer:
+        case .bounceDown:
             return "弹跳向下"
-        case .scaleUpByLayer:
+        case .scaleUp:
             return "缩放"
-        case .scaleDownByLayer:
+        case .scaleDown:
             return "缩放向下"
-        case .wiggleForwardByLayer:
+        case .wiggleForward:
             return "摇摆"
-        case .wiggleBackwardByLayer:
+        case .wiggleBackward:
             return "摇摆向后"
-        case .wiggleUpByLayer:
+        case .wiggleUp:
             return "摇摆"
-        case .wiggleDownByLayer:
+        case .wiggleDown:
             return "摇摆向下"
-        case .wiggleLeftByLayer:
+        case .wiggleLeft:
             return "摇摆向左"
-        case .wiggleRightByLayer:
+        case .wiggleRight:
             return "摇摆向右"
-        case .wiggleClockwiseByLayer:
-            return "摇摆顺时针"
-        case .wiggleCounterClockwiseByLayer:
+        case .wiggleClockwise:
+            return "抖动" //"摇摆顺时针"
+        case .wiggleCounterClockwise:
             return "摇摆逆时针"
-        case .wiggleCustom40ByLayer:
+        case .wiggleCustom40:
             return "摇摆自定义角度"
-        case .rotateClockwiseByLayer:
+        case .rotateClockwise:
             return "旋转"
-        case .rotateCounterClockwiseByLayer:
+        case .rotateCounterClockwise:
             return "旋转逆时针"
-        case .breathePlainByLayer:
+        case .breathePlain:
             return "呼吸"
-        case .breathePulseByLayer:
-            return "呼吸跳动"
+        case .breathePulse:
+            return "呼吸" //"呼吸跳动"
         case .pulse:
             return "脉冲"
         }
@@ -83,19 +83,21 @@ public enum SymbolEffectType: String, Sendable, CaseIterable, Codable {
     static func fromString(_ effect: String) -> SymbolEffectType {
         switch effect.lowercased() {
         case "bounce":
-            return .bounceUpByLayer
+            return .bounceUp
         case "bounce.down":
-            return .bounceDownByLayer
+            return .bounceDown
         case "scale":
-            return .scaleUpByLayer
+            return .scaleUp
         case "scale.down":
-            return .scaleDownByLayer
+            return .scaleDown
         case "wiggle":
-            return .wiggleForwardByLayer
+            return .wiggleForward
+        case "shake":
+            return .wiggleClockwise
         case "rotate":
-            return .rotateClockwiseByLayer
+            return .rotateClockwise
         case "breathe":
-            return .breathePlainByLayer
+            return .breathePulse
         case "pulse":
             return .pulse
         default:
@@ -103,95 +105,95 @@ public enum SymbolEffectType: String, Sendable, CaseIterable, Codable {
         }
     }
     
-    @available(iOSApplicationExtension 18.0, *)
+    @available(iOS 18.0, *)
     public func apply(to symbol: Image) -> some View {
         switch self {
         // 弹跳
-        case .bounceUpByLayer:
+        case .bounceUp:
             return AnyView(
                 symbol
                     .symbolEffect(.bounce.up.byLayer, options: .repeat(.continuous))
             )
-        case .bounceDownByLayer:
+        case .bounceDown:
             return AnyView(
                 symbol
                     .symbolEffect(.bounce.down.byLayer, options: .repeat(.continuous))
             )
         // 缩放
-        case .scaleUpByLayer:
+        case .scaleUp:
             return AnyView(
                 symbol
                     .symbolEffect(.scale.up.byLayer, options: .repeat(.continuous))
             )
-        case .scaleDownByLayer:
+        case .scaleDown:
             return AnyView(
                 symbol
                     .symbolEffect(.scale.down.byLayer, options: .repeat(.continuous))
             )
         // 摇摆
-        case .wiggleForwardByLayer:
+        case .wiggleForward:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.forward.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleBackwardByLayer:
+        case .wiggleBackward:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.backward.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleUpByLayer:
+        case .wiggleUp:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.up.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleDownByLayer:
+        case .wiggleDown:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.down.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleLeftByLayer:
+        case .wiggleLeft:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.left.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleRightByLayer:
+        case .wiggleRight:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.right.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleClockwiseByLayer:
+        case .wiggleClockwise:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.clockwise.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleCounterClockwiseByLayer:
+        case .wiggleCounterClockwise:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.counterClockwise.byLayer, options: .repeat(.continuous))
             )
-        case .wiggleCustom40ByLayer:
+        case .wiggleCustom40:
             return AnyView(
                 symbol
                     .symbolEffect(.wiggle.custom(angle: 40.0).byLayer, options: .repeat(.continuous))
             )
         // 旋转
-        case .rotateClockwiseByLayer:
+        case .rotateClockwise:
             return AnyView(
                 symbol
                     .symbolEffect(.rotate.clockwise.byLayer, options: .repeat(.continuous))
             )
-        case .rotateCounterClockwiseByLayer:
+        case .rotateCounterClockwise:
             return AnyView(
                 symbol
                     .symbolEffect(.rotate.counterClockwise.byLayer, options: .repeat(.continuous))
             )
         // 呼吸
-        case .breathePlainByLayer:
+        case .breathePlain:
             return AnyView(
                 symbol
                     .symbolEffect(.breathe.plain.byLayer, options: .repeat(.continuous))
             )
-        case .breathePulseByLayer:
+        case .breathePulse:
             return AnyView(
                 symbol
                     .symbolEffect(.breathe.pulse.byLayer, options: .repeat(.continuous))
@@ -211,8 +213,8 @@ public enum SymbolEffectType: String, Sendable, CaseIterable, Codable {
 }
 
 public extension Image {
-    @available(iOSApplicationExtension 18.0, *)
-    public func applyEffect(_ effect: SymbolEffectType) -> some View {
+    @available(iOS 18.0, *)
+    func applyEffect(_ effect: SymbolEffectType) -> some View {
         return effect.apply(to: self)
     }
 }

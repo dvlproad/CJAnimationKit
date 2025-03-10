@@ -8,7 +8,7 @@
 import SwiftUI
 
 // 动画类型
-public enum AnimationType: String, Codable {
+public enum AnimationType: String, Codable, CaseIterable {
     case none
     case bounce
     case swing
