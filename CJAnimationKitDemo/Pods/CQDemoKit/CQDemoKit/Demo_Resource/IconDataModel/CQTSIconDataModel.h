@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface CQTSIconDataModel : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
-@property (nonatomic, copy) NSString *name;
+@interface CQTSIconDataModel : NSObject<NSCoding>
+
+@property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, strong) UIImage *imagePlaceholderImage;
+@property (nullable, nonatomic, strong) UIImage *imagePlaceholderImage;
 @property (nonatomic, assign) NSInteger badgeCount;
 
-//+ (void)setupImageView:(UIImageView *)imageView withImageUrl:(NSString *)imageUrl;
+@property (nonatomic, assign) BOOL selected;    /**< 是否选中状态 */
 
 @end
+
+NS_ASSUME_NONNULL_END

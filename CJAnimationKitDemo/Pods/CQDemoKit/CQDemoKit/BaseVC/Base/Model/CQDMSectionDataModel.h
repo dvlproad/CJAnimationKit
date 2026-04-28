@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CQDMSectionDataModel : NSObject<NSCopying, NSMutableCopying> {
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CQDMSectionDataModel : NSObject<NSCopying, NSMutableCopying, NSCoding> {
     
 }
 @property (nonatomic, assign) NSInteger type;           /**< section的类型 */
@@ -18,3 +20,5 @@
 @property (nonatomic, assign, getter=isSelected) BOOL selected;  /**< section是否选中 */ //比较少用，常用比如打开section
 
 @end
+
+NS_ASSUME_NONNULL_END

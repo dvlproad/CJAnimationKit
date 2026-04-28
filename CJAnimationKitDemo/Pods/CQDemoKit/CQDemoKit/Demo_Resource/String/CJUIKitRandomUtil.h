@@ -2,7 +2,8 @@
 //  CJUIKitRandomUtil.h
 //  CQDemoKit
 //
-//  Created by 李超前 on 2020/11/13.
+//  Created by ciyouzen on 2020/11/13.
+//  Copyright © 2020 dvlproad. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,12 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - C函数
 /// 获取随机的颜色
-UIColor *cqtsRandomColor();
+UIColor *cqtsRandomColor(void);
 
 /// 获取随机的字符串
 NSString *cqtsRandomString(NSInteger minLength, NSInteger maxLength, CQRipeStringType stringType);
 
-
+/// 获取随机的中文名字
+NSString *cqtsRandomName(NSInteger minLength, NSInteger maxLength);
 
 
 
@@ -46,6 +48,12 @@ NSString *cqtsRandomString(NSInteger minLength, NSInteger maxLength, CQRipeStrin
 + (NSString *)randomStringWithMinLength:(NSInteger)minLength
                               maxLength:(NSInteger)maxLength
                              stringType:(CQRipeStringType)stringType;
+
+#pragma mark 名字
+/// 获取所有姓名
++ (NSArray<NSString *> *)names;
+/// 获取指定位置的名字
++ (NSString *)nameAtIndex:(NSInteger)selIndex;
 
 @end
 

@@ -18,14 +18,38 @@
     return self;
 }
 
-+ (void)setupImageView:(UIImageView *)imageView withImageUrl:(NSString *)imageUrl {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            imageView.image = image;
-        });
-    });
+#pragma mark - NSCoding
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        _haveLoadImage = [coder decodeBoolForKey:@"haveLoadImage"];
+        _name = [coder decodeObjectForKey:@"name"];
+        _imageUrl = [coder decodeObjectForKey:@"imageUrl"];
+        _badgeCount = [coder decodeIntegerForKey:@"badgeCount"];
+        _selected = [coder decodeBoolForKey:@"selected"];
+        
+        // 解码 UIImage
+        NSData *imageData = [coder decodeObjectForKey:@"imagePlaceholderImage"];
+        if (imageData) {
+            _imagePlaceholderImage = [UIImage imageWithData:imageData];
+        }
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeBool:_haveLoadImage forKey:@"haveLoadImage"];
+    [coder encodeObject:_name forKey:@"name"];
+    [coder encodeObject:_imageUrl forKey:@"imageUrl"];
+    [coder encodeInteger:_badgeCount forKey:@"badgeCount"];
+    [coder encodeBool:_selected forKey:@"selected"];
+
+    // 编码 UIImage
+    if (_imagePlaceholderImage) {
+        NSData *imageData = UIImagePNGRepresentation(_imagePlaceholderImage);
+        [coder encodeObject:imageData forKey:@"imagePlaceholderImage"];
+    }
 }
 
 

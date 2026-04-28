@@ -65,6 +65,7 @@
 }
 
 #pragma mark - rumtime:frame
+/// 开始拖动时候此视图的初始frame位置（拖动过程中self.frame会变化）
 - (CGRect)cjPanStartFrame {
     NSString *frameString = objc_getAssociatedObject(self, @selector(cjPanStartFrame));
     return CGRectFromString(frameString);
@@ -96,49 +97,30 @@
 
 #pragma mark - Event
 /*
- *  添加pan手势
+ *  添加pan手势：设置视图拖动结束且应该消失时候，应该执行的操作
+ *  ps: ①已自动实现拖动过程中，视图frame的变化
+ *      ②已自动实现拖动结束，当未拖动到视图初始位置一半的时候，自动恢复视图到初始frame
  *
- *  @param panCompleteDismissBlock      拖动结束需要执行dimiss的回调(其他部分已自动内部设置frame)
+ *  @param panCompleteDismissBlock      视图拖动结束且应该消失时候，应该执行的操作
  */
-- (void)cj_addPanWithPanCompleteDismissBlock:(void(^)(void))panCompleteDismissBlock {
-    //添加拖拽手势
-    [self cj_addPanWithPaningOffsetBlock:^(BOOL isDown, CGPoint transP) {
-        CGRect oldFrame = self.frame;
-        
-        if (isDown) {
-            //向下拖 transP.y > 0
-            oldFrame.origin.y += transP.y;
-            self.frame = oldFrame;
-            
-        } else {
-            //向上拖 transP.y < 0
-            CGFloat containerPanStartY = CGRectGetMinY(self.cjPanStartFrame);
-            CGFloat containerCurrentY = CGRectGetMinY(self.frame);
-            if(containerCurrentY > containerPanStartY){
-                NSLog(@"currentY2=%.0f, originY=%0.f", containerCurrentY, containerPanStartY);
-                oldFrame.origin.y += transP.y;
-                oldFrame.origin.y = MAX(oldFrame.origin.y, containerPanStartY);
-                self.frame = oldFrame;
-            }
-        }
-    } panCompleteBlock:^(BOOL isFast) {
+- (void)cj_addPanWithPanCompleteDismissBlock:(void(^ _Nullable)(void))panCompleteDismissBlock
+{
+    [self cj_addPanWithPanCompleteBlock:^(BOOL isFast) {
         if (isFast) {
             !panCompleteDismissBlock ?: panCompleteDismissBlock();
         } else {
             //如果是普通拖拽
-            CGFloat containerCurrentY = CGRectGetMinY(self.frame);
-            if(containerCurrentY >=  CGRectGetMidY(self.cjPanStartFrame)) {
-                !panCompleteDismissBlock ?: panCompleteDismissBlock();
+            CGFloat containerCurrentY = CGRectGetMinY(self.frame);  // 根据视图当前位置
+            CGFloat shouldRecoveryCheckY = CGRectGetMidY(self.cjPanStartFrame);// 根据视图拖动的初始位置
+            BOOL shouldRecoveryFrame = containerCurrentY < shouldRecoveryCheckY;// 普通拖曳结束，是否在恢复拖动初始frame的滑动范围内
+            if(shouldRecoveryFrame == YES) {
+                [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    self.frame = self.cjPanStartFrame;
+                } completion:^(BOOL finished) {
+                    NSLog(@"普通拖曳结束后，恢复到拖动初始frame完成");
+                }];
             } else {
-                [UIView animateWithDuration:0.15f
-                                      delay:0.0f
-                                    options:UIViewAnimationOptionCurveEaseOut
-                                 animations:^{
-                                     self.frame = self.cjPanStartFrame;
-                                 }
-                                 completion:^(BOOL finished) {
-                                     NSLog(@"结束");
-                                 }];
+                !panCompleteDismissBlock ?: panCompleteDismissBlock();
             }
         }
     }];
@@ -146,12 +128,44 @@
 
 /*
  *  添加pan手势
+ *  ps:①已自动实现拖动过程中，视图frame的变化
+ *
+ *  @param panCompleteBlock             拖动结束的回调(isFast:是类似轻扫的那种)
+ */
+- (void)cj_addPanWithPanCompleteBlock:(void(^ _Nullable)(BOOL isFast))panCompleteBlock
+{
+    __weak typeof(self)weakSelf = self;
+    [self cj_addPanWithPaningOffsetBlock:^(BOOL isDown, CGPoint transP) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        CGRect oldFrame = strongSelf.frame;
+        
+        if (isDown) {
+            //向下拖 transP.y > 0
+            oldFrame.origin.y += transP.y;
+            strongSelf.frame = oldFrame;
+            
+        } else {
+            //向上拖 transP.y < 0
+            CGFloat containerPanStartY = CGRectGetMinY(strongSelf.cjPanStartFrame);
+            CGFloat containerCurrentY = CGRectGetMinY(strongSelf.frame);
+            if(containerCurrentY > containerPanStartY){
+                NSLog(@"currentY2=%.0f, originY=%0.f", containerCurrentY, containerPanStartY);
+                oldFrame.origin.y += transP.y;
+                oldFrame.origin.y = MAX(oldFrame.origin.y, containerPanStartY);
+                strongSelf.frame = oldFrame;
+            }
+        }
+    } panCompleteBlock:panCompleteBlock];
+}
+
+/*
+ *  添加pan手势
  *
  *  @param paningOffsetBlockpan         拖动进行中的回调(isDown:是否是向下，offset:偏移量)
- *  @param cjPanCompleteBlock           拖动结束的回调(isFast:是类似轻扫的那种)
+ *  @param panCompleteBlock             拖动结束的回调(isFast:是类似轻扫的那种)
  */
 - (void)cj_addPanWithPaningOffsetBlock:(void(^)(BOOL isDown, CGPoint offset))paningOffsetBlock
-                      panCompleteBlock:(void(^)(BOOL isFast))panCompleteBlock
+                      panCompleteBlock:(void(^ _Nullable)(BOOL isFast))panCompleteBlock
 {
     NSAssert([self isKindOfClass:[UIScrollView class]] == NO, @"调用此方法的视图不能是UIScrollView或其子类，否则下拉滑动会有问题。解决方式，请将你想要的那个UIScrollView或其子类视图用个UIView包起来，再调用此方法。不信你自己注释掉此行代码，执行下就知道");
     
@@ -163,9 +177,9 @@
     self.cjPan_lastDrapDistance = 0.0;
     
     //添加拖拽手势
-    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(cj_panAction:)];
     [self addGestureRecognizer:panGestureRecognizer];
-    panGestureRecognizer.delegate = self;
+    panGestureRecognizer.delegate = self; // 只有竖直拖动的时候才执行手势事件（gestureRecognizerShouldBegin）
     self.cjPan_PanGestureRecognizer = panGestureRecognizer;
 }
 
@@ -187,7 +201,7 @@
                 self.cjPan_isDragScrollView = NO;
                 break;
             }
-            touchView = [touchView nextResponder];
+            touchView = (UIView *)[touchView nextResponder];
         }
     }
     return YES;
@@ -196,8 +210,16 @@
 //2.
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if(gestureRecognizer == self.cjPan_PanGestureRecognizer){
-        //如果是自己加的拖拽手势
+//        如果是自己加的拖拽手势
         NSLog(@"gestureRecognizerShouldBegin");
+        CGPoint velocity = [self.cjPan_PanGestureRecognizer velocityInView:self];
+        CGFloat verticalMove = fabs(velocity.y);
+        CGFloat horizontalMove = fabs(velocity.x);
+        if (verticalMove > horizontalMove) { // 只有竖直拖动的时候才执行手势事件
+            return YES;
+        } else {
+            return NO;
+        }
     }
     return YES;
 }
@@ -217,7 +239,7 @@
 }
 
 //拖拽手势
-- (void)pan:(UIPanGestureRecognizer *)panGestureRecognizer {
+- (void)cj_panAction:(UIPanGestureRecognizer *)panGestureRecognizer {
     if(panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.cjPanStartFrame = self.frame;
         NSLog(@"cjPanStartFrame=%@", NSStringFromCGRect(self.cjPanStartFrame));
@@ -244,6 +266,12 @@
             }
         }
     } else {
+//        CGFloat verticalTranslation = fabsf(transP.y);
+//        CGFloat horizontalTranslation = fabsf(transP.x);
+//        if (verticalTranslation < horizontalTranslation) { // 只有竖直拖动的时候才执行手势事件
+//            return;
+//        }
+        
         if(transP.y > 0) {
             //向下拖
             !self.cjPaningOffsetBlock ?: self.cjPaningOffsetBlock(YES, transP);

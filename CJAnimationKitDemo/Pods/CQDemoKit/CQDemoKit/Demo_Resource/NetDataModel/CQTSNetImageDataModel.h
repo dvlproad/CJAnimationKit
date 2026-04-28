@@ -9,14 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface CQTSNetImageDataModel : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CQTSNetImageDataModel : NSObject<NSCoding>
 
 @property (nonatomic, assign) BOOL haveLoadImage;  /**< 设置此model的时候，是否已经下载了图片 */
-@property (nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, strong) UIImage *imagePlaceholderImage;
+@property (nullable, nonatomic, strong) UIImage *imagePlaceholderImage;
 @property (nonatomic, assign) NSInteger badgeCount;
 
-//+ (void)setupImageView:(UIImageView *)imageView withImageUrl:(NSString *)imageUrl;
+@property (nonatomic, assign) BOOL selected;    /**< 是否选中状态 */
 
 @end
+
+NS_ASSUME_NONNULL_END

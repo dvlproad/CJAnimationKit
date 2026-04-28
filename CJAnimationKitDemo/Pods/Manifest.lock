@@ -2,56 +2,57 @@ PODS:
   - CJAnimationKit-Swift (0.0.1):
     - CJAnimationKit-Swift/Extension (= 0.0.1)
   - CJAnimationKit-Swift/Extension (0.0.1)
-  - CJBaseUIKit/UINavigationBar (0.7.5)
-  - CJBaseUIKit/UIView/CJDragAction (0.7.5)
-  - CQDemoKit/BaseUIKit (0.6.0):
+  - CJBaseUIKit/UINavigationBar (0.8.1)
+  - CJBaseUIKit/UIView/CJDragAction (0.8.1)
+  - CQDemoKit/BaseUIKit (0.8.0):
     - Masonry
-  - CQDemoKit/BaseUtil (0.6.0)
-  - CQDemoKit/BaseVC (0.6.0):
-    - CQDemoKit/BaseVC/Base (= 0.6.0)
-    - CQDemoKit/BaseVC/Collection (= 0.6.0)
-    - CQDemoKit/BaseVC/ScrollView (= 0.6.0)
-    - CQDemoKit/BaseVC/TabBar (= 0.6.0)
-    - CQDemoKit/BaseVC/TableView (= 0.6.0)
-    - CQDemoKit/BaseVC/TextView (= 0.6.0)
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/Base (0.6.0):
-    - CQDemoKit/Helper
+  - CQDemoKit/BaseUtil (0.8.0)
+  - CQDemoKit/BaseVC (0.8.0):
+    - CQDemoKit/BaseVC/Base (= 0.8.0)
+    - CQDemoKit/BaseVC/Collection (= 0.8.0)
+    - CQDemoKit/BaseVC/ScrollView (= 0.8.0)
+    - CQDemoKit/BaseVC/TabBar (= 0.8.0)
+    - CQDemoKit/BaseVC/TableView (= 0.8.0)
+    - CQDemoKit/BaseVC/TextView (= 0.8.0)
+  - CQDemoKit/BaseVC/Base (0.8.0):
+    - CQDemoKit/BaseUIKit
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.6.0):
+  - CQDemoKit/BaseVC/Collection (0.8.0):
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/ScrollView (0.6.0):
+  - CQDemoKit/BaseVC/ScrollView (0.8.0):
     - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TabBar (0.8.0):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TabBar (0.6.0):
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.6.0):
+  - CQDemoKit/BaseVC/TableView (0.8.0):
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TextView (0.6.0):
+  - CQDemoKit/BaseVC/TextView (0.8.0):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
+  - CQDemoKit/Demo_DataSourceAndDelegate (0.8.0):
+    - CQDemoKit/BaseVC
+    - CQDemoKit/Demo_Resource
+  - CQDemoKit/Demo_Resource (0.8.0):
+    - CQDemoKit/BaseUIKit
     - CQDemoKit/Helper
-  - CQDemoKit/Demo_Resource (0.6.0):
-    - CQDemoKit/Helper
-  - CQDemoKit/Demo_RipeView (0.6.0):
+  - CQDemoKit/Demo_RipeView (0.8.0):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
-  - CQDemoKit/Helper (0.6.0)
+    - CQDemoKit/Demo_DataSourceAndDelegate
+    - CQDemoKit/Demo_Resource
+  - CQDemoKit/Helper (0.8.0)
   - HWWeakTimer (1.0)
   - Masonry (1.1.0)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
   - CJAnimationKit-Swift (from `../`)
-  - CJBaseUIKit/UINavigationBar (~> 0.7.5)
-  - CJBaseUIKit/UIView/CJDragAction (~> 0.7.5)
-  - CQDemoKit/BaseUIKit (~> 0.6.0)
-  - CQDemoKit/BaseUtil (~> 0.6.0)
-  - CQDemoKit/BaseVC (~> 0.6.0)
-  - CQDemoKit/Demo_Resource (~> 0.6.0)
-  - CQDemoKit/Demo_RipeView (~> 0.6.0)
+  - CJBaseUIKit/UINavigationBar (~> 0.8.1)
+  - CJBaseUIKit/UIView/CJDragAction (~> 0.8.1)
+  - CQDemoKit/BaseUIKit (~> 0.8.0)
+  - CQDemoKit/BaseUtil (~> 0.8.0)
+  - CQDemoKit/BaseVC (~> 0.8.0)
+  - CQDemoKit/Demo_Resource (~> 0.8.0)
+  - CQDemoKit/Demo_RipeView (~> 0.8.0)
   - HWWeakTimer (~> 1.0)
   - Shimmer
 
@@ -69,12 +70,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CJAnimationKit-Swift: 79907e80c44f7b44b05fd0f573a2b2d96a989ed7
-  CJBaseUIKit: d02f247601071d2cffff74782de1010b04b98486
-  CQDemoKit: 4ca734f84ecd494053166c5c0c3ddd4885151668
+  CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
+  CQDemoKit: 1fea1039a960befe72d4452ff17827e2828b9501
   HWWeakTimer: 79488095ef2dd8937f94b676d12bd5fa954486e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 8adcc5ec85c0e018f58661f6725efcca9857fd1b
+PODFILE CHECKSUM: bc7ea9cbabe0fe8b40f8f403c4cad404e1c3b466
 
 COCOAPODS: 1.16.2

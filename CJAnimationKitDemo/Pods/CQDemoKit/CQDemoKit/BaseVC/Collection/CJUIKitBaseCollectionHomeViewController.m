@@ -8,6 +8,8 @@
 
 #import "CJUIKitBaseCollectionHomeViewController.h"
 #import "CJUIKitCollectionViewCell.h"
+#import "CJUIKitCollectionViewHeader.h"
+#import "UIImageView+CQTSBaseUtil.h"
 
 @interface CJUIKitBaseCollectionHomeViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
     
@@ -31,10 +33,23 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     self.sectionDataModels = sectionDataModels;
+    
+    self.perMaxCount = 3;
+//    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 }
 
+#pragma mark - Setter
+- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection {
+    _scrollDirection = scrollDirection;
+    
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;//通过这种方式去获取layout，避免使用xib初始化的时候得不到
+    flowLayout.scrollDirection = scrollDirection;
+}
+
+#pragma mark - setupViews
 - (void)setupViews {
-    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor clearColor];
     
@@ -42,6 +57,7 @@
     /* 设置Register的Cell或Nib */
     CJUIKitCollectionViewCell *registerCell = [[CJUIKitCollectionViewCell alloc] init];
     [collectionView registerClass:[registerCell class] forCellWithReuseIdentifier:@"cell"];
+    [collectionView registerClass:[CJUIKitCollectionViewHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CJUIKitCollectionViewHeader"];
     
     /* 设置DataSource */
     collectionView.dataSource = self;
@@ -51,7 +67,26 @@
     
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
+//        if #available(iOS 11.0, *) {
+//            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(10)
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+//        } else {
+//            // Fallback on earlier versions
+//            // topLayoutGuide\bottomLayoutGuide iOS11已经被弃用
+//            make.top.equalTo(topLayoutGuide.snp.bottom).offset(10)
+//            make.bottom.equalTo(bottomLayoutGuide.snp.top).offset(-10)
+//        }
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-10);
+        } else {
+            // Fallback on earlier versions
+            // topLayoutGuide\bottomLayoutGuide iOS11已经被弃用
+            make.top.equalTo(self.mas_topLayoutGuideBottom).offset(10);
+            make.bottom.equalTo(self.mas_bottomLayoutGuideTop).offset(-10);
+        }
+        make.left.mas_equalTo(self.view).mas_offset(10);
+        make.centerX.mas_equalTo(self.view);
     }];
     self.collectionView = collectionView;
 }
@@ -81,28 +116,45 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout*)collectionViewLayout
+                  layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat collectionViewCellWidth = 0;
-    if (0) {
+    CGFloat collectionViewCellHeight = 0;
+    
+    UICollectionViewFlowLayout *flowLayout = collectionViewLayout;
+    BOOL isScrollHorizontal = flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal;
+    if (isScrollHorizontal) {   // 按水平方向滚动时，按个数计算cell的高
+        NSInteger perColumnMaxRowCount = self.perMaxCount;
         
-    } else {
-        NSInteger cellWidthFromPerRowMaxShowCount = 3;
+        UIEdgeInsets sectionInset = [self collectionView:collectionView
+                                                  layout:collectionViewLayout
+                                  insetForSectionAtIndex:indexPath.section];;
+        CGFloat rowSpacing = [self collectionView:collectionView
+                                           layout:collectionViewLayout
+         minimumInteritemSpacingForSectionAtIndex:indexPath.section];
+        
+        CGFloat height = CGRectGetHeight(collectionView.frame);
+        CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - rowSpacing*(perColumnMaxRowCount-1);
+        collectionViewCellHeight = floorf(validHeight/perColumnMaxRowCount);
+        collectionViewCellWidth = collectionViewCellHeight;
+        
+    } else {                    // 按竖直方向滚动时，按个数计算cell的宽
+        NSInteger perRowMaxColumnCount = self.perMaxCount;
         
         UIEdgeInsets sectionInset = [self collectionView:collectionView
                                                   layout:collectionViewLayout
                                   insetForSectionAtIndex:indexPath.section];
-        CGFloat minimumInteritemSpacing = [self collectionView:collectionView
-                                                        layout:collectionViewLayout
-                      minimumInteritemSpacingForSectionAtIndex:indexPath.section];
+        CGFloat columnSpacing = [self collectionView:collectionView
+                                              layout:collectionViewLayout
+            minimumInteritemSpacingForSectionAtIndex:indexPath.section];
         
         CGFloat width = CGRectGetWidth(collectionView.frame);
-        CGFloat validWith = width - sectionInset.left - sectionInset.right - minimumInteritemSpacing*(cellWidthFromPerRowMaxShowCount-1);
-        collectionViewCellWidth = floorf(validWith/cellWidthFromPerRowMaxShowCount);
+        CGFloat validWith = width - sectionInset.left - sectionInset.right - columnSpacing*(perRowMaxColumnCount-1);
+        collectionViewCellWidth = floorf(validWith/perRowMaxColumnCount);
+        collectionViewCellHeight = collectionViewCellWidth;
     }
     
-    CGFloat collectionViewCellHeight = collectionViewCellWidth;
     
     return CGSizeMake(collectionViewCellWidth, collectionViewCellHeight);
 }
@@ -144,8 +196,12 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     
     CJUIKitCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    UIImage *image = moduleModel.normalImage ? moduleModel.normalImage : [UIImage imageNamed:@"icon"];
-    cell.imageView.image = image;
+    if (moduleModel.imageUrl.length > 0) {
+        [cell.imageView cqdm_setImageWithUrl:moduleModel.imageUrl completed:nil];
+    } else {
+        UIImage *image = moduleModel.normalImage ? moduleModel.normalImage : [UIImage imageNamed:@"icon"];
+        cell.imageView.image = image;
+    }
     
     cell.textLabel.text = moduleModel.title;
     
@@ -158,6 +214,13 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         
     } else if (moduleModel.selector) {
         [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
+        
+    } else if (moduleModel.viewGetterHandle) {
+        UIView *tsview = moduleModel.viewGetterHandle();
+        
+        UIViewController *viewController = [CQDMModuleModel viewControllWithTitle:moduleModel.title tsview:tsview];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
         
     } else {
         UIViewController *viewController = nil;
@@ -180,6 +243,30 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         viewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:viewController animated:YES];
     }
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    
+    CJUIKitCollectionViewHeader *reusableview = [[CJUIKitCollectionViewHeader alloc] init];
+    if (kind == UICollectionElementKindSectionHeader) {
+        reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CJUIKitCollectionViewHeader" forIndexPath:indexPath];
+        reusableview.titleNameLabel.text = [NSString stringWithFormat:@"%zd.%@", indexPath.section, sectionDataModel.theme];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            reusableview.layer.zPosition = -10;
+        });
+    }
+    return reusableview;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    return CGSizeMake(screenWidth, 46.0f);
 }
 
 - (void)didReceiveMemoryWarning {

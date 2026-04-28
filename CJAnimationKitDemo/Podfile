@@ -5,9 +5,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
 
 target 'CJAnimationKitDemo' do
-    pod 'CQDemoKit',            '~> 0.6.0',     :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+  pod 'CQDemoKit',              '~> 0.8.0',     :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
   
-  pod 'CJBaseUIKit',            '~> 0.7.5',     :subspecs => ['UIView/CJDragAction', 'UINavigationBar']
+  pod 'CJBaseUIKit',            '~> 0.8.1',     :subspecs => ['UIView/CJDragAction', 'UINavigationBar']
   
   pod 'Shimmer' #fackBook的闪光动画
   
@@ -18,4 +18,13 @@ end
 
 target 'CJAnimationKitDemoTests' do
 
+end
+
+# 修复新版Xcode26.4.1无 libarclite 问题
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+    end
+  end
 end
