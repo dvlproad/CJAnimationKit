@@ -1,9 +1,17 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint CJAnimationKit-Swift.podspec --allow-warnings --use-libraries --verbose
+  # 上传到github公有库:
+  #验证方法1：pod lib lint CJAnimationKit-Swift.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJAnimationKit-Swift.podspec --sources=master --allow-warnings --use-libraries --verbose
+  #提交方法(github公有库)： pod trunk push CJAnimationKit-Swift.podspec --allow-warnings --verbose
+  
+  # 上传到私有库 gitee上的私有项目: dvlproadSpecs
+  #验证方法1：pod lib lint CJAnimationKit-Swift.podspec --sources='https://github.com/CocoaPods/Specs.git,https://gitee.com/dvlproad/dvlproadSpecs' --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJAnimationKit-Swift.podspec --sources=master,dvlproad --allow-warnings --use-libraries --verbose
+  #提交方法(私有库)： pod repo push dvlproad CJAnimationKit-Swift.podspec --sources=master,dvlproad --allow-warnings --use-libraries --verbose
   s.name         = "CJAnimationKit-Swift"
   s.version      = "0.0.1"
   s.summary      = "动画帮助类(Swift版)"
-  s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
+  s.homepage     = "https://github.com/dvlproad/CJAnimationKit.git"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
@@ -21,7 +29,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "14.0"
   s.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJAnimationKit-Swift_0.1.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit-Swift_0.1.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'

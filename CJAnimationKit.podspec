@@ -1,9 +1,16 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint CJAnimationKit.podspec --allow-warnings --use-libraries --verbose
+  #验证方法1：pod lib lint CJAnimationKit.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJAnimationKit.podspec --sources=master --allow-warnings --use-libraries --verbose
+  #提交方法(github公有库)： pod trunk push CJAnimationKit.podspec --allow-warnings --verbose
+  
+  # 上传到私有库 gitee上的私有项目: dvlproadSpecs
+  #验证方法1：pod lib lint CJAnimationKit.podspec --sources='https://github.com/CocoaPods/Specs.git,https://gitee.com/dvlproad/dvlproadSpecs' --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJAnimationKit.podspec --sources=master,dvlproad --allow-warnings --use-libraries --verbose
+  #提交方法(私有库)： pod repo push dvlproad CJAnimationKit.podspec --sources=master,dvlproad --allow-warnings --use-libraries --verbose
   s.name         = "CJAnimationKit"
   s.version      = "0.0.2"
   s.summary      = "自定义的动画"
-  s.homepage     = "https://gitee.com/dvlproad/CJAnimationKit"
+  s.homepage     = "https://github.com/dvlproad/CJAnimationKit"
 
   s.description  = <<-DESC
                   *、CJGraduatedCycleView： 渐变的刻度圆盘
@@ -27,9 +34,9 @@ Pod::Spec.new do |s|
 
   s.author   = { "dvlproad" => "" }
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "12.0"
  
-  s.source       = { :git => "https://gitee.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit_0.0.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit_0.0.3" }
   s.source_files  = "CJAnimationKit/*.{h,m}"
 
   s.frameworks = "UIKit", "QuartzCore"
