@@ -50,6 +50,7 @@
 #import "CQTSRipeButton.h"
 #import "CQTSRipeTableView.h"
 #import "CQTSMediaPickerViewController.h"
+#import "CQTSRipeButtonCollectionView.h"
 #import "CQTSRipeButtonCollectionViewCell.h"
 #import "CQTSRipeImageCollectionViewCell.h"
 #import "NSError+CQTSErrorString.h"

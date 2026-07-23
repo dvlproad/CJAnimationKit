@@ -8,11 +8,14 @@
 
 #import "TSShakeViewController.h"
 #import <CQDemoKit/CQTSButtonFactory.h>
+#import <CQDemoKit/CQTSRipeButtonCollectionView.h>
+#import <CJAnimationKit/UIView+CJShake.h>
 
-#define kShakingRadian(R) ((R) / 180.0 * M_PI)
-
+#define kDegreesToRadians(degrees) ((degrees) / 180.0 * M_PI)
 
 @interface TSShakeViewController ()
+
+@property (nonatomic, strong) UIView *shakeView;
 
 @end
 
@@ -20,105 +23,188 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    // [iOS 仿射变换CGAffineTransform](https://www.jianshu.com/p/c40e4bbb3ae2)
-    __weak typeof(self)weakSelf = self;
-    UIButton *shakeView = [CQTSButtonFactory themeBGButtonWithTitle:@"点击视图抖动" actionBlock:^(UIButton * _Nonnull bButton) {
-        [TSShakeViewController addAnimationShakeWithView:bButton];
+    self.title = @"视图抖动动画";
+
+    // 待抖动的视图
+    UIButton *shakeView = [CQTSButtonFactory themeBGButtonWithTitle:@"我是按钮上的文字" actionBlock:^(UIButton * _Nonnull bButton) {
+        [bButton cjStopShake];
     }];
-    shakeView.backgroundColor = [UIColor redColor];
+    UIImage *normalBGImage = cqts_buttonBGImage(UIColor.redColor);
+    [shakeView setBackgroundImage:normalBGImage forState:UIControlStateNormal];
     [self.view addSubview:shakeView];
     [shakeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view).mas_offset(100);
-        make.centerX.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(100);
-        make.height.mas_equalTo(400);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.mas_topLayoutGuide).offset(20);
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(100);
     }];
-    
-//    shakeView.transform = CGAffineTransformMakeRotation(30/ 180.0 * M_PI);
-//    shakeView.layer.transform = CATransform3DMakeRotation(80/ 180.0 * M_PI, 0, 0, 1);
+    self.shakeView = shakeView;
+
+    UILabel *tipLabel = [[UILabel alloc] init];
+    tipLabel.text = @"点击下方按钮测试不同抖动效果";
+    tipLabel.textColor = [UIColor grayColor];
+    tipLabel.font = [UIFont systemFontOfSize:13];
+    [self.view addSubview:tipLabel];
+    [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.shakeView.mas_bottom).offset(16);
+    }];
+
+    // 多种抖动动画测试
+    NSArray<NSString *> *titles = @[
+        @"绕X轴旋转(CABasic)",
+        @"绕Y轴旋转(CABasic)",
+        @"绕Z轴旋转(CABasic)",
+        @"绕Y轴旋转(UIView)",
+        @"关键帧左右摇摆",
+        @"关键帧多角度",
+        @"绕Y轴重复旋转",
+        @"X轴来回弹跳",
+        @"[库] cjShake(短抖)",
+        @"[库] cjShakeKeeping(持续抖动)",
+    ];
+
+    __weak typeof(self) weakSelf = self;
+    CQTSRipeButtonCollectionView *collectionView =
+        [[CQTSRipeButtonCollectionView alloc] initWithTitles:titles
+                                                perMaxCount:2
+                                           widthHeightRatio:88 / 44.0
+                                            scrollDirection:UICollectionViewScrollDirectionVertical
+                                 didSelectItemAtIndexHandle:^(NSInteger index) {
+                                     [weakSelf shakeWithIndex:index];
+                                 }];
+    collectionView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:collectionView];
+    [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.top.equalTo(tipLabel.mas_bottom).mas_offset(16);
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop).mas_offset(0);
+    }];
 }
 
-#pragma mark - 添加抖动动画
-+ (void)addAnimationShakeWithView:(UIView *)view {
-    CABasicAnimation *theAnimation;
-    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
-    theAnimation.duration=4;
-    theAnimation.removedOnCompletion = YES;
-    theAnimation.fromValue = [NSNumber numberWithFloat:0];
-    theAnimation.toValue = [NSNumber numberWithFloat:50/ 180.0 * M_PI];
-     [view.layer addAnimation:theAnimation forKey:@"animateTransform"];
-    
-    
-    return;
-    
-//    view.layer.transform = CATransform3DMakeRotation(30/ 180.0 * M_PI, 0, 1, 0);
-    
-    [UIView animateWithDuration:3
-                              delay:0
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{
-    //你想绕哪个轴哪个轴就为 1，其中的参数（角度， x, y, z）
-                            view.layer.transform=CATransform3DMakeRotation(-80/ 180.0 * M_PI, 0, -1, 0);
-                         }
-                         completion:^(BOOL finished) {
-    //你想绕哪个轴哪个轴就为 1，其中的参数（角度， x, y, z）
-//                             view.layer.transform=CATransform3DMakeRotation(80/ 180.0 * M_PI, 0, 1, 0);
-                         }];
+- (void)shakeWithIndex:(NSInteger)index {
+    // 先清除旧动画
+    [self.shakeView.layer removeAllAnimations];
+    self.shakeView.transform = CGAffineTransformIdentity;
 
-    
-//    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
-//
-//    animation.keyPath = @"transform.rotation.y";
-//
-//    CGFloat angel = 70;
-////    animation.values = @[@(kShakingRadian(-0)), @(kShakingRadian(angel)), @(kShakingRadian(-0)), @(kShakingRadian(angel)), @(kShakingRadian(-0))];
-//    animation.values = @[@(kShakingRadian(-0)), @(70/ 180.0 * M_PI), @(kShakingRadian(-0)), @(-70/ 180.0 * M_PI), @0];
-//
-//    animation.duration = 5;
-//
-//    // 动画的重复执行次数
-//    animation.repeatCount = 1;
-//
-//    // 保持动画执行完毕后的状态
-////    animation.removedOnCompletion = NO;
-//
-////    animation.fillMode = kCAFillModeForwards;
-//
-//    [view.layer addAnimation:animation forKey:@"sh_animation_shake"];
-    
-    
-    
-    
-//    CABasicAnimation* rotationAnimation;
-//    //绕哪个轴，那么就改成什么：这里是绕y轴 ---> transform.rotation.y
-//    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
-//    //旋转角度
-//    rotationAnimation.toValue = [NSNumber numberWithFloat: 30/ 180.0 * M_PI];
-//    //每次旋转的时间（单位秒）
-//    rotationAnimation.duration = 2;
-//    rotationAnimation.cumulative = YES;
-//    //重复旋转的次数，如果你想要无数次，那么设置成MAXFLOAT
-//    rotationAnimation.repeatCount = 2;
-//    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    switch (index) {
+        case 0: [self shakeRotationX]; break;
+        case 1: [self shakeRotationY]; break;
+        case 2: [self shakeRotationZ]; break;
+        case 3: [self shakeUIViewRotationY]; break;
+        case 4: [self shakeKeyframeSwing]; break;
+        case 5: [self shakeKeyframeMultiAngle]; break;
+        case 6: [self shakeRotationYRepeat]; break;
+        case 7: [self shakeBounceX]; break;
+        case 8: [self.shakeView cjShake]; break;
+        case 9: [self.shakeView cjShakeKeeping]; break;
+        default: break;
+    }
 }
 
-#pragma mark - 移除抖动动画
-+ (void)removeAnimationShakeWithView:(UIView *)view{
-    
-    //结束动画
-    [view.layer removeAnimationForKey:@"sh_animation_shake"];
+#pragma mark - CABasicAnimation 绕X轴旋转
+- (void)shakeRotationX {
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
+    anim.fromValue = @(0);
+    anim.toValue = @(kDegreesToRadians(50));
+    anim.duration = 0.5;
+    anim.repeatCount = 3;
+    anim.autoreverses = YES;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_x"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - CABasicAnimation 绕Y轴旋转
+- (void)shakeRotationY {
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+    anim.fromValue = @(0);
+    anim.toValue = @(kDegreesToRadians(30));
+    anim.duration = 0.3;
+    anim.repeatCount = 4;
+    anim.autoreverses = YES;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_y"];
 }
-*/
+
+#pragma mark - CABasicAnimation 绕Z轴旋转
+- (void)shakeRotationZ {
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    anim.fromValue = @(kDegreesToRadians(-10));
+    anim.toValue = @(kDegreesToRadians(10));
+    anim.duration = 0.15;
+    anim.repeatCount = 6;
+    anim.autoreverses = YES;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_z"];
+}
+
+#pragma mark - UIView Animation 绕Y轴旋转
+- (void)shakeUIViewRotationY {
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+        self.shakeView.layer.transform = CATransform3DMakeRotation(kDegreesToRadians(-80), 0, 1, 0);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.shakeView.layer.transform = CATransform3DIdentity;
+        }];
+    }];
+}
+
+#pragma mark - CAKeyframeAnimation 左右摇摆
+- (void)shakeKeyframeSwing {
+    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    anim.keyPath = @"transform.rotation.z";
+    anim.values = @[
+        @(kDegreesToRadians(0)),
+        @(kDegreesToRadians(-15)),
+        @(kDegreesToRadians(15)),
+        @(kDegreesToRadians(-10)),
+        @(kDegreesToRadians(10)),
+        @(kDegreesToRadians(0)),
+    ];
+    anim.duration = 0.6;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_keyframe_swing"];
+}
+
+#pragma mark - CAKeyframeAnimation 多角度
+- (void)shakeKeyframeMultiAngle {
+    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    anim.keyPath = @"transform.rotation.z";
+    anim.values = @[
+        @(kDegreesToRadians(0)),
+        @(kDegreesToRadians(-30)),
+        @(kDegreesToRadians(0)),
+        @(kDegreesToRadians(30)),
+        @(kDegreesToRadians(0)),
+    ];
+    anim.duration = 1.0;
+    anim.repeatCount = 2;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_keyframe_multi"];
+}
+
+#pragma mark - CABasicAnimation 绕Y轴重复旋转
+- (void)shakeRotationYRepeat {
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+    anim.toValue = @(kDegreesToRadians(360));
+    anim.duration = 1.0;
+    anim.repeatCount = 3;
+    anim.cumulative = YES;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_y_repeat"];
+}
+
+#pragma mark - CAKeyframeAnimation X轴来回弹跳
+- (void)shakeBounceX {
+    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    anim.keyPath = @"transform.rotation.x";
+    anim.values = @[
+        @(kDegreesToRadians(0)),
+        @(kDegreesToRadians(-20)),
+        @(kDegreesToRadians(15)),
+        @(kDegreesToRadians(-10)),
+        @(kDegreesToRadians(5)),
+        @(kDegreesToRadians(0)),
+    ];
+    anim.duration = 0.8;
+    [self.shakeView.layer addAnimation:anim forKey:@"shake_bounce_x"];
+}
 
 @end

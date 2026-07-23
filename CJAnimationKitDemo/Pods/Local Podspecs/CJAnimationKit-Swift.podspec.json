@@ -5,7 +5,6 @@
   "homepage": "https://github.com/dvlproad/CJAnimationKit.git",
   "license": "MIT",
   "authors": "dvlproad",
-  "description": "A longer description of CJAnimationKit-Swift in Markdown format.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
   "platforms": {
     "ios": "14.0"
   },
@@ -14,12 +13,24 @@
     "git": "https://github.com/dvlproad/CJAnimationKit.git",
     "tag": "CJAnimationKit-Swift_0.1.2"
   },
-  "frameworks": "UIKit",
+  "frameworks": [
+    "UIKit",
+    "SwiftUI"
+  ],
   "requires_arc": true,
   "subspecs": [
     {
-      "name": "Extension",
-      "source_files": "CJAnimationKit-Swift/Extension/**/*.{swift}"
+      "name": "SwiftUIAnimation",
+      "subspecs": [
+        {
+          "name": "EasyAnimation",
+          "source_files": "CJAnimationKit-Swift/Extension/CJEasyAnimationExtension.swift"
+        },
+        {
+          "name": "SymbolAnimation",
+          "source_files": "CJAnimationKit-Swift/Extension/CJSymbolAnimationType.swift"
+        }
+      ]
     }
   ],
   "swift_version": "5.0"

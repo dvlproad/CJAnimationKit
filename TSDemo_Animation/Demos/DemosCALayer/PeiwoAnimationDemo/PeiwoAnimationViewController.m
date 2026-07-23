@@ -11,8 +11,7 @@
 
 #import <CJBaseUIKit/UIView+CJDragAction.h>
 //#import <CJBaseUIKit/UIView+CJKeepBounds.h>
-
-#import "UIView+CJZoomFrame.h"
+#import <CJAnimationKit/UIView+CJZoomFrame.h>
 
 @interface PeiwoAnimationViewController ()
 

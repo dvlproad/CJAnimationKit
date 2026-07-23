@@ -37,16 +37,21 @@ Pod::Spec.new do |s|
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
+  s.frameworks   = 'UIKit', 'SwiftUI'
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  # SwiftUI 动画集合
+  s.subspec 'SwiftUIAnimation' do |ss|
+    # 常见动画：弹跳、摆动、旋转、木质鱼、呼吸、脉冲
+    ss.subspec 'EasyAnimation' do |sss|
+      sss.source_files = "CJAnimationKit-Swift/Extension/CJEasyAnimationExtension.swift"
+    end
 
-  # 基础的常见动画
-  s.subspec 'Extension' do |ss|
-    ss.source_files = "CJAnimationKit-Swift/Extension/**/*.{swift}"
-
-#    ss.dependency "CJDataVientianeSDK_Swift"#,   :path => '../../../../CJDataVientianeSDK'
+    # SF Symbol 动画类型：弹跳、缩放、摇摆、脉冲、呼吸
+    ss.subspec 'SymbolAnimation' do |sss|
+      sss.source_files = "CJAnimationKit-Swift/Extension/CJSymbolAnimationType.swift"
+    end
   end
 
 end

@@ -10,6 +10,17 @@
 
 @implementation UIView (CJTransitionAnimation)
 
+#pragma mark - 系统的转场动画：None无、FlipFromLeft左翻转、FlipFromRight右翻转、CurlUp上翻页、CurlDown下翻页
+/* 完整的描述请参见文件头部 */
+- (void)cj_systemTransition:(UIViewAnimationTransition)transition
+{
+    [UIView animateWithDuration:0.7 animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationTransition:transition forView:self cache:YES];
+    }];
+}
+
+#pragma mark - 自定义的常见转场动画
 - (void)cj_commonTransitionFrom:(CJTransitionDirection)transitionDirection
               withAnimationType:(CJAnimateCommonType)animationType
 {
@@ -37,6 +48,7 @@
     }
 }
 
+#pragma mark - 自定义的不常见转场动画
 - (void)cj_customTransitionFrom:(CJTransitionDirection)transitionDirection
               withAnimationType:(CJAnimateCustomType)animationType
 {
@@ -105,7 +117,7 @@
 
 
 
-#pragma CATransition动画实现
+#pragma mark - 自定义(常见/不常见)的转场动画的底层实现：CATransition动画实现
 - (void)cj_transitionWithType:(NSString *)type subtype:(NSString *)subtype
 {
     CATransition *animation = [CATransition animation];
@@ -122,16 +134,5 @@
     [self.layer addAnimation:animation forKey:@"animation"];
 }
 
-
-
-#pragma UIView实现动画
-/* 完整的描述请参见文件头部 */
-- (void)cj_animationWithAnimationTransition:(UIViewAnimationTransition)transition
-{
-    [UIView animateWithDuration:0.7 animations:^{
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationTransition:transition forView:self cache:YES];
-    }];
-}
 
 @end

@@ -11,9 +11,9 @@
 @interface RadarAnimationViewController : UIViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UIButton *radarButton1;
-@property (nonatomic, weak) IBOutlet UIButton *radarButton2;
-@property (nonatomic, weak) IBOutlet UIButton *radarButton3;
+@property (nonatomic, strong) UIButton *radarButton1;
+@property (nonatomic, strong) UIButton *radarButton2;
+@property (nonatomic, strong) UIButton *radarButton3;
 
 @property (nonatomic, strong) CAShapeLayer *cycleRadarShapeLayer;
 

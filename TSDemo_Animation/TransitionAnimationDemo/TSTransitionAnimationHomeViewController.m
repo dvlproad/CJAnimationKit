@@ -20,22 +20,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"View动画", nil);
+    self.navigationItem.title = NSLocalizedString(@"View转场动画(UIView+CJTransitionAnimation)", nil);
     
-    UIImage *backgroundImage = [CQTSAssetSourceUtil localImageAtIndex:0 folderNames:@[@"jpg"]];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    [self _setupBackgroundImage:0];
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
     //UIViewAnimationTransition
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIViewAnimationTransition";
+        sectionDataModel.theme = @"系统的转场动画";
         {
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"0.None(生硬效果)";
             animationModule.actionBlock = ^{
-                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionNone];
+                [self.tableView cj_systemTransition:UIViewAnimationTransitionNone];
                 [self changeBackgroundImage];
             };
             [sectionDataModel.values addObject:animationModule];
@@ -44,7 +43,7 @@
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"1.FlipFromLeft(左翻转效果)";
             animationModule.actionBlock = ^{
-                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionFlipFromLeft];
+                [self.tableView cj_systemTransition:UIViewAnimationTransitionFlipFromLeft];
                 [self changeBackgroundImage];
             };
             [sectionDataModel.values addObject:animationModule];
@@ -53,7 +52,7 @@
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"2.FlipFromRight(右翻转效果)";
             animationModule.actionBlock = ^{
-                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionFlipFromRight];
+                [self.tableView cj_systemTransition:UIViewAnimationTransitionFlipFromRight];
                 [self changeBackgroundImage];
             };
             [sectionDataModel.values addObject:animationModule];
@@ -62,7 +61,7 @@
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"3.CurlUp(上翻页效果)";
             animationModule.actionBlock = ^{
-                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionCurlUp];
+                [self.tableView cj_systemTransition:UIViewAnimationTransitionCurlUp];
                 [self changeBackgroundImage];
             };
             [sectionDataModel.values addObject:animationModule];
@@ -71,7 +70,7 @@
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"4.CurlDown(下翻页效果)";
             animationModule.actionBlock = ^{
-                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionCurlDown];
+                [self.tableView cj_systemTransition:UIViewAnimationTransitionCurlDown];
                 [self changeBackgroundImage];
             };
             [sectionDataModel.values addObject:animationModule];
@@ -83,7 +82,7 @@
     //CommonTransition:Fade淡入淡出、MoveIn覆盖、Push推挤、Reveal揭开
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"CommonTransition";
+        sectionDataModel.theme = @"自定义的(常见)转场动画";
         {
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"Fade(淡化效果)";
@@ -134,7 +133,7 @@
     //CustomTransition
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"CustomTransition";
+        sectionDataModel.theme = @"自定义的(不常见)转场动画";
         {
             CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"Cube(3D立方效果)";
@@ -252,13 +251,22 @@
 - (void)changeBackgroundImage {
     static int i = 0;
     if (i == 0) {
+        i = 1;
+        [self _setupBackgroundImage:i];
+        
+    } else {
+        i = 0;
+        [self _setupBackgroundImage:i];
+    }
+}
+
+- (void)_setupBackgroundImage:(NSInteger)imageIndex {
+    if (imageIndex % 2 == 0) {
         UIImage *backgroundImage = [CQTSAssetSourceUtil localImageAtIndex:0 folderNames:@[@"jpg"]];
         self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-        i = 1;
     } else {
         UIImage *backgroundImage = [CQTSAssetSourceUtil localImageAtIndex:1 folderNames:@[@"jpg"]];
-        self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-        i = 0;
+        self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage] ;
     }
 }
 

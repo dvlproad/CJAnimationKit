@@ -51,6 +51,9 @@ NS_ASSUME_NONNULL_BEGIN
                    clickSubmitTitleHandle:(void(^)(UIButton *button))clickSubmitTitleHandle
                      clickEditTitleHandle:(void(^)(UIButton *button))clickEditTitleHandle;
 
+/// 使用颜色构建的背景图片
+UIImage *cqts_buttonBGImage(UIColor *bgColor);
+
 @end
 
 NS_ASSUME_NONNULL_END

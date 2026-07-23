@@ -20,17 +20,22 @@ typedef NS_ENUM(NSUInteger, CJShakeType) {
 @interface UIView (CJShake) {
     
 }
-@property (nonatomic, assign) CJShakeType cjShakeType;
+@property (nonatomic, assign, readonly) CJShakeType cjShakeType;
 
-/**
-*  短暂抖动(常见于密码输入错误)
-*/
+/*
+ *  短暂抖动(常见于密码输入错误)
+ */
 - (void)cjShake;
 
-/**
+/*
  *  持续抖动(常见于拖动操作)
  */
 - (void)cjShakeKeeping;
+
+/*
+ *  停止抖动
+ */
+- (void)cjStopShake;
 
 @end
 

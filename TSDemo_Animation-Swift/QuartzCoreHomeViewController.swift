@@ -8,13 +8,14 @@
 
 import UIKit
 import CQDemoKit
+import TSDemo_Animation
 
 @objc class QuartzCoreHomeViewController: CJUIKitBaseHomeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = NSLocalizedString("Home首页", comment: "")
+        self.title = NSLocalizedString("组件特效", comment: "")
 
         let sectionDataModels = NSMutableArray()
 
@@ -38,7 +39,8 @@ import CQDemoKit
             do {
                 let module = CQDMModuleModel()
                 module.title = "视图抖动动画"
-                module.classEntry = NSClassFromString("TSDemo_Animation.TSShakeViewController")
+                module.content = "UIView+CJShake"
+                module.classEntry = TSShakeViewController.self
                 sectionDataModel.values.add(module)
             }
             sectionDataModels.add(sectionDataModel)
@@ -52,25 +54,36 @@ import CQDemoKit
                 // RadarAnimation
                 let radarAnimationModule = CQDMModuleModel()
                 radarAnimationModule.title = "RadarAnimation(雷达动画)"
-                radarAnimationModule.classEntry = NSClassFromString("TSDemo_Animation.RadarAnimationViewController")
+                radarAnimationModule.content = "UIControl+CJRadarAnimation"
+                radarAnimationModule.classEntry = RadarAnimationViewController.self
                 sectionDataModel.values.add(radarAnimationModule)
-
+            }
+            do {
                 // PeiwoAnimation
                 let peiwoAnimationModule = CQDMModuleModel()
                 peiwoAnimationModule.title = "PeiwoAnimation(陪我动画)"
-                peiwoAnimationModule.classEntry = NSClassFromString("TSDemo_Animation.PeiwoAnimationViewController")
+                peiwoAnimationModule.content = "UIView+CJZoomFrame"
+                peiwoAnimationModule.classEntry = PeiwoAnimationViewController.self
+                peiwoAnimationModule.isCreateByXib = true
+                peiwoAnimationModule.xibBundle = Bundle(for: PeiwoAnimationViewController.self)
                 sectionDataModel.values.add(peiwoAnimationModule)
-
+            }
+            do {
                 // ShimmerAnimationViewController
                 let shimmerAnimationModule = CQDMModuleModel()
                 shimmerAnimationModule.title = "shimmerAnimation(闪光动画)"
-                shimmerAnimationModule.classEntry = NSClassFromString("TSDemo_Animation.ShimmerAnimationViewController")
+                shimmerAnimationModule.classEntry = ShimmerAnimationViewController.self
+                shimmerAnimationModule.isCreateByXib = true
+                shimmerAnimationModule.xibBundle = Bundle(for: ShimmerAnimationViewController.self)
                 sectionDataModel.values.add(shimmerAnimationModule)
-
+            }
+            do {
                 // SampleLayerMaskViewController
                 let sampleLayerMaskModule = CQDMModuleModel()
                 sampleLayerMaskModule.title = "切出你心中的那个图案"
-                sampleLayerMaskModule.classEntry = NSClassFromString("TSDemo_Animation.SampleLayerMaskViewController")
+                sampleLayerMaskModule.classEntry = SampleLayerMaskViewController.self
+                sampleLayerMaskModule.isCreateByXib = true
+                sampleLayerMaskModule.xibBundle = Bundle(for: SampleLayerMaskViewController.self)
                 sectionDataModel.values.add(sampleLayerMaskModule)
             }
             sectionDataModels.add(sectionDataModel)

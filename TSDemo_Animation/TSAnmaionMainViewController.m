@@ -38,16 +38,7 @@
     }
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-        tabBarModel.title = NSLocalizedString(@"基础动画", nil);
-        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-home"];
-        tabBarModel.classEntry = [BaseAnimationViewController class];
-        tabBarModel.isCreateByXib = YES;
-        tabBarModel.xibBundle = [NSBundle bundleForClass:[BaseAnimationViewController class]];
-        [tabBarModels addObject:tabBarModel];
-    }
-    {
-        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-        tabBarModel.title = NSLocalizedString(@"QuartzCore", nil);
+        tabBarModel.title = NSLocalizedString(@"组件特效", nil);
         tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-calendar"];
         tabBarModel.classEntry = NSClassFromString(@"TSDemo_Animation_Swift.QuartzCoreHomeViewController");
         [tabBarModels addObject:tabBarModel];
@@ -72,6 +63,15 @@
         tabBarModel.title = NSLocalizedString(@"Refresh", nil);
         tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-settings"];
         tabBarModel.classEntry = [RefreshHomeViewController class];
+        [tabBarModels addObject:tabBarModel];
+    }
+    {
+        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
+        tabBarModel.title = NSLocalizedString(@"基础动画", nil);
+        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-home"];
+        tabBarModel.classEntry = [BaseAnimationViewController class];
+        tabBarModel.isCreateByXib = YES;
+        tabBarModel.xibBundle = [NSBundle bundleForClass:[BaseAnimationViewController class]];
         [tabBarModels addObject:tabBarModel];
     }
     

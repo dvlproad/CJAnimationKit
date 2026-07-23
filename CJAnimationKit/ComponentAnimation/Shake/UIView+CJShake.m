@@ -29,6 +29,8 @@ static NSString * const cjShakeTypeKey = @"cjShakeTypeKey";
 */
 - (void)cjShake
 {
+    self.cjShakeType = CJShakeTypeMoving;
+    
     CAKeyframeAnimation *keyAn = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     [keyAn setDuration:0.5f];
     NSArray *array = [[NSArray alloc] initWithObjects:
@@ -72,10 +74,12 @@ static NSString * const cjShakeTypeKey = @"cjShakeTypeKey";
     if (animation) {
         // 复原
         self.layer.speed = 1.0;
+        self.cjShakeType = CJShakeTypeEnd;
         return;
     }
     
     // 抖动动画
+    self.cjShakeType = CJShakeTypeMoving;
     animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     [animation setDuration:0.1];
     animation.fromValue = @(-M_1_PI/6);
@@ -85,6 +89,17 @@ static NSString * const cjShakeTypeKey = @"cjShakeTypeKey";
     self.layer.anchorPoint = CGPointMake(0.5, 0.5);
     [self.layer addAnimation:animation forKey:@"rotation"];
     
+}
+
+
+/**
+*  停止抖动
+*/
+- (void)cjStopShake {
+    [self.layer removeAllAnimations];
+    self.layer.speed = 1.0;
+    self.transform = CGAffineTransformIdentity;
+    self.cjShakeType = CJShakeTypeEnd;
 }
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import "RadarAnimationViewController.h"
+#import <Masonry/Masonry.h>
 
 #import "CJAnimationFactory.h"
 #import "CAShapeLayerFactory.h"
 
 #import "UIControl+CJRadarAnimation.h"
+#import <CQDemoKit/CQTSRipeButtonCollectionView.h>
 
 @interface RadarAnimationViewController ()
 
@@ -21,17 +23,72 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    [self.radarButton1 addTarget:self action:@selector(radarAnimation1:) forControlEvents:UIControlEventTouchUpInside];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.radarButton2 addTarget:self action:@selector(radarAnimation2:) forControlEvents:UIControlEventTouchDown];
-    [self.radarButton2 addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside]; //点击事件，其实包含了抬起事件，所以需需要处理与TouchDown相对应的事件
-    [self.radarButton2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside]; //点击事件，其实包含了抬起事件，所以需需要处理与TouchDown相对应的事件
+    UIColor *buttonColor = [UIColor colorWithRed:0.996 green:0.780 blue:0.369 alpha:1.0];
     
-//    [self.radarButton2 addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil]; //观察者是self
+    // radarButton1
+    UIButton *radarButton1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    radarButton1.backgroundColor = buttonColor;
+    [radarButton1 setTitle:@"每点击一下产生一圈雷达波纹" forState:UIControlStateNormal];
+    [radarButton1 addTarget:self action:@selector(radarAnimation1:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:radarButton1];
+    self.radarButton1 = radarButton1;
     
-    self.radarButton3.cjRadarAnimationType = CJRadarAnimationTypeOnlyDown;
+    // radarButton2
+    UIButton *radarButton2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    radarButton2.backgroundColor = buttonColor;
+    [radarButton2 setTitle:@"按住的时候产生雷达波纹" forState:UIControlStateNormal];
+    [radarButton2 addTarget:self action:@selector(radarAnimation2:) forControlEvents:UIControlEventTouchDown];
+    [radarButton2 addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [radarButton2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:radarButton2];
+    self.radarButton2 = radarButton2;
+    
+    // radarButton3
+    UIButton *radarButton3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    radarButton3.backgroundColor = buttonColor;
+    [radarButton3 setTitle:@"雷达波纹" forState:UIControlStateNormal];
+    radarButton3.cjRadarAnimationType = CJRadarAnimationTypeOnlyDown;
+    [self.view addSubview:radarButton3];
+    self.radarButton3 = radarButton3;
+    
+    // cjRadarAnimationType 测试
+    NSArray<NSString *> *titles = @[
+        @"None(无动画)",
+        @"OnlyDown(按下触发)",
+        @"EveryTouch(每次触发)",
+    ];
+    __weak typeof(self) weakSelf = self;
+    CQTSRipeButtonCollectionView *collectionView = [CQTSRipeButtonCollectionView columnRadioButtonsWithWidth:200 height:3*50 titles:titles didSelectItemAtIndexHandle:^(NSInteger index) {
+        [weakSelf setRadarTypeWithIndex:index];
+    }];
+    [self.view addSubview:collectionView];
+    
+    // Masonry 布局
+    [radarButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(65);
+        make.right.mas_equalTo(self.view).mas_offset(-65);
+        make.top.mas_equalTo(self.view).mas_offset(163);
+        make.height.mas_equalTo(72);
+    }];
+    [radarButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.height.mas_equalTo(radarButton1);
+        make.top.mas_equalTo(radarButton1.mas_bottom).mas_offset(96);
+    }];
+    [radarButton3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.height.mas_equalTo(radarButton1);
+        make.top.mas_equalTo(radarButton2.mas_bottom).mas_offset(37);
+    }];
+    [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(radarButton3.mas_bottom).mas_offset(10);
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(3*50);
+    }];
+    
+    [collectionView reloadData];
 }
 
 - (void)radarAnimation1:(UIButton *)button {
@@ -76,6 +133,15 @@
     }
 }
 
+
+- (void)setRadarTypeWithIndex:(NSInteger)index {
+    switch (index) {
+        case 0: self.radarButton3.cjRadarAnimationType = CJRadarAnimationTypeNone; break;
+        case 1: self.radarButton3.cjRadarAnimationType = CJRadarAnimationTypeOnlyDown; break;
+        case 2: self.radarButton3.cjRadarAnimationType = CJRadarAnimationTypeEveryTouch; break;
+        default: break;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
