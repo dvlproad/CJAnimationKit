@@ -1,0 +1,29 @@
+{
+  "name": "TSDemo_Animation-Swift",
+  "version": "0.0.1",
+  "summary": "TSDemo_Animation Swift 版 - 补充使用 Swift 语言实现的动画演示界面",
+  "homepage": "https://github.com/dvlproad/CJAnimationKit",
+  "license": "MIT",
+  "authors": {
+    "dvlproad": ""
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "source": {
+    "git": "https://github.com/dvlproad/CJAnimationKit.git",
+    "tag": "TSDemo_Animation-Swift_0.0.1"
+  },
+  "swift_versions": "5.0",
+  "frameworks": [
+    "UIKit",
+    "SwiftUI"
+  ],
+  "requires_arc": true,
+  "source_files": "TSDemo_Animation-Swift/**/*.{swift}",
+  "dependencies": {
+    "TSDemo_Animation": [],
+    "CJAnimationKit-Swift": []
+  },
+  "swift_version": "5.0"
+}

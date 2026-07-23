@@ -21,6 +21,20 @@ PODS:
   - CJAnimationKit/TransitionAnimation (0.0.3)
   - CJBaseUIKit/UINavigationBar (0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (0.8.1)
+  - CQDemoKit (0.9.10):
+    - CQDemoKit/Auxiliary (= 0.9.10)
+    - CQDemoKit/BaseUIKit (= 0.9.10)
+    - CQDemoKit/BaseUtil (= 0.9.10)
+    - CQDemoKit/BaseVC (= 0.9.10)
+    - CQDemoKit/Demo_DataSourceAndDelegate (= 0.9.10)
+    - CQDemoKit/Demo_Resource (= 0.9.10)
+    - CQDemoKit/Demo_RipeView (= 0.9.10)
+    - CQDemoKit/Helper (= 0.9.10)
+    - CQDemoKit/Monitor (= 0.9.10)
+    - CQDemoKit/StateUI (= 0.9.10)
+    - CQDemoKit/TestMethod (= 0.9.10)
+  - CQDemoKit/Auxiliary (0.9.10):
+    - Masonry
   - CQDemoKit/BaseUIKit (0.9.10):
     - Masonry
   - CQDemoKit/BaseUtil (0.9.10)
@@ -84,6 +98,12 @@ PODS:
     - CQDemoKit/Demo_Resource
     - Masonry
   - CQDemoKit/Helper (0.9.10)
+  - CQDemoKit/Monitor (0.9.10)
+  - CQDemoKit/StateUI (0.9.10):
+    - Masonry
+  - CQDemoKit/TestMethod (0.9.10):
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC/Base
   - CQDemoResource/Core (0.3.0):
     - CQDemoKit/Demo_Resource
   - CQDemoResource/Images (0.3.0):
@@ -91,6 +111,15 @@ PODS:
   - HWWeakTimer (1.0)
   - Masonry (1.1.0)
   - Shimmer (1.0.2)
+  - TSDemo_Animation (0.0.1):
+    - CJAnimationKit
+    - CJBaseUIKit/UINavigationBar
+    - CQDemoKit
+    - CQDemoResource/Images
+    - Shimmer
+  - TSDemo_Animation-Swift (0.0.1):
+    - CJAnimationKit-Swift
+    - TSDemo_Animation
 
 DEPENDENCIES:
   - CJAnimationKit (from `../`)
@@ -104,7 +133,8 @@ DEPENDENCIES:
   - CQDemoKit/Demo_RipeView (~> 0.9.10)
   - CQDemoResource/Images (~> 0.3.0)
   - HWWeakTimer (~> 1.0)
-  - Shimmer
+  - TSDemo_Animation (from `../`)
+  - TSDemo_Animation-Swift (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -120,6 +150,10 @@ EXTERNAL SOURCES:
     :path: "../"
   CJAnimationKit-Swift:
     :path: "../"
+  TSDemo_Animation:
+    :path: "../"
+  TSDemo_Animation-Swift:
+    :path: "../"
 
 SPEC CHECKSUMS:
   CJAnimationKit: cf037bdb664541a4807f75ab1a460852b0985ede
@@ -130,7 +164,9 @@ SPEC CHECKSUMS:
   HWWeakTimer: 79488095ef2dd8937f94b676d12bd5fa954486e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  TSDemo_Animation: 1e0c6d309efb783b063c36d211156cb39b11ac7e
+  TSDemo_Animation-Swift: 7936cd962b5235d7a8a5980fc9ea525c89cd01d9
 
-PODFILE CHECKSUM: 984312d97731f3e9dfaa778398c2fa0eed0fdf06
+PODFILE CHECKSUM: c537448f16b94a75769c494d38564500c024d3e9
 
 COCOAPODS: 1.16.2

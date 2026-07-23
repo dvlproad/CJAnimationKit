@@ -7,3 +7,5 @@ ${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework
 ${BUILT_PRODUCTS_DIR}/HWWeakTimer/HWWeakTimer.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework
+${BUILT_PRODUCTS_DIR}/TSDemo_Animation/TSDemo_Animation.framework
+${BUILT_PRODUCTS_DIR}/TSDemo_Animation-Swift/TSDemo_Animation_Swift.framework

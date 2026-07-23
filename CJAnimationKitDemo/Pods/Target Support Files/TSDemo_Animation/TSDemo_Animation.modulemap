@@ -1,0 +1,6 @@
+framework module TSDemo_Animation {
+  umbrella header "TSDemo_Animation-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -184,6 +184,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/HWWeakTimer/HWWeakTimer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation/TSDemo_Animation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation-Swift/TSDemo_Animation_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit/CJAnimationKit.framework"
@@ -194,6 +196,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/HWWeakTimer/HWWeakTimer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation/TSDemo_Animation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation-Swift/TSDemo_Animation_Swift.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

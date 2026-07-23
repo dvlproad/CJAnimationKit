@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CJRepeatKeyWindow.h"
+#import <TSDemo_Animation/TSAnimationAppDelegateProtocol.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, TSAnimationAppDelegateProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 

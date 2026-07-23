@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "UIView+CQAuxiliaryText.h"
+#import "UIViewController+CQNavigationBar.h"
 #import "CQTSBorderStateButton.h"
 #import "CQTSButtonFactory.h"
 #import "CQTSContainerViewFactory.h"
@@ -51,6 +53,21 @@
 #import "CQTSRipeButtonCollectionViewCell.h"
 #import "CQTSRipeImageCollectionViewCell.h"
 #import "NSError+CQTSErrorString.h"
+#import "CQTSFPSView.h"
+#import "CQTSAlertManager.h"
+#import "CQTSDataEmptyView.h"
+#import "CQTSLongBaseAutoTestMethodViewController.h"
+#import "CQTSShortBaseAutoTestMethodViewController.h"
+#import "CQTSAutoTestMethodModel.h"
+#import "CQTSTestMethodTableHeaderView.h"
+#import "CQTSTestMethodLongTableViewCell.h"
+#import "CQTSTestMethodMiddleButton.h"
+#import "CQTSTestMethodLeftButton.h"
+#import "CQTSTestMethodShortTableViewCell.h"
+#import "CQTSManualBaseTestMethodViewController.h"
+#import "CQTSManualTestMethodModel.h"
+#import "CQTSMinusAddView.h"
+#import "TestValueChangeTableViewCell.h"
 
 FOUNDATION_EXPORT double CQDemoKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CQDemoKitVersionString[];
