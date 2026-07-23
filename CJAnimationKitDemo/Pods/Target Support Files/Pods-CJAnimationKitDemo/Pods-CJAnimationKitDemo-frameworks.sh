@@ -176,17 +176,21 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit/CJAnimationKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit-Swift/CJAnimationKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HWWeakTimer/HWWeakTimer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit/CJAnimationKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit-Swift/CJAnimationKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HWWeakTimer/HWWeakTimer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"

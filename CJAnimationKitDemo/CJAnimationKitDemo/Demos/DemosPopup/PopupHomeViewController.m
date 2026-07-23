@@ -30,10 +30,9 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"CoreAnimate";
         {
-            //BaseAnimationDemo
             CQDMModuleModel *baseAnimationModuleModel = [[CQDMModuleModel alloc] init];
-            baseAnimationModuleModel.title = @"BaseAnimationDemo";
-            baseAnimationModuleModel.classEntry = [BasicAnimationVC class];
+            baseAnimationModuleModel.title = @"xxx";
+            baseAnimationModuleModel.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:baseAnimationModuleModel];
         }
         

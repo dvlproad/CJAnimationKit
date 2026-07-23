@@ -39,7 +39,7 @@
         sectionDataModel.theme = @"视图常见动画";
         {
             CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
-            module.title = @"弹跳 摆动 旋转 呼吸 脉冲";
+            module.title = @"弹跳 摆动 旋转 呼吸 脉冲(UIKit)";
             module.classEntry = [TSEasyAnimationViewController class];
             [sectionDataModel.values addObject:module];
         }

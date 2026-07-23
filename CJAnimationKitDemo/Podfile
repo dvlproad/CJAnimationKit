@@ -4,15 +4,35 @@ use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
 
+#post_install do |installer|
+#
+#    puts 'Determining pod project minimal deployment target'
+#
+#    pods_project = installer.pods_project
+#    deployment_target_key = 'IPHONEOS_DEPLOYMENT_TARGET'
+#    deployment_targets = pods_project.build_configurations.map{ |config| config.build_settings[deployment_target_key] }
+#    minimal_deployment_target = deployment_targets.min_by{ |version| Gem::Version.new(version) }
+#
+#    puts 'Minimal deployment target is ' + minimal_deployment_target
+#    puts 'Setting each pod deployment target to ' + minimal_deployment_target
+#
+#    installer.pods_project.targets.each do |target|
+#        target.build_configurations.each do |config|
+#            config.build_settings[deployment_target_key] = minimal_deployment_target
+#        end
+#    end
+#end
+
 target 'CJAnimationKitDemo' do
-  pod 'CQDemoKit',              '~> 0.8.0',     :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
-  
+  pod 'CQDemoKit',              '~> 0.9.10',    :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+  pod 'CQDemoResource',         '~> 0.3.0'      :subspecs => ['Images']
   pod 'CJBaseUIKit',            '~> 0.8.1',     :subspecs => ['UIView/CJDragAction', 'UINavigationBar']
   
   pod 'Shimmer' #fackBook的闪光动画
   
   pod 'HWWeakTimer', '~> 1.0' #Timer的循环引用
   
+  pod 'CJAnimationKit',         path: '../'
   pod 'CJAnimationKit-Swift',   path: '../'
 end
 
