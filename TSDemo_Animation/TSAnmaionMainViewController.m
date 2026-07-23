@@ -9,6 +9,8 @@
 #import "TSAnmaionMainViewController.h"
 #import <CQDemoResource/UIImage+CQDemoResource.h>
 
+#import "TSTransitionAnimationHomeViewController.h"
+
 #import "BaseAnimationViewController.h"
 #import "CycleHomeViewController.h"
 #import "PopupHomeViewController.h"
@@ -27,6 +29,13 @@
     // Do any additional setup after loading the view.
     
     NSMutableArray<CQDMTabBarModel *> *tabBarModels = [[NSMutableArray alloc] init];
+    {
+        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
+        tabBarModel.title = NSLocalizedString(@"转场", nil);
+        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-menu"];
+        tabBarModel.classEntry = [TSTransitionAnimationHomeViewController class];
+        [tabBarModels addObject:tabBarModel];
+    }
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
         tabBarModel.title = NSLocalizedString(@"基础动画", nil);
@@ -50,13 +59,13 @@
         tabBarModel.classEntry = [CycleHomeViewController class];
         [tabBarModels addObject:tabBarModel];
     }
-    {
-        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-        tabBarModel.title = NSLocalizedString(@"Popup", nil);
-        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-menu"];
-        tabBarModel.classEntry = [PopupHomeViewController class];
-        [tabBarModels addObject:tabBarModel];
-    }
+//    {
+//        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
+//        tabBarModel.title = NSLocalizedString(@"Popup", nil);
+//        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-menu"];
+//        tabBarModel.classEntry = [PopupHomeViewController class];
+//        [tabBarModels addObject:tabBarModel];
+//    }
     
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];

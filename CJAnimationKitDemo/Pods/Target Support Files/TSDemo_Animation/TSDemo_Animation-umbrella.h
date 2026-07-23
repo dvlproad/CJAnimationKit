@@ -33,6 +33,7 @@
 #import "RefreshAnimateViewController.h"
 #import "TNActivityIndicator.h"
 #import "RefreshHomeViewController.h"
+#import "TSTransitionAnimationHomeViewController.h"
 #import "TSAnimationAppDelegateProtocol.h"
 #import "TSAnmaionMainViewController.h"
 #import "WelcomeVCToPopup.h"
