@@ -16,14 +16,6 @@
 		7802B2FA210CAF9D006C113A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B2F9210CAF9D006C113A /* main.m */; };
 		7802B304210CAF9E006C113A /* CJAnimationKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B303210CAF9E006C113A /* CJAnimationKitDemoTests.m */; };
 		7802B30F210CAF9E006C113A /* CJAnimationKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B30E210CAF9E006C113A /* CJAnimationKitDemoUITests.m */; };
-		7802B32E210CB1B9006C113A /* UIView+CJZoomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B31D210CB1B9006C113A /* UIView+CJZoomFrame.m */; };
-		7802B32F210CB1B9006C113A /* UIControl+CJRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B31E210CB1B9006C113A /* UIControl+CJRadarAnimation.m */; };
-		7802B330210CB1B9006C113A /* CJGraduatedCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B323210CB1B9006C113A /* CJGraduatedCycleView.m */; };
-		7802B331210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B324210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m */; };
-		7802B332210CB1B9006C113A /* CJAnimationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B326210CB1B9006C113A /* CJAnimationFactory.m */; };
-		7802B333210CB1B9006C113A /* UIView+CJShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B327210CB1B9006C113A /* UIView+CJShimmering.m */; };
-		7802B334210CB1B9006C113A /* CAShapeLayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B32A210CB1B9006C113A /* CAShapeLayerFactory.m */; };
-		7802B335210CB1B9006C113A /* CJRepeatKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B32B210CB1B9006C113A /* CJRepeatKeyWindow.m */; };
 		7802B39C210CB1D0006C113A /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7802B36D210CB1CF006C113A /* bgCar@2x.jpg */; };
 		7802B39D210CB1D0006C113A /* av_call@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7802B36E210CB1CF006C113A /* av_call@3x.png */; };
 		7802B39E210CB1D0006C113A /* av_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 7802B36F210CB1CF006C113A /* av_call.png */; };
@@ -76,7 +68,6 @@
 		781FFBF1210E3BFB0051A1BE /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE3210E3BFA0051A1BE /* arrow_back_red@2x.png */; };
 		781FFBF2210E3BFB0051A1BE /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE4210E3BFA0051A1BE /* arrow_R_white@2x.png */; };
 		781FFBF3210E3BFB0051A1BE /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 781FFBE5210E3BFA0051A1BE /* arrow_down.png */; };
-		786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */; };
 		78FCB39C259B8A41006CD44F /* HUDCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB39B259B8A41006CD44F /* HUDCycleLayer.m */; };
 		78FCB3A2259B8B37006CD44F /* HUDLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3A1259B8B37006CD44F /* HUDLayerView.m */; };
 		78FCB3A8259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB3A7259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m */; };
@@ -128,22 +119,6 @@
 		7802B30A210CAF9E006C113A /* CJAnimationKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJAnimationKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7802B30E210CAF9E006C113A /* CJAnimationKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAnimationKitDemoUITests.m; sourceTree = "<group>"; };
 		7802B310210CAF9E006C113A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7802B31D210CB1B9006C113A /* UIView+CJZoomFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJZoomFrame.m"; sourceTree = "<group>"; };
-		7802B31E210CB1B9006C113A /* UIControl+CJRadarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CJRadarAnimation.m"; sourceTree = "<group>"; };
-		7802B31F210CB1B9006C113A /* CAShapeLayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerFactory.h; sourceTree = "<group>"; };
-		7802B321210CB1B9006C113A /* CJGraduatedCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJGraduatedCycleView.h; sourceTree = "<group>"; };
-		7802B322210CB1B9006C113A /* CJGraduatedCycleView+Countdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJGraduatedCycleView+Countdown.h"; sourceTree = "<group>"; };
-		7802B323210CB1B9006C113A /* CJGraduatedCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJGraduatedCycleView.m; sourceTree = "<group>"; };
-		7802B324210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJGraduatedCycleView+Countdown.m"; sourceTree = "<group>"; };
-		7802B325210CB1B9006C113A /* CJRepeatKeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRepeatKeyWindow.h; sourceTree = "<group>"; };
-		7802B326210CB1B9006C113A /* CJAnimationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAnimationFactory.m; sourceTree = "<group>"; };
-		7802B327210CB1B9006C113A /* UIView+CJShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShimmering.m"; sourceTree = "<group>"; };
-		7802B328210CB1B9006C113A /* UIControl+CJRadarAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CJRadarAnimation.h"; sourceTree = "<group>"; };
-		7802B329210CB1B9006C113A /* UIView+CJZoomFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJZoomFrame.h"; sourceTree = "<group>"; };
-		7802B32A210CB1B9006C113A /* CAShapeLayerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerFactory.m; sourceTree = "<group>"; };
-		7802B32B210CB1B9006C113A /* CJRepeatKeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRepeatKeyWindow.m; sourceTree = "<group>"; };
-		7802B32C210CB1B9006C113A /* UIView+CJShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShimmering.h"; sourceTree = "<group>"; };
-		7802B32D210CB1B9006C113A /* CJAnimationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAnimationFactory.h; sourceTree = "<group>"; };
 		7802B36D210CB1CF006C113A /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		7802B36E210CB1CF006C113A /* av_call@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "av_call@3x.png"; sourceTree = "<group>"; };
 		7802B36F210CB1CF006C113A /* av_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = av_call.png; sourceTree = "<group>"; };
@@ -216,8 +191,6 @@
 		781FFBE3210E3BFA0051A1BE /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
 		781FFBE4210E3BFA0051A1BE /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
 		781FFBE5210E3BFA0051A1BE /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
-		786966F025926F3A00E7B4A8 /* CQGradientBorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQGradientBorderButton.h; sourceTree = "<group>"; };
-		786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQGradientBorderButton.m; sourceTree = "<group>"; };
 		78FCB39A259B8A41006CD44F /* HUDCycleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDCycleLayer.h; sourceTree = "<group>"; };
 		78FCB39B259B8A41006CD44F /* HUDCycleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDCycleLayer.m; sourceTree = "<group>"; };
 		78FCB3A0259B8B37006CD44F /* HUDLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayerView.h; sourceTree = "<group>"; };
@@ -315,7 +288,6 @@
 				97C286F12611A5270070610D /* TSAnmaionMainViewController.m */,
 				7802B2ED210CAF9B006C113A /* ViewController.h */,
 				7802B2EE210CAF9B006C113A /* ViewController.m */,
-				7802B31C210CB1B9006C113A /* CJAnimationKit */,
 				7802B2F0210CAF9B006C113A /* Main.storyboard */,
 				781FFB7A210E346B0051A1BE /* Demos */,
 				7802B36C210CB1CF006C113A /* Resources */,
@@ -344,40 +316,6 @@
 				7802B310210CAF9E006C113A /* Info.plist */,
 			);
 			path = CJAnimationKitDemoUITests;
-			sourceTree = "<group>";
-		};
-		7802B31C210CB1B9006C113A /* CJAnimationKit */ = {
-			isa = PBXGroup;
-			children = (
-				7802B31F210CB1B9006C113A /* CAShapeLayerFactory.h */,
-				7802B32A210CB1B9006C113A /* CAShapeLayerFactory.m */,
-				7802B32D210CB1B9006C113A /* CJAnimationFactory.h */,
-				7802B326210CB1B9006C113A /* CJAnimationFactory.m */,
-				7802B320210CB1B9006C113A /* CJGraduatedCycleView */,
-				7802B325210CB1B9006C113A /* CJRepeatKeyWindow.h */,
-				7802B32B210CB1B9006C113A /* CJRepeatKeyWindow.m */,
-				7802B328210CB1B9006C113A /* UIControl+CJRadarAnimation.h */,
-				7802B31E210CB1B9006C113A /* UIControl+CJRadarAnimation.m */,
-				7802B32C210CB1B9006C113A /* UIView+CJShimmering.h */,
-				7802B327210CB1B9006C113A /* UIView+CJShimmering.m */,
-				7802B329210CB1B9006C113A /* UIView+CJZoomFrame.h */,
-				7802B31D210CB1B9006C113A /* UIView+CJZoomFrame.m */,
-			);
-			name = CJAnimationKit;
-			path = ../../CJAnimationKit;
-			sourceTree = "<group>";
-		};
-		7802B320210CB1B9006C113A /* CJGraduatedCycleView */ = {
-			isa = PBXGroup;
-			children = (
-				7802B321210CB1B9006C113A /* CJGraduatedCycleView.h */,
-				7802B323210CB1B9006C113A /* CJGraduatedCycleView.m */,
-				786966F025926F3A00E7B4A8 /* CQGradientBorderButton.h */,
-				786966F125926F3A00E7B4A8 /* CQGradientBorderButton.m */,
-				7802B322210CB1B9006C113A /* CJGraduatedCycleView+Countdown.h */,
-				7802B324210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m */,
-			);
-			path = CJGraduatedCycleView;
 			sourceTree = "<group>";
 		};
 		7802B36C210CB1CF006C113A /* Resources */ = {
@@ -880,18 +818,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				781FFBBF210E346B0051A1BE /* CycleHomeViewController.m in Sources */,
-				7802B32E210CB1B9006C113A /* UIView+CJZoomFrame.m in Sources */,
 				974EFC392D324B9300A48D07 /* TSEasyAnimationView.swift in Sources */,
 				781FFBBC210E346B0051A1BE /* BezierPathAnimationVC.m in Sources */,
 				7802B2EF210CAF9B006C113A /* ViewController.m in Sources */,
-				7802B32F210CB1B9006C113A /* UIControl+CJRadarAnimation.m in Sources */,
 				7802B2FA210CAF9D006C113A /* main.m in Sources */,
 				78FCB3A8259B98FB006CD44F /* UIView+CQHUDRotationAnimation.m in Sources */,
 				781FFBC8210E346B0051A1BE /* TNActivityIndicator.m in Sources */,
 				97C286F92611A6320070610D /* UIWindow+RootSetting.m in Sources */,
-				7802B332210CB1B9006C113A /* CJAnimationFactory.m in Sources */,
 				781FFBD5210E36FA0051A1BE /* PopupHomeViewController.m in Sources */,
-				786966F225926F3B00E7B4A8 /* CQGradientBorderButton.m in Sources */,
 				781FFBCF210E346B0051A1BE /* PeiwoAnimationViewController.m in Sources */,
 				781FFBC1210E346B0051A1BE /* GradientCycleViewController.m in Sources */,
 				974EFC3C2D324CB000A48D07 /* TSEasyAnimationHomeViewController.swift in Sources */,
@@ -902,19 +836,14 @@
 				78FCB3AE259B99B2006CD44F /* HUDImageView.m in Sources */,
 				781FFBBA210E346B0051A1BE /* KeyframeAnimationVC.m in Sources */,
 				781FFBCD210E346B0051A1BE /* SampleLayerMaskViewController.m in Sources */,
-				7802B330210CB1B9006C113A /* CJGraduatedCycleView.m in Sources */,
 				781FFBD8210E37060051A1BE /* RefreshHomeViewController.m in Sources */,
 				974EFC372D324B2B00A48D07 /* TSEasyAnimationViewController.swift in Sources */,
 				97C286F32611A5270070610D /* TSAnmaionMainViewController.m in Sources */,
 				781FFBC4210E346B0051A1BE /* GradientCycleView.m in Sources */,
-				7802B335210CB1B9006C113A /* CJRepeatKeyWindow.m in Sources */,
 				781FFBB7210E346B0051A1BE /* BasicAnimationVC.m in Sources */,
 				781FFBC7210E346B0051A1BE /* RefreshAnimateViewController.m in Sources */,
 				781FFBDB210E37160051A1BE /* QuartzCoreHomeViewController.m in Sources */,
 				78FCB3A2259B8B37006CD44F /* HUDLayerView.m in Sources */,
-				7802B334210CB1B9006C113A /* CAShapeLayerFactory.m in Sources */,
-				7802B333210CB1B9006C113A /* UIView+CJShimmering.m in Sources */,
-				7802B331210CB1B9006C113A /* CJGraduatedCycleView+Countdown.m in Sources */,
 				781FFBCA210E346B0051A1BE /* UIViewDemo.m in Sources */,
 				7802B3A6210CB1D0006C113A /* WelcomeViewToPopup.m in Sources */,
 				781FFBC3210E346B0051A1BE /* GradientCycleLayer.m in Sources */,

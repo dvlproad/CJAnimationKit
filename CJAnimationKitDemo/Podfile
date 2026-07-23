@@ -25,7 +25,7 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条�
 
 target 'CJAnimationKitDemo' do
   pod 'CQDemoKit',              '~> 0.9.10',    :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
-  pod 'CQDemoResource',         '~> 0.3.0'      :subspecs => ['Images']
+  pod 'CQDemoResource',         '~> 0.3.0',     :subspecs => ['Images']
   pod 'CJBaseUIKit',            '~> 0.8.1',     :subspecs => ['UIView/CJDragAction', 'UINavigationBar']
   
   pod 'Shimmer' #fackBook的闪光动画

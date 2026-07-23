@@ -1,10 +1,24 @@
 PODS:
-  - CJAnimationKit (0.0.2):
-    - CJAnimationKit/CJGraduatedCycleView (= 0.0.2)
+  - CJAnimationKit (0.0.3):
+    - CJAnimationKit/ComponentAnimation (= 0.0.3)
+    - CJAnimationKit/TransitionAnimation (= 0.0.3)
   - CJAnimationKit-Swift (0.0.1):
     - CJAnimationKit-Swift/Extension (= 0.0.1)
   - CJAnimationKit-Swift/Extension (0.0.1)
-  - CJAnimationKit/CJGraduatedCycleView (0.0.2)
+  - CJAnimationKit/ComponentAnimation (0.0.3):
+    - CJAnimationKit/ComponentAnimation/Radar (= 0.0.3)
+    - CJAnimationKit/ComponentAnimation/RepeatKeyWindow (= 0.0.3)
+    - CJAnimationKit/ComponentAnimation/Shake (= 0.0.3)
+    - CJAnimationKit/ComponentAnimation/ShapeLayer (= 0.0.3)
+    - CJAnimationKit/ComponentAnimation/Shimmer (= 0.0.3)
+    - CJAnimationKit/ComponentAnimation/ZoomFrame (= 0.0.3)
+  - CJAnimationKit/ComponentAnimation/Radar (0.0.3)
+  - CJAnimationKit/ComponentAnimation/RepeatKeyWindow (0.0.3)
+  - CJAnimationKit/ComponentAnimation/Shake (0.0.3)
+  - CJAnimationKit/ComponentAnimation/ShapeLayer (0.0.3)
+  - CJAnimationKit/ComponentAnimation/Shimmer (0.0.3)
+  - CJAnimationKit/ComponentAnimation/ZoomFrame (0.0.3)
+  - CJAnimationKit/TransitionAnimation (0.0.3)
   - CJBaseUIKit/UINavigationBar (0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (0.8.1)
   - CQDemoKit/BaseUIKit (0.9.10):
@@ -88,7 +102,7 @@ DEPENDENCIES:
   - CQDemoKit/BaseVC (~> 0.9.10)
   - CQDemoKit/Demo_Resource (~> 0.9.10)
   - CQDemoKit/Demo_RipeView (~> 0.9.10)
-  - CQDemoResource/Images
+  - CQDemoResource/Images (~> 0.3.0)
   - HWWeakTimer (~> 1.0)
   - Shimmer
 
@@ -108,7 +122,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJAnimationKit: 79c59bc9e21af089d63470b7bf5c6b143528dca3
+  CJAnimationKit: cf037bdb664541a4807f75ab1a460852b0985ede
   CJAnimationKit-Swift: 1df31e99f8d8561b49eb60b5fa400edda24f40d8
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CQDemoKit: 9f8aa6a4170962f9621b08748ac66f2d88d25f35
@@ -117,6 +131,6 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: b94cf3ce3a66b21e0d17bd18b1fd4cb2bd651ae5
+PODFILE CHECKSUM: 984312d97731f3e9dfaa778398c2fa0eed0fdf06
 
 COCOAPODS: 1.16.2
