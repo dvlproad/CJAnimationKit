@@ -38,19 +38,6 @@ static NSString *cjRadarAnimationTypeKey = @"cjRadarAnimationTypeKey";
     return [objc_getAssociatedObject(self, &cjRadarAnimationTypeKey) integerValue];
 }
 
-- (void)cjResetRadarAnimation {
-    // 1. 移除旧动画 layer
-    CAShapeLayer *oldLayer = self.cjCircleShapeLayer;
-    [oldLayer removeFromSuperlayer];
-    
-    // 2. 取消延迟调用
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(addCJRadarAnimation) object:nil];
-    
-    // 3. 移除旧的 target-action
-    [self removeTarget:self action:@selector(touchDownAction) forControlEvents:UIControlEventTouchDown];
-    [self removeTarget:self action:@selector(touchUpAction) forControlEvents:UIControlEventTouchUpInside];
-}
-
 - (void)setCjRadarAnimationType:(CJRadarAnimationType)cjRadarAnimationType {
     [self cjResetRadarAnimation];   // 修复切换 radarAnimationType 的时候的问题
     
@@ -107,6 +94,19 @@ static NSString *cjRadarAnimationTypeKey = @"cjRadarAnimationTypeKey";
     if (self.cjCircleShapeLayer) {
         [self.cjCircleShapeLayer removeFromSuperlayer];
     }
+}
+
+- (void)cjResetRadarAnimation {
+    // 1. 移除旧动画 layer
+    CAShapeLayer *oldLayer = self.cjCircleShapeLayer;
+    [oldLayer removeFromSuperlayer];
+    
+    // 2. 取消延迟调用
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(addCJRadarAnimation) object:nil];
+    
+    // 3. 移除旧的 target-action
+    [self removeTarget:self action:@selector(touchDownAction) forControlEvents:UIControlEventTouchDown];
+    [self removeTarget:self action:@selector(touchUpAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
