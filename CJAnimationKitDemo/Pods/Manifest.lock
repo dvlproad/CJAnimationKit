@@ -11,13 +11,11 @@ PODS:
   - CJAnimationKit-Swift/SwiftUIAnimation/SymbolAnimation (0.0.1)
   - CJAnimationKit/ComponentAnimation (0.0.3):
     - CJAnimationKit/ComponentAnimation/Radar (= 0.0.3)
-    - CJAnimationKit/ComponentAnimation/RepeatKeyWindow (= 0.0.3)
     - CJAnimationKit/ComponentAnimation/Shake (= 0.0.3)
     - CJAnimationKit/ComponentAnimation/ShapeLayer (= 0.0.3)
     - CJAnimationKit/ComponentAnimation/Shimmer (= 0.0.3)
     - CJAnimationKit/ComponentAnimation/ZoomFrame (= 0.0.3)
   - CJAnimationKit/ComponentAnimation/Radar (0.0.3)
-  - CJAnimationKit/ComponentAnimation/RepeatKeyWindow (0.0.3)
   - CJAnimationKit/ComponentAnimation/Shake (0.0.3)
   - CJAnimationKit/ComponentAnimation/ShapeLayer (0.0.3)
   - CJAnimationKit/ComponentAnimation/Shimmer (0.0.3)
@@ -25,92 +23,106 @@ PODS:
   - CJAnimationKit/TransitionAnimation (0.0.3)
   - CJBaseUIKit/UINavigationBar (0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (0.8.1)
-  - CQDemoKit (0.9.11):
-    - CQDemoKit/Auxiliary (= 0.9.11)
-    - CQDemoKit/BaseUIKit (= 0.9.11)
-    - CQDemoKit/BaseUtil (= 0.9.11)
-    - CQDemoKit/BaseVC (= 0.9.11)
-    - CQDemoKit/Demo_DataSourceAndDelegate (= 0.9.11)
-    - CQDemoKit/Demo_Resource (= 0.9.11)
-    - CQDemoKit/Demo_RipeView (= 0.9.11)
-    - CQDemoKit/Helper (= 0.9.11)
-    - CQDemoKit/Monitor (= 0.9.11)
-    - CQDemoKit/StateUI (= 0.9.11)
-    - CQDemoKit/TestMethod (= 0.9.11)
-  - CQDemoKit/Auxiliary (0.9.11):
+  - CQDemoKit (0.9.13):
+    - CQDemoKit/Auxiliary (= 0.9.13)
+    - CQDemoKit/BaseUIKit (= 0.9.13)
+    - CQDemoKit/BaseUtil (= 0.9.13)
+    - CQDemoKit/BaseVC (= 0.9.13)
+    - CQDemoKit/Demo_DataSourceAndDelegate (= 0.9.13)
+    - CQDemoKit/Demo_Resource (= 0.9.13)
+    - CQDemoKit/Demo_RipeView (= 0.9.13)
+    - CQDemoKit/Helper (= 0.9.13)
+    - CQDemoKit/Monitor (= 0.9.13)
+    - CQDemoKit/StateUI (= 0.9.13)
+    - CQDemoKit/TestMethod (= 0.9.13)
+  - CQDemoKit-Swift/as (0.0.5)
+  - CQDemoKit/Auxiliary (0.9.13):
     - Masonry
-  - CQDemoKit/BaseUIKit (0.9.11):
+  - CQDemoKit/BaseUIKit (0.9.13):
+    - CQDemoKit/BaseUIKit/Button (= 0.9.13)
+    - CQDemoKit/BaseUIKit/Container (= 0.9.13)
+    - CQDemoKit/BaseUIKit/ImageLoader (= 0.9.13)
+    - CQDemoKit/BaseUIKit/Switch (= 0.9.13)
+  - CQDemoKit/BaseUIKit/Button (0.9.13):
     - Masonry
-  - CQDemoKit/BaseUtil (0.9.11)
-  - CQDemoKit/BaseVC (0.9.11):
-    - CQDemoKit/BaseVC/Base (= 0.9.11)
-    - CQDemoKit/BaseVC/Collection (= 0.9.11)
-    - CQDemoKit/BaseVC/ScrollView (= 0.9.11)
-    - CQDemoKit/BaseVC/TabBar (= 0.9.11)
-    - CQDemoKit/BaseVC/TableView (= 0.9.11)
-  - CQDemoKit/BaseVC/Base (0.9.11):
+  - CQDemoKit/BaseUIKit/Container (0.9.13):
+    - Masonry
+  - CQDemoKit/BaseUIKit/ImageLoader (0.9.13)
+  - CQDemoKit/BaseUIKit/Switch (0.9.13):
+    - Masonry
+  - CQDemoKit/BaseUtil (0.9.13)
+  - CQDemoKit/BaseVC (0.9.13):
+    - CQDemoKit/BaseVC/Base (= 0.9.13)
+    - CQDemoKit/BaseVC/Collection (= 0.9.13)
+    - CQDemoKit/BaseVC/ScrollView (= 0.9.13)
+    - CQDemoKit/BaseVC/TabBar (= 0.9.13)
+    - CQDemoKit/BaseVC/TableView (= 0.9.13)
+  - CQDemoKit/BaseVC/Base (0.9.13):
     - CQDemoKit/BaseUIKit
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.9.11):
+  - CQDemoKit/BaseVC/Collection (0.9.13):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/ScrollView (0.9.11):
+  - CQDemoKit/BaseVC/ScrollView (0.9.13):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TabBar (0.9.11):
+  - CQDemoKit/BaseVC/TabBar (0.9.13):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.9.11):
+  - CQDemoKit/BaseVC/TableView (0.9.13):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/Demo_DataSourceAndDelegate (0.9.11):
+  - CQDemoKit/Demo_DataSourceAndDelegate (0.9.13):
     - CQDemoKit/BaseVC
-  - CQDemoKit/Demo_Resource (0.9.11):
-    - CQDemoKit/Demo_Resource/GitUtil (= 0.9.11)
-    - CQDemoKit/Demo_Resource/ImageModel (= 0.9.11)
-    - CQDemoKit/Demo_Resource/InFramework (= 0.9.11)
-    - CQDemoKit/Demo_Resource/RandomUtil (= 0.9.11)
-    - CQDemoKit/Demo_Resource/ResourceInfoUtil (= 0.9.11)
-    - CQDemoKit/Demo_Resource/SandboxFileUtil (= 0.9.11)
-    - CQDemoKit/Demo_Resource/SandboxPathUtil (= 0.9.11)
-    - CQDemoKit/Demo_Resource/SandboxPhotoUtil (= 0.9.11)
-  - CQDemoKit/Demo_Resource/GitUtil (0.9.11)
-  - CQDemoKit/Demo_Resource/ImageModel (0.9.11)
-  - CQDemoKit/Demo_Resource/InFramework (0.9.11)
-  - CQDemoKit/Demo_Resource/RandomUtil (0.9.11)
-  - CQDemoKit/Demo_Resource/ResourceInfoUtil (0.9.11)
-  - CQDemoKit/Demo_Resource/SandboxFileUtil (0.9.11):
+  - CQDemoKit/Demo_Resource (0.9.13):
+    - CQDemoKit/Demo_Resource/GitUtil (= 0.9.13)
+    - CQDemoKit/Demo_Resource/ImageModel (= 0.9.13)
+    - CQDemoKit/Demo_Resource/InFramework (= 0.9.13)
+    - CQDemoKit/Demo_Resource/RandomUtil (= 0.9.13)
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil (= 0.9.13)
+    - CQDemoKit/Demo_Resource/SandboxFileUtil (= 0.9.13)
+    - CQDemoKit/Demo_Resource/SandboxPathUtil (= 0.9.13)
+    - CQDemoKit/Demo_Resource/SandboxPhotoUtil (= 0.9.13)
+  - CQDemoKit/Demo_Resource/GitUtil (0.9.13)
+  - CQDemoKit/Demo_Resource/ImageModel (0.9.13)
+  - CQDemoKit/Demo_Resource/InFramework (0.9.13)
+  - CQDemoKit/Demo_Resource/RandomUtil (0.9.13)
+  - CQDemoKit/Demo_Resource/ResourceInfoUtil (0.9.13)
+  - CQDemoKit/Demo_Resource/SandboxFileUtil (0.9.13):
     - CQDemoKit/Demo_Resource/SandboxPathUtil
     - CQDemoKit/Helper
-  - CQDemoKit/Demo_Resource/SandboxPathUtil (0.9.11):
+  - CQDemoKit/Demo_Resource/SandboxPathUtil (0.9.13):
     - CQDemoKit/Demo_Resource/ResourceInfoUtil
-  - CQDemoKit/Demo_Resource/SandboxPhotoUtil (0.9.11):
+  - CQDemoKit/Demo_Resource/SandboxPhotoUtil (0.9.13):
     - CQDemoKit/Demo_Resource/ResourceInfoUtil
-  - CQDemoKit/Demo_RipeView (0.9.11):
+  - CQDemoKit/Demo_RipeView (0.9.13):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/Demo_DataSourceAndDelegate
     - CQDemoKit/Demo_Resource
-    - CQDemoKit/Demo_RipeView/ImagePicker (= 0.9.11)
-    - CQDemoKit/Demo_RipeView/RipeCollectionView (= 0.9.11)
-  - CQDemoKit/Demo_RipeView/ImagePicker (0.9.11):
-    - CQDemoKit/BaseUIKit
-    - CQDemoKit/BaseUtil
-    - CQDemoKit/Demo_DataSourceAndDelegate
-    - CQDemoKit/Demo_Resource
-    - Masonry
-  - CQDemoKit/Demo_RipeView/RipeCollectionView (0.9.11):
+    - CQDemoKit/Demo_RipeView/ImagePicker (= 0.9.13)
+    - CQDemoKit/Demo_RipeView/RipeCollectionView (= 0.9.13)
+  - CQDemoKit/Demo_RipeView/ImagePicker (0.9.13):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/Demo_DataSourceAndDelegate
     - CQDemoKit/Demo_Resource
     - Masonry
-  - CQDemoKit/Helper (0.9.11)
-  - CQDemoKit/Monitor (0.9.11)
-  - CQDemoKit/StateUI (0.9.11):
+  - CQDemoKit/Demo_RipeView/RipeCollectionView (0.9.13):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/Demo_DataSourceAndDelegate
+    - CQDemoKit/Demo_Resource
     - Masonry
-  - CQDemoKit/TestMethod (0.9.11):
+  - CQDemoKit/Helper (0.9.13)
+  - CQDemoKit/Monitor (0.9.13)
+  - CQDemoKit/StateUI (0.9.13):
+    - Masonry
+  - CQDemoKit/TestMethod (0.9.13):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
-  - CQDemoResource/Core (0.3.0):
+  - CQDemoProtocol (0.0.2):
+    - CQDemoProtocol/AppDelegate (= 0.0.2)
+  - CQDemoProtocol/AppDelegate (0.0.2)
+  - CQDemoResource/Core (0.3.2):
     - CQDemoKit/Demo_Resource
-  - CQDemoResource/Images (0.3.0):
+  - CQDemoResource/Images (0.3.2):
     - CQDemoResource/Core
   - HWWeakTimer (1.0)
   - Masonry (1.1.0)
@@ -119,10 +131,12 @@ PODS:
     - CJAnimationKit
     - CJBaseUIKit/UINavigationBar
     - CQDemoKit
+    - CQDemoProtocol
     - CQDemoResource/Images
     - Shimmer
   - TSDemo_Animation-Swift (0.0.1):
     - CJAnimationKit-Swift
+    - CQDemoKit-Swift/as
     - TSDemo_Animation
 
 DEPENDENCIES:
@@ -130,12 +144,10 @@ DEPENDENCIES:
   - CJAnimationKit-Swift (from `../`)
   - CJBaseUIKit/UINavigationBar (~> 0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (~> 0.8.1)
-  - CQDemoKit/BaseUIKit (~> 0.9.10)
-  - CQDemoKit/BaseUtil (~> 0.9.10)
-  - CQDemoKit/BaseVC (~> 0.9.10)
-  - CQDemoKit/Demo_Resource (~> 0.9.10)
-  - CQDemoKit/Demo_RipeView (~> 0.9.10)
-  - CQDemoResource/Images (~> 0.3.0)
+  - CQDemoKit/BaseUIKit (~> 0.9.13)
+  - CQDemoKit/BaseUtil (~> 0.9.13)
+  - CQDemoKit/BaseVC (~> 0.9.13)
+  - CQDemoResource/Images (~> 0.3.2)
   - HWWeakTimer (~> 1.0)
   - TSDemo_Animation (from `../`)
   - TSDemo_Animation-Swift (from `../`)
@@ -144,6 +156,8 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CJBaseUIKit
     - CQDemoKit
+    - CQDemoKit-Swift
+    - CQDemoProtocol
     - CQDemoResource
     - HWWeakTimer
     - Masonry
@@ -160,17 +174,19 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJAnimationKit: edbb8dd9f2c4103ea537d374e6c7272e4f235770
-  CJAnimationKit-Swift: d485a371317d7373c8262eed18655c5a0ed85321
+  CJAnimationKit: 80198c143b0773c167e73494afc58fa9c78f619a
+  CJAnimationKit-Swift: 1f6f81ed28ad15bae113e73666ed65a33e201faf
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
-  CQDemoKit: d79436b719df5f992b76c0350f0d24c31eea5c7f
-  CQDemoResource: 4b414e6919d4a6f72c2ec7fba3ef69bdb82714eb
+  CQDemoKit: 0d6351e9a948e3c214aa1727c4421dc288208630
+  CQDemoKit-Swift: 7d9c026dc37e64b13ddaa91c1b1df823e022781e
+  CQDemoProtocol: c222084b0aec11e1d675d8848cad50f3795c7424
+  CQDemoResource: efdf1a0231767f665f5e6e0df59ed8a5042680f7
   HWWeakTimer: 79488095ef2dd8937f94b676d12bd5fa954486e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  TSDemo_Animation: 1e0c6d309efb783b063c36d211156cb39b11ac7e
-  TSDemo_Animation-Swift: 7936cd962b5235d7a8a5980fc9ea525c89cd01d9
+  TSDemo_Animation: 611ad710248b6e59b5fd1be6d7524d2aa69a6a17
+  TSDemo_Animation-Swift: 336646a05408efbdfb90a9c6eb2d1d0a37e3fd67
 
-PODFILE CHECKSUM: c537448f16b94a75769c494d38564500c024d3e9
+PODFILE CHECKSUM: 19e6372256d40672b53ebdc81adb3b1179c63b21
 
 COCOAPODS: 1.16.2

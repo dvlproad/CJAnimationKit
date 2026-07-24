@@ -6,6 +6,7 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 //  让 UIView 进行各种抖动效果
+//  layer addAnimation CAKeyframeAnimation
 
 #import <UIKit/UIKit.h>
 

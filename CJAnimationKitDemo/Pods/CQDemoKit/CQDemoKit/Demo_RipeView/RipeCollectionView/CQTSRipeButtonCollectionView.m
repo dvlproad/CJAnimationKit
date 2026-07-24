@@ -10,7 +10,6 @@
 #import <CQDemoKit/CQTSRipeBaseCollectionViewDelegate.h>
 #import <CQDemoKit/CQTSRipeBaseCollectionViewDataSource.h>
 #import <CQDemoKit/CQTSRipeButtonCollectionViewCell.h>
-#import <CQDemoKit/CQTSLocImageDataModel.h>
 
 @interface CQTSRipeButtonCollectionView ()<UICollectionViewDelegate> {
     
@@ -25,7 +24,7 @@
 
 
 @implementation CQTSRipeButtonCollectionView
-
+/*
 #pragma mark - RadioButton
 /// 单行的 单选按钮组合
 + (instancetype)rowRadioButtonsWithHorizontalMargin:(CGFloat)horizontalMargin
@@ -47,17 +46,15 @@
 }
 
 
-/*
- *  初始化 单行或单列的按钮组
- *
- *  @param buttonTitles                 按钮的标题数组
- *  @param width                        视图的宽度
- *  @param height                       视图的高度
- *  @param scrollDirection              集合视图的滚动方向
- *  @param didSelectItemAtIndexHandle   点击item的回调
- *
- *  @return CollectionView
- */
+/// 初始化 单行或单列的按钮组
+///
+/// @param buttonTitles                 按钮的标题数组
+/// @param width                        视图的宽度
+/// @param height                       视图的高度
+/// @param scrollDirection              集合视图的滚动方向
+/// @param didSelectItemAtIndexHandle   点击item的回调
+///
+/// @return CollectionView
 - (instancetype)initWithTitles:(NSArray<NSString *> *)buttonTitles
                          width:(CGFloat)width
                         height:(CGFloat)height
@@ -122,6 +119,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+*/
 
 #pragma mark - Init
 /*
@@ -180,6 +178,15 @@
             return cell;
         }];
         self.dataSource = self.ripeCollectionViewDataSource;
+}
+
+#pragma mark - Public Method
+- (void)didSelectItemAtIndex:(NSInteger)index {
+    if (index < 0 || index >= [self numberOfItemsInSection:0]) return;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    [self selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    !self.didSelectItemAtIndexHandle ?: self.didSelectItemAtIndexHandle(index);
 }
 
 @end

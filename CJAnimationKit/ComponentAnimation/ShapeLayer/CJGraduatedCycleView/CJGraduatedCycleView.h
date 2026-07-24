@@ -5,6 +5,25 @@
 //  Created by ciyouzen on 2018/7/27.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
+//  layer 的 addSublayer 等于 CAShapeLayer : CALayer
+
+/**
+ 渐变圆环进度动画视图
+
+ 功能：
+ 1. 双层圆环：外层刻度环（虚线样式）+ 内层圆满环（实线样式）
+ 2. 动画进度：支持从 fromValue 到 toValue 的平滑动画过渡
+ 3. 分圈显示：通过 dividedCount 设置圆环分圈数，支持多圈进度显示
+ 4. 中心标签：自动在圆环中心显示进度值
+ 5. 方向控制：支持顺时针/逆时针旋转方向
+ 6. 代理回调：提供进度更新、完成通知等代理方法
+
+ 使用场景：
+ - Apple Watch 风格的活动圆环
+ - 倒计时/计时器显示
+ - 下载/上传进度指示
+ - 任务完成度展示
+ */
 
 #import <UIKit/UIKit.h>
 

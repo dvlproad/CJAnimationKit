@@ -11,12 +11,12 @@
 #import <CQDemoKit/CJUIKitToastUtil.h>
 #import <CQDemoKit/CJUIKitAlertUtil.h>
 #import <CQDemoKit/UIButton+CQTSMoreProperty.h>
+#import <CQDemoKit/CQTSRadioButtonsView.h>
 
-#import "CJAnimationFactory.h"
-#import "CAShapeLayerFactory.h"
+#import <CJAnimationKit/CJAnimationFactory.h>
+#import <CJAnimationKit/CAShapeLayerFactory.h>
+#import <CJAnimationKit/UIControl+CJRadarAnimation.h>
 
-#import "UIControl+CJRadarAnimation.h"
-#import <CQDemoKit/CQTSRipeButtonCollectionView.h>
 
 @interface RadarAnimationViewController ()
 
@@ -37,7 +37,7 @@
         @"(必须保证 layer.masksToBounds = NO;)",
     ] componentsJoinedByString:@"\n"] forState:UIControlStateNormal];
     [radarButton1 setCqtsTouchUpInsideBlock:^(UIButton * _Nonnull bButton) {
-        CAShapeLayer *circleShape = [CAShapeLayerFactory cjCircleShapeLayerForView:bButton circleType:CJCircleTypeInscribe];
+        CAShapeLayer *circleShape = [CAShapeLayerFactory circleShapeLayerWithSize:bButton.bounds.size circleType:CJCircleTypeInscribe];
         CAAnimationGroup *radarAnimationGroup = [CJAnimationFactory cjRadarAnimationWithScale:5 duration:3];
         radarAnimationGroup.repeatCount = 1;
         [circleShape addAnimation:radarAnimationGroup forKey:nil];
@@ -84,7 +84,7 @@
         @"EveryTouch(每次触发)",
     ];
     __weak typeof(self) weakSelf = self;
-    UIView *radioButtonsView = [CQTSRipeButtonCollectionView columnRadioButtonsWithWidth:200 height:3*50 titles:titles didSelectItemAtIndexHandle:^(NSInteger index) {
+    UIView *radioButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:titles alongAxis:MASAxisTypeVertical fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
         [weakSelf setRadarTypeWithIndex:index];
     }];
     [self.view addSubview:radioButtonsView];
@@ -123,7 +123,7 @@
 }
 
 - (void)_buttonAnimation {
-    CAShapeLayer *circleShape = [CAShapeLayerFactory cjCircleShapeLayerForView:self.radarButton2 circleType:CJCircleTypeInscribe];
+    CAShapeLayer *circleShape = [CAShapeLayerFactory circleShapeLayerWithSize:self.radarButton2.bounds.size circleType:CJCircleTypeInscribe];
     CAAnimationGroup *radarAnimationGroup = [CJAnimationFactory cjRadarAnimationWithScale:5 duration:3];
     [circleShape addAnimation:radarAnimationGroup forKey:nil];
     [self.radarButton2.layer addSublayer:circleShape];

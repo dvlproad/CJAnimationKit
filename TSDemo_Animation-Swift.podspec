@@ -17,5 +17,6 @@ Pod::Spec.new do |s|
   s.source_files = "TSDemo_Animation-Swift/**/*.{swift}"
 
   s.dependency "TSDemo_Animation"
+  s.dependency 'CQDemoKit-Swift/as'
   s.dependency 'CJAnimationKit-Swift'
 end

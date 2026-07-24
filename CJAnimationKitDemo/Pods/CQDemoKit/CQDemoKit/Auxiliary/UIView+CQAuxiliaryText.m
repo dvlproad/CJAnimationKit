@@ -11,7 +11,7 @@
 
 @implementation UIView (Prompt)
 
-- (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
+- (void)cqts_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
     UILabel *label = [[UILabel alloc] init];
     label.tag = 9004;
     label.numberOfLines = 0;
@@ -19,15 +19,15 @@
     label.textColor = [UIColor blackColor];
     label.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
     label.textAlignment = NSTextAlignmentCenter;
-    [self cqdemo_addPromptView:label layout:layout height:height];
+    [self cqts_addPromptView:label layout:layout height:height];
 }
 
 
-- (void)cqdemo_removePrompt:(CQAuxiliaryRemove)order {
-    [self cqdemo_removePromptWithTag:9004 order:order];
+- (void)cqts_removePrompt:(CQAuxiliaryRemove)order {
+    [self cqts_removePromptWithTag:9004 order:order];
 }
 
-- (void)cqdemo_removePromptWithTag:(NSInteger)tag order:(CQAuxiliaryRemove)order {
+- (void)cqts_removePromptWithTag:(NSInteger)tag order:(CQAuxiliaryRemove)order {
     UILabel *label = [self viewWithTag:tag];
     if (label == nil) {
         return;
@@ -62,12 +62,14 @@
 }
 
 
-- (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
+- (void)cqts_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
     promptView.tag = 9004;
     [self addSubview:promptView];
 
     if (layout == CQAuxiliaryAlignmentTop ||
         layout == CQAuxiliaryAlignmentBottom ||
+        layout == CQAuxiliaryAlignmentTopTop ||
+        layout == CQAuxiliaryAlignmentBottomBottom ||
         layout == CQAuxiliaryAlignmentCenter) {
         
         [promptView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,8 +80,12 @@
             if (layout == CQAuxiliaryAlignmentTop) {
                 make.top.equalTo(self);
             } else if (layout == CQAuxiliaryAlignmentBottom) {
-                make.bottom.equalTo(self);
-            } else {
+                make.bottom.mas_equalTo(self);
+            } else if (layout == CQAuxiliaryAlignmentTopTop) {
+                make.bottom.mas_equalTo(self.mas_top);
+            } else if (layout == CQAuxiliaryAlignmentBottomBottom) {
+                make.top.mas_equalTo(self.mas_bottom);
+            }  else {
                 make.centerY.equalTo(self);
             }
         }];

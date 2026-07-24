@@ -7,7 +7,8 @@
 //
 
 #import "PeiwoAnimationViewController.h"
-#import "TSAnimationAppDelegateProtocol.h"
+#import <CQDemoResource/CQTSAssetSourceUtil.h>
+#import <CQDemoProtocol/CQTSDemoAppDelegateProtocol.h>
 
 #import <CJBaseUIKit/UIView+CJDragAction.h>
 //#import <CJBaseUIKit/UIView+CJKeepBounds.h>
@@ -39,24 +40,24 @@
         [self.animationView cj_addPeiwoLayerWithLayerFrame:layerFrame layerAnimated:YES layerAddType:layerAddType whenAnimationDidStopUpdateFrameToLayerFrame:YES andDoSubviewSetupBlock:nil];
         
     } else {
-        id<TSAnimationAppDelegateProtocol> delegate = [UIWindow ts_animationAppDelegate];
-        delegate.cjFloatingWindow.hidden = NO;
-        delegate.cjFloatingWindow.cjDragEnable = YES;
-        [delegate.cjFloatingWindow cj_addWindowSubview:self.animationView];
+        id<CQTSDemoAppDelegateProtocol> delegate = (id<CQTSDemoAppDelegateProtocol>)[UIApplication sharedApplication].delegate;
+        delegate.cqtsFloatingWindow.hidden = NO;
+        delegate.cqtsFloatingWindow.cjDragEnable = YES;
+        [delegate.cqtsFloatingWindow addWindowSubview:self.animationView];
         //delegate.cjFloatingWindow.backgroundColor = [UIColor redColor];
         
         CGRect layerFrame = CGRectMake(100, 100, 100, 200);
-        [delegate.cjFloatingWindow cj_addPeiwoLayerWithLayerFrame:layerFrame layerAnimated:YES layerAddType:layerAddType whenAnimationDidStopUpdateFrameToLayerFrame:YES andDoSubviewSetupBlock:^{
-            for (UIView *subview in delegate.cjFloatingWindow.subviews) {
+        [delegate.cqtsFloatingWindow cj_addPeiwoLayerWithLayerFrame:layerFrame layerAnimated:YES layerAddType:layerAddType whenAnimationDidStopUpdateFrameToLayerFrame:YES andDoSubviewSetupBlock:^{
+            for (UIView *subview in delegate.cqtsFloatingWindow.subviews) {
                 [subview removeFromSuperview];
             }
             
             CGRect buttonFrame = CGRectMake(0, 0, CGRectGetWidth(layerFrame), CGRectGetHeight(layerFrame));
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setFrame:buttonFrame];
-            [button setImage:[UIImage imageNamed:@"bg.jpg"] forState:UIControlStateNormal];
+            [button setImage:[CQTSAssetSourceUtil localImageAtIndex:0 folderNames:@[@"jpg"]] forState:UIControlStateNormal];
             [button setBackgroundColor:[UIColor orangeColor]];
-            [delegate.cjFloatingWindow addSubview:button];
+            [delegate.cqtsFloatingWindow addSubview:button];
         }];
 
     }

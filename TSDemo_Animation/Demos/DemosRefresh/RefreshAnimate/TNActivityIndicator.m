@@ -36,10 +36,18 @@
 
 - (void)commonInit
 {
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loading_logo"]];
-    [self addSubview:logo];
+    NSString *bundleName = @"TSDemo_Animation";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
     
-    _animateCircle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loading_indicator"]];
+    UIImage *logoImage = [UIImage imageNamed:@"loading_logo" inBundle:resourceBundle compatibleWithTraitCollection:nil];
+    UIImage *indicatorImage = [UIImage imageNamed:@"loading_indicator" inBundle:resourceBundle compatibleWithTraitCollection:nil];
+    
+    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:logoImage];
+    [self addSubview:logoImageView];
+    
+    _animateCircle = [[UIImageView alloc] initWithImage:indicatorImage];
     [self addSubview:_animateCircle];
 }
 

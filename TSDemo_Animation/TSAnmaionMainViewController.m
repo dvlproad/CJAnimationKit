@@ -12,7 +12,6 @@
 #import "TSTransitionAnimationHomeViewController.h"
 
 #import "BaseAnimationViewController.h"
-#import "CycleHomeViewController.h"
 #import "PopupHomeViewController.h"
 #import "RefreshHomeViewController.h"
 
@@ -39,15 +38,15 @@
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
         tabBarModel.title = NSLocalizedString(@"组件特效", nil);
-        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-calendar"];
-        tabBarModel.classEntry = NSClassFromString(@"TSDemo_Animation_Swift.QuartzCoreHomeViewController");
+        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-folder"];
+        tabBarModel.classEntry = NSClassFromString(@"TSDemo_Animation_Swift.TSComponentAniHomeViewController");
         [tabBarModels addObject:tabBarModel];
     }
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-        tabBarModel.title = NSLocalizedString(@"Cycle", nil);
-        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-folder"];
-        tabBarModel.classEntry = [CycleHomeViewController class];
+        tabBarModel.title = NSLocalizedString(@"SwiftUI", nil);
+        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-calendar"];
+        tabBarModel.classEntry = NSClassFromString(@"TSDemo_Animation_Swift.TSSwiftUIAniHomeViewController");
         [tabBarModels addObject:tabBarModel];
     }
 //    {
@@ -60,9 +59,9 @@
     
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-        tabBarModel.title = NSLocalizedString(@"Refresh", nil);
+        tabBarModel.title = NSLocalizedString(@"Popup", nil);
         tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-settings"];
-        tabBarModel.classEntry = [RefreshHomeViewController class];
+        tabBarModel.classEntry = [PopupHomeViewController class];
         [tabBarModels addObject:tabBarModel];
     }
     {

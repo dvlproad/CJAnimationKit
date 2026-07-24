@@ -51,8 +51,11 @@
 }
 
 
-- (IBAction)btnAction_View_xib:(UIButton *)sender{
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPopup" owner:nil options:nil];
+- (IBAction)btnAction_View_xib:(UIButton *)sender {
+    
+    NSBundle *resourceBundle = [NSBundle bundleForClass:[self class]];
+    
+    NSArray *array = [resourceBundle loadNibNamed:@"WelcomeViewToPopup" owner:nil options:nil];
     WelcomeViewToPopup *popupView = (WelcomeViewToPopup *)[array lastObject];
     popupView.delegate = self;
     [self.view addSubview:popupView];
@@ -87,7 +90,9 @@
 
 
 - (IBAction)btnAction_ViewController:(UIButton *)sender{
-    WelcomeVCToPopup *popupVC = [[WelcomeVCToPopup alloc] initWithNibName:@"WelcomeVCToPopup" bundle:[NSBundle bundleForClass:[self class]]];
+    NSBundle *resourceBundle = [NSBundle bundleForClass:[self class]];
+    
+    WelcomeVCToPopup *popupVC = [[WelcomeVCToPopup alloc] initWithNibName:@"WelcomeVCToPopup" bundle:resourceBundle];
     popupVC.delegate = self;
     [self.view addSubview:popupVC.view];
     [self addChildViewController:popupVC];//别漏了

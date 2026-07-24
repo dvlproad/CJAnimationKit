@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
                    • CJAnimationKit/ComponentAnimation/Shimmer - 闪烁加载动画：UIView+CJShimmering(类似Facebook Shimmer效果)
                    • CJAnimationKit/ComponentAnimation/ZoomFrame - 缩放动画：UIView+CJZoomFrame(layer缩放动画)
                    • CJAnimationKit/ComponentAnimation/ShapeLayer - 图形绘制：CAShapeLayerFactory(图形工厂)、CJGraduatedCycleView(渐变刻度圆盘)
-                   • CJAnimationKit/ComponentAnimation/RepeatKeyWindow - 重复按键窗口：CJRepeatKeyWindow
 
                    每个子库可独立引入，详见各子库描述。
                    DESC
@@ -77,11 +76,6 @@ Pod::Spec.new do |s|
     # 图形绘制：CAShapeLayerFactory(图形工厂)、CJGraduatedCycleView(渐变刻度圆盘)
     ss.subspec 'ShapeLayer' do |sss|
       sss.source_files = "CJAnimationKit/ComponentAnimation/ShapeLayer/**/*.{h,m}"
-    end
-
-    # 重复按键窗口：CJRepeatKeyWindow
-    ss.subspec 'RepeatKeyWindow' do |sss|
-      sss.source_files = "CJAnimationKit/ComponentAnimation/RepeatKeyWindow/**/*.{h,m}"
     end
   end
 

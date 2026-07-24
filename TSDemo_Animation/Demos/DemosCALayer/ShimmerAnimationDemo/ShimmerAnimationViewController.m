@@ -7,7 +7,8 @@
 //
 
 #import "ShimmerAnimationViewController.h"
-#import "UIView+CJShimmering.h"
+#import <CQDemoResource/CQTSAssetSourceUtil.h>
+#import <CJAnimationKit/UIView+CJShimmering.h>
 
 @interface ShimmerAnimationViewController () {
     
@@ -56,7 +57,7 @@
     [self.view addSubview:self.imageShimmeringView];
     
     self.headImageView = [[UIImageView alloc] initWithFrame:self.imageShimmeringView.bounds];
-    self.headImageView.image = [UIImage imageNamed:@"bgRainbow.jpg"];
+    self.headImageView.image = [CQTSAssetSourceUtil localImageAtIndex:0 folderNames:@[@"jpg"]];
     self.headImageView.contentMode = UIViewContentModeScaleToFill;
     self.headImageView.layer.cornerRadius = 40;
     self.headImageView.clipsToBounds = YES;

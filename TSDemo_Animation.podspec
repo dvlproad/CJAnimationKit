@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   s.dependency 'CJBaseUIKit/UINavigationBar'
   s.dependency "CQDemoKit"
   s.dependency "CQDemoResource/Images"
+  s.dependency 'CQDemoProtocol'
   s.dependency "CJAnimationKit"
   s.dependency "Shimmer"
 end

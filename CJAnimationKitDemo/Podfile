@@ -24,8 +24,11 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条�
 #end
 
 target 'CJAnimationKitDemo' do
-  pod 'CQDemoKit',              '~> 0.9.10',    :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
-  pod 'CQDemoResource',         '~> 0.3.0',     :subspecs => ['Images']
+#  pod 'CQDemoKit',        path: '../../../Github/001-UIKit-CQDemo-iOS'
+#  pod 'CQDemoKit-Swift',  path: '../../../Github/001-UIKit-CQDemo-iOS'
+#  pod 'CQDemoProtocol',   path: '../../../Github/001-UIKit-CQDemo-iOS'
+  pod 'CQDemoKit',              '~> 0.9.13',    :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil']
+  pod 'CQDemoResource',         '~> 0.3.2',     :subspecs => ['Images']
   pod 'CJBaseUIKit',            '~> 0.8.1',     :subspecs => ['UIView/CJDragAction', 'UINavigationBar']
 
   pod 'HWWeakTimer', '~> 1.0'

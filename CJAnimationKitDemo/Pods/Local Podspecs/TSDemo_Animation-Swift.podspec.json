@@ -23,6 +23,7 @@
   "source_files": "TSDemo_Animation-Swift/**/*.{swift}",
   "dependencies": {
     "TSDemo_Animation": [],
+    "CQDemoKit-Swift/as": [],
     "CJAnimationKit-Swift": []
   },
   "swift_version": "5.0"

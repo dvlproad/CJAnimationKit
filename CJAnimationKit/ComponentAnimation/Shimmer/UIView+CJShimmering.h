@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/7/10.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  使用： layer.mask = CAGradientLayer : CALayer
 
 #import <UIKit/UIKit.h>
 

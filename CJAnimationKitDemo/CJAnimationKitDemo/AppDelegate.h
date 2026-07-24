@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJRepeatKeyWindow.h"
-#import <TSDemo_Animation/TSAnimationAppDelegateProtocol.h>
+#import <CQDemoProtocol/CQTSDemoAppDelegateProtocol.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, TSAnimationAppDelegateProtocol>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CQTSDemoAppDelegateProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) CJRepeatKeyWindow *cjFloatingWindow; /**< 创建的window必须强制持有，且要想window一直不被释放，除了strong，还必须放在AppDelegate上 */
+@property (strong, nonatomic) CQTSWindow *cqtsFloatingWindow; /**< 创建的window必须强制持有，且要想window一直不被释放，除了strong，还必须放在AppDelegate上 */
 
 
 @end

@@ -1,0 +1,33 @@
+//
+//  CQTSWindow.h
+//  CJAnimationKitDemo
+//
+//  Created by ciyouzen on 2017/5/22.
+//  Copyright © 2017年 dvlproad. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ *  一个和默认的keyWindow完全重合的window
+ */
+@interface CQTSWindow : UIWindow {
+    
+}
+#pragma mark - Init
+///唯一有用的初始化方式（因为frame的设置会在addWindowSubview中）
+- (instancetype)init;
+
+
+/**
+ *  将windowSubview从其默认所在的keyWindow上转移添加到和keyWindow大小位置一样的此window上（此操作重置新window的frame，使得其和所添加的windowSubview默认所在的keyWindow重合）
+ *
+ *  @param windowSubview    要添加的windowSubvie
+ */
+- (void)addWindowSubview:(UIView *)windowSubview;
+
+@end
+
+NS_ASSUME_NONNULL_END

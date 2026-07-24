@@ -5,7 +5,10 @@
 //  Created by ciyouzen on 8/10/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
-//  本视图介绍：单选按钮的组合。为了提供给某些例子需要有多种情况的测试时候，而快速构建的【单排或单列的按钮组合CollectionView】
+//  有状态的单选按钮组
+//  CQTSRipeButtonCollectionView：更适合【多行或者多列】的单选按钮的组合。
+//  CQTSRadioButtonsView：        更适合【单行或者单列】的单选按钮的组合。
+//  常见使用场景：为了提供给某些例子需要有多种情况的测试时候，而快速构建的【按钮组合】
 //
 //  为了快速构建完整 Demo 工程提供的成熟的CollectionView(已含内容和事件)
 
@@ -17,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 @property (nullable, nonatomic, copy) void(^cellConfigBlock)(UICollectionViewCell *bCell); /**< cell的UI定制（有时候需要cell和其所在列表的背景色为透明） */
-
+/*
 #pragma mark - RadioButton
 /// 单行的 单选按钮组合
 + (instancetype)rowRadioButtonsWithHorizontalMargin:(CGFloat)horizontalMargin
@@ -30,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
                                      height:(CGFloat)height
                                      titles:(NSArray<NSString *> *)buttonTitles
                  didSelectItemAtIndexHandle:(void(^)(NSInteger index))didSelectItemAtIndexHandle;
+*/
 
 #pragma mark - Init
 /*
@@ -66,6 +70,10 @@ collectionView.cellConfigBlock = ^(UICollectionViewCell * _Nonnull bCell) {
     bCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
 };
 */
+
+#pragma mark - Public Method
+/// 主动选中某项（更新UI并触发回调）
+- (void)didSelectItemAtIndex:(NSInteger)index;
 
 @end
 

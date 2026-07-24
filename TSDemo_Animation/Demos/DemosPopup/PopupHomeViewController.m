@@ -7,9 +7,9 @@
 //
 
 #import "PopupHomeViewController.h"
-#import "BasicAnimationVC.h"
+#import "UIViewDemo.h"
 
-@interface PopupHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface PopupHomeViewController () {
     
 }
 
@@ -21,18 +21,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"Popup首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"Popup首页", nil);
 
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    //CoreAnimate
+    //PopupAnimate
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"CoreAnimate";
+        sectionDataModel.theme = @"PopupAnimate";
         {
             CQDMModuleModel *baseAnimationModuleModel = [[CQDMModuleModel alloc] init];
-            baseAnimationModuleModel.title = @"xxx";
-            baseAnimationModuleModel.classEntry = [UIViewController class];
+            baseAnimationModuleModel.title = @"下拉的视图";
+            baseAnimationModuleModel.classEntry = [UIViewDemo class];
+            baseAnimationModuleModel.isCreateByXib = YES;
+            baseAnimationModuleModel.xibBundle = [NSBundle bundleForClass:[UIViewDemo class]];
             [sectionDataModel.values addObject:baseAnimationModuleModel];
         }
         

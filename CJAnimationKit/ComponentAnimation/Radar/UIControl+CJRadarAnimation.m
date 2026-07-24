@@ -67,7 +67,7 @@ static NSString *cjRadarAnimationTypeKey = @"cjRadarAnimationTypeKey";
 }
 
 - (void)addCJRadarAnimation {
-    CAShapeLayer *circleShape = [CAShapeLayerFactory cjCircleShapeLayerForView:self circleType:CJCircleTypeInscribe];
+    CAShapeLayer *circleShape = [CAShapeLayerFactory circleShapeLayerWithSize:self.bounds.size circleType:CJCircleTypeInscribe];
     CAAnimationGroup *radarAnimationGroup = [CJAnimationFactory cjRadarAnimationWithScale:5 duration:3];
     if (self.cjRadarAnimationType == CJRadarAnimationTypeEveryTouch) {
         radarAnimationGroup.repeatCount = 1;

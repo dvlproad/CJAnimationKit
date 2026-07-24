@@ -5,6 +5,7 @@
   "homepage": "https://github.com/dvlproad/CJAnimationKit.git",
   "license": "MIT",
   "authors": "dvlproad",
+  "description": "各种动画相关的处理(视图转场、弹窗出现/消失、组件特效、SwiftUI 动画 + SF Symbol)，可按需独立引入：\n• CJAnimationKit-Swift/SwiftUIAnimation - SwiftUI 动画集合\n• CJAnimationKit-Swift/SwiftUIAnimation/EasyAnimation - 常见动画： 弹跳bounce  摇摆wiggle/swing  旋转rotate  呼吸breathe  脉冲pulse\n• CJAnimationKit-Swift/SwiftUIAnimation/SymbolAnimation - SF Symbol 动画类型： 弹跳bounce缩放scale摇摆wiggle旋转rotate呼吸breathe脉冲pulse\n\n每个子库可独立引入，详见各子库描述。",
   "platforms": {
     "ios": "14.0"
   },
@@ -24,11 +25,11 @@
       "subspecs": [
         {
           "name": "EasyAnimation",
-          "source_files": "CJAnimationKit-Swift/Extension/CJEasyAnimationExtension.swift"
+          "source_files": "CJAnimationKit-Swift/SwiftUIAnimation/View+CJAnimation.swift"
         },
         {
           "name": "SymbolAnimation",
-          "source_files": "CJAnimationKit-Swift/Extension/CJSymbolAnimationType.swift"
+          "source_files": "CJAnimationKit-Swift/SwiftUIAnimation/SymbolImage+CJAnimation.swift"
         }
       ]
     }

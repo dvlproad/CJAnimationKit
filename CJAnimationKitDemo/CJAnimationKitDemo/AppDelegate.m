@@ -19,8 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.cjFloatingWindow = [[CJRepeatKeyWindow alloc] initWithFrame:CGRectMake(100, 100, 276, 276)];
-    self.cjFloatingWindow.hidden = YES;
+    self.cqtsFloatingWindow = [[CQTSWindow alloc] initWithFrame:CGRectMake(100, 100, 276, 276)];
+    self.cqtsFloatingWindow.hidden = YES;
     
     
     // 设置主窗口,并设置根控制器
