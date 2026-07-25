@@ -22,6 +22,7 @@
 @property (nonatomic, strong) CQTSRadioButtonsView *usageRadioButtons;
 @property (nonatomic, strong) CQTSRipeButtonCollectionView *shapeCollectionView;
 @property (nonatomic, strong) UIView *animationSwitchView;
+@property (nonatomic, strong) UIView *clipsToBoundsSwitchView;
 @property (nonatomic, assign) NSInteger selectedShapeIndex;
 @property (nonatomic, assign) NSInteger selectedUsageIndex;
 
@@ -34,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Shape Layer 测试";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]; //#f4f4f4;
     
     [self setupSampleView];
     
@@ -114,6 +115,20 @@
         make.height.mas_equalTo(31);
     }];
     self.animationSwitchView = switchView;
+    
+    // clipsToBounds 开关（对 mask 无效，仅 sublayer 有效）
+    UIView *clipsSwitchView = [CQTSSwitchViewFactory switchViewWithTitle:@"clipsToBounds (对mask无效):"
+                                                              switchOn:YES
+                                               switchValueChangedBlock:^(UISwitch *bSwitch) {
+        [weakSelf applyLayerIfNeeded];
+    }];
+    [self.view addSubview:clipsSwitchView];
+    [clipsSwitchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.animationSwitchView.mas_bottom).mas_offset(8);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.height.mas_equalTo(31);
+    }];
+    self.clipsToBoundsSwitchView = clipsSwitchView;
 }
 
 - (void)setupShapeCollectionView {
@@ -122,7 +137,7 @@
     titleLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.view addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.animationSwitchView.mas_bottom).mas_offset(20);
+        make.top.mas_equalTo(self.clipsToBoundsSwitchView.mas_bottom).mas_offset(20);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];
     
@@ -184,7 +199,8 @@
             [self applyMaskWithPath:path showAnimation:showAnimation];
             break;
         case 1: // sublayer
-            [self applySublayerWithPath:path showAnimation:showAnimation];
+            BOOL clipsToBounds = [(UISwitch *)self.clipsToBoundsSwitchView.subviews.firstObject isOn];
+            [self applySublayerWithPath:path showAnimation:showAnimation clipsToBounds:clipsToBounds];
             break;
     }
     
@@ -229,7 +245,9 @@
     [layer addAnimation:animation forKey:@"transformAnimation"];
 }
 
-- (void)applySublayerWithPath:(CGPathRef)path showAnimation:(BOOL)showAnimation {
+- (void)applySublayerWithPath:(CGPathRef)path showAnimation:(BOOL)showAnimation clipsToBounds:(BOOL)clipsToBounds {
+    self.sampleView.clipsToBounds = clipsToBounds;
+    
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.path = path;
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
