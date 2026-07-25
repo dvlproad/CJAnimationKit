@@ -22,14 +22,13 @@
     self.cqtsFloatingWindow = [[CQTSWindow alloc] initWithFrame:CGRectMake(100, 100, 276, 276)];
     self.cqtsFloatingWindow.hidden = YES;
     
-    
-    // 设置主窗口,并设置根控制器
-//    if (@available(iOS 13.0, *)) {
-//
-//    } else {
+    // iOS 13+ 使用 SceneDelegate 处理 window
+    if (@available(iOS 13.0, *)) {
+        // SceneDelegate 会处理 window 创建
+    } else {
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         [self.window settingRoot];
-//    }
+    }
     
     return YES;
 }

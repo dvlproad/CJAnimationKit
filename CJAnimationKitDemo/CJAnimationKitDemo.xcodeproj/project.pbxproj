@@ -17,6 +17,7 @@
 		7802B304210CAF9E006C113A /* CJAnimationKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B303210CAF9E006C113A /* CJAnimationKitDemoTests.m */; };
 		7802B30F210CAF9E006C113A /* CJAnimationKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802B30E210CAF9E006C113A /* CJAnimationKitDemoUITests.m */; };
 		97C286F92611A6320070610D /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C286F82611A6320070610D /* UIWindow+RootSetting.m */; };
+		97C548E730149D5400D8A6A8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C548E630149D5400D8A6A8 /* SceneDelegate.m */; };
 		A77792D263A4DEB84D96AAD0 /* Pods_CJAnimationKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400A96033855F57EDBCA80B0 /* Pods_CJAnimationKitDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		974EFC352D324B2B00A48D07 /* CJAnimationKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJAnimationKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		97C286F72611A6320070610D /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
 		97C286F82611A6320070610D /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
+		97C548E530149D5400D8A6A8 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		97C548E630149D5400D8A6A8 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		CD795AC2213C993BF48D2992 /* Pods_CJAnimationKitDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJAnimationKitDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +133,8 @@
 			children = (
 				7802B2EA210CAF9B006C113A /* AppDelegate.h */,
 				7802B2EB210CAF9B006C113A /* AppDelegate.m */,
+				97C548E530149D5400D8A6A8 /* SceneDelegate.h */,
+				97C548E630149D5400D8A6A8 /* SceneDelegate.m */,
 				97C286F72611A6320070610D /* UIWindow+RootSetting.h */,
 				97C286F82611A6320070610D /* UIWindow+RootSetting.m */,
 				974EFC352D324B2B00A48D07 /* CJAnimationKitDemo-Bridging-Header.h */,
@@ -309,9 +314,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -363,6 +372,7 @@
 			files = (
 				7802B2EF210CAF9B006C113A /* ViewController.m in Sources */,
 				7802B2FA210CAF9D006C113A /* main.m in Sources */,
+				97C548E730149D5400D8A6A8 /* SceneDelegate.m in Sources */,
 				97C286F92611A6320070610D /* UIWindow+RootSetting.m in Sources */,
 				7802B2EC210CAF9B006C113A /* AppDelegate.m in Sources */,
 			);
