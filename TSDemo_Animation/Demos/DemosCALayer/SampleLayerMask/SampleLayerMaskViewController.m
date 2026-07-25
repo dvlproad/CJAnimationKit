@@ -25,6 +25,8 @@
 @property (nonatomic, assign) NSInteger selectedShapeIndex;
 @property (nonatomic, assign) NSInteger selectedUsageIndex;
 
+@property (nonatomic, strong) CAShapeLayer *addedSublayer; // 存住自己添加的 sublayer，避免误删
+
 @end
 
 @implementation SampleLayerMaskViewController
@@ -161,7 +163,13 @@
 - (void)applyLayer {
     // 清除旧的 layer
     self.sampleView.layer.mask = nil;
-    [self.sampleView.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];   // 此行会导致崩溃
+    
+    // 【危险】禁止使用 [layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)]
+    // 原因：makeObjectsPerformSelector: 遍历 sublayers 数组时，每移除一个元素，数组就变一次，
+    // 属于遍历中修改容器的未定义行为，会导致后续导航返回时 UIKit 遍历 view hierarchy 触发崩溃。
+    // 正确做法：存住自己添加的 sublayer，清理时只移除自己的。
+    [self.addedSublayer removeFromSuperlayer];
+    self.addedSublayer = nil;
     
     CGSize size = self.sampleView.bounds.size;
     if (size.width == 0 || size.height == 0) return;
@@ -228,6 +236,7 @@
     shapeLayer.strokeColor = [UIColor redColor].CGColor;
     shapeLayer.lineWidth = 3;
     [self.sampleView.layer addSublayer:shapeLayer];
+    self.addedSublayer = shapeLayer; // 存住，清理时只移除这一个
     
     if (showAnimation) {
         [self addStrokeAnimationToLayer:shapeLayer];
