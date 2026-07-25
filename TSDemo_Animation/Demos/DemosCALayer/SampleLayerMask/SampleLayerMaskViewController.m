@@ -161,6 +161,7 @@
 - (void)applyLayer {
     // 清除旧的 layer
     self.sampleView.layer.mask = nil;
+    [self.sampleView.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];   // 此行会导致崩溃
     
     CGSize size = self.sampleView.bounds.size;
     if (size.width == 0 || size.height == 0) return;
