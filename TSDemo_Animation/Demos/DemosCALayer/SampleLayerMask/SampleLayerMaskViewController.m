@@ -9,12 +9,21 @@
 #import "SampleLayerMaskViewController.h"
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSButtonFactory.h>
+#import <CQDemoKit/CQTSRadioButtonsView.h>
+#import <CQDemoKit/CQTSRipeButtonCollectionView.h>
+#import <CQDemoKit/CQTSSwitchViewFactory.h>
 
 #import <CJAnimationKit/CJPathFactory.h>
+#import <CJAnimationKit/CAShapeLayerFactory.h>
 
 @interface SampleLayerMaskViewController ()
 
 @property (nonatomic, strong) UIView *sampleView;
+@property (nonatomic, strong) CQTSRadioButtonsView *usageRadioButtons;
+@property (nonatomic, strong) CQTSRipeButtonCollectionView *shapeCollectionView;
+@property (nonatomic, strong) UIView *animationSwitchView;
+@property (nonatomic, assign) NSInteger selectedShapeIndex;
+@property (nonatomic, assign) NSInteger selectedUsageIndex;
 
 @end
 
@@ -26,6 +35,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupSampleView];
+    
+    // 先设置默认值，再设置回调，最后设置默认选中
+    self.selectedShapeIndex = -1;
+    self.selectedUsageIndex = -1;
+    
+    [self setupUsageRadioButtons];
+    [self setupShapeCollectionView];
+    
+    // 默认选中 mask（用途），形状不默认选中
+    self.selectedUsageIndex = 0;
+    [self.usageRadioButtons didSelectItemAtIndex:0];
 }
 
 - (void)setupSampleView {
@@ -47,33 +67,182 @@
         make.center.mas_equalTo(self.sampleView);
     }];
     
-    __weak typeof(self) weakSelf = self;
-    UIButton *maskButton = [CQTSButtonFactory themeBGButtonWithTitle:@"mask (裁剪)" actionBlock:^(UIButton * _Nonnull bButton) {
-        [weakSelf applyLayer];
+    self.selectedShapeIndex = -1;
+    self.selectedUsageIndex = -1;
+}
+
+- (void)setupUsageRadioButtons {
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = @"用途:";
+    titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    [self.view addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.sampleView.mas_bottom).mas_offset(20);
+        make.left.mas_equalTo(self.view).mas_offset(20);
     }];
-    [self.view addSubview:maskButton];
-    [maskButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.sampleView.mas_bottom).mas_offset(8);
+    
+    NSArray *titles = @[@"mask (裁剪)", @"sublayer (描边)"];
+    
+    __weak typeof(self) weakSelf = self;
+    self.usageRadioButtons = [[CQTSRadioButtonsView alloc] initWithTitles:titles
+                                                                             alongAxis:MASAxisTypeVertical
+                                                                          fixedSpacing:8
+                                                        didSelectItemAtIndexHandle:^(NSInteger index) {
+        weakSelf.selectedUsageIndex = index;
+        [weakSelf applyLayerIfNeeded];
+    }];
+    [self.view addSubview:self.usageRadioButtons];
+    [self.usageRadioButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(titleLabel.mas_bottom).mas_offset(8);
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
         make.height.mas_equalTo(2 * 44 + 1 * 8);
     }];
+    
+    // 动画开关
+    UIView *switchView = [CQTSSwitchViewFactory switchViewWithTitle:@"动画:"
+                                                           switchOn:YES
+                                            switchValueChangedBlock:^(UISwitch *bSwitch) {
+        [weakSelf applyLayerIfNeeded];
+    }];
+    [self.view addSubview:switchView];
+    [switchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.usageRadioButtons.mas_bottom).mas_offset(12);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.height.mas_equalTo(31);
+    }];
+    self.animationSwitchView = switchView;
+}
+
+- (void)setupShapeCollectionView {
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = @"形状:";
+    titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    [self.view addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.animationSwitchView.mas_bottom).mas_offset(20);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+    }];
+    
+    NSArray *titles = @[@"箭头", @"半角", @"五角星", @"心形", @"蝙蝠", @"邮票", @"圆形(内切)", @"圆形(外接)"];
+    
+    __weak typeof(self) weakSelf = self;
+    self.shapeCollectionView = [[CQTSRipeButtonCollectionView alloc] initWithTitles:titles
+                                                                                          perMaxCount:3
+                                                                                     widthHeightRatio:88/44.0
+                                                                                      scrollDirection:UICollectionViewScrollDirectionVertical
+                                                                           didSelectItemAtIndexHandle:^(NSInteger index) {
+        weakSelf.selectedShapeIndex = index;
+        [weakSelf applyLayerIfNeeded];
+    }];
+    self.shapeCollectionView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.shapeCollectionView];
+    [self.shapeCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(titleLabel.mas_bottom).mas_offset(8);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.height.mas_equalTo(180);
+    }];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+}
+
+- (void)applyLayerIfNeeded {
+    if (self.selectedShapeIndex < 0 || self.selectedUsageIndex < 0) return;
+    
+    CGSize size = self.sampleView.bounds.size;
+    if (size.width == 0 || size.height == 0) return;
+    
+    [self applyLayer];
 }
 
 - (void)applyLayer {
-    // 清除旧的 mask
+    // 清除旧的 layer
     self.sampleView.layer.mask = nil;
     
     CGSize size = self.sampleView.bounds.size;
     if (size.width == 0 || size.height == 0) return;
     
-    CGPathRef path = [CJPathFactory batPathWithSize:size];
+    CGPathRef path = [self createPathWithSize:size];
+    if (!path) return;
+    
+    BOOL showAnimation = [(UISwitch *)self.animationSwitchView.subviews.firstObject isOn];
+    
+    switch (self.selectedUsageIndex) {
+        case 0: // mask
+            [self applyMaskWithPath:path showAnimation:showAnimation];
+            break;
+        case 1: // sublayer
+            [self applySublayerWithPath:path showAnimation:showAnimation];
+            break;
+    }
+    
+    CGPathRelease(path);
+}
+
+- (CGPathRef)createPathWithSize:(CGSize)size {
+    switch (self.selectedShapeIndex) {
+        case 0: return [CJPathFactory arrowPathWithSize:size];
+        case 1: return [CJPathFactory halfAnglePathWithSize:size];
+        case 2: return [CJPathFactory pentagramPathWithSize:size];
+        case 3: return [CJPathFactory heartPathWithSize:size];
+        case 4: return [CJPathFactory batPathWithSize:size];
+        case 5: return [CJPathFactory stampPathWithSize:size];
+        case 6: return [CJPathFactory circlePathWithSize:size circleType:CJCircleTypeInscribe];
+        case 7: return [CJPathFactory circlePathWithSize:size circleType:CJCircleTypeCircumcircle];
+        default: return NULL;
+    }
+}
+
+- (void)applyMaskWithPath:(CGPathRef)path showAnimation:(BOOL)showAnimation {
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.path = path;
     maskLayer.frame = self.sampleView.bounds;
     self.sampleView.layer.mask = maskLayer;
     
-    CGPathRelease(path);
+    if (showAnimation) {
+        [self addMaskAnimationToLayer:maskLayer];
+    }
+}
+
+- (void)addMaskAnimationToLayer:(CAShapeLayer *)layer {
+    layer.transform = CATransform3DMakeScale(0.01, 0.01, 1.0);
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.01, 0.01, 1.0)];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    animation.duration = 0.5;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    [layer addAnimation:animation forKey:@"transformAnimation"];
+}
+
+- (void)applySublayerWithPath:(CGPathRef)path showAnimation:(BOOL)showAnimation {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = path;
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    shapeLayer.lineWidth = 3;
+    [self.sampleView.layer addSublayer:shapeLayer];
+    
+    if (showAnimation) {
+        [self addStrokeAnimationToLayer:shapeLayer];
+    }
+}
+
+- (void)addStrokeAnimationToLayer:(CAShapeLayer *)layer {
+    layer.strokeEnd = 0;
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.fromValue = @(0);
+    animation.toValue = @(1);
+    animation.duration = 2.0;
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    [layer addAnimation:animation forKey:@"strokeEndAnimation"];
 }
 
 @end
