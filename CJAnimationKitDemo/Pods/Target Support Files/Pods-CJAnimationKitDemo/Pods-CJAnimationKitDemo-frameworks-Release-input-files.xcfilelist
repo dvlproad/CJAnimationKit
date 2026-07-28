@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-CJAnimationKitDemo/Pods-CJAnimationKitDem
 ${BUILT_PRODUCTS_DIR}/CJAnimationKit/CJAnimationKit.framework
 ${BUILT_PRODUCTS_DIR}/CJAnimationKit-Swift/CJAnimationKit_Swift.framework
 ${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework
+${BUILT_PRODUCTS_DIR}/CJPopupAnimation/CJPopupAnimation.framework
 ${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework
 ${BUILT_PRODUCTS_DIR}/CQDemoKit-Swift/CQDemoKit_Swift.framework
 ${BUILT_PRODUCTS_DIR}/CQDemoProtocol/CQDemoProtocol.framework
@@ -11,3 +12,4 @@ ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework
 ${BUILT_PRODUCTS_DIR}/TSDemo_Animation/TSDemo_Animation.framework
 ${BUILT_PRODUCTS_DIR}/TSDemo_Animation-Swift/TSDemo_Animation_Swift.framework
+${BUILT_PRODUCTS_DIR}/TSDemo_PopupAnimation/TSDemo_PopupAnimation.framework

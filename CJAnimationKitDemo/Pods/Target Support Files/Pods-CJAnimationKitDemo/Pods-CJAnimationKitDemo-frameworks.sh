@@ -179,6 +179,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit/CJAnimationKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit-Swift/CJAnimationKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJPopupAnimation/CJPopupAnimation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit-Swift/CQDemoKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoProtocol/CQDemoProtocol.framework"
@@ -188,11 +189,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation/TSDemo_Animation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation-Swift/TSDemo_Animation_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_PopupAnimation/TSDemo_PopupAnimation.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit/CJAnimationKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJAnimationKit-Swift/CJAnimationKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJPopupAnimation/CJPopupAnimation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit-Swift/CQDemoKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoProtocol/CQDemoProtocol.framework"
@@ -202,6 +205,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation/TSDemo_Animation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_Animation-Swift/TSDemo_Animation_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_PopupAnimation/TSDemo_PopupAnimation.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

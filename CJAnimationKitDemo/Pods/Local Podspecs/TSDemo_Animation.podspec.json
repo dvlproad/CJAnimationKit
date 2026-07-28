@@ -24,6 +24,8 @@
     "CQDemoResource/Images": [],
     "CQDemoProtocol": [],
     "CJAnimationKit": [],
-    "Shimmer": []
+    "CJPopupAnimation": [],
+    "Shimmer": [],
+    "TSDemo_PopupAnimation": []
   }
 }

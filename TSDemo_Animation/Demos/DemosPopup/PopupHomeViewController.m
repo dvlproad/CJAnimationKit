@@ -7,6 +7,9 @@
 //
 
 #import "PopupHomeViewController.h"
+
+#import <TSDemo_PopupAnimation/TSBaseAnimationHomeViewController.h>
+
 #import "UIViewDemo.h"
 
 @interface PopupHomeViewController () {
@@ -26,6 +29,18 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
     //PopupAnimate
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"PopupAnimate";
+        {
+            CQDMModuleModel *baseAnimationModuleModel = [[CQDMModuleModel alloc] init];
+            baseAnimationModuleModel.title = @"PopupBaseAnimate";
+            baseAnimationModuleModel.classEntry = [TSBaseAnimationHomeViewController class];
+            [sectionDataModel.values addObject:baseAnimationModuleModel];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"PopupAnimate";

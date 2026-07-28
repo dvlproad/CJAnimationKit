@@ -15,6 +15,7 @@
 #import "PopupHomeViewController.h"
 #import "RefreshHomeViewController.h"
 
+#import <TSDemo_PopupAnimation/TSBaseAnimationHomeViewController.h>
 
 
 @interface TSAnmaionMainViewController ()
@@ -44,24 +45,16 @@
     }
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-        tabBarModel.title = NSLocalizedString(@"SwiftUI", nil);
-        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-calendar"];
-        tabBarModel.classEntry = NSClassFromString(@"TSDemo_Animation_Swift.TSSwiftUIAniHomeViewController");
-        [tabBarModels addObject:tabBarModel];
-    }
-//    {
-//        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
-//        tabBarModel.title = NSLocalizedString(@"Popup", nil);
-//        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-menu"];
-//        tabBarModel.classEntry = [PopupHomeViewController class];
-//        [tabBarModels addObject:tabBarModel];
-//    }
-    
-    {
-        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
         tabBarModel.title = NSLocalizedString(@"Popup", nil);
         tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-settings"];
         tabBarModel.classEntry = [PopupHomeViewController class];
+        [tabBarModels addObject:tabBarModel];
+    }
+    {
+        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
+        tabBarModel.title = NSLocalizedString(@"SwiftUI", nil);
+        tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-calendar"];
+        tabBarModel.classEntry = NSClassFromString(@"TSDemo_Animation_Swift.TSSwiftUIAniHomeViewController");
         [tabBarModels addObject:tabBarModel];
     }
     {
