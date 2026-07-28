@@ -28,15 +28,11 @@
 #import "UIView+CQHUDRotationAnimation.h"
 #import "PayCountDownViewController.h"
 #import "TSPayCountDownUtil.h"
-#import "PopupHomeViewController.h"
-#import "UIViewDemo.h"
 #import "RefreshAnimateViewController.h"
 #import "TNActivityIndicator.h"
 #import "RefreshHomeViewController.h"
 #import "TSTransitionAnimationHomeViewController.h"
 #import "TSAnmaionMainViewController.h"
-#import "WelcomeVCToPopup.h"
-#import "WelcomeViewToPopup.h"
 
 FOUNDATION_EXPORT double TSDemo_AnimationVersionNumber;
 FOUNDATION_EXPORT const unsigned char TSDemo_AnimationVersionString[];

@@ -7,6 +7,8 @@
 //
 
 #import "UIViewDemo.h"
+#import <CJAnimationKit/UIView+CJSlideConvenience.h>
+#import <CJAnimationKit/UIView+CJExpandFrameAnimationBind.h>
 
 
 @interface UIViewDemo ()
@@ -74,7 +76,7 @@
     
     CGRect rect_hide = CGRectMake(x_hide, y_hide, width, height);
     CGRect rect_show = CGRectMake(x_show, y_show, width, height);
-    
+    /*
     [popupView setRect_hide:rect_hide];
     [popupView setFrame:rect_hide];
     [popupView setAlpha:0];
@@ -84,6 +86,12 @@
     } completion:^(BOOL finished){
         
     }];
+    */
+    [UIView cj_showExpandAnimateBindView:popupView
+                           withShowFrame:rect_show
+                               direction:CJExpandToDirectionDown
+                               blankView:nil
+                              completion:nil];
 }
 
 
@@ -129,6 +137,8 @@
 
 #pragma mark - 委托
 - (void)hiddenPopupView:(WelcomeViewToPopup *)popupView{
+    [UIView cj_hideExpandAnimateBindView:popupView completion:nil];
+    /*
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         
         CGRect rect_hidden = popupView.rect_hide;
@@ -139,6 +149,7 @@
         [popupView removeFromSuperview];
         
     }];
+    */
 }
 
 - (void)hiddenPopupViewController:(WelcomeVCToPopup *)popupVC{

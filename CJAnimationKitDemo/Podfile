@@ -28,8 +28,9 @@ target 'CJAnimationKitDemo' do
 #  pod 'CQDemoKit-Swift',  path: '../../../Github/001-UIKit-CQDemo-iOS'
 #  pod 'CQDemoProtocol',   path: '../../../Github/001-UIKit-CQDemo-iOS'
 
-#  pod 'CJPopupAnimation',   path: '../../../Gitee/UIKit-PopupAnimation-iOS'
 #  pod 'CJPopupAction',        path: '../../../Github/CJPopupAction'
+
+#  pod 'CJPopupAnimation', :path => '../../../Gitee/UIKit-PopupAnimation-iOS'
 
   pod 'CQDemoKit',              '~> 0.9.13',    :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil']
   pod 'CQDemoResource',         '~> 0.3.2',     :subspecs => ['Images']

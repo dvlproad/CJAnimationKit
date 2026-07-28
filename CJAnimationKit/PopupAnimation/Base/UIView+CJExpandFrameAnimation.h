@@ -32,7 +32,7 @@ typedef void(^CJExpandInterceptor)(UIView *animatedView, BOOL forShow,
                 withShowFrame:(CGRect)popupViewShowFrame
                     direction:(CJExpandToDirection)direction
                     blankView:(nullable UIView *)blankView
-                   completion:(void(^)(void))completion;
+                   completion:(nullable void(^)(void))completion;
 
 @end
 

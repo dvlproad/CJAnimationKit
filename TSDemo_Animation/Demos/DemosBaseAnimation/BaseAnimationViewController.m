@@ -27,10 +27,32 @@
 }
 
 //
-- (IBAction)goUIViewDemo:(id)sender{
-    UIViewDemo *vc = [[UIViewDemo alloc]initWithNibName:@"UIViewDemo" bundle:[NSBundle bundleForClass:[self class]]];
-    vc.title = [sender titleForState:UIControlStateNormal];
-    [self.navigationController pushViewController:vc animated:YES];
+- (IBAction)goUIViewDemo:(UIButton *)sender{
+    CGFloat width = CGRectGetWidth(sender.frame);
+    CGFloat height = 100;
+    
+    CGFloat x_show = CGRectGetMinX(sender.frame);
+    CGFloat y_show = CGRectGetMaxY(sender.frame);
+    
+    CGFloat x_hide = x_show;
+    CGFloat y_hide = y_show - height;
+    
+    CGRect rect_hide = CGRectMake(x_hide, y_hide, width, height);
+    CGRect rect_show = CGRectMake(x_show, y_show, width, height);
+    
+    
+    UIView *popupView = [[UIView alloc]initWithFrame:rect_show];
+    popupView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:popupView];
+    
+    [popupView setFrame:rect_hide];
+    [popupView setAlpha:0];
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        [popupView setFrame:rect_show];
+        [popupView setAlpha:1];
+    } completion:^(BOOL finished){
+        
+    }];
 }
 
 

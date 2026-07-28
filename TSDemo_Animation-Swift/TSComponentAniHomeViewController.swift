@@ -44,7 +44,7 @@ class TSComponentAniHomeViewController: CJUIKitBaseHomeViewController {
                 module.content = [
                     "layer 的 addSublayer 等于 CAShapeLayer : CALayer"
                 ].joined(separator: "\n")
-                module.classEntry = RefreshAnimateViewController.self
+                module.classEntry = RefreshHomeViewController.self
                 sectionDataModel.values.add(module)
             }
             sectionDataModels.add(sectionDataModel)

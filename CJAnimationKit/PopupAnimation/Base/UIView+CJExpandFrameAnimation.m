@@ -19,7 +19,7 @@ static NSMutableArray<CJExpandInterceptor> *_globalExpandInterceptors = nil;
                 withShowFrame:(CGRect)popupViewShowFrame
                     direction:(CJExpandToDirection)direction
                     blankView:(nullable UIView *)blankView
-                   completion:(void(^)(void))completion
+                   completion:(nullable void(^)(void))completion
 {
     // 根据 direction 计算 hideFrame
     CGRect popupViewHideFrame = [CJExpandCalculator hideFrameFromShowFrame:popupViewShowFrame direction:direction];
@@ -76,7 +76,7 @@ static NSMutableArray<CJExpandInterceptor> *_globalExpandInterceptors = nil;
                         withShowFrame:(CGRect)popupViewShowFrame
                             hideFrame:(CGRect)popupViewHideFrame
                             blankView:(nullable UIView *)blankView
-                           completion:(void(^)(void))completion
+                           completion:(nullable void(^)(void))completion
 {
     if (blankView != nil) {
         blankView.alpha = forShow ? 0.2 : 1.0;

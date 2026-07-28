@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = "TSDemo_PopupAnimation/**/*.{h,m}"
-  # s.resources    = "TSDemo_PopupAnimation/**/*.{xib,xcassets,png,jpg}"
+  s.resources    = "TSDemo_PopupAnimation/**/*.{xib,xcassets,png,jpg}"
   
   s.dependency "CQDemoKit/BaseVC"
   s.dependency 'CQDemoKit/BaseUtil'

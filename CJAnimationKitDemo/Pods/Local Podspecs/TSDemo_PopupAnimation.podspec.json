@@ -17,6 +17,7 @@
   "frameworks": "UIKit",
   "requires_arc": true,
   "source_files": "TSDemo_PopupAnimation/**/*.{h,m}",
+  "resources": "TSDemo_PopupAnimation/**/*.{xib,xcassets,png,jpg}",
   "dependencies": {
     "CQDemoKit/BaseVC": [],
     "CQDemoKit/BaseUtil": [],
