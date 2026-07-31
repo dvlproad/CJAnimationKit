@@ -29,13 +29,16 @@ PODS:
     - CJAnimationKit/PopupAnimation/BaseBind (= 0.0.4)
     - CJAnimationKit/PopupAnimation/BaseConvenience (= 0.0.4)
     - CJAnimationKit/PopupAnimation/Core (= 0.0.4)
+    - CJAnimationKit/PopupAnimation/Interceptor (= 0.0.4)
   - CJAnimationKit/PopupAnimation/Base (0.0.4):
-    - CJAnimationKit/PopupAnimation/Core
+    - CJAnimationKit/PopupAnimation/Interceptor
   - CJAnimationKit/PopupAnimation/BaseBind (0.0.4):
     - CJAnimationKit/PopupAnimation/Base
   - CJAnimationKit/PopupAnimation/BaseConvenience (0.0.4):
     - CJAnimationKit/PopupAnimation/BaseBind
   - CJAnimationKit/PopupAnimation/Core (0.0.4)
+  - CJAnimationKit/PopupAnimation/Interceptor (0.0.4):
+    - CJAnimationKit/PopupAnimation/Core
   - CJAnimationKit/TransitionAnimation (0.0.4)
   - CJBaseUIKit/UINavigationBar (0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (0.8.1)
@@ -208,7 +211,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJAnimationKit: 4ac6f166181fe601489326bfc556e82210f7b557
+  CJAnimationKit: 50f7c2fdf71fc56e582a58a85c30436cde6b7b68
   CJAnimationKit-Swift: 1f6f81ed28ad15bae113e73666ed65a33e201faf
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CJPopupAnimation: 6b372f73ef4fb6957e7e926aa96de34e3cf5a793

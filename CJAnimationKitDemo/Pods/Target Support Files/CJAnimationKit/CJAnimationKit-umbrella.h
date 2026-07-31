@@ -28,6 +28,10 @@
 #import "CJExpandCalculateResultModel.h"
 #import "CJExpandCalculator.h"
 #import "CJSlideCalculator.h"
+#import "UIView+CJExpandInterceptor.h"
+#import "UIView+CJInterceptorChain.h"
+#import "UIView+CJSlide3DInterceptor.h"
+#import "UIView+CJSlideInterceptor.h"
 #import "UIView+CJTransitionAnimation.h"
 #import "CJAnimationFactory.h"
 #import "UIControl+CJRadarAnimation.h"
@@ -47,6 +51,10 @@
 #import "CJExpandCalculateResultModel.h"
 #import "CJExpandCalculator.h"
 #import "CJSlideCalculator.h"
+#import "UIView+CJExpandInterceptor.h"
+#import "UIView+CJInterceptorChain.h"
+#import "UIView+CJSlide3DInterceptor.h"
+#import "UIView+CJSlideInterceptor.h"
 #import "UIView+CJTransitionAnimation.h"
 
 FOUNDATION_EXPORT double CJAnimationKitVersionNumber;
