@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
   s.dependency "CQDemoResource/Images"
   s.dependency 'CQDemoProtocol'
   s.dependency "CJAnimationKit"
-  s.dependency 'CJPopupAnimation'
   s.dependency "Shimmer"
   
   s.dependency 'TSDemo_PopupAnimation'
