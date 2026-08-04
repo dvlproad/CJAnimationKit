@@ -1,12 +1,12 @@
 //
-//  TSBaseAnimationHomeViewController.m
+//  TSPopupAnimationHomeViewController.m
 //  CJPopupViewDemo
 //
 //  Created by ciyouzen on 6/22/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "TSBaseAnimationHomeViewController.h"
+#import "TSPopupAnimationHomeViewController.h"
 
 #import <CJAnimationKit/UIView+CJExpandFrameAnimation.h>
 #import <CJAnimationKit/UIView+CJSlideTransformAnimation.h>
@@ -14,15 +14,15 @@
 #import "TSSlideAnimateViewController.h"
 #import "TSExpandAnimateViewController.h"
 
-@interface TSBaseAnimationHomeViewController ()
+@interface TSPopupAnimationHomeViewController ()
 
 @end
 
-@implementation TSBaseAnimationHomeViewController
+@implementation TSPopupAnimationHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = NSLocalizedString(@"Base Animation Demo", nil);
+    self.navigationItem.title = NSLocalizedString(@"PopupAnimation", nil);
 
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
 

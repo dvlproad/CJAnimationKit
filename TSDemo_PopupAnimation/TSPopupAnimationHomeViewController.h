@@ -1,5 +1,5 @@
 //
-//  TSBaseAnimationHomeViewController.h
+//  TSPopupAnimationHomeViewController.h
 //  CJPopupViewDemo
 //
 //  Created by ciyouzen on 6/22/15.
@@ -8,6 +8,6 @@
 
 #import <CQDemoKit/CJUIKitBaseHomeViewController.h>
 
-@interface TSBaseAnimationHomeViewController : CJUIKitBaseHomeViewController
+@interface TSPopupAnimationHomeViewController : CJUIKitBaseHomeViewController
 
 @end

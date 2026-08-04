@@ -11,10 +11,9 @@
 
 #import "TSTransitionAnimationHomeViewController.h"
 
-#import "BaseAnimationViewController.h"
-#import "PopupHomeViewController.h"
+#import <TSDemo_PopupAnimation/TSPopupAnimationHomeViewController.h>
 
-#import <TSDemo_PopupAnimation/TSBaseAnimationHomeViewController.h>
+#import "BaseAnimationViewController.h"
 
 
 @interface TSAnmaionMainViewController ()
@@ -46,7 +45,7 @@
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
         tabBarModel.title = NSLocalizedString(@"Popup", nil);
         tabBarModel.normalImage = [UIImage cqresource_imageNamed:@"icons8-settings"];
-        tabBarModel.classEntry = [PopupHomeViewController class];
+        tabBarModel.classEntry = [TSPopupAnimationHomeViewController class];
         [tabBarModels addObject:tabBarModel];
     }
     {

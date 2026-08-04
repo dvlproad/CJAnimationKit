@@ -10,13 +10,9 @@
 #endif
 #endif
 
-#import "TSBaseAnimationHomeViewController.h"
 #import "TSExpandAnimateViewController.h"
 #import "TSSlideAnimateViewController.h"
-#import "PopupHomeViewController.h"
-#import "UIViewDemo.h"
-#import "WelcomeVCToPopup.h"
-#import "WelcomeViewToPopup.h"
+#import "TSPopupAnimationHomeViewController.h"
 
 FOUNDATION_EXPORT double TSDemo_PopupAnimationVersionNumber;
 FOUNDATION_EXPORT const unsigned char TSDemo_PopupAnimationVersionString[];
