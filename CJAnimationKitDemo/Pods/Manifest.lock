@@ -1,8 +1,8 @@
 PODS:
-  - CJAnimationKit (0.0.5):
-    - CJAnimationKit/ComponentAnimation (= 0.0.5)
-    - CJAnimationKit/PopupAnimation (= 0.0.5)
-    - CJAnimationKit/TransitionAnimation (= 0.0.5)
+  - CJAnimationKit (0.0.6):
+    - CJAnimationKit/ComponentAnimation (= 0.0.6)
+    - CJAnimationKit/PopupAnimation (= 0.0.6)
+    - CJAnimationKit/TransitionAnimation (= 0.0.6)
   - CJAnimationKit-Swift (0.0.1):
     - CJAnimationKit-Swift/SwiftUIAnimation (= 0.0.1)
   - CJAnimationKit-Swift/SwiftUIAnimation (0.0.1):
@@ -10,36 +10,36 @@ PODS:
     - CJAnimationKit-Swift/SwiftUIAnimation/SymbolAnimation (= 0.0.1)
   - CJAnimationKit-Swift/SwiftUIAnimation/EasyAnimation (0.0.1)
   - CJAnimationKit-Swift/SwiftUIAnimation/SymbolAnimation (0.0.1)
-  - CJAnimationKit/ComponentAnimation (0.0.5):
-    - CJAnimationKit/ComponentAnimation/Radar (= 0.0.5)
-    - CJAnimationKit/ComponentAnimation/Shake (= 0.0.5)
-    - CJAnimationKit/ComponentAnimation/ShapeLayer (= 0.0.5)
-    - CJAnimationKit/ComponentAnimation/ShapeLayerCore (= 0.0.5)
-    - CJAnimationKit/ComponentAnimation/Shimmer (= 0.0.5)
-    - CJAnimationKit/ComponentAnimation/ZoomFrame (= 0.0.5)
-  - CJAnimationKit/ComponentAnimation/Radar (0.0.5):
+  - CJAnimationKit/ComponentAnimation (0.0.6):
+    - CJAnimationKit/ComponentAnimation/Radar (= 0.0.6)
+    - CJAnimationKit/ComponentAnimation/Shake (= 0.0.6)
+    - CJAnimationKit/ComponentAnimation/ShapeLayer (= 0.0.6)
+    - CJAnimationKit/ComponentAnimation/ShapeLayerCore (= 0.0.6)
+    - CJAnimationKit/ComponentAnimation/Shimmer (= 0.0.6)
+    - CJAnimationKit/ComponentAnimation/ZoomFrame (= 0.0.6)
+  - CJAnimationKit/ComponentAnimation/Radar (0.0.6):
     - CJAnimationKit/ComponentAnimation/ShapeLayerCore
-  - CJAnimationKit/ComponentAnimation/Shake (0.0.5)
-  - CJAnimationKit/ComponentAnimation/ShapeLayer (0.0.5)
-  - CJAnimationKit/ComponentAnimation/ShapeLayerCore (0.0.5)
-  - CJAnimationKit/ComponentAnimation/Shimmer (0.0.5)
-  - CJAnimationKit/ComponentAnimation/ZoomFrame (0.0.5)
-  - CJAnimationKit/PopupAnimation (0.0.5):
-    - CJAnimationKit/PopupAnimation/Base (= 0.0.5)
-    - CJAnimationKit/PopupAnimation/BaseBind (= 0.0.5)
-    - CJAnimationKit/PopupAnimation/BaseConvenience (= 0.0.5)
-    - CJAnimationKit/PopupAnimation/Core (= 0.0.5)
-    - CJAnimationKit/PopupAnimation/Interceptor (= 0.0.5)
-  - CJAnimationKit/PopupAnimation/Base (0.0.5):
+  - CJAnimationKit/ComponentAnimation/Shake (0.0.6)
+  - CJAnimationKit/ComponentAnimation/ShapeLayer (0.0.6)
+  - CJAnimationKit/ComponentAnimation/ShapeLayerCore (0.0.6)
+  - CJAnimationKit/ComponentAnimation/Shimmer (0.0.6)
+  - CJAnimationKit/ComponentAnimation/ZoomFrame (0.0.6)
+  - CJAnimationKit/PopupAnimation (0.0.6):
+    - CJAnimationKit/PopupAnimation/Base (= 0.0.6)
+    - CJAnimationKit/PopupAnimation/BaseBind (= 0.0.6)
+    - CJAnimationKit/PopupAnimation/BaseConvenience (= 0.0.6)
+    - CJAnimationKit/PopupAnimation/Core (= 0.0.6)
+    - CJAnimationKit/PopupAnimation/Interceptor (= 0.0.6)
+  - CJAnimationKit/PopupAnimation/Base (0.0.6):
     - CJAnimationKit/PopupAnimation/Interceptor
-  - CJAnimationKit/PopupAnimation/BaseBind (0.0.5):
+  - CJAnimationKit/PopupAnimation/BaseBind (0.0.6):
     - CJAnimationKit/PopupAnimation/Base
-  - CJAnimationKit/PopupAnimation/BaseConvenience (0.0.5):
+  - CJAnimationKit/PopupAnimation/BaseConvenience (0.0.6):
     - CJAnimationKit/PopupAnimation/BaseBind
-  - CJAnimationKit/PopupAnimation/Core (0.0.5)
-  - CJAnimationKit/PopupAnimation/Interceptor (0.0.5):
+  - CJAnimationKit/PopupAnimation/Core (0.0.6)
+  - CJAnimationKit/PopupAnimation/Interceptor (0.0.6):
     - CJAnimationKit/PopupAnimation/Core
-  - CJAnimationKit/TransitionAnimation (0.0.5)
+  - CJAnimationKit/TransitionAnimation (0.0.6)
   - CJBaseUIKit/UINavigationBar (0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (0.8.1)
   - CQDemoKit (0.9.13):
@@ -201,7 +201,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJAnimationKit: c1a2fd9b1b314accf5091e1fabaf583b85cc3f53
+  CJAnimationKit: f6da6760a66f542d3eb0e082873c0eb690ad984f
   CJAnimationKit-Swift: 1f6f81ed28ad15bae113e73666ed65a33e201faf
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CQDemoKit: 0d6351e9a948e3c214aa1727c4421dc288208630

@@ -8,7 +8,7 @@
 
 #import "TSPopupAnimationHomeViewController.h"
 
-#import <CJAnimationKit/UIView+CJExpandFrameAnimation.h>
+#import <CJAnimationKit/UIView+CJExpandRectAnimation.h>
 #import <CJAnimationKit/UIView+CJSlideTransformAnimation.h>
 
 #import "TSSlideAnimateViewController.h"

@@ -9,7 +9,7 @@
   #提交方法(私有库)： pod repo push gitee-dvlproad-dvlproadspecs CJAnimationKit.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
   s.name         = "CJAnimationKit"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "各种动画相关的处理(视图转场、弹窗出现/消失、组件特效、SwiftUI 动画 + SF Symbol)"
   s.homepage     = "https://github.com/dvlproad/CJAnimationKit"
 
@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
                    • CJAnimationKit/PopupAnimation - 视图显示动画：除为自己自身显示时候增加动画的功能外，还可以作为弹窗功能出现/消失的动画
                    • CJAnimationKit/PopupAnimation/Core - 位置计算器(位移位置计算器:CJExpandCalculator; 展开位置计算器:CJSlideCalculator;)
                    • CJAnimationKit/PopupAnimation/Interceptor - 动画拦截器：在动画真正执行前插入自定义逻辑(拦截器链)，常用于埋点统计、动画执行前后附加操作、日志记录、甚至拦截/替换默认动画(拦截器中不调用 next 即中止链，默认动画不会执行)。分两种：全局拦截器(类级别，注册一次即对所有动画生效)、实例拦截器(per-view，仅对指定视图的动画生效)。已内置 展开/位移/3D位移 三种拦截器类型，可仿照新增类型。公共链执行器：UIView+CJInterceptorChain；各类型：UIView+CJExpandInterceptor、UIView+CJSlideInterceptor、UIView+CJSlide3DInterceptor
-                   • CJAnimationKit/PopupAnimation/Base - 不关心隐藏的基础动画，常用于视图show带动画，也是关心隐藏的动画需要调用的底层方法（位移动画 UIView+CJSlideAnimation； 展开动画: UIView+CJExpandAnimation）
-                   • CJAnimationKit/PopupAnimation/BaseBind - 关心隐藏但需自己先主动添加进superView的基础动画：绑定参数到view，show时记录，hide时复用（展开动画 UIView+CJExpandFrameAnimationBind； 位移动画 UIView+CJSlideTransformAnimationBind）  
+                   • CJAnimationKit/PopupAnimation/Base - 不关心隐藏的基础动画，常用于视图show带动画，也是关心隐藏的动画需要调用的底层方法（位移动画 UIView+CJSlideAnimation； 展开动画: UIView+CJExpandRectAnimation）
+                   • CJAnimationKit/PopupAnimation/BaseBind - 关心隐藏但需自己先主动添加进superView的基础动画：绑定参数到view，show时记录，hide时复用（展开动画 UIView+CJExpandRectAnimationBind； 位移动画 UIView+CJSlideTransformAnimationBind）  
                    • CJAnimationKit/PopupAnimation/BaseConvenience - 便捷方法：自动计算距离、小距离动画（UIView+CJSlideConvenience）
 
                    • CJAnimationKit/ComponentAnimation/Shake - 让 UIView 进行各种抖动效果：UIView+CJShake （密码错误抖一下、拖动时持续抖动）
@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit_0.0.5" }
+  s.source       = { :git => "https://github.com/dvlproad/CJAnimationKit.git", :tag => "CJAnimationKit_0.0.6" }
   s.source_files  = "CJAnimationKit/**/*.{h,m}"
 
   s.frameworks = "UIKit", "QuartzCore"
@@ -73,13 +73,13 @@ Pod::Spec.new do |s|
       interceptor.dependency 'CJAnimationKit/PopupAnimation/Core' # 各拦截器 typedef 需要 CJExpandToDirection、CJSlideFromDirection
     end
     
-    # 不关心隐藏的基础动画，常用于视图show带动画，也是关心隐藏的动画需要调用的底层方法（位移动画 UIView+CJSlideAnimation； 展开动画: UIView+CJExpandAnimation）
+    # 不关心隐藏的基础动画，常用于视图show带动画，也是关心隐藏的动画需要调用的底层方法（位移动画 UIView+CJSlideAnimation； 展开动画: UIView+CJExpandRectAnimation）
     ss.subspec 'Base' do |popup|
       popup.source_files = "CJAnimationKit/PopupAnimation/Base/**/*.{h,m}"
       popup.dependency 'CJAnimationKit/PopupAnimation/Interceptor' # 动画方法需要拦截器
     end
 
-    # 关心隐藏但需自己先主动添加进superView的基础动画：绑定参数到view，show时记录，hide时复用（展开动画 UIView+CJExpandFrameAnimationBind； 位移动画 UIView+CJSlideTransformAnimationBind）
+    # 关心隐藏但需自己先主动添加进superView的基础动画：绑定参数到view，show时记录，hide时复用（展开动画 UIView+CJExpandRectAnimationBind； 位移动画 UIView+CJSlideTransformAnimationBind）
     ss.subspec 'BaseBind' do |bind|
       bind.source_files = "CJAnimationKit/PopupAnimation/BaseBind/**/*.{h,m}"
       bind.dependency 'CJAnimationKit/PopupAnimation/Base'

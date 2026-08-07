@@ -11,7 +11,7 @@
 #import <CQDemoKit/CQTSButtonFactory.h>
 #import <CQDemoKit/CQTSRadioButtonsView.h>
 
-#import <CJAnimationKit/UIView+CJExpandFrameAnimationBind.h>
+#import <CJAnimationKit/UIView+CJExpandRectAnimationBind.h>
 #import <CJAnimationKit/CJExpandCalculator.h>
 
 @interface TSExpandAnimateViewController ()
@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UIButton *toggleButton;   // 动画对象
 @property (nonatomic, strong) CQTSRadioButtonsView *directionRadioButtons;
 @property (nonatomic, assign) CJExpandToDirection selectedDirection;
+@property (nonatomic, assign) BOOL hasSetToggleButtonFrame;  // 动画视图是否已设置过初始frame（避免布局时被重置，破坏frame动画）
 
 @end
 
@@ -89,9 +90,16 @@
     self.toggleButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     self.toggleButton.userInteractionEnabled = NO; // 不需要点击，由上方单选按钮控制
     [self.view addSubview:self.toggleButton];
-    [self.toggleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.placeholderView);
-    }];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    // 动画视图采用 frame 布局，仅在首次布局时跟随参照物的位置与大小，
+    // 之后不再重置，避免破坏 frame 动画（动画依赖 frame 在两阶段中的渐变）
+    if (!self.hasSetToggleButtonFrame) {
+        self.toggleButton.frame = self.placeholderView.frame;
+        self.hasSetToggleButtonFrame = YES;
+    }
 }
 
 - (void)showAction {

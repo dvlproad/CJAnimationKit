@@ -9,22 +9,21 @@
 /* Begin PBXBuildFile section */
 		00CB8C3063FDC2052B33356BFB18EFB5 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E852F0C97716CF237A4EAD2CA0D0679 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01637D0E191980C21FD91BF3C5248BF1 /* CJUIKitBaseScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EFE1E1DDFAADC17FDFF8087C1C07EE /* CJUIKitBaseScrollViewController.m */; };
-		030B9B8D7674349501FF43E16C22F6E6 /* UIView+CJSlideTransformAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2297FBEE8AC868E40849C31263C72E5C /* UIView+CJSlideTransformAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		031C059D0D905DD8CD5D1FCE0380359F /* cqts_jpg_long_horizontal_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8B910EBA4ECA742ABDE0B2E4D8097D3 /* cqts_jpg_long_horizontal_1.jpg */; };
 		03978660DB42E23DFF2050CE52B2177A /* GradientCycleView.h in Headers */ = {isa = PBXBuildFile; fileRef = D99722234FF1DFD5CF75954D51D39853 /* GradientCycleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03E614C96C905F1DF0A662F24499F775 /* CQTSIconDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F438EABCBE4243F62BD3D1CB3D789F45 /* CQTSIconDataModel.m */; };
+		041D01E220EB20178C1F2044961D1304 /* UIView+CJInterceptorChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 262D60C13A876E29EC51C1B88F8AE6D5 /* UIView+CJInterceptorChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0475F4BC21438B463A38EF9334B90060 /* CJAnimationKit-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7B7CA9217324B34CE529EAD74B7EC43 /* CJAnimationKit-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		047B65C8575990BFC6BA602B3F512362 /* CQTSMediaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5E76BD6518EB5186112832F9D7C19 /* CQTSMediaPickerViewController.m */; };
 		04DE9CCC28889363E0C8C577CD5662A6 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CF3574C832E165A60C33FDC581FAA750 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		051B1407A5E6133F39D9650E3B949729 /* UIView+CJExpandInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3743FCDA0AD8BE43617ED9BED6B242FE /* UIView+CJExpandInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06A750A31AEF02776BE7004BFF162448 /* CQGradientBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55262D9D9FC291118EF342572BA6CE3F /* CQGradientBorderButton.m */; };
 		06DA9788922D984EAD446736375995F9 /* CQDMSectionDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E99325AB7A6099FED06DC354C1BE458 /* CQDMSectionDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		075AE57E55614FBC6CB7FD089E34ABF9 /* UIView+CJShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E07D8FD0B184945C23E9679E7A88CC8 /* UIView+CJShimmering.m */; };
 		07E8FAE0C71AD7526187883C18B39234 /* cqts_placeholder_png_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5411D9BAE5F331319BC15FFAD1DB8E4E /* cqts_placeholder_png_01.png */; };
+		07F166FDFC406E0E37350BF640DDBEAA /* UIView+CJShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = E18AB0B43546609C8C878325AEC8AD0E /* UIView+CJShimmering.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083C7674645310F63979301363CF9CCC /* CJUIKitBaseCollectionHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FBA5E6012CA2833A9DD3DC80C2B446E /* CJUIKitBaseCollectionHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		093EFBB49FB752290124DF852B11CEE1 /* cqts_placeholder_jpg_01.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 830F88A420418CC9802BF0287E954CF1 /* cqts_placeholder_jpg_01.jpeg */; };
 		0A022FD2CD823660C1FE8B47525558ED /* arrow_dash_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C05DB32A5708FEE0A2E051925E0E1A /* arrow_dash_01.png */; };
-		0A99028086DD9AD0321E7831A3DF2857 /* CJExpandCalculateResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 835E51A492E4710307D8F640F8A57D33 /* CJExpandCalculateResultModel.m */; };
-		0B50127846982615E9E62121B57498ED /* UIView+CJExpandFrameAnimationBind.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D7C771568FD73A326D85EFE79D0959 /* UIView+CJExpandFrameAnimationBind.m */; };
+		0AB32A01531C864A02340CE33EE57B82 /* UIView+CJShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E07D8FD0B184945C23E9679E7A88CC8 /* UIView+CJShimmering.m */; };
 		0B5F49AAD2D79B069DE1AF22622C6FD8 /* CQTSTestMethodTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A46018CA0FC86879EE5E2BB8D3ED464 /* CQTSTestMethodTableHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B71F3FF432C163C352C86B075E260BA /* CQDemoResource-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CE7D7E22F06D58BC53E54660C6EAFF /* CQDemoResource-dummy.m */; };
 		0CF80119970B71AD5195087C0FE2F4B5 /* UIView+CQHUDRotationAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 259FC190D25E530FBE89DCC01427D942 /* UIView+CQHUDRotationAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,7 +35,6 @@
 		0F5310B5508884DD7120842C17BAB4AB /* TSSlideAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9247F9EBA1C93725C17332D79AE8432C /* TSSlideAnimateViewController.m */; };
 		0F703F04D80CD53641BA2E24C619CC7B /* UISwitch+CQTSMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3B6ADAF76EA326AD2300B56E09531 /* UISwitch+CQTSMoreProperty.m */; };
 		0FCD89E6B6749465F4A8464A705A0E57 /* CQTSResourceInfoUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C8CF370E74C04792492EE02233A04382 /* CQTSResourceInfoUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11538108A6751814B35E0412456D68AE /* UIView+CJSlideTransformAnimationBind.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BB59A3AB57AB1254FEF6379FBB4D7 /* UIView+CJSlideTransformAnimationBind.m */; };
 		11756C15FE503C925BCCF26CB05A1A3B /* CQTSRipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 60D63B6E7F4AA7F10EC0CB166079B1FA /* CQTSRipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11EDD8AF3FFE7CB283E9EAD5D8D78E97 /* FBShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F0EAC4039023B04A9DDA094DC9412D /* FBShimmering.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1228C71A344082244062B3075BDA4022 /* HWWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EF276500D6BBC2FB7700828076FBFA7 /* HWWeakTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,14 +45,15 @@
 		1676538E9811F05D559994AC996F9FCC /* CJUIKitCollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EEB41E5388FDE09990E3E5CF4162E /* CJUIKitCollectionViewHeader.m */; };
 		1698CCAED7A3608FD23358C809AE2711 /* BaseAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B16E29FD8F6DBD2F934FFC85BAB8C52 /* BaseAnimationViewController.m */; };
 		17A436F81749CB7D8C137739E00916F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
-		17E4A6524700CE814F36E039A6E66BFD /* CJAnimationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B9366A6B554313F9B04CC21616D5D012 /* CJAnimationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		187FE82A7EBCA40F234E6D1BE63E413F /* CJPathFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BAC1415D51F4E771459CB7EE71A9B8 /* CJPathFactory.m */; };
 		18AD2F85A85B6DF3897BAB885178C17E /* cqts_jpg_bg_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3B641F5AA99817537CCE5CB7422826B /* cqts_jpg_bg_03.jpg */; };
 		1902CCE8345D7BE6F92F1BEB45CCD610 /* CQTSGitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C484426DEAC75A45723319C8D89201E /* CQTSGitUtil.m */; };
 		193010546D5A65A03D07D0FD250E7955 /* cqts_png_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 674D9224CB841626953E03B313780B9C /* cqts_png_01.png */; };
+		1936A4EE4FD4BCC03CDDB0AF92499556 /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F381FFE9BF670F34F18E25AA0B4B /* UIView+CJShake.m */; };
+		19E4DD2076FB8D529E6F1FDE68C906D9 /* UIView+CJExpandRectAnimationBind.m in Sources */ = {isa = PBXBuildFile; fileRef = 32379C53198163F85E80C1ABB53D76E0 /* UIView+CJExpandRectAnimationBind.m */; };
 		1BB832BC135D3E749089C936794B0FAC /* CJUIKitBaseTabBarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4B1ED4B481B9A1258FAE14D89196F9 /* CJUIKitBaseTabBarViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D378299EB53D9C8BCD3F3A2D44CB273 /* CJAnimationKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D7B777C655717F20A3E9FC14F8DF /* CJAnimationKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F3754315C2B4E4BF5C3A96DB25403EF /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BE3022731EEF4AF0E3E8CACEFC82117 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20EA78066063AD208DC29D732A0FC3AA /* CJAnimationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0A5ED9CE6B14F406BBE04712CFC1CB /* CJAnimationFactory.m */; };
+		203E977C9890E7C68519F7CFC26ED645 /* UIView+CJSlideConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 889C97D6B890E755ACED26C6ED8C567B /* UIView+CJSlideConvenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		210CFB7F62D342F645502703827421DA /* ShimmerAnimationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C908595CA8D6814C947519E8F62C8F2 /* ShimmerAnimationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2142D890A36F5C5C4953F1130A6ED125 /* CQTSRipeBaseCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 526D6FE123FD21FE4FDC8E99804B61AA /* CQTSRipeBaseCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2172FDD0B5F1C792FD945E22FA144368 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC820933974CC54BC6E8EF054A0096 /* MASConstraint.m */; };
@@ -65,51 +64,53 @@
 		22DC9B7E3E7336D03D30E4E0F133BC6B /* BasicAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DC35FC83071CADA0A3486665558B3E /* BasicAnimationVC.xib */; };
 		22DF796E152A4BF2F0F7376FC4679662 /* CQDemoKit-CQDemoKit_TestMethod in Resources */ = {isa = PBXBuildFile; fileRef = AF41583843F66976874822B9B3CFDFC3 /* CQDemoKit-CQDemoKit_TestMethod */; };
 		233873FAFFA9B3AF577AF4DA78A54B00 /* cqts_jpg_avatar_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2F54BBE79C7F8196FF87B4A18A869A3 /* cqts_jpg_avatar_04.jpg */; };
+		239E2A6281FFE6F402683C08BCC691EC /* UIView+CJExpandRectAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A507BB451ED759A9F9DB305210093 /* UIView+CJExpandRectAnimation.m */; };
+		2413692BC31C976EF9F07091D59B344E /* UIView+CJSlideConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DC5309172DA28E89E21362FA1D03A3 /* UIView+CJSlideConvenience.m */; };
 		2463A0D9DA7A188952E6DDC8B69989B2 /* av_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB811A38AF9A8E657BB4DE1F54ABF7F /* av_call.png */; };
 		25202B389BEBD5A245B593C27587766B /* TSShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2796DF93ECF837F3B62C6BD2100830D4 /* TSShakeViewController.m */; };
 		2595EA49A7AF0B46C61B03362BFD3CBF /* cqts_jpg_avatar_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 299A468E78D9C63735B886686434F86D /* cqts_jpg_avatar_02.jpg */; };
 		26C043F70C809B0E6BB187CD18251EF1 /* CQDemoResource-CQDemoResource in Resources */ = {isa = PBXBuildFile; fileRef = E8D0D7F2B9FF326830475E10FB918698 /* CQDemoResource-CQDemoResource */; };
-		2867493EDB331C2443E203E050B50CF4 /* UIView+CJSlide3DInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D0A8A52114A7B6CBF1308A2CB8CC6 /* UIView+CJSlide3DInterceptor.m */; };
 		2A83B9BBB36468E3F927596C604167B8 /* GradientCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A4426C2573070514B16759B3C9238 /* GradientCycleViewController.xib */; };
 		2AD7FFA210E8FD2739EB2916F878038B /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2613455083F17C9C20EE1DE415EE23 /* FBShimmeringLayer.m */; };
 		2B23A712EBE0C7BFC33FCA7D01C85338 /* minus_common_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0552BCA003CD77760E155313552D8557 /* minus_common_icon@3x.png */; };
 		2B39006C04657793F4FB4CE38F06408C /* CQTSRipeBaseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 89284D24783FF428A3AD7C37610A21E8 /* CQTSRipeBaseCollectionViewDataSource.m */; };
+		2B4BA0DF4917DBAB5A899ED5CEB9FFB9 /* UIView+CJZoomFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 14541E7554C6D7328514D4BA6BB64A96 /* UIView+CJZoomFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BA7F120AD4E384F142D207031FB96C6 /* CJUIKitCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF5E02FA6AB43EA151454A03AA28ED /* CJUIKitCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BA98831999F8ADFE8F15158DFF0A004 /* UIView+CJSlideInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7EE1F4A207FAE1A4F8E8C49F17CDEB /* UIView+CJSlideInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BCECD06F2AA0A45D58C5154BE08A29D /* HWWeakTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CEB439B1E0DA858DB170B1FD9838CC /* HWWeakTimer-dummy.m */; };
+		2C31980C4346AE368097C9221AA0E5F5 /* CJExpandCalculateResultModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7942E37C79D44F43705246C5E5EE528E /* CJExpandCalculateResultModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C9A96101862DF042486F005D7C8EDCC /* TSAnmaionMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50C2B277614578A0C93308248C5FC86 /* TSAnmaionMainViewController.m */; };
 		2D7BFD1516706ABC92C12315A244798F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		2E44C3CB92A685A805F5D4B3EFB0B05D /* View+CJAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C1270533F2DB324CF146C013DE5A0 /* View+CJAnimation.swift */; };
 		325F5479691A4C60C0C8E2F67B881466 /* cqts_bmp_02.bmp in Resources */ = {isa = PBXBuildFile; fileRef = AC0D635F60C00B73EC14C9CE37C674F7 /* cqts_bmp_02.bmp */; };
+		33980E0D1C873EED10810CFAE09B226B /* UIView+CJExpandRectAnimationBind.h in Headers */ = {isa = PBXBuildFile; fileRef = 7258277C4E14D5354EBF4DA15D60DFCB /* UIView+CJExpandRectAnimationBind.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3449D8769EC9B5A28B476963EB55C59B /* RefreshHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A947E2B9B76679FB3BC57E4DE5806896 /* RefreshHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34D9A23F13A7B7CFBA3383CFD2CC20F1 /* CQTSImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C6CB6FC9D038B3299782ED279C49A /* CQTSImageLoader.m */; };
+		35106DAFED66E1A41B9D7450155E0593 /* UIControl+CJRadarAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D0944F84B37344B9B2AFEE4425DCF714 /* UIControl+CJRadarAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35ECFE9D2CF5B177A68CC2B70A9978BB /* CQTSTestMethodShortTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22461393545E4473E4EC6A11530839C4 /* CQTSTestMethodShortTableViewCell.m */; };
 		36CC10F2EDF862BE105D56FCEB2B9099 /* ShimmerAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB30B6782604B2C73CA429AC7AA6184 /* ShimmerAnimationViewController.xib */; };
 		376F7F0A2820CDFA6358C38CE049ADFF /* CQDemoKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E037908D56CBBF9DEF69BEBE9F35708E /* CQDemoKit-dummy.m */; };
+		379126812EFE3ACCE8F234AAEE500B66 /* UIView+CJExpandInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3743FCDA0AD8BE43617ED9BED6B242FE /* UIView+CJExpandInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37BDD50E4A79032A60A0363A08CE073E /* CQTSSwitchViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 764947C69F8F31D0261A6F65377CB702 /* CQTSSwitchViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39549645F0C36C1BF8FD4CFD92D99721 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20200A31B6A32BD05DED915AB283A717 /* Masonry-dummy.m */; };
-		39E8E4868092E41C5F6C0C2A6A3FD716 /* UIView+CJTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99978C892CD2477B4D1741A3AE887029 /* UIView+CJTransitionAnimation.m */; };
-		3ACC07446E42265454D2D4CEA4B2EEC2 /* CJExpandCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C71752E0EED67E305E2EC81CE31DD08 /* CJExpandCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B6E4292E023B3922B4E0E5F24CFBAB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		3BDB0F4290F4EB5E9DADD948FF696149 /* CJUIKitBaseScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E813517943B7EA09644A34D72148F08 /* CJUIKitBaseScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DCAE5848B1224FDB779DF3224D07E57 /* CQTSAssetModelGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0027FF203C9E246EB880F84480671B5A /* CQTSAssetModelGetter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E43230F9DD3EBD255675665EDCA09FD /* UIView+CJSlideTransformAnimationBind.h in Headers */ = {isa = PBXBuildFile; fileRef = E4EB64528CC701561EA0B52D619EA5E7 /* UIView+CJSlideTransformAnimationBind.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E9E41EF76DC3D3B6F88C55C4E1A6392 /* UIView+CJPanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B8AF9A2ED9D5093058BE284AD9858 /* UIView+CJPanAction.m */; };
 		3F1D616DC7AEBC2B8167BD8F91FC34E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		3F7545645D3A6FEEC1164B46C1D586BA /* cqts_jpg_avatar_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22C96DF656097C605A7C0894E97BEB6E /* cqts_jpg_avatar_03.jpg */; };
 		3FF783C021B5784364C507E01D21E58D /* CQDemoKit-CQDemoKit_StateUI in Resources */ = {isa = PBXBuildFile; fileRef = 7B83DD1403DF89B2087FB8B179946D1F /* CQDemoKit-CQDemoKit_StateUI */; };
 		403DE5C5071855DDCEC5896308C961AE /* TNActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ED71CA4798641F650544AD708265AD /* TNActivityIndicator.m */; };
-		405E8BB0DE5ADB48A81DEAE1E5010489 /* CJGraduatedCycleView+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2B5F5BDA176F031C9C79491952F96 /* CJGraduatedCycleView+Countdown.m */; };
 		4088014BAF50B7980BA7DE0FC2CFCB24 /* Shimmer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3573AB2138EE7A79994D25812E939CC9 /* Shimmer-dummy.m */; };
 		40B475D14A8F9172E7EDBD72114617F9 /* HWWeakTimer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 789DE97CD6D09B9DE36CFF4E08DDFAAB /* HWWeakTimer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41674A8279599A6ED828FB6496254F7C /* UIImage+CQTSInFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ED563C21A9C6E74D0D84A3E833EEFCD /* UIImage+CQTSInFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		417212C3B777E3325263BE42F187144A /* HUDCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C2C96C2E7638FC499DCF47EEFFCA10 /* HUDCycleLayer.m */; };
-		41D677FD2A092FD302396D5C046B2EDB /* UIView+CJTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 40DE604D89A0378DCDA09A3CEA0CB298 /* UIView+CJTransitionAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		424D7B8C2E6A4A939C7FFD8484DF77A8 /* CJBaseUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63117B7B4D66201A25F8CAF00CBF43FF /* CJBaseUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42F7030096842F72A26B6D6CE14743C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
 		443A19FC0935B358ACE8CA33AA6960A3 /* CQTSRipeImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DA8B129C97E24AF9180762DB5B815D /* CQTSRipeImageCollectionViewCell.m */; };
+		44A669E46258B2C3B3D5B87E0D632F89 /* CJExpandCalculateResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 835E51A492E4710307D8F640F8A57D33 /* CJExpandCalculateResultModel.m */; };
 		44E6220CBE6AA509491C859B0C77343F /* BezierPathAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B54CC05E3AFA3215F9D5BF7E8D074 /* BezierPathAnimationVC.m */; };
 		45293E8AF889BDD9A7A980CDFA546C14 /* CQTSRipeBaseCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D224C0FC6A605BBF267E25E563FEDDEC /* CQTSRipeBaseCollectionViewDelegate.m */; };
-		455CEA2ACA7F1DA42DFD7596F655492C /* UIView+CJExpandFrameAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B1A9713CF1E912F2E87D2741EA1ED9 /* UIView+CJExpandFrameAnimation.m */; };
 		45715D1AEBA389F7DA0EE198499AB0E1 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 330B4FA91BCF80351CE4A14538FDEB35 /* MASViewConstraint.m */; };
 		459352509756A07664938F89DC2905ED /* CQTSRipeButtonCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 303EAD6455E4021F593E5CEF25809C78 /* CQTSRipeButtonCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		463953C7846192796B73DEFCAA1483E7 /* cqts_jpg_avatar_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FD577098F85176A40BF10538A9E21CC /* cqts_jpg_avatar_05.jpg */; };
@@ -119,45 +120,37 @@
 		478A5988EE381C1D65490C320169CA4B /* CQTSShortBaseAutoTestMethodViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9160DE565D478981C2479F6C759FC44D /* CQTSShortBaseAutoTestMethodViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47D17ABA3C415A834E19C7B4E26BC3AD /* UIView+CQAuxiliaryText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6935E8D325590E8CF06EDAB2D6247A /* UIView+CQAuxiliaryText.m */; };
 		488B1EFECDF34A59528C99645F57260D /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66328850634BFA5348CE9A0EAC8FC49 /* CJUIKitBaseHomeViewController.m */; };
-		49DCD9DC8A765EE8096FD96E043CABC1 /* UIView+CJSlideInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEB6306BE8502EEF7C36978AE597E0 /* UIView+CJSlideInterceptor.m */; };
+		48A8D1B95D0E3E12D1FAED272B0AAAE6 /* UIView+CJSlideInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEB6306BE8502EEF7C36978AE597E0 /* UIView+CJSlideInterceptor.m */; };
 		49F41C4E2FC2BFFD6E139E3C6CB05538 /* CQTSNetImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81790A42FD4141BE67329D1494FB783B /* CQTSNetImageDataModel.m */; };
 		4CCBE0C3CF8B867E862EA7863529EFF7 /* RadarAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BB0D47760A47C24A7ABE7FE08D614 /* RadarAnimationViewController.m */; };
 		4DF1EE17CD0454DB25F8BA3B67CA669B /* CQTSRadioButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50DFF5497E89A9EF1016EEC7F231F67 /* CQTSRadioButtonsView.m */; };
 		4EA81D8493A0F99D8FB5DA957DFB03EB /* CQDMTabBarModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 046BD024B8E6AF0FCFE096B9F2704B6F /* CQDMTabBarModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F69C0C8079E4871E347AC68B785E159 /* UIView+CJZoomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D445F2BEA166F33B0BA18D86EF0A8 /* UIView+CJZoomFrame.m */; };
 		4FB3495C8216CDCF1B03F12CEE69BBF4 /* HUDLayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFFA9C79740C460D935E5E6203748138 /* HUDLayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5316598B8EFD12E18518988F4AFCD88C /* CQTSIconDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C967E780054F70875D109127B87549 /* CQTSIconDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53CD8159C5BD79DBE6F4798287FDEAB9 /* SymbolImage+CJAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7447439DF4EE332006A328F24E3325F /* SymbolImage+CJAnimation.swift */; };
-		540FD746EFE4A6B2B5104B347A056E92 /* UIView+CJExpandInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED62B9876CBC3D5311C7E9DBC7D3AB5D /* UIView+CJExpandInterceptor.m */; };
 		55BF8B139BCC72DDA89EA8C1CC15DF58 /* CJUIKitBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 083B1E6DB086912894136064AAE8B3CA /* CJUIKitBaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		564475D1695912220252732243052D43 /* CQTSManualBaseTestMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C9956526B61E77A6921E873E526666 /* CQTSManualBaseTestMethodViewController.m */; };
 		57A466E977ECBC2C0AB4590B6515600C /* TSShakeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 92387F2EEDA4FBFFFD462FCBB4868FE3 /* TSShakeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57B7668EAB35A532CB4CF2EB6719F278 /* UIView+CJPanAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3221B1B25A540E5131432625F7482B9C /* UIView+CJPanAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5844C27F5122F397A57ED57F90B4D53E /* CQTSWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A45A88F38322519C5B3FC249FDB6D /* CQTSWindow.m */; };
 		593E4C39D36FCD819FA6D44A4C5D87E5 /* PeiwoAnimationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 28487E6941B372488A374C65B9AE3DD7 /* PeiwoAnimationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59C2CA62593C226CB54DC52F6A6E0FF9 /* CJGraduatedCycleView+Countdown.h in Headers */ = {isa = PBXBuildFile; fileRef = C1C67CFC67E06D53B854D83D778ACF8F /* CJGraduatedCycleView+Countdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A83EB52065E3B32EA5EC32B2A59690C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 077026A51B0AD2AF9BD3E67AE345A604 /* PrivacyInfo.xcprivacy */; };
 		5ABC2F34E844472B47AA683130AB5439 /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4963E33BABF5E9D3E7B00C30BB9BF87 /* arrow_back_red@2x.png */; };
-		5AC49B5374D522FFEA1FBCC64776ED6F /* CJExpandCalculateResultModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7942E37C79D44F43705246C5E5EE528E /* CJExpandCalculateResultModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AE64B3BD179965B5D78AAF940230996 /* CQTSSuspendWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BABCC4732C9ED6EA32D529C6B83700F1 /* CQTSSuspendWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6C181C9BC9C2452CB9744684FA4C27 /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611E319796453FB4B02B9E5BEF4C316 /* CJUIKitBaseViewController.m */; };
 		5C45BD68F3745509A334F457423848F9 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD942B1F547F1400964069D66FB23CE /* MASLayoutConstraint.m */; };
 		5DA87F46A172DA37248A67A814101F70 /* SampleLayerMaskViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 60D0AAA50AA7062971CCE39EFE6F2D1A /* SampleLayerMaskViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EEA85BB1E56B115F4CA7617E89C0251 /* CQTSImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 325FAB69A916AF5774A0D5A9F9110D44 /* CQTSImageLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EFC72B759A0A858D2374EF8CA90581A /* CJSlideCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F4E8D13F405530858ED4219E3875C72 /* CJSlideCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FB1EAE0C30AEBCC42A932C0556D2D2A /* CQTSRadioButtonsView.h in Headers */ = {isa = PBXBuildFile; fileRef = A50D8EC883940083E514CCB4C8DC0E74 /* CQTSRadioButtonsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FE13A8214F8345B9F4ED4F0E1FB69E8 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF9889BD0BFBF7C9ADB91F6324E3E2 /* NSArray+MASAdditions.m */; };
-		605352509C0C18421EBDA2C0AA1D4FC2 /* UIView+CJSlideInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7EE1F4A207FAE1A4F8E8C49F17CDEB /* UIView+CJSlideInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60587877A30295D58EFA49DCAF1CD96D /* KeyframeAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D653624DD0FEDA2ED1B0912DB8CFBEE9 /* KeyframeAnimationVC.m */; };
 		6081069F0E902CEE5DC40B403A1DF2F3 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3D6E296C11D4B7AB2A7D67804A744 /* ViewController+MASAdditions.m */; };
-		60B2AFD47FF607A29B563673EA77CD63 /* CJGraduatedCycleView.h in Headers */ = {isa = PBXBuildFile; fileRef = D1DB3089FD79E6F40B4A1AE52907B9B7 /* CJGraduatedCycleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		610B36D97B90204DC9D8E4FC5411E28A /* cqts_jpg_bg_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF1B49D145FA2EE876D94EEEDCDD2D98 /* cqts_jpg_bg_05.jpg */; };
 		6191F95E0577A8B841341C596A3324DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
-		61A67D8965BA13F748E9235787C8D16A /* CJPathFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BAC1415D51F4E771459CB7EE71A9B8 /* CJPathFactory.m */; };
 		62158B084037EE88172EC4553E075B80 /* FBShimmeringLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D9E271AB20B8566A46EEC7C610FE6565 /* FBShimmeringLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62B6A1CD27539753151789C4AC8D7C0D /* cqts_jpg_bg_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5770F70F6E72E50C139A3E4A0F1A3AE3 /* cqts_jpg_bg_02.jpg */; };
 		6411782DA2CC8F2DE706FAC069C76FA9 /* TSNormalImageAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA8532F3C0FC592087C4CFD949197CC /* TSNormalImageAnimationView.swift */; };
-		65310E8D6A7AA95148D2D18DF9AD95E5 /* UIView+CJSlideConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 889C97D6B890E755ACED26C6ED8C567B /* UIView+CJSlideConvenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6500AE11F09A07E7C5ACFC4BB53CD35D /* CJExpandCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB90FDC93D2757DC25FAC54AD5575C /* CJExpandCalculator.m */; };
 		655115676649A2672521795A5D68F61B /* TSDemo_PopupAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E8F3C1067B3F7EA997D6E1FB325EE2 /* TSDemo_PopupAnimation-dummy.m */; };
 		65EEA5EDF0695ED85C09FED4062EC445 /* CJUIKitToastUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 415F15F895FC14DD59A166B61D10C46F /* CJUIKitToastUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66007039FFDC69F6694F5EA8CA0C10EE /* GradientCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C932FFBB8EE5AEDEDBBD49AAC3469BDA /* GradientCycleLayer.m */; };
@@ -165,6 +158,7 @@
 		6638E1E64AEAEBCF9070F33ACFF3FB97 /* CQTSRipeBaseCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C7C74C0F5E10463A9C065F6557FD577 /* CQTSRipeBaseCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6647980BD733E40A2DD1342405209A56 /* CQTSSandboxFileUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B2C0E8C80938E71FAD7BA80FF87CC53 /* CQTSSandboxFileUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		668156CBD90C6B3845DAA3C80BBC05C4 /* arrow_dash_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EABA8C575C9DF37BF825E3327BE2912 /* arrow_dash_02.png */; };
+		67999FFC07B5DBCB51E5F37A7841059C /* UIView+CJSlide3DInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 878F3B00DF569032860A324301F63F95 /* UIView+CJSlide3DInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69A0FEC67C1F9ADAFC9C55513A9F262D /* ShimmerAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1500E992250ACC417D8447E875A270 /* ShimmerAnimationViewController.m */; };
 		6A8D6BCBCDB822CF70755A6D38D57E13 /* CQTSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 451A00DDAF5585E26DF4797A0CC26985 /* CQTSAlertManager.m */; };
 		6B9A7EE04C16B44BF931FCF17AC32016 /* cqts_jpg_avatar_08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DA980C303ABDA2A896E17E435DD96B3 /* cqts_jpg_avatar_08.jpg */; };
@@ -183,6 +177,9 @@
 		733DD641182AB4A9ADCBF76948D90CED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
 		740FEE53EB0E7E76D382559AB949D2E5 /* UISwitch+CQTSMoreProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A8B94C7F8F9A98E9E5C74BFB87FF1C /* UISwitch+CQTSMoreProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		753E7E7214769566FF7EF6E78A05CEE6 /* CQTSResourceInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F4513D001C6ACCBD96889A7EF6CFD333 /* CQTSResourceInfoUtil.m */; };
+		7556E8009C48D593A7451A7E3E68B1E7 /* UIView+CJShake.h in Headers */ = {isa = PBXBuildFile; fileRef = 010A3DCB245D16D3FD14D02CA9155D76 /* UIView+CJShake.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7611A63B2CA7C7F379675137933F3A12 /* CJAnimationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0A5ED9CE6B14F406BBE04712CFC1CB /* CJAnimationFactory.m */; };
+		769E70A44BBB7A147585AF959687F383 /* CAShapeLayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAB299F724719F3913E45FE7ECC6339 /* CAShapeLayerFactory.m */; };
 		7741AA9DB62BDAF629504B02933F3CB9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 94926BFD10131A286DB4560DE54BBC5E /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		778FDA57DA3295F6C2F9AE9C1C1EC29A /* cqts_jpg_avatar_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2940F8A86152673FBD12A51EE76C6F5E /* cqts_jpg_avatar_01.jpg */; };
 		781835E05F75CF68FDDD1C9C5EB3F68B /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8AE2A7B7644646F0456994865205A5 /* arrow_up.png */; };
@@ -191,14 +188,13 @@
 		7A34B0E4E5ED55728FC084ABD7A602FC /* cqts_jpg_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 998FCDC67FCA22CE65201A02D0876387 /* cqts_jpg_02.jpg */; };
 		7A567091AE1AB760932D3D474BA7B608 /* CQTSRipeButtonCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA36591AABDDDFBF714E2F44F617BBE9 /* CQTSRipeButtonCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A5A604D813FED1F9CFD00E38BF8FFE2 /* KeyframeAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE580806ACC8975103DF834203A8998 /* KeyframeAnimationVC.xib */; };
-		7ABC753FC9F6C65B0D1E67B913E35D07 /* UIView+CJShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = E18AB0B43546609C8C878325AEC8AD0E /* UIView+CJShimmering.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AA16A13E62B06B32EB14D167269DFD5 /* UIView+CJSlideTransformAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F45098E768966F482FF8BFB7EA5DCAFE /* UIView+CJSlideTransformAnimation.m */; };
 		7AC7E94C28AF34FED347F3A12BEBD637 /* GradientCycleLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F889B77DA479BC04F25F3CE9B2DAC020 /* GradientCycleLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C421C63974010D292AC86821C362C13 /* CQTSSuspendWindowFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = AD36A061B2EACC6B43F76E14B73B86B4 /* CQTSSuspendWindowFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C5E7918EF3CBD529D1B2910EF162BEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		7C8D201261944F8A152D8417002DB203 /* CQTSRipeTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 69CCEA59790F75D0C8F4F072E97E57E9 /* CQTSRipeTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C8E18E72BC23C04E9A0856415A94FBC /* RefreshAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D423C766AE341C65CF8190809FFFFF /* RefreshAnimateViewController.m */; };
 		7CAAACFA51FCCABEF95D362A4F26D84D /* UIImage+CQTSInFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 878D774EDE8C410D0868FC4A301BDA31 /* UIImage+CQTSInFramework.m */; };
-		7CFEA69E61C8832C4B849304B8FF80C2 /* CJGraduatedCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F388AFC2F159A08A87BEA816CC551CE /* CJGraduatedCycleView.m */; };
 		7F0458D861274985EB5B9487AE1D12E2 /* TSAnmaionMainViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B7D40041073C4023638D8DF637F19A51 /* TSAnmaionMainViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F746AD63C844A5762A40EB9DF569B92 /* CQDemoKit-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD1E3F9E6C925A4D023DD87A355A8360 /* CQDemoKit-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FA90C7244596A54208A75554C0F4B69 /* CQTSShortBaseAutoTestMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979DB8DB8E8F44FD17E54C10C7111036 /* CQTSShortBaseAutoTestMethodViewController.m */; };
@@ -217,30 +213,26 @@
 		87ACF7AD1B139312A05799FD1E6615F5 /* CQDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210ECC3542287F4376C5C8FBB5DD078D /* CQDemoAssets.xcassets */; };
 		8935CE6A096588DCDCF4C7927EA5F180 /* CQTSTestMethodTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6900770D0240E2837E684E961803A /* CQTSTestMethodTableHeaderView.m */; };
 		896905F0E96AA8121F91AFC7B1F9CF3C /* CQDMSectionDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A6E13F615C99DBEB351309418FF378 /* CQDMSectionDataModel.m */; };
-		899C1885342E226262F5445A14F80D5F /* UIView+CJSlideConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DC5309172DA28E89E21362FA1D03A3 /* UIView+CJSlideConvenience.m */; };
 		8A4372C83A84DF71239645D76C3C44F5 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E745947AA0D739024A31A42B55ED9427 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AE0DE40AA0AC09DEA46E695A83C74D9 /* arrow_dash_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A0B813322E55CAFD71EB8847A60930E /* arrow_dash_03.png */; };
 		8B02590EE63974DB0016ACC103EB6E5F /* PayCountDownViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DF340393B5349E1AA352EAC0C45007 /* PayCountDownViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B7340925F4D1503F33A206C4C154C6A /* Pods-CJAnimationKitDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43A883F83862FBD349EC334BBAE29E /* Pods-CJAnimationKitDemoTests-dummy.m */; };
 		8B7D4BB7EDC7A88DEC9C36049DFD0D2A /* CQTSLongBaseAutoTestMethodViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A7677FDF77073FA7F285B1B1EC6BE5F6 /* CQTSLongBaseAutoTestMethodViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B98D975C1DB29F1559CAC543AC3C907 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4688D5D0B4BE1EBF1A1940A070C5243 /* SwiftUI.framework */; };
-		8BD6477144A92B63E1EB977E9D23C9C7 /* UIView+CJExpandFrameAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C26355454808FB5684CF0B9490E5528 /* UIView+CJExpandFrameAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C16DD0D31CFF95252AC4B4A1313CCEB /* CQTSAssetSourceUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = D2D1E85259312E1E2D85522A2E9FCBFD /* CQTSAssetSourceUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C4B49FA4B29530321386348A95E7868 /* Pods-CJAnimationKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6603E34F7C7BB2C7F27A7AF13E19CC26 /* Pods-CJAnimationKitDemo-dummy.m */; };
 		8C52EC761495D1C228D397E546A62A05 /* TestValueChangeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE0BAAA2DEB4FF0D3B2A849C0CEF7D9 /* TestValueChangeTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C6BD81739E74809FD85725CBE979918 /* cqts_jpg_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821019304379AF88BEAF071F94C84D2A /* cqts_jpg_04.jpg */; };
-		8D21B347CCD4FE816DFEE23C3D126F3E /* UIView+CJSlide3DInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 878F3B00DF569032860A324301F63F95 /* UIView+CJSlide3DInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DA5EEEAB4933A4322EED4883ADAB4BD /* CQTSSwiftUIAsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2E026792764EBF2B35FEBFB065865 /* CQTSSwiftUIAsUIViewController.swift */; };
 		8DFE0E9D8E1E374F27E1E49F4854D9BD /* CQTSSandboxPhotoUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F77C6D20A563737794719925C8DA35D /* CQTSSandboxPhotoUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F66D20C39307437A1069556156C310F /* TSDemo_Animation-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74373855218C8E3B2526601624BE743C /* TSDemo_Animation-Swift-dummy.m */; };
-		91715C002DA8A4E2E551E20E5DF91414 /* UIView+CJInterceptorChain.m in Sources */ = {isa = PBXBuildFile; fileRef = AF66B7A01199F67E120FC5C6B9CFB27D /* UIView+CJInterceptorChain.m */; };
+		910BA2D09B573B4D8C9FF43C05F1F980 /* CJExpandCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C71752E0EED67E305E2EC81CE31DD08 /* CJExpandCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93AF119A039413FF76B851B388BFE18E /* HUDCycleLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E42E7C70C1152A6CF616BC6BEA5E9B4 /* HUDCycleLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9408BF4A5741BA0AA6D926F66DFD31C0 /* UIImageView+CQTSBaseUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 793FD9D18F0E35230820FB82CF3F0CAE /* UIImageView+CQTSBaseUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		941111427165F093586CD043B8DACDD8 /* CQDemoResource-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A211BA7A16DC58E81CF90420974FE6 /* CQDemoResource-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		942BB9FEA4B68D31A86470457CDBE24A /* BaseAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A2652FC9B87A3D1EB49ED7B80D4F67 /* BaseAnimationViewController.xib */; };
 		9481298E488C9D85CF7ABBF2EA65D9F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2E14BC9B788B38C00A482525DC9FB0 /* QuartzCore.framework */; };
 		951F239E42CB8A2DBF57EB7BB9D5F8C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
-		959E297BA2851463415572DDE04B756D /* CJAnimationKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA195E7D3F0A3D99B511F10FF3AD27A2 /* CJAnimationKit-dummy.m */; };
 		95A27E31D1BD8B950C8CD6CC6A60D218 /* cqts_bmp_01.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 59AE5D93B999DC746FB2F7E71E614722 /* cqts_bmp_01.bmp */; };
 		96873B30267DA9BAAC4351DE01C3373E /* TSExpandAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C37BD124D40E2B3CDD15121D733C63 /* TSExpandAnimateViewController.m */; };
 		96BE880B0F9E0F411CA52A9EDD78C2ED /* CQTSGitUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = CC637A0E94CEAEAFCBEA2085D2ABFD67 /* CQTSGitUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -254,8 +246,8 @@
 		9868C8FB1ADB10D44B12692CD5CEA0FA /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF2465540A7E08C9AEC533479FB376 /* arrow_balland_red@2x.png */; };
 		98C74BFF598035AC04C2BE6ACC6C1179 /* CQTSLocImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CE6B9E2042FAD0A4B3E27B871C6AA3 /* CQTSLocImageDataModel.m */; };
 		9A4BD3BEB26D76A9A7B8C405438C1446 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
-		9AEE941D2E384B6A30A7EB188E10E017 /* CQGradientBorderButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8CDBB788CF7CD644EEF9E5D00929CD /* CQGradientBorderButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E9B75CE14D2C90C10449456B7C57FE6 /* CQTSSandboxFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04DCDC64384D5448511464AEE9F5511 /* CQTSSandboxFileUtil.m */; };
+		9F3ABD74FF5A7F7EFDAB5B07C1AB8B66 /* CQGradientBorderButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8CDBB788CF7CD644EEF9E5D00929CD /* CQGradientBorderButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F7B8031165DB7B76200D8871B2C9CC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		9FE1A185BCF73449B5E0367C7723E199 /* CJUIKitRandomUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE304D44EA5BE556A43C34896FADE873 /* CJUIKitRandomUtil.m */; };
 		A109F71ABDD2849D78B6F05E6D56A7A6 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B4591642EA7EC561EAC6B41E8292A7C /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -266,7 +258,8 @@
 		A69F4FEFBBC06F0F25A568BCA224EC6C /* KeyframeAnimationVC.h in Headers */ = {isa = PBXBuildFile; fileRef = B4CF6BE1B473496E99FFFD9A67422C05 /* KeyframeAnimationVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A70849F8287E7ED8556B1E8E4D066C5E /* cqts_jpg_avatar_06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EEA65B862AAA024E18BF7AC1275EE91E /* cqts_jpg_avatar_06.jpg */; };
 		A879D32BB945D8D9EA64E48EC7473564 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = D1CFDE8B5FE618EDC124E5B52F35BFD4 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9D5E549DA32FCAC126AEBD561B28074 /* CJPathFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 74EF0A5685DF666C6C56F7B89D608F0B /* CJPathFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8D8C831423CCDAA348D0BEFE02CD376 /* CJGraduatedCycleView+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2B5F5BDA176F031C9C79491952F96 /* CJGraduatedCycleView+Countdown.m */; };
+		A92E014C0D8246025209CEF3A9A02A72 /* CAShapeLayerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FEC837C7261A41238C427759087E763 /* CAShapeLayerFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA89F986507F7BCC40E0E17396768E52 /* CQDemoProtocol-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 037BE27CC47067A5F3578704EBC9F8FD /* CQDemoProtocol-dummy.m */; };
 		ABA650000CE4148016FD317412C52DCA /* CQTSMediaPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D7CC6DB9BC0A1CDD12DC6C3BD114C6E4 /* CQTSMediaPickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABF2646EC40B6D4BE6C0192B131D39E8 /* TSTransitionAnimationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F797C17330D164D9AC4438109AD0F7 /* TSTransitionAnimationHomeViewController.m */; };
@@ -276,20 +269,23 @@
 		ADA2BDACB092F1239B10F7EA09AACFE9 /* CQTSSandboxPathUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 846F73D913DDF8140110CC0C282CB625 /* CQTSSandboxPathUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0EA1493F30B64E461D78CC15EEBEE6 /* CQTSAlertManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1539008A5487254032DD81166578BB9B /* CQTSAlertManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9338731F9072DFEBF041B4E1659209 /* HUDImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 14D8773946021E8AD2F1A735B657854B /* HUDImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEBAEE80C33DB3F3E560873484D5B2DD /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F381FFE9BF670F34F18E25AA0B4B /* UIView+CJShake.m */; };
 		AECFD54ED1BC8998F6568E2A131BB376 /* BaseAnimationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67450D246DA87F2222CA834A8A1CC7C8 /* BaseAnimationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AED3B4B62A02404D837A51ED45E2EEF7 /* CQTSManualTestMethodModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 846FE83A632394B9B4FD57749B1B87B4 /* CQTSManualTestMethodModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEDA190D2981B12A706C832FFB163765 /* UIView+CJTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99978C892CD2477B4D1741A3AE887029 /* UIView+CJTransitionAnimation.m */; };
+		AF16F85A100A1519D6926C5A0D317720 /* CJAnimationKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA195E7D3F0A3D99B511F10FF3AD27A2 /* CJAnimationKit-dummy.m */; };
 		AF27FD484FA474D3AC9E74B71FA29F5C /* CQTSDataEmptyView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8580B8040BA4D8A80090294438E9010 /* CQTSDataEmptyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF3D1355B341E37A8DA4C79BEE3F3520 /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D777CEE233A13385893599AC950B4CE /* arrow_R_white@2x.png */; };
 		AFBCE4E6D184DF3E8BA0603994667E3B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6296541F1A7FDABDB6134FAB8FC4ABCF /* MASCompositeConstraint.m */; };
-		B08F2902BC77B8E21E66324FF8076950 /* UIView+CJSlideTransformAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E407FC59779E15557350098BE2B33D2 /* UIView+CJSlideTransformAnimation.m */; };
+		B1231CD7FED421B4902A352B82B8790A /* UIView+CJSlide3DInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D0A8A52114A7B6CBF1308A2CB8CC6 /* UIView+CJSlide3DInterceptor.m */; };
 		B1B31621D459CE73DBC52B45FF68BA8E /* cqts_placeholder_jpg_02.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CC7DA53842E4A445A76DD8AE4107A8AC /* cqts_placeholder_jpg_02.jpeg */; };
 		B1BFA442720F951A67752D9EFBC79C6A /* UIImageView+CQTSBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5529C1171FA76433F67F340C15B0F4B3 /* UIImageView+CQTSBaseUtil.m */; };
 		B2C531412D2A4C9829A0943CB970F21F /* arrow_R_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 020191B901B19D196C5113AC939D4523 /* arrow_R_blue.png */; };
 		B3AFA6AB277DC34CE2AB49CE6AF861C7 /* GradientCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832F146CB2846B2EDC5C4591524412B /* GradientCycleView.m */; };
-		B43AA09BED651BB8DC3D18916A839F00 /* UIControl+CJRadarAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D0944F84B37344B9B2AFEE4425DCF714 /* UIControl+CJRadarAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4B7341D4B1E15630890D63B8152EF4C /* UIView+CJExpandInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED62B9876CBC3D5311C7E9DBC7D3AB5D /* UIView+CJExpandInterceptor.m */; };
 		B6A50DE7657160640B5BCEF5E3DC565D /* cqts_jpg_long_vertical_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 99653800030AF1F57A028911C92C41CA /* cqts_jpg_long_vertical_1.jpg */; };
+		B78DAE0DE68A052A97EB547FCB336FDE /* UIView+CJSlideTransformAnimationBind.h in Headers */ = {isa = PBXBuildFile; fileRef = 871D90159AA015A78420650178A372B7 /* UIView+CJSlideTransformAnimationBind.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B79F82279A3FEAE516AA14B5D65F63DB /* CQTSTestMethodMiddleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 46233343016C4409929F92E3F638E227 /* CQTSTestMethodMiddleButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7F35574AC0770B962B1367E315F4DCD /* UIView+CJTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 40DE604D89A0378DCDA09A3CEA0CB298 /* UIView+CJTransitionAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7F7CD29412D0D96A908AFAC69F27C24 /* CJUIKitCollectionViewHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C2D74F08AF4642D256D859F06CBE454 /* CJUIKitCollectionViewHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B81D3597FF72D8122D9B7C9C56959347 /* UIButton+CQTSMoreProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = B7CB234BF9B1982772694609F00D1AFA /* UIButton+CQTSMoreProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B82341D78A04950AE84D42774C9A3159 /* CQTSRipeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C01A10B4C4CEA116C7639CE1A8C802E /* CQTSRipeTableView.m */; };
@@ -301,15 +297,16 @@
 		BB0229069E15B152E20C1AABAADB48EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
 		BB95145543FD2560348ED474CCF321E8 /* TSDemo_Animation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B91E602FD3AD0B39DE4515260E2D82B8 /* TSDemo_Animation-dummy.m */; };
 		BC360E3BF6398C8C310CF6A1CE1C00CF /* CQTSMinusAddView.h in Headers */ = {isa = PBXBuildFile; fileRef = D43BD0E1C625B04C948CA55B0F041BCB /* CQTSMinusAddView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC6E185227B213F22DD0C349A59FA26C /* UIView+CJSlideTransformAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553F348B7CF0B177A1628B12B8D5AD8 /* UIView+CJSlideTransformAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCF202C6FFD6845389171EB91F77BCA3 /* CQTSSuspendWindowFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD20993BB1AB4A829D9C9A7DC4DAECD /* CQTSSuspendWindowFactory.m */; };
-		BCFE660BFE233919CC3729F3BBE6DA64 /* UIView+CJZoomFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 14541E7554C6D7328514D4BA6BB64A96 /* UIView+CJZoomFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD947C8C3EAB5FCE54F543FB759C4607 /* CAShapeLayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAB299F724719F3913E45FE7ECC6339 /* CAShapeLayerFactory.m */; };
+		BD8EF2678A9A5A19AD4C4255E2D12641 /* CJGraduatedCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F388AFC2F159A08A87BEA816CC551CE /* CJGraduatedCycleView.m */; };
 		BF5CF907C6F525E9CC94C02C9CE06BAB /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2928A2968491A89E1BEFDD187CF75AEF /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFE44B3082D1380658B62315A3EA3745 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E139A413D2C744DCFF30FB606D157F3 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C007C7C27EAD58C7DE60CF3D92CF205B /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 73845C2783117D35DA8075AC3EDA7D55 /* UINavigationBar+CJChangeBG.m */; };
 		C073AF33FDCB06B87FE61755337306F4 /* CQDMModuleModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E1545F6CC1BE62DAC564C2B894CA1C /* CQDMModuleModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C174329EE7F3A6921D0A0536B386E8FC /* CQTSRipeButtonCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C366FE2A42D25F4B424D719BC1F68C4 /* CQTSRipeButtonCollectionView.m */; };
 		C1ABBC3A41FDD9F505D00EA912F3EBEC /* cqts_png_avatar_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FF291097E407A1B06C6F92F5CF2A253 /* cqts_png_avatar_01.png */; };
+		C23A90487C752948B7CCC9E5D4A8DE0B /* CJGraduatedCycleView+Countdown.h in Headers */ = {isa = PBXBuildFile; fileRef = C1C67CFC67E06D53B854D83D778ACF8F /* CJGraduatedCycleView+Countdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C29D05DEEFB0BEFA4E2E3D78ABC59E67 /* TSSlideAnimateViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CFDD4454174ADC751FE5812F2229535D /* TSSlideAnimateViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2AEFF8D57A5146E056F6C02F5404326 /* CQTSTestMethodShortTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = ED7968406A3ED9A9A30F8B849443FF24 /* CQTSTestMethodShortTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C38552404FA0FFA860639EE0B8573BB1 /* CQTSTestMethodLongTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 47BEEB385A734A633406399B2AE2AB14 /* CQTSTestMethodLongTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -321,20 +318,18 @@
 		C68E8DA2520AA93EECDAC3A881F1DE40 /* TSSwiftUIAniHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC20FE5F3FFADA737713FC1B46F98F /* TSSwiftUIAniHomeViewController.swift */; };
 		C74589216E3D8B37C2E81B182C3096F8 /* TSPopupAnimationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCEEEB9085E1857F2B4784617FF1839 /* TSPopupAnimationHomeViewController.m */; };
 		C746470B7121BAD79C177C9ABE098B0F /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D518E197EFEB7D47D3B517D8B8F1AE53 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75AE9BC0BE0105C8DE63A41590646BE /* CJPathFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 74EF0A5685DF666C6C56F7B89D608F0B /* CJPathFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7788953ADBE4342CB0FCABA96149DF4 /* UIViewController+CQNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9080422234162384C1FE026F45FE2062 /* UIViewController+CQNavigationBar.m */; };
 		C9951AE6D2CCCBF061DDD0EDA709FEDF /* BezierPathAnimationVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 574FBE9C6AD1ED26956F36148E627906 /* BezierPathAnimationVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAADA0BE4B6EA4F69C1C4D0713D67725 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A0644E3708B66A39520F8DDBE6AA323F /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB43041DFD77005501D72C73AE40C4C2 /* cqts_heic_01.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 4957096B2205D089989EEEAE0E0956D0 /* cqts_heic_01.HEIC */; };
 		CB588F914A99BEA1783D2C7C2F313710 /* CQTSButtonFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FD99490FF5B1AF1CDD398D829A7EF6C /* CQTSButtonFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC8AD5354AE917E89553203BFA07844D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
-		CCF97AF936067208F7139B91596E7251 /* CAShapeLayerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FEC837C7261A41238C427759087E763 /* CAShapeLayerFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCFC52B7961D0E7E073093B156A44F48 /* CQTSSandboxPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B124D18437B508E609468D48BD9DE2 /* CQTSSandboxPathUtil.m */; };
-		CCFE621C50298AFA34231B464338D9BE /* CJExpandCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCB90FDC93D2757DC25FAC54AD5575C /* CJExpandCalculator.m */; };
 		CD51F31EFDCA8F151A66ABF5D8917298 /* NSError+CQTSErrorString.h in Headers */ = {isa = PBXBuildFile; fileRef = 079D65FDAAFFBAFAF36684FCCDE81972 /* NSError+CQTSErrorString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDBF204CE63656DA47803B73787B0425 /* CQTSManualBaseTestMethodViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EF2C59C6FB294760C9833DBB20A32551 /* CQTSManualBaseTestMethodViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEEF50B73E9C6913E9823FCBAD254252 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		CF1BF4083ED0FBD7F4A0B1A909CDF674 /* CQTSButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCB5FFB1AA99947436D31A4718E0F52 /* CQTSButtonFactory.m */; };
-		D03C9745CE7BB2DC8F7C5A16208FCE2E /* UIView+CJShake.h in Headers */ = {isa = PBXBuildFile; fileRef = 010A3DCB245D16D3FD14D02CA9155D76 /* UIView+CJShake.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0AF3301691544C87503CEAFC771422A /* icon_no_data.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A18D5E249B11DBB75724DA747C5CBE /* icon_no_data.png */; };
 		D1497C61B6AAAAC7A7562618625315AB /* TSPopupAnimationHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F043FD6DA6650A5C4785F9E73CD0614A /* TSPopupAnimationHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D19337DCA2A997F1F18B34DFA976D294 /* CQTSDemoAppDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C722DBC61F5AC9185C38BC7BCB760C0 /* CQTSDemoAppDelegateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -345,27 +340,28 @@
 		D6EECD1656CE804A9C2D54F70CC890C5 /* CQTSSwiftUIAsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036F8B7A9B66B5E543D113806678F96 /* CQTSSwiftUIAsUIView.swift */; };
 		D6FA7F8D766ABF2C9EF708506C558992 /* CQDemoKit-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51CCB2E3A3B68E40FA9EADF1EDAAE1DF /* CQDemoKit-Swift-dummy.m */; };
 		D71658C30B763724C28F958CF19DAD3D /* CQTSAutoTestMethodModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 90CF198D9FC7DB3E1AD2CAFDD4D724A9 /* CQTSAutoTestMethodModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7259D09A6A33ED53BB90246D5E6E320 /* UIView+CJInterceptorChain.m in Sources */ = {isa = PBXBuildFile; fileRef = AF66B7A01199F67E120FC5C6B9CFB27D /* UIView+CJInterceptorChain.m */; };
 		D7A835F706837AF348407B6102DAD74A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		D7E09C0A434505CA085B4689AB276EF1 /* add_common_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B68C0F0A3AFE4549754DBAB2A78D61E /* add_common_icon@2x.png */; };
+		D890856DD4CD0CDB05DAC377EE82FDBA /* CJAnimationKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D7B777C655717F20A3E9FC14F8DF /* CJAnimationKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D906848D7E59492FD5D3AF3C358456A8 /* CQTSMinusAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = D10E30C700E8D8093385B2004816C733 /* CQTSMinusAddView.m */; };
-		D97D1600065893F247E3CBADF979EC5C /* UIView+CJInterceptorChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 262D60C13A876E29EC51C1B88F8AE6D5 /* UIView+CJInterceptorChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA1797BC15880F0B57D5B78170B5A3D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
 		DA872C8D5BD5D70AB36F7912E9D5F96B /* CQTSContainerViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED6FAE6F56AC157B4792219F110951 /* CQTSContainerViewFactory.m */; };
 		DA8EA6DABFFBB30911E76756FA0E9D3A /* NSError+CQTSErrorString.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6FA913B3A6710D9A82FB18B9175CF7 /* NSError+CQTSErrorString.m */; };
 		DA9EEC1C2605E2803200AC48E6770C2A /* TSDemo_Animation-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E1D0CFB13005C32E0F25338DE5E259A /* TSDemo_Animation-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DACEF37B06A0929F5C4058773FAA6693 /* TSSymbolImageAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D85493398B6C180105F267BAE3A1B /* TSSymbolImageAnimationView.swift */; };
-		DAF2CD7A1A1C9041A8C4637F9CECF96D /* UIControl+CJRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D766C0DB8A6FF71473599B8F1B0B9E69 /* UIControl+CJRadarAnimation.m */; };
 		DBE1B71EF74D2DC3E696789F32DCCAFF /* TSTransitionAnimationHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F05011DBC52B92E79ED64078C03353D /* TSTransitionAnimationHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCBABCA87FAEDE7059D371C64491BE36 /* CJUIKitToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C29B166F21F3856417DBE40030E0759B /* CJUIKitToastUtil.m */; };
-		DD476F3A19FC66536B89F0AC51E1162A /* CJSlideCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D48A9CB0DCB2EA4E59EC15EC677B76 /* CJSlideCalculator.m */; };
+		DD56337DFDFAE1A53FC93AE9F9715824 /* CJSlideCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F4E8D13F405530858ED4219E3875C72 /* CJSlideCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD63E9588DDC46C18152AF0DB02CE3F5 /* CQTSAssetSourceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6963BFCC21BFF257785F131216DFF2 /* CQTSAssetSourceUtil.m */; };
 		DE5294508110DDB62F1B412B1C8F986D /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF322282419401123CCB9AE862BBAED /* MASConstraintMaker.m */; };
 		DECFEEEB289A65D377F1E4D83B927D0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
 		DF25B4E3CE754D3A62E6F01B49E8C559 /* cqts_jpg_bg_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B2DEBE0F9B3D50CE252AAD7F48E3CE4 /* cqts_jpg_bg_01.jpg */; };
 		E0D9CEB33074E7072261B656D81FDDEC /* CQTSNetImageDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = EB0B30617A280D8C51E4FD54881CA610 /* CQTSNetImageDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E15DEEF7FDBEA76E52CC88A468FA6714 /* TSPayCountDownUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 97F9785B2AC31671542C752E31E98400 /* TSPayCountDownUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E25F29C45A196B438C8D597E25B4D49D /* UIControl+CJRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D766C0DB8A6FF71473599B8F1B0B9E69 /* UIControl+CJRadarAnimation.m */; };
 		E6156E4DDC0B33B4CF836C87B667EACA /* TSPayCountDownUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF0DBECDE650971076082903A51D5B2 /* TSPayCountDownUtil.m */; };
-		E8BCD55A0BC1D8D12DF09287CF938DA6 /* CQGradientBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55262D9D9FC291118EF342572BA6CE3F /* CQGradientBorderButton.m */; };
+		E8846E92E486DDB49AE36714C28BB1F3 /* UIView+CJZoomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D445F2BEA166F33B0BA18D86EF0A8 /* UIView+CJZoomFrame.m */; };
 		E96155761C3C840B5287252EB739FD32 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27531ED368F97145C2912D6E9BBE0241 /* FBShimmeringView.m */; };
 		E9A83A421E3ED89ED87D287F500B685F /* CJUIKitAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2BA729BA55CBF96ECD0AA845DE760 /* CJUIKitAlertUtil.m */; };
 		E9BF636BEE02ABE2E228AE9F59CB991D /* CQTSSwitchViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7DEC47E38F353ACADCDC108C16A24 /* CQTSSwitchViewFactory.m */; };
@@ -375,12 +371,15 @@
 		EE125323EEA3031AB1A61DCFB8506B36 /* minus_common_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D3FBD7223E36EF50E4D753BCD92E99 /* minus_common_icon@2x.png */; };
 		EE34DA41D58B9B16CAF740666D837929 /* CJUIKitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B873DC74C4F68E61AC8F729DF9989 /* CJUIKitCollectionViewCell.m */; };
 		EF346986FDFE31F6CF5232EF501ECF50 /* TSExpandAnimateViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BA1C639428346A557BBCC5538481FD5 /* TSExpandAnimateViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFA8A15D5C46CCC1F85041432B666993 /* CJSlideCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D48A9CB0DCB2EA4E59EC15EC677B76 /* CJSlideCalculator.m */; };
+		EFC7CAC1C07DFAD378DCC0C598546ECF /* CJGraduatedCycleView.h in Headers */ = {isa = PBXBuildFile; fileRef = D1DB3089FD79E6F40B4A1AE52907B9B7 /* CJGraduatedCycleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F022E64767FF822E012C06EB61D383B9 /* CQTSManualTestMethodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0DAD2347C930FD00A37F4007A2A0E /* CQTSManualTestMethodModel.m */; };
 		F0EC19377C657966B115AC4B7A846997 /* CQTSLongBaseAutoTestMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A87C069B15B0D658C89C05DF5E086 /* CQTSLongBaseAutoTestMethodViewController.m */; };
 		F13DEDA7CBD82EBDFD475F6D80011FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667885A1500FC5280D325980B1F53E85 /* UIKit.framework */; };
 		F13E23EA0859E3EBFDAC09D833694DE3 /* UIView+CJDragAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8FD395C1B01508C1E00387D1EB5011 /* UIView+CJDragAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F15495EF3506E3880917B8BCF6096C9E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4688D5D0B4BE1EBF1A1940A070C5243 /* SwiftUI.framework */; };
 		F3D6AE3AEE12218153BE5EC07936D717 /* CQTSTestMethodLeftButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805EB169549DF5805273F5918F68638 /* CQTSTestMethodLeftButton.m */; };
+		F455C56A61540927348760AFDBE56369 /* CJAnimationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B9366A6B554313F9B04CC21616D5D012 /* CJAnimationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4606188C37DD9C6D02500B9DB7F686F /* FBShimmeringView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E4624280238560D8F5519ECD580EFEE /* FBShimmeringView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4F2F62D6B9C2E842042D357DC5EA0DC /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 5835CE834DBE2E2851AC2530E9FB1890 /* arrow_down.png */; };
 		F51227D471F446AC7D2AD42096007A6D /* TestValueChangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65312AA18C726906F6C891F0D87441CE /* TestValueChangeTableViewCell.m */; };
@@ -392,8 +391,9 @@
 		F9379CC541C3D453BF8A1A16ACEFC719 /* CQDemoKit-CQDemoKit_Privacy in Resources */ = {isa = PBXBuildFile; fileRef = A91984ED62E3D2D67A2E2376AC273137 /* CQDemoKit-CQDemoKit_Privacy */; };
 		FA0F149ADADAD9C205661AB6F9535BFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
 		FA17E62A5355C7CD6717FD927024408E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16931F5C7C103D9C5C6CEDBB065250A /* Foundation.framework */; };
-		FAAAAFFFB206708947326287383A97B4 /* UIView+CJExpandFrameAnimationBind.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D7C164846D06BCFCE94933BD9B0A42E /* UIView+CJExpandFrameAnimationBind.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA23CDD746B80FDE0A51D018E551051C /* UIView+CJExpandRectAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B1F13FD4F6B942B401F0D2F9B51ED77F /* UIView+CJExpandRectAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAC29318B1BB01E527B91E92FD556DF5 /* CQDemoKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A020FC47D0B9A9F916F06345F3BE66 /* CQDemoKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAFE893A6675F6BB0F94D77C26BC45B4 /* UIView+CJSlideTransformAnimationBind.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A056A03DFC96BF368CC2D7AAED8F3A /* UIView+CJSlideTransformAnimationBind.m */; };
 		FBBD7806982AB57E7035B676DBB763B8 /* TNActivityIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 121A8FB219202F829F1D9ED8663E38E9 /* TNActivityIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBF88EA61E80E490B3B1025C2F609ECE /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 26613A0E8D3F90499E6A74656928A44F /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCC0BAD0351B1514EFB35A5A60E45D9D /* CQTSTestMethodMiddleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BAA70D152CD86A8A5B0B811A78DAED /* CQTSTestMethodMiddleButton.m */; };
@@ -664,7 +664,6 @@
 		1A61B6F1EE9E25D04B0688308EEAE2B5 /* CQDemoResource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CQDemoResource.debug.xcconfig; sourceTree = "<group>"; };
 		1AE79245E6076455F08966E217CF3C0F /* Pods-CJAnimationKitDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CJAnimationKitDemo-Info.plist"; sourceTree = "<group>"; };
 		1B16E29FD8F6DBD2F934FFC85BAB8C52 /* BaseAnimationViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseAnimationViewController.m; sourceTree = "<group>"; };
-		1C26355454808FB5684CF0B9490E5528 /* UIView+CJExpandFrameAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExpandFrameAnimation.h"; sourceTree = "<group>"; };
 		1C2D74F08AF4642D256D859F06CBE454 /* CJUIKitCollectionViewHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJUIKitCollectionViewHeader.h; path = CQDemoKit/BaseVC/Collection/CJUIKitCollectionViewHeader.h; sourceTree = "<group>"; };
 		1C484426DEAC75A45723319C8D89201E /* CQTSGitUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSGitUtil.m; path = CQDemoKit/Demo_Resource/String/CQTSGitUtil.m; sourceTree = "<group>"; };
 		1E1D0CFB13005C32E0F25338DE5E259A /* TSDemo_Animation-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSDemo_Animation-Swift-umbrella.h"; sourceTree = "<group>"; };
@@ -679,7 +678,6 @@
 		210ECC3542287F4376C5C8FBB5DD078D /* CQDemoAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = CQDemoAssets.xcassets; path = CQDemoResource/Resources/CQDemoAssets.xcassets; sourceTree = "<group>"; };
 		21D7DEC47E38F353ACADCDC108C16A24 /* CQTSSwitchViewFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSSwitchViewFactory.m; path = CQDemoKit/BaseUIKit/Switch/CQTSSwitchViewFactory.m; sourceTree = "<group>"; };
 		22461393545E4473E4EC6A11530839C4 /* CQTSTestMethodShortTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSTestMethodShortTableViewCell.m; path = CQDemoKit/TestMethod/CompareHopeResult/View/ShortInputCell/CQTSTestMethodShortTableViewCell.m; sourceTree = "<group>"; };
-		2297FBEE8AC868E40849C31263C72E5C /* UIView+CJSlideTransformAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJSlideTransformAnimation.h"; sourceTree = "<group>"; };
 		22C96DF656097C605A7C0894E97BEB6E /* cqts_jpg_avatar_03.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_jpg_avatar_03.jpg; path = CQDemoResource/Resources/jpg/cqts_jpg_avatar_03.jpg; sourceTree = "<group>"; };
 		25059C46A18311C8017FF22AA2446216 /* TSDemo_PopupAnimation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSDemo_PopupAnimation-umbrella.h"; sourceTree = "<group>"; };
 		2526520F500F01D8C3A971F48C79A53B /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
@@ -715,6 +713,7 @@
 		31444DFC657C51AB0A99D907F71B6B61 /* CQDemoResource */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CQDemoResource; path = CQDemoResource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CEB439B1E0DA858DB170B1FD9838CC /* HWWeakTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HWWeakTimer-dummy.m"; sourceTree = "<group>"; };
 		3221B1B25A540E5131432625F7482B9C /* UIView+CJPanAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJPanAction.h"; path = "CJBaseUIKit/UIView/CJDragAction/UIView+CJPanAction.h"; sourceTree = "<group>"; };
+		32379C53198163F85E80C1ABB53D76E0 /* UIView+CJExpandRectAnimationBind.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExpandRectAnimationBind.m"; sourceTree = "<group>"; };
 		325FAB69A916AF5774A0D5A9F9110D44 /* CQTSImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSImageLoader.h; path = CQDemoKit/BaseUIKit/ImageLoader/CQTSImageLoader.h; sourceTree = "<group>"; };
 		32DC35FC83071CADA0A3486665558B3E /* BasicAnimationVC.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = BasicAnimationVC.xib; sourceTree = "<group>"; };
 		330B4FA91BCF80351CE4A14538FDEB35 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
@@ -743,7 +742,6 @@
 		415F15F895FC14DD59A166B61D10C46F /* CJUIKitToastUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJUIKitToastUtil.h; path = CQDemoKit/BaseUtil/CJUIKitToastUtil.h; sourceTree = "<group>"; };
 		41739FC25C5E74EC175A23FA7B215B69 /* Shimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Shimmer.debug.xcconfig; sourceTree = "<group>"; };
 		4204D7B777C655717F20A3E9FC14F8DF /* CJAnimationKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJAnimationKit-umbrella.h"; sourceTree = "<group>"; };
-		43B1A9713CF1E912F2E87D2741EA1ED9 /* UIView+CJExpandFrameAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExpandFrameAnimation.m"; sourceTree = "<group>"; };
 		451A00DDAF5585E26DF4797A0CC26985 /* CQTSAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSAlertManager.m; path = CQDemoKit/StateUI/CQTSAlertManager.m; sourceTree = "<group>"; };
 		45DF3BE1C9C7CE24DC6D505CA6E185DE /* CQTSFPSView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSFPSView.h; path = CQDemoKit/Monitor/CQTSFPSView.h; sourceTree = "<group>"; };
 		45F0EAC4039023B04A9DDA094DC9412D /* FBShimmering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = FBShimmering/FBShimmering.h; sourceTree = "<group>"; };
@@ -772,6 +770,7 @@
 		54BAA70D152CD86A8A5B0B811A78DAED /* CQTSTestMethodMiddleButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSTestMethodMiddleButton.m; path = CQDemoKit/TestMethod/CompareHopeResult/View/LongInputCell/CQTSTestMethodMiddleButton.m; sourceTree = "<group>"; };
 		55262D9D9FC291118EF342572BA6CE3F /* CQGradientBorderButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CQGradientBorderButton.m; sourceTree = "<group>"; };
 		5529C1171FA76433F67F340C15B0F4B3 /* UIImageView+CQTSBaseUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CQTSBaseUtil.m"; path = "CQDemoKit/BaseUIKit/ImageLoader/UIImageView+CQTSBaseUtil.m"; sourceTree = "<group>"; };
+		5553F348B7CF0B177A1628B12B8D5AD8 /* UIView+CJSlideTransformAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJSlideTransformAnimation.h"; sourceTree = "<group>"; };
 		574FBE9C6AD1ED26956F36148E627906 /* BezierPathAnimationVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BezierPathAnimationVC.h; sourceTree = "<group>"; };
 		5770F70F6E72E50C139A3E4A0F1A3AE3 /* cqts_jpg_bg_02.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_jpg_bg_02.jpg; path = CQDemoResource/Resources/jpg/cqts_jpg_bg_02.jpg; sourceTree = "<group>"; };
 		5835CE834DBE2E2851AC2530E9FB1890 /* arrow_down.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
@@ -816,16 +815,15 @@
 		6CE3CAE8A422A2C756CEFC68AEA45154 /* CQDemoProtocol */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CQDemoProtocol; path = CQDemoProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF90DF70D39E7A9B519B003D3EAD32C /* TSDemo_PopupAnimation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSDemo_PopupAnimation.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6D777CEE233A13385893599AC950B4CE /* arrow_R_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
-		6D7C164846D06BCFCE94933BD9B0A42E /* UIView+CJExpandFrameAnimationBind.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExpandFrameAnimationBind.h"; sourceTree = "<group>"; };
 		6D84372FEF57812BFA899CFE57A32EE8 /* CQDemoKit-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "CQDemoKit-Swift"; path = CQDemoKit_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE580806ACC8975103DF834203A8998 /* KeyframeAnimationVC.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = KeyframeAnimationVC.xib; sourceTree = "<group>"; };
 		6ED0337FA61D35D23707A0619CA4FEC3 /* Pods-CJAnimationKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CJAnimationKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F388AFC2F159A08A87BEA816CC551CE /* CJGraduatedCycleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CJGraduatedCycleView.m; sourceTree = "<group>"; };
 		70D9F8B942683180EDD39B0BC6998949 /* TSDemo_Animation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSDemo_Animation-umbrella.h"; sourceTree = "<group>"; };
 		71ED71CA4798641F650544AD708265AD /* TNActivityIndicator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TNActivityIndicator.m; sourceTree = "<group>"; };
+		7258277C4E14D5354EBF4DA15D60DFCB /* UIView+CJExpandRectAnimationBind.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExpandRectAnimationBind.h"; sourceTree = "<group>"; };
 		72D958B924A534C8D319FBEC1C1FFAF7 /* HUDLayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HUDLayerView.m; sourceTree = "<group>"; };
 		73845C2783117D35DA8075AC3EDA7D55 /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+CJChangeBG.m"; path = "CJBaseUIKit/UINavigationBar/UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
-		73D7C771568FD73A326D85EFE79D0959 /* UIView+CJExpandFrameAnimationBind.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExpandFrameAnimationBind.m"; sourceTree = "<group>"; };
 		74373855218C8E3B2526601624BE743C /* TSDemo_Animation-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSDemo_Animation-Swift-dummy.m"; sourceTree = "<group>"; };
 		7493617668C8283E835B35B43432C65F /* add_common_icon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "add_common_icon@3x.png"; path = "CQDemoKit/TestMethod/MinusAddFeedback/Resources/add_common_icon@3x.png"; sourceTree = "<group>"; };
 		74AF5E02FA6AB43EA151454A03AA28ED /* CJUIKitCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJUIKitCollectionViewCell.h; path = CQDemoKit/BaseVC/Collection/CJUIKitCollectionViewCell.h; sourceTree = "<group>"; };
@@ -864,6 +862,7 @@
 		85D4CBA6A799E2BD1D1123319B961765 /* TSDemo_Animation-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSDemo_Animation-Swift-Info.plist"; sourceTree = "<group>"; };
 		85E622537AAD62259E076BEB15B014EE /* CQTSFPSView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSFPSView.m; path = CQDemoKit/Monitor/CQTSFPSView.m; sourceTree = "<group>"; };
 		8663559CDE19E29E2614FA6F973F084C /* Shimmer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shimmer-umbrella.h"; sourceTree = "<group>"; };
+		871D90159AA015A78420650178A372B7 /* UIView+CJSlideTransformAnimationBind.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJSlideTransformAnimationBind.h"; sourceTree = "<group>"; };
 		87689BE6BDCE9BE07CDE88927E2E376A /* TSDemo_Animation-Swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "TSDemo_Animation-Swift.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		878D774EDE8C410D0868FC4A301BDA31 /* UIImage+CQTSInFramework.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CQTSInFramework.m"; path = "CQDemoKit/Demo_Resource/UIImage+CQTSInFramework.m"; sourceTree = "<group>"; };
 		878F3B00DF569032860A324301F63F95 /* UIView+CJSlide3DInterceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJSlide3DInterceptor.h"; sourceTree = "<group>"; };
@@ -877,8 +876,6 @@
 		8C13F616A16097F90BE01A65C00A5B92 /* CQDemoProtocol-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CQDemoProtocol-prefix.pch"; sourceTree = "<group>"; };
 		8C6A4602CC38667BC3C3DC66EE7E6433 /* CJUIKitBaseTabBarViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJUIKitBaseTabBarViewController.m; path = CQDemoKit/BaseVC/TabBar/CJUIKitBaseTabBarViewController.m; sourceTree = "<group>"; };
 		8C7C74C0F5E10463A9C065F6557FD577 /* CQTSRipeBaseCollectionViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSRipeBaseCollectionViewDelegate.h; path = CQDemoKit/Demo_DataSourceAndDelegate/CQTSRipeBaseCollectionViewDelegate.h; sourceTree = "<group>"; };
-		8E407FC59779E15557350098BE2B33D2 /* UIView+CJSlideTransformAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJSlideTransformAnimation.m"; sourceTree = "<group>"; };
-		8E6BB59A3AB57AB1254FEF6379FBB4D7 /* UIView+CJSlideTransformAnimationBind.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJSlideTransformAnimationBind.m"; sourceTree = "<group>"; };
 		8EEE2C0FD8D2F33572052B775458D60E /* CQTSTestMethodLongTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSTestMethodLongTableViewCell.m; path = CQDemoKit/TestMethod/CompareHopeResult/View/LongInputCell/CQTSTestMethodLongTableViewCell.m; sourceTree = "<group>"; };
 		8EF276500D6BBC2FB7700828076FBFA7 /* HWWeakTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HWWeakTimer.h; path = Classes/HWWeakTimer.h; sourceTree = "<group>"; };
 		8F09165C3D8937A765B50303BB8B95FE /* CJAnimationKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJAnimationKit.debug.xcconfig; sourceTree = "<group>"; };
@@ -951,6 +948,7 @@
 		AA195E7D3F0A3D99B511F10FF3AD27A2 /* CJAnimationKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJAnimationKit-dummy.m"; sourceTree = "<group>"; };
 		AA36591AABDDDFBF714E2F44F617BBE9 /* CQTSRipeButtonCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSRipeButtonCollectionView.h; path = CQDemoKit/Demo_RipeView/RipeCollectionView/CQTSRipeButtonCollectionView.h; sourceTree = "<group>"; };
 		AA6816E09EAF77FBD7200E919D7D6F62 /* GradientCycleViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GradientCycleViewController.h; sourceTree = "<group>"; };
+		AB3A507BB451ED759A9F9DB305210093 /* UIView+CJExpandRectAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExpandRectAnimation.m"; sourceTree = "<group>"; };
 		ABCF3D81CA46FF2283C9DD97FF481354 /* CQDemoProtocol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CQDemoProtocol.modulemap; sourceTree = "<group>"; };
 		AC0D635F60C00B73EC14C9CE37C674F7 /* cqts_bmp_02.bmp */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_bmp_02.bmp; path = CQDemoResource/Resources/bmp/cqts_bmp_02.bmp; sourceTree = "<group>"; };
 		AC3D68FB75D85C137F3DE812181B7DA7 /* CJAnimationKit-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "CJAnimationKit-Swift"; path = CJAnimationKit_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -964,6 +962,7 @@
 		AFCB5FFB1AA99947436D31A4718E0F52 /* CQTSButtonFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSButtonFactory.m; path = CQDemoKit/BaseUIKit/Button/CQTSButtonFactory.m; sourceTree = "<group>"; };
 		B1A2652FC9B87A3D1EB49ED7B80D4F67 /* BaseAnimationViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = BaseAnimationViewController.xib; sourceTree = "<group>"; };
 		B1B5C67D5612885D9CC250015E57F6C1 /* CQTSTestMethodLeftButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSTestMethodLeftButton.h; path = CQDemoKit/TestMethod/CompareHopeResult/View/ShortInputCell/CQTSTestMethodLeftButton.h; sourceTree = "<group>"; };
+		B1F13FD4F6B942B401F0D2F9B51ED77F /* UIView+CJExpandRectAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExpandRectAnimation.h"; sourceTree = "<group>"; };
 		B2DC5309172DA28E89E21362FA1D03A3 /* UIView+CJSlideConvenience.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJSlideConvenience.m"; sourceTree = "<group>"; };
 		B3552D024C8F424051F8CCCB6C123302 /* CQTSSuspendButtonRootViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSSuspendButtonRootViewController.h; path = CQDemoKit/BaseVC/Base/BaseWindow/SuspendWindowFactory/CQTSSuspendButtonRootViewController.h; sourceTree = "<group>"; };
 		B3CCDEF839714A7491C90C101ED21DCF /* CJBaseUIKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CJBaseUIKit-Info.plist"; sourceTree = "<group>"; };
@@ -988,6 +987,7 @@
 		C1C67CFC67E06D53B854D83D778ACF8F /* CJGraduatedCycleView+Countdown.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJGraduatedCycleView+Countdown.h"; sourceTree = "<group>"; };
 		C29553905DA507AFC54D158E74BABFE1 /* TSDemo_Animation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSDemo_Animation.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C29B166F21F3856417DBE40030E0759B /* CJUIKitToastUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJUIKitToastUtil.m; path = CQDemoKit/BaseUtil/CJUIKitToastUtil.m; sourceTree = "<group>"; };
+		C2A056A03DFC96BF368CC2D7AAED8F3A /* UIView+CJSlideTransformAnimationBind.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJSlideTransformAnimationBind.m"; sourceTree = "<group>"; };
 		C39AC924DCA9E3EE82E17607902E6BF0 /* CJUIKitAlertUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJUIKitAlertUtil.h; path = CQDemoKit/BaseUtil/CJUIKitAlertUtil.h; sourceTree = "<group>"; };
 		C51243CC19645963A75FF0CB7F0FA2F3 /* ResourceBundle-CQDemoResource-CQDemoResource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CQDemoResource-CQDemoResource-Info.plist"; sourceTree = "<group>"; };
 		C7447439DF4EE332006A328F24E3325F /* SymbolImage+CJAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SymbolImage+CJAnimation.swift"; path = "CJAnimationKit-Swift/SwiftUIAnimation/SymbolImage+CJAnimation.swift"; sourceTree = "<group>"; };
@@ -1052,7 +1052,6 @@
 		E399A6A90EDBF6866F207295D5E10A96 /* CJAnimationKit-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJAnimationKit-Swift-prefix.pch"; sourceTree = "<group>"; };
 		E439D915F1BF451F0ECA3D7657D4FA59 /* CJAnimationKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJAnimationKit-prefix.pch"; sourceTree = "<group>"; };
 		E492832FD416CEFDD8BCDDD705640820 /* Shimmer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shimmer-prefix.pch"; sourceTree = "<group>"; };
-		E4EB64528CC701561EA0B52D619EA5E7 /* UIView+CJSlideTransformAnimationBind.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+CJSlideTransformAnimationBind.h"; sourceTree = "<group>"; };
 		E52DB0BB204CD13AE2E4224A4ADF2245 /* Pods-CJAnimationKitDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CJAnimationKitDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E5F4FBC2B6CDC438BE1942BE2E9D25C1 /* CQTSRipeButtonCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSRipeButtonCollectionViewCell.m; path = CQDemoKit/Demo_RipeView/RipeCollectionView/CQTSRipeButtonCollectionViewCell.m; sourceTree = "<group>"; };
 		E60B4AB1D4E7AD37AEC09D23A5F90D94 /* CQDemoKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CQDemoKit.release.xcconfig; sourceTree = "<group>"; };
@@ -1081,6 +1080,7 @@
 		F25CFE92DF0668649B5EFDB042F1F393 /* TSDemo_PopupAnimation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TSDemo_PopupAnimation.modulemap; sourceTree = "<group>"; };
 		F438EABCBE4243F62BD3D1CB3D789F45 /* CQTSIconDataModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSIconDataModel.m; path = CQDemoKit/Demo_Resource/ImageModel/CQTSIconDataModel.m; sourceTree = "<group>"; };
 		F442304394EE7BA07F9F4EC28AE47F4F /* SampleLayerMaskViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SampleLayerMaskViewController.m; sourceTree = "<group>"; };
+		F45098E768966F482FF8BFB7EA5DCAFE /* UIView+CJSlideTransformAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJSlideTransformAnimation.m"; sourceTree = "<group>"; };
 		F4513D001C6ACCBD96889A7EF6CFD333 /* CQTSResourceInfoUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSResourceInfoUtil.m; path = CQDemoKit/Demo_Resource/CQTSResourceInfoUtil.m; sourceTree = "<group>"; };
 		F855B64A18D64C59CE5B63495D657FEB /* CJBaseUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJBaseUIKit-prefix.pch"; sourceTree = "<group>"; };
 		F889B77DA479BC04F25F3CE9B2DAC020 /* GradientCycleLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GradientCycleLayer.h; sourceTree = "<group>"; };
@@ -1535,18 +1535,6 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		3DC3F6307942677AED2144700C0F95E3 /* BaseBind */ = {
-			isa = PBXGroup;
-			children = (
-				6D7C164846D06BCFCE94933BD9B0A42E /* UIView+CJExpandFrameAnimationBind.h */,
-				73D7C771568FD73A326D85EFE79D0959 /* UIView+CJExpandFrameAnimationBind.m */,
-				E4EB64528CC701561EA0B52D619EA5E7 /* UIView+CJSlideTransformAnimationBind.h */,
-				8E6BB59A3AB57AB1254FEF6379FBB4D7 /* UIView+CJSlideTransformAnimationBind.m */,
-			);
-			name = BaseBind;
-			path = BaseBind;
-			sourceTree = "<group>";
-		};
 		3FDC45279ACD1CF4E1214BA7EB5967D7 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -1576,6 +1564,18 @@
 			);
 			name = DemosCycle;
 			path = DemosCycle;
+			sourceTree = "<group>";
+		};
+		432A9236F016CB76991B7C24F4E99F27 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B1F13FD4F6B942B401F0D2F9B51ED77F /* UIView+CJExpandRectAnimation.h */,
+				AB3A507BB451ED759A9F9DB305210093 /* UIView+CJExpandRectAnimation.m */,
+				5553F348B7CF0B177A1628B12B8D5AD8 /* UIView+CJSlideTransformAnimation.h */,
+				F45098E768966F482FF8BFB7EA5DCAFE /* UIView+CJSlideTransformAnimation.m */,
+			);
+			name = Base;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		445E3251693BF41438AFE3ADE0BC4336 /* SandboxPhotoUtil */ = {
@@ -1621,18 +1621,6 @@
 			);
 			name = PayCountDownDemo;
 			path = PayCountDownDemo;
-			sourceTree = "<group>";
-		};
-		552F3D843DE8A70EDFF243D0EBBB432D /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				1C26355454808FB5684CF0B9490E5528 /* UIView+CJExpandFrameAnimation.h */,
-				43B1A9713CF1E912F2E87D2741EA1ED9 /* UIView+CJExpandFrameAnimation.m */,
-				2297FBEE8AC868E40849C31263C72E5C /* UIView+CJSlideTransformAnimation.h */,
-				8E407FC59779E15557350098BE2B33D2 /* UIView+CJSlideTransformAnimation.m */,
-			);
-			name = Base;
-			path = Base;
 			sourceTree = "<group>";
 		};
 		55A6C1D52D0C9D041414DD498E9927B8 /* Support Files */ = {
@@ -1736,8 +1724,8 @@
 		620182792C5EDEF39A3CC97F5B354C9D /* PopupAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				552F3D843DE8A70EDFF243D0EBBB432D /* Base */,
-				3DC3F6307942677AED2144700C0F95E3 /* BaseBind */,
+				432A9236F016CB76991B7C24F4E99F27 /* Base */,
+				EF1AD38D547D9E0F0155730BBA837935 /* BaseBind */,
 				316E4A39A99607B37451647EA64E3312 /* BaseConvenience */,
 				5CF7C0B52090C1A56A4301547F73AE7C /* Core */,
 				2555086AC0BD13E56186932665C2A6A2 /* Interceptor */,
@@ -2646,6 +2634,18 @@
 			name = CJDragAction;
 			sourceTree = "<group>";
 		};
+		EF1AD38D547D9E0F0155730BBA837935 /* BaseBind */ = {
+			isa = PBXGroup;
+			children = (
+				7258277C4E14D5354EBF4DA15D60DFCB /* UIView+CJExpandRectAnimationBind.h */,
+				32379C53198163F85E80C1ABB53D76E0 /* UIView+CJExpandRectAnimationBind.m */,
+				871D90159AA015A78420650178A372B7 /* UIView+CJSlideTransformAnimationBind.h */,
+				C2A056A03DFC96BF368CC2D7AAED8F3A /* UIView+CJSlideTransformAnimationBind.m */,
+			);
+			name = BaseBind;
+			path = BaseBind;
+			sourceTree = "<group>";
+		};
 		F0F538C6B3EAA1D799245EBF92F819E1 /* SwiftUIAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -2805,6 +2805,37 @@
 				3DCAE5848B1224FDB779DF3224D07E57 /* CQTSAssetModelGetter.h in Headers */,
 				8C16DD0D31CFF95252AC4B4A1313CCEB /* CQTSAssetSourceUtil.h in Headers */,
 				229CEEEAABC95FC0BDE7D05F3328B183 /* UIImage+CQDemoResource.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FD2B2C3538369323E1D41BAE2207253 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92E014C0D8246025209CEF3A9A02A72 /* CAShapeLayerFactory.h in Headers */,
+				F455C56A61540927348760AFDBE56369 /* CJAnimationFactory.h in Headers */,
+				D890856DD4CD0CDB05DAC377EE82FDBA /* CJAnimationKit-umbrella.h in Headers */,
+				2C31980C4346AE368097C9221AA0E5F5 /* CJExpandCalculateResultModel.h in Headers */,
+				910BA2D09B573B4D8C9FF43C05F1F980 /* CJExpandCalculator.h in Headers */,
+				EFC7CAC1C07DFAD378DCC0C598546ECF /* CJGraduatedCycleView.h in Headers */,
+				C23A90487C752948B7CCC9E5D4A8DE0B /* CJGraduatedCycleView+Countdown.h in Headers */,
+				C75AE9BC0BE0105C8DE63A41590646BE /* CJPathFactory.h in Headers */,
+				DD56337DFDFAE1A53FC93AE9F9715824 /* CJSlideCalculator.h in Headers */,
+				9F3ABD74FF5A7F7EFDAB5B07C1AB8B66 /* CQGradientBorderButton.h in Headers */,
+				35106DAFED66E1A41B9D7450155E0593 /* UIControl+CJRadarAnimation.h in Headers */,
+				379126812EFE3ACCE8F234AAEE500B66 /* UIView+CJExpandInterceptor.h in Headers */,
+				FA23CDD746B80FDE0A51D018E551051C /* UIView+CJExpandRectAnimation.h in Headers */,
+				33980E0D1C873EED10810CFAE09B226B /* UIView+CJExpandRectAnimationBind.h in Headers */,
+				041D01E220EB20178C1F2044961D1304 /* UIView+CJInterceptorChain.h in Headers */,
+				7556E8009C48D593A7451A7E3E68B1E7 /* UIView+CJShake.h in Headers */,
+				07F166FDFC406E0E37350BF640DDBEAA /* UIView+CJShimmering.h in Headers */,
+				67999FFC07B5DBCB51E5F37A7841059C /* UIView+CJSlide3DInterceptor.h in Headers */,
+				203E977C9890E7C68519F7CFC26ED645 /* UIView+CJSlideConvenience.h in Headers */,
+				2BA98831999F8ADFE8F15158DFF0A004 /* UIView+CJSlideInterceptor.h in Headers */,
+				BC6E185227B213F22DD0C349A59FA26C /* UIView+CJSlideTransformAnimation.h in Headers */,
+				B78DAE0DE68A052A97EB547FCB336FDE /* UIView+CJSlideTransformAnimationBind.h in Headers */,
+				B7F35574AC0770B962B1367E315F4DCD /* UIView+CJTransitionAnimation.h in Headers */,
+				2B4BA0DF4917DBAB5A899ED5CEB9FFB9 /* UIView+CJZoomFrame.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3004,37 +3035,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFACF2FF8F4C1002D5E1A5AF6BEC7BB4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CCF97AF936067208F7139B91596E7251 /* CAShapeLayerFactory.h in Headers */,
-				17E4A6524700CE814F36E039A6E66BFD /* CJAnimationFactory.h in Headers */,
-				1D378299EB53D9C8BCD3F3A2D44CB273 /* CJAnimationKit-umbrella.h in Headers */,
-				5AC49B5374D522FFEA1FBCC64776ED6F /* CJExpandCalculateResultModel.h in Headers */,
-				3ACC07446E42265454D2D4CEA4B2EEC2 /* CJExpandCalculator.h in Headers */,
-				60B2AFD47FF607A29B563673EA77CD63 /* CJGraduatedCycleView.h in Headers */,
-				59C2CA62593C226CB54DC52F6A6E0FF9 /* CJGraduatedCycleView+Countdown.h in Headers */,
-				A9D5E549DA32FCAC126AEBD561B28074 /* CJPathFactory.h in Headers */,
-				5EFC72B759A0A858D2374EF8CA90581A /* CJSlideCalculator.h in Headers */,
-				9AEE941D2E384B6A30A7EB188E10E017 /* CQGradientBorderButton.h in Headers */,
-				B43AA09BED651BB8DC3D18916A839F00 /* UIControl+CJRadarAnimation.h in Headers */,
-				8BD6477144A92B63E1EB977E9D23C9C7 /* UIView+CJExpandFrameAnimation.h in Headers */,
-				FAAAAFFFB206708947326287383A97B4 /* UIView+CJExpandFrameAnimationBind.h in Headers */,
-				051B1407A5E6133F39D9650E3B949729 /* UIView+CJExpandInterceptor.h in Headers */,
-				D97D1600065893F247E3CBADF979EC5C /* UIView+CJInterceptorChain.h in Headers */,
-				D03C9745CE7BB2DC8F7C5A16208FCE2E /* UIView+CJShake.h in Headers */,
-				7ABC753FC9F6C65B0D1E67B913E35D07 /* UIView+CJShimmering.h in Headers */,
-				8D21B347CCD4FE816DFEE23C3D126F3E /* UIView+CJSlide3DInterceptor.h in Headers */,
-				65310E8D6A7AA95148D2D18DF9AD95E5 /* UIView+CJSlideConvenience.h in Headers */,
-				605352509C0C18421EBDA2C0AA1D4FC2 /* UIView+CJSlideInterceptor.h in Headers */,
-				030B9B8D7674349501FF43E16C22F6E6 /* UIView+CJSlideTransformAnimation.h in Headers */,
-				3E43230F9DD3EBD255675665EDCA09FD /* UIView+CJSlideTransformAnimationBind.h in Headers */,
-				41D677FD2A092FD302396D5C046B2EDB /* UIView+CJTransitionAnimation.h in Headers */,
-				BCFE660BFE233919CC3729F3BBE6DA64 /* UIView+CJZoomFrame.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -3152,8 +3152,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB481366BDD93C9C366265450EFF226F /* Build configuration list for PBXNativeTarget "CJAnimationKit" */;
 			buildPhases = (
-				EFACF2FF8F4C1002D5E1A5AF6BEC7BB4 /* Headers */,
-				65B7F25978092C9DABF9907D25193646 /* Sources */,
+				2FD2B2C3538369323E1D41BAE2207253 /* Headers */,
+				97773CEE7BB821152F5DE1382DB43650 /* Sources */,
 				6D95C92124FB1F34438669020AA79DF4 /* Frameworks */,
 				CBC4FC15D9CC9BE2262DC99197C00A7E /* Resources */,
 			);
@@ -3790,37 +3790,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65B7F25978092C9DABF9907D25193646 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD947C8C3EAB5FCE54F543FB759C4607 /* CAShapeLayerFactory.m in Sources */,
-				20EA78066063AD208DC29D732A0FC3AA /* CJAnimationFactory.m in Sources */,
-				959E297BA2851463415572DDE04B756D /* CJAnimationKit-dummy.m in Sources */,
-				0A99028086DD9AD0321E7831A3DF2857 /* CJExpandCalculateResultModel.m in Sources */,
-				CCFE621C50298AFA34231B464338D9BE /* CJExpandCalculator.m in Sources */,
-				7CFEA69E61C8832C4B849304B8FF80C2 /* CJGraduatedCycleView.m in Sources */,
-				405E8BB0DE5ADB48A81DEAE1E5010489 /* CJGraduatedCycleView+Countdown.m in Sources */,
-				61A67D8965BA13F748E9235787C8D16A /* CJPathFactory.m in Sources */,
-				DD476F3A19FC66536B89F0AC51E1162A /* CJSlideCalculator.m in Sources */,
-				E8BCD55A0BC1D8D12DF09287CF938DA6 /* CQGradientBorderButton.m in Sources */,
-				DAF2CD7A1A1C9041A8C4637F9CECF96D /* UIControl+CJRadarAnimation.m in Sources */,
-				455CEA2ACA7F1DA42DFD7596F655492C /* UIView+CJExpandFrameAnimation.m in Sources */,
-				0B50127846982615E9E62121B57498ED /* UIView+CJExpandFrameAnimationBind.m in Sources */,
-				540FD746EFE4A6B2B5104B347A056E92 /* UIView+CJExpandInterceptor.m in Sources */,
-				91715C002DA8A4E2E551E20E5DF91414 /* UIView+CJInterceptorChain.m in Sources */,
-				AEBAEE80C33DB3F3E560873484D5B2DD /* UIView+CJShake.m in Sources */,
-				075AE57E55614FBC6CB7FD089E34ABF9 /* UIView+CJShimmering.m in Sources */,
-				2867493EDB331C2443E203E050B50CF4 /* UIView+CJSlide3DInterceptor.m in Sources */,
-				899C1885342E226262F5445A14F80D5F /* UIView+CJSlideConvenience.m in Sources */,
-				49DCD9DC8A765EE8096FD96E043CABC1 /* UIView+CJSlideInterceptor.m in Sources */,
-				B08F2902BC77B8E21E66324FF8076950 /* UIView+CJSlideTransformAnimation.m in Sources */,
-				11538108A6751814B35E0412456D68AE /* UIView+CJSlideTransformAnimationBind.m in Sources */,
-				39E8E4868092E41C5F6C0C2A6A3FD716 /* UIView+CJTransitionAnimation.m in Sources */,
-				4F69C0C8079E4871E347AC68B785E159 /* UIView+CJZoomFrame.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D3968FB708C0BC03E48879D420ED7DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3856,6 +3825,37 @@
 				6411782DA2CC8F2DE706FAC069C76FA9 /* TSNormalImageAnimationView.swift in Sources */,
 				C68E8DA2520AA93EECDAC3A881F1DE40 /* TSSwiftUIAniHomeViewController.swift in Sources */,
 				DACEF37B06A0929F5C4058773FAA6693 /* TSSymbolImageAnimationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97773CEE7BB821152F5DE1382DB43650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				769E70A44BBB7A147585AF959687F383 /* CAShapeLayerFactory.m in Sources */,
+				7611A63B2CA7C7F379675137933F3A12 /* CJAnimationFactory.m in Sources */,
+				AF16F85A100A1519D6926C5A0D317720 /* CJAnimationKit-dummy.m in Sources */,
+				44A669E46258B2C3B3D5B87E0D632F89 /* CJExpandCalculateResultModel.m in Sources */,
+				6500AE11F09A07E7C5ACFC4BB53CD35D /* CJExpandCalculator.m in Sources */,
+				BD8EF2678A9A5A19AD4C4255E2D12641 /* CJGraduatedCycleView.m in Sources */,
+				A8D8C831423CCDAA348D0BEFE02CD376 /* CJGraduatedCycleView+Countdown.m in Sources */,
+				187FE82A7EBCA40F234E6D1BE63E413F /* CJPathFactory.m in Sources */,
+				EFA8A15D5C46CCC1F85041432B666993 /* CJSlideCalculator.m in Sources */,
+				06A750A31AEF02776BE7004BFF162448 /* CQGradientBorderButton.m in Sources */,
+				E25F29C45A196B438C8D597E25B4D49D /* UIControl+CJRadarAnimation.m in Sources */,
+				B4B7341D4B1E15630890D63B8152EF4C /* UIView+CJExpandInterceptor.m in Sources */,
+				239E2A6281FFE6F402683C08BCC691EC /* UIView+CJExpandRectAnimation.m in Sources */,
+				19E4DD2076FB8D529E6F1FDE68C906D9 /* UIView+CJExpandRectAnimationBind.m in Sources */,
+				D7259D09A6A33ED53BB90246D5E6E320 /* UIView+CJInterceptorChain.m in Sources */,
+				1936A4EE4FD4BCC03CDDB0AF92499556 /* UIView+CJShake.m in Sources */,
+				0AB32A01531C864A02340CE33EE57B82 /* UIView+CJShimmering.m in Sources */,
+				B1231CD7FED421B4902A352B82B8790A /* UIView+CJSlide3DInterceptor.m in Sources */,
+				2413692BC31C976EF9F07091D59B344E /* UIView+CJSlideConvenience.m in Sources */,
+				48A8D1B95D0E3E12D1FAED272B0AAAE6 /* UIView+CJSlideInterceptor.m in Sources */,
+				7AA16A13E62B06B32EB14D167269DFD5 /* UIView+CJSlideTransformAnimation.m in Sources */,
+				FAFE893A6675F6BB0F94D77C26BC45B4 /* UIView+CJSlideTransformAnimationBind.m in Sources */,
+				AEDA190D2981B12A706C832FFB163765 /* UIView+CJTransitionAnimation.m in Sources */,
+				E8846E92E486DDB49AE36714C28BB1F3 /* UIView+CJZoomFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
