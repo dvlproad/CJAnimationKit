@@ -14,10 +14,10 @@
 
 #pragma mark - 展开动画（进阶）
 + (void)cj_showExpandAnimateBindView:(UIView *)animatedView
-                        withShowFrame:(CGRect)showFrame
-                            direction:(CJExpandToDirection)direction
-                            blankView:(nullable UIView *)blankView
-                           completion:(nullable void(^)(void))completion {
+                       withShowFrame:(CGRect)showFrame
+                           direction:(CJExpandToDirection)direction
+                           blankView:(nullable UIView *)blankView
+                          completion:(nullable void(^)(void))completion {
     CGRect popupViewHideFrame = [CJExpandCalculator hideFrameFromShowFrame:showFrame direction:direction];
     animatedView.cjExpandAnimateBlock = ^(UIView *animatedView, BOOL forShow) {
         if (blankView != nil) {
@@ -28,26 +28,26 @@
     };
     [UIView cj_expandAnimateView:animatedView
                          forShow:YES
-                     animateBlock:animatedView.cjExpandAnimateBlock
-                       completion:completion];
+                    animateBlock:animatedView.cjExpandAnimateBlock
+                      completion:completion];
 }
 
 + (void)cj_showExpandAnimateBindView:(UIView *)animatedView
-                         animateBlock:(CJExpandAnimateBlock)animateBlock
-                           completion:(nullable void(^)(void))completion {
+                        animateBlock:(CJExpandAnimateBlock)animateBlock
+                          completion:(nullable void(^)(void))completion {
     animatedView.cjExpandAnimateBlock = animateBlock;
     [UIView cj_expandAnimateView:animatedView
                          forShow:YES
-                     animateBlock:animateBlock
-                       completion:completion];
+                    animateBlock:animateBlock
+                      completion:completion];
 }
 
 + (void)cj_hideExpandAnimateBindView:(UIView *)animatedView
-                           completion:(nullable void(^)(void))completion {
+                          completion:(nullable void(^)(void))completion {
     [UIView cj_expandAnimateView:animatedView
                          forShow:NO
-                     animateBlock:animatedView.cjExpandAnimateBlock
-                       completion:completion];
+                    animateBlock:animatedView.cjExpandAnimateBlock
+                      completion:completion];
 }
 
 @end

@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
                    • CJAnimationKit/TransitionAnimation - 视图转场动画：常见出现动画、自定义出现动画、转场动画。【如常见的出现动画：Fade淡入淡出、MoveIn覆盖、Push推挤、Reveal揭开；自定义的出现动画：Cube立方体、SuckEffect吮吸、OglFlip翻转、RippleEffect波纹、PageCurl翻页、PageUnCurl反翻页、CameraIrisHollowOpen开镜头、CameraIrisHollowClose关镜头；转场动画：None无、FlipFromLeft左翻转、FlipFromRight右翻转、CurlUp上翻页、CurlDown下翻页)】
                    
                    • CJAnimationKit/PopupAnimation - 视图显示动画：除为自己自身显示时候增加动画的功能外，还可以作为弹窗功能出现/消失的动画
-                   • CJAnimationKit/PopupAnimation/Core - 位置计算器(位移位置计算器:CJExpandCalculator; 展开位置计算器:CJSlideCalculator;)
+                   • CJAnimationKit/PopupAnimation/Core - 位置计算器(展开位置计算器:CJExpandCalculator; 位移位置计算器:CJSlideCalculator;)
                    • CJAnimationKit/PopupAnimation/Interceptor - 动画拦截器：在动画真正执行前插入自定义逻辑(拦截器链)，常用于埋点统计、动画执行前后附加操作、日志记录、甚至拦截/替换默认动画(拦截器中不调用 next 即中止链，默认动画不会执行)。分两种：全局拦截器(类级别，注册一次即对所有动画生效)、实例拦截器(per-view，仅对指定视图的动画生效)。已内置 展开/位移/3D位移 三种拦截器类型，可仿照新增类型。公共链执行器：UIView+CJInterceptorChain；各类型：UIView+CJExpandInterceptor、UIView+CJSlideInterceptor、UIView+CJSlide3DInterceptor
                    • CJAnimationKit/PopupAnimation/Base - 不关心隐藏的基础动画，常用于视图show带动画，也是关心隐藏的动画需要调用的底层方法（位移动画 UIView+CJSlideAnimation； 展开动画: UIView+CJExpandRectAnimation）
                    • CJAnimationKit/PopupAnimation/BaseBind - 关心隐藏但需自己先主动添加进superView的基础动画：绑定参数到view，show时记录，hide时复用（展开动画 UIView+CJExpandRectAnimationBind； 位移动画 UIView+CJSlideTransformAnimationBind）  
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
 
   # 视图显示动画：除为自己自身显示时候增加动画的功能外，还可以作为弹窗功能出现/消失的动画
   s.subspec 'PopupAnimation' do |ss|
-    # 位置计算器(位移位置计算器:CJExpandCalculator; 展开位置计算器:CJSlideCalculator;)
+    # 位置计算器(展开位置计算器:CJExpandCalculator; 位移位置计算器:CJSlideCalculator;)
     ss.subspec 'Core' do |core|
       core.source_files = "CJAnimationKit/PopupAnimation/Core/**/*.{h,m}"
     end

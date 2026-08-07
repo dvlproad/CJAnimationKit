@@ -21,7 +21,11 @@ typedef NS_ENUM(NSUInteger, CJSlideFromDirection) {
 @interface CJSlideCalculator : NSObject
 
 
-+ (CGAffineTransform)slideHideTransformWithDirection:(CJSlideFromDirection)direction
-                                             offset:(CGFloat)offset;
+/// 计算 hide 状态的 transform（视图从 show 状态平移 offset 到隐藏位置）
+/// @param direction 滑入方向（show 状态的反方向）
+/// @param offset 移动距离
+/// @return hide 状态对应的 CGAffineTransform
++ (CGAffineTransform)hideTransformWithDirection:(CJSlideFromDirection)direction
+                                        offset:(CGFloat)offset;
 
 @end

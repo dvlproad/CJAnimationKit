@@ -15,11 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 普通平移（进阶）
 + (void)cj_showSlideAnimateBindView:(UIView *)animatedView
-                    withShowDirection:(CJSlideFromDirection)showFromDirection
-                        animateOffset:(CGFloat)animateOffset
-                           completion:(void (^ __nullable)(BOOL finished))completion;
+                  withShowDirection:(CJSlideFromDirection)showFromDirection
+                      animateOffset:(CGFloat)animateOffset
+                         completion:(void (^ __nullable)(BOOL finished))completion;
 + (void)cj_hideSlideAnimateBindView:(UIView *)animatedView
-                          completion:(void (^ __nullable)(BOOL finished))completion;
+                         completion:(void (^ __nullable)(BOOL finished))completion;
 
 #pragma mark - 3D平移（进阶）
 + (void)cj_show3DSlideAnimateBindView:(UIView *)animatedView

@@ -9,22 +9,6 @@
 
 @implementation CJExpandCalculator
 
-#pragma mark - 计算 showFrame
-+ (CGRect)showFrameFromLeftTop:(CGPoint)leftTop size:(CGSize)size {
-    return CGRectMake(leftTop.x, leftTop.y, size.width, size.height);
-}
-
-+ (CGRect)showFrameFromLeftBottom:(CGPoint)leftBottom size:(CGSize)size {
-    return CGRectMake(leftBottom.x, leftBottom.y - size.height, size.width, size.height);
-}
-
-+ (CGRect)showFrameFromCenter:(CGPoint)center size:(CGSize)size {
-    return CGRectMake(center.x - size.width / 2.0,
-                      center.y - size.height / 2.0,
-                      size.width,
-                      size.height);
-}
-
 #pragma mark - 计算 hideFrame
 + (CGRect)hideFrameFromShowFrame:(CGRect)showFrame
                        direction:(CJExpandToDirection)direction {

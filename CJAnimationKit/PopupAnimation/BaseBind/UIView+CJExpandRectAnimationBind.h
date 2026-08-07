@@ -18,16 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// 便捷方法：frame 驱动，show 时记录参数到 view，hide 时复用（内部翻译成 block），
 /// 适合非 AutoLayout 的 frame 布局场景
 + (void)cj_showExpandAnimateBindView:(UIView *)animatedView
-                        withShowFrame:(CGRect)showFrame
-                            direction:(CJExpandToDirection)direction
-                            blankView:(nullable UIView *)blankView
-                           completion:(nullable void(^)(void))completion;
+                       withShowFrame:(CGRect)showFrame
+                           direction:(CJExpandToDirection)direction
+                           blankView:(nullable UIView *)blankView
+                          completion:(nullable void(^)(void))completion;
 /// 核心方法：block 驱动，show 时记录 block 到 view，hide 时复用，block 内设置显示/隐藏状态（通常通过修改约束实现）
 + (void)cj_showExpandAnimateBindView:(UIView *)animatedView
-                         animateBlock:(CJExpandAnimateBlock)animateBlock
-                           completion:(nullable void(^)(void))completion;
+                        animateBlock:(CJExpandAnimateBlock)animateBlock
+                          completion:(nullable void(^)(void))completion;
 + (void)cj_hideExpandAnimateBindView:(UIView *)animatedView
-                           completion:(nullable void(^)(void))completion;
+                          completion:(nullable void(^)(void))completion;
 
 @end
 

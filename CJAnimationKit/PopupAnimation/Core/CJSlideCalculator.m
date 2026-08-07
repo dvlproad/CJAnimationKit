@@ -9,8 +9,8 @@
 
 @implementation CJSlideCalculator
 
-+ (CGAffineTransform)slideHideTransformWithDirection:(CJSlideFromDirection)direction
-                                             offset:(CGFloat)offset
++ (CGAffineTransform)hideTransformWithDirection:(CJSlideFromDirection)direction
+                                        offset:(CGFloat)offset
 {
     switch (direction) {
         case CJSlideFromDirectionTop:

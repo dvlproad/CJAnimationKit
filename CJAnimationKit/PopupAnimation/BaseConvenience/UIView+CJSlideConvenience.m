@@ -38,9 +38,9 @@
 - (void)cq_slideFromOffset:(CGFloat)offset
                  direction:(CJSlideFromDirection)showFromDirection {
     [UIView cj_showSlideAnimateBindView:self
-                       withShowDirection:showFromDirection
-                           animateOffset:offset
-                              completion:nil];
+                      withShowDirection:showFromDirection
+                          animateOffset:offset
+                             completion:nil];
 }
 
 - (void)cq_slideSmallForHideWithAnimate:(BOOL)animate {

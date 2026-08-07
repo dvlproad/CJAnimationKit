@@ -8,6 +8,7 @@
 
 #import "UIView+CJSlideTransformAnimation.h"
 #import "UIView+CJInterceptorChain.h"
+#import "CJSlideCalculator.h"
 
 @implementation UIView (CJSlideTransformAnimation)
 
@@ -168,20 +169,7 @@
                          animateOffset:(CGFloat)animateOffset
                                   view:(UIView *)view
 {
-    CGAffineTransform transform;
-    if (direction == CJSlideFromDirectionTop) {
-        transform = CGAffineTransformMakeTranslation(0, -animateOffset);
-    } else if (direction == CJSlideFromDirectionBottom) {
-        transform = CGAffineTransformMakeTranslation(0, animateOffset);
-    } else if (direction == CJSlideFromDirectionLeft) {
-        transform = CGAffineTransformMakeTranslation(-animateOffset, 0);
-    } else if (direction == CJSlideFromDirectionRight) {
-        transform = CGAffineTransformMakeTranslation(animateOffset, 0);
-    } else {
-        transform = CGAffineTransformMakeTranslation(0, animateOffset);
-    }
-    
-    view.transform = transform;
+    view.transform = [CJSlideCalculator hideTransformWithDirection:direction offset:animateOffset];
 }
 
 + (CATransform3D)__updateTransform3DFromDirection:(CJSlideFromDirection)direction
